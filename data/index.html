@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Open GEO Data — IndexHot</title>
+  <meta name="description" content="Public datasets for AI search visibility research. Free to use, cite, and reproduce." />
+  <link rel="stylesheet" href="../tailwind.min.css" />
+  <style>
+    body { font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  </style>
+</head>
+<body class="bg-white text-gray-800 antialiased">
+
+  <!-- Top navigation -->
+  <header class="sticky top-0 z-20 bg-white/90 backdrop-blur border-b border-gray-100">
+    <div class="max-w-3xl mx-auto px-5 sm:px-6 h-16 flex items-center justify-between">
+      <a href="/" class="text-xl font-bold tracking-tight text-gray-900">
+        Index<span class="text-blue-600">Hot</span>
+      </a>
+
+      <!-- Desktop nav -->
+      <nav class="hidden md:flex items-center gap-6">
+        <a href="/blog/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Blog</a>
+        <a href="/methodology/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Methodology</a>
+        <a href="/data/" aria-current="page" class="text-sm font-medium text-blue-600">Data</a>
+        <a href="/about/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">About</a>
+        <a href="#" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Sign in</a>
+      </nav>
+
+      <!-- Mobile menu toggle -->
+      <button id="menu-btn" type="button" aria-label="Open menu" aria-expanded="false"
+        class="md:hidden flex items-center justify-center w-10 h-10 -mr-2 rounded-lg text-gray-600 hover:text-blue-600 hover:bg-gray-100 transition-colors">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile menu -->
+    <nav id="mobile-menu" class="hidden md:hidden px-5 pb-4 pt-2 border-t border-gray-100 bg-white">
+      <a href="/blog/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Blog</a>
+      <a href="/methodology/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Methodology</a>
+      <a href="/data/" aria-current="page" class="block py-2.5 text-sm font-medium text-blue-600">Data</a>
+      <a href="/about/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">About</a>
+      <a href="#" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Sign in</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="px-5 sm:px-6 pt-12 pb-12">
+      <div class="max-w-3xl mx-auto">
+
+        <!-- Header -->
+        <header class="mb-9">
+          <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900 leading-tight">
+            Open GEO Data
+          </h1>
+          <p class="mt-4 text-base sm:text-lg text-gray-500 leading-relaxed">
+            Public datasets for AI search visibility research. Free to use, cite, and reproduce.
+          </p>
+        </header>
+
+        <!-- Dataset list -->
+        <div class="space-y-4">
+
+          <article class="p-6 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition flex flex-col">
+            <div class="flex items-start justify-between gap-4">
+              <h2 class="text-lg sm:text-xl font-semibold text-gray-900 leading-snug">AI Citation Behavior Dataset (2026 Q3)</h2>
+              <span class="flex-shrink-0 text-xs font-semibold text-blue-700 bg-blue-50 border border-blue-100 rounded-full px-2.5 py-1">CSV · JSONL</span>
+            </div>
+            <p class="mt-2 text-sm sm:text-base text-gray-600 leading-relaxed">
+              20 brands &times; 50 prompts &times; 3 platforms. Each row records whether the brand was mentioned, the citation sources returned, and the brand&rsquo;s rank position in the answer &mdash; collected under the governed IndexHot measurement standard.
+            </p>
+            <div class="mt-3 flex flex-wrap gap-2 text-xs text-gray-500">
+              <span class="rounded-md bg-gray-100 px-2 py-1">3,000 answer records</span>
+              <span class="rounded-md bg-gray-100 px-2 py-1">ChatGPT · Perplexity · Gemini</span>
+              <span class="rounded-md bg-gray-100 px-2 py-1">License: CC BY 4.0</span>
+            </div>
+            <p class="mt-3 text-xs font-medium text-gray-500">Last updated: <time datetime="2026-09-30">September 30, 2026</time></p>
+            <a href="https://github.com/indexhot-code/geo-data" target="_blank" rel="noopener"
+              class="mt-4 inline-flex items-center gap-1.5 self-start text-sm font-semibold text-blue-600 hover:text-blue-700 transition-colors">
+              Download on GitHub <span aria-hidden="true">&rarr;</span>
+            </a>
+          </article>
+
+          <article class="p-6 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition flex flex-col">
+            <div class="flex items-start justify-between gap-4">
+              <h2 class="text-lg sm:text-xl font-semibold text-gray-900 leading-snug">Brand Mention Rates by Industry</h2>
+              <span class="flex-shrink-0 text-xs font-semibold text-blue-700 bg-blue-50 border border-blue-100 rounded-full px-2.5 py-1">CSV</span>
+            </div>
+            <p class="mt-2 text-sm sm:text-base text-gray-600 leading-relaxed">
+              AI mention rates aggregated by industry and platform, covering both branded and non-branded prompts. Use it to benchmark how visible a typical brand in your sector is across generative engines.
+            </p>
+            <div class="mt-3 flex flex-wrap gap-2 text-xs text-gray-500">
+              <span class="rounded-md bg-gray-100 px-2 py-1">Industry-level aggregates</span>
+              <span class="rounded-md bg-gray-100 px-2 py-1">Branded &amp; non-branded split</span>
+              <span class="rounded-md bg-gray-100 px-2 py-1">License: CC BY 4.0</span>
+            </div>
+            <p class="mt-3 text-xs font-medium text-gray-500">Last updated: <time datetime="2026-10-15">October 15, 2026</time></p>
+            <a href="https://github.com/indexhot-code/geo-data" target="_blank" rel="noopener"
+              class="mt-4 inline-flex items-center gap-1.5 self-start text-sm font-semibold text-blue-600 hover:text-blue-700 transition-colors">
+              Download on GitHub <span aria-hidden="true">&rarr;</span>
+            </a>
+          </article>
+
+          <article class="p-6 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition flex flex-col">
+            <div class="flex items-start justify-between gap-4">
+              <h2 class="text-lg sm:text-xl font-semibold text-gray-900 leading-snug">Schema Markup Impact Data</h2>
+              <span class="flex-shrink-0 text-xs font-semibold text-blue-700 bg-blue-50 border border-blue-100 rounded-full px-2.5 py-1">CSV · JSONL</span>
+            </div>
+            <p class="mt-2 text-sm sm:text-base text-gray-600 leading-relaxed">
+              Results from a controlled experiment across 50 pages where structured data was added and removed. Includes citation and absorption outcomes by schema type, so you can see which markup actually moves AI citations.
+            </p>
+            <div class="mt-3 flex flex-wrap gap-2 text-xs text-gray-500">
+              <span class="rounded-md bg-gray-100 px-2 py-1">50 test pages</span>
+              <span class="rounded-md bg-gray-100 px-2 py-1">Before / after comparison</span>
+              <span class="rounded-md bg-gray-100 px-2 py-1">License: CC BY 4.0</span>
+            </div>
+            <p class="mt-3 text-xs font-medium text-gray-500">Last updated: <time datetime="2026-10-25">October 25, 2026</time></p>
+            <a href="https://github.com/indexhot-code/geo-data" target="_blank" rel="noopener"
+              class="mt-4 inline-flex items-center gap-1.5 self-start text-sm font-semibold text-blue-600 hover:text-blue-700 transition-colors">
+              Download on GitHub <span aria-hidden="true">&rarr;</span>
+            </a>
+          </article>
+
+        </div>
+
+        <!-- How to cite -->
+        <section class="mt-10 rounded-xl border border-gray-200 bg-gray-50 p-6">
+          <h2 class="text-lg font-semibold text-gray-900">How to cite</h2>
+          <p class="mt-2 text-sm text-gray-600 leading-relaxed">
+            If you use these datasets in research or reports, please cite them as:
+          </p>
+          <p class="mt-3 text-xs font-semibold text-gray-900">Plain text</p>
+          <blockquote class="mt-2 rounded-lg bg-white border border-gray-200 p-4 text-sm text-gray-800 font-mono leading-relaxed break-words">
+            IndexHot GEO Data, 2026. https://indexhot.com/data/
+          </blockquote>
+          <p class="mt-4 text-xs font-semibold text-gray-900">BibTeX</p>
+          <pre class="mt-2 font-mono bg-gray-900 text-gray-100 rounded-lg p-4 overflow-x-auto text-sm leading-relaxed"><code>@misc{indexhot2026data,
+  title={IndexHot GEO Data 2026},
+  author={IndexHot},
+  year={2026},
+  url={https://indexhot.com/data/}
+}</code></pre>
+          <p class="mt-3 text-xs text-gray-400">
+            All datasets are released under CC BY 4.0 &mdash; free to use, cite and reproduce with attribution.
+          </p>
+        </section>
+
+        <!-- Related resources -->
+        <section class="mt-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Related resources</h2>
+          <div class="rounded-xl border border-gray-200 divide-y divide-gray-100 overflow-hidden">
+            <a href="/methodology/" class="flex items-center justify-between gap-4 px-5 py-4 hover:bg-gray-50 transition-colors">
+              <span>
+                <span class="block text-sm font-semibold text-gray-900">Methodology</span>
+                <span class="block text-sm text-gray-500">The open GEO measurement standard</span>
+              </span>
+              <span class="flex-shrink-0 text-blue-600" aria-hidden="true">&rarr;</span>
+            </a>
+            <a href="/blog/" class="flex items-center justify-between gap-4 px-5 py-4 hover:bg-gray-50 transition-colors">
+              <span>
+                <span class="block text-sm font-semibold text-gray-900">Blog</span>
+                <span class="block text-sm text-gray-500">Technical deep dives and data discoveries</span>
+              </span>
+              <span class="flex-shrink-0 text-blue-600" aria-hidden="true">&rarr;</span>
+            </a>
+            <a href="https://github.com/indexhot-code/geo-data" target="_blank" rel="noopener" class="flex items-center justify-between gap-4 px-5 py-4 hover:bg-gray-50 transition-colors">
+              <span>
+                <span class="block text-sm font-semibold text-gray-900">GitHub repository</span>
+                <span class="block text-sm text-gray-500 break-all">Download all datasets and raw files</span>
+              </span>
+              <span class="flex-shrink-0 text-blue-600" aria-hidden="true">&rarr;</span>
+            </a>
+          </div>
+        </section>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-100 px-5 sm:px-6 py-8">
+    <div class="max-w-3xl mx-auto text-center text-sm text-gray-400">
+      © 2026 IndexHot. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- Dataset structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Dataset",
+        "name": "AI Citation Behavior Dataset (2026 Q3)",
+        "description": "20 brands x 50 prompts x 3 platforms. Each row records whether the brand was mentioned, the citation sources returned, and the brand's rank position in the answer, collected under the governed IndexHot measurement standard.",
+        "dateModified": "2026-09-30",
+        "url": "https://indexhot.com/data/",
+        "license": "https://creativecommons.org/licenses/by/4.0/",
+        "publisher": { "@type": "Organization", "name": "IndexHot", "url": "https://indexhot.com" },
+        "distribution": {
+          "@type": "DataDownload",
+          "encodingFormat": ["CSV", "JSONL"],
+          "contentUrl": "https://github.com/indexhot-code/geo-data"
+        }
+      },
+      {
+        "@type": "Dataset",
+        "name": "Brand Mention Rates by Industry",
+        "description": "AI mention rates aggregated by industry and platform, covering both branded and non-branded prompts, for benchmarking sector visibility across generative engines.",
+        "dateModified": "2026-10-15",
+        "url": "https://indexhot.com/data/",
+        "license": "https://creativecommons.org/licenses/by/4.0/",
+        "publisher": { "@type": "Organization", "name": "IndexHot", "url": "https://indexhot.com" },
+        "distribution": {
+          "@type": "DataDownload",
+          "encodingFormat": "CSV",
+          "contentUrl": "https://github.com/indexhot-code/geo-data"
+        }
+      },
+      {
+        "@type": "Dataset",
+        "name": "Schema Markup Impact Data",
+        "description": "Results from a controlled experiment across 50 pages where structured data was added and removed, including citation and absorption outcomes by schema type.",
+        "dateModified": "2026-10-25",
+        "url": "https://indexhot.com/data/",
+        "license": "https://creativecommons.org/licenses/by/4.0/",
+        "publisher": { "@type": "Organization", "name": "IndexHot", "url": "https://indexhot.com" },
+        "distribution": {
+          "@type": "DataDownload",
+          "encodingFormat": ["CSV", "JSONL"],
+          "contentUrl": "https://github.com/indexhot-code/geo-data"
+        }
+      }
+    ]
+  }
+  </script>
+
+  <script>
+    (function () {
+      var menuBtn = document.getElementById('menu-btn');
+      var mobileMenu = document.getElementById('mobile-menu');
+
+      menuBtn.addEventListener('click', function () {
+        var isHidden = mobileMenu.classList.toggle('hidden');
+        menuBtn.setAttribute('aria-expanded', String(!isHidden));
+      });
+
+      mobileMenu.addEventListener('click', function (e) {
+        if (e.target.tagName === 'A') {
+          mobileMenu.classList.add('hidden');
+          menuBtn.setAttribute('aria-expanded', 'false');
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How to Track Your Brand in ChatGPT, Perplexity & Gemini (With Code) — IndexHot Blog</title>
+  <meta name="description" content="A reproducible AI-search brand tracking workflow with copy-ready Python and Node.js snippets for logging mentions, citations and rank across platforms." />
+  <link rel="stylesheet" href="../../tailwind.min.css" />
+  <style>
+    body { font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+    pre { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "headline": "How to Track Your Brand in ChatGPT, Perplexity & Gemini (With Code)",
+        "description": "A practical, reproducible tracking workflow with copy-ready Python and Node.js snippets for logging mentions, citations and rank across AI search platforms.",
+        "datePublished": "2026-10-18",
+        "dateModified": "2026-10-18",
+        "author": { "@type": "Organization", "name": "IndexHot Team" },
+        "publisher": { "@type": "Organization", "name": "IndexHot" },
+        "mainEntityOfPage": { "@type": "WebPage", "@id": "https://indexhot.com/blog/track-brand-ai-search/" }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "Do I need official API access?", "acceptedAnswer": { "@type": "Answer", "text": "For automated tracking, yes. OpenAI and Perplexity share an OpenAI-compatible chat-completions API, and Gemini has its own generative-language endpoint. If you cannot use APIs, you can drive the web apps with a browser-automation tool and feed the page text into the same coding functions." } },
+          { "@type": "Question", "name": "Will API results match the consumer web apps?", "acceptedAnswer": { "@type": "Answer", "text": "Not exactly. APIs and web interfaces can differ in model version, search settings and formatting. Treat API runs as a consistent, reproducible signal, and always log which surface and version you tested so trends stay comparable." } },
+          { "@type": "Question", "name": "How do you detect absorption in code?", "acceptedAnswer": { "@type": "Answer", "text": "Start with a claim-overlap heuristic: tokenize distinctive phrases, numbers and product names from your source pages and measure how many appear in the answer. This is a useful proxy for depth 1; reserve depth 2 for a distinctive claim or figure you can trace back to a specific source." } },
+          { "@type": "Question", "name": "How often should the tracker run?", "acceptedAnswer": { "@type": "Answer", "text": "Run the full library monthly as a baseline, weekly during active GEO campaigns or around a model release. Run each prompt at least three times and keep the median to absorb non-determinism." } }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="bg-white text-gray-800 antialiased">
+
+  <!-- Top navigation -->
+  <header class="sticky top-0 z-20 bg-white/90 backdrop-blur border-b border-gray-100">
+    <div class="max-w-3xl mx-auto px-5 sm:px-6 h-16 flex items-center justify-between">
+      <a href="/" class="text-xl font-bold tracking-tight text-gray-900">
+        Index<span class="text-blue-600">Hot</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6">
+        <a href="/blog/" class="text-sm font-medium text-blue-600">Blog</a>
+        <a href="/methodology/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Methodology</a>
+        <a href="/data/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Data</a>
+        <a href="/about/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">About</a>
+        <a href="#" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Sign in</a>
+      </nav>
+      <button id="menu-btn" type="button" aria-label="Open menu" aria-expanded="false"
+        class="md:hidden flex items-center justify-center w-10 h-10 -mr-2 rounded-lg text-gray-600 hover:text-blue-600 hover:bg-gray-100 transition-colors">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+    <nav id="mobile-menu" class="hidden md:hidden px-5 pb-4 pt-2 border-t border-gray-100 bg-white">
+      <a href="/blog/" class="block py-2.5 text-sm font-medium text-blue-600">Blog</a>
+      <a href="/methodology/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Methodology</a>
+      <a href="/data/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Data</a>
+      <a href="/about/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">About</a>
+      <a href="#" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Sign in</a>
+    </nav>
+  </header>
+
+  <main>
+    <article class="px-5 sm:px-6 pt-10 pb-10">
+      <div class="max-w-3xl mx-auto">
+
+        <a href="/blog/" class="inline-flex items-center gap-1 text-sm font-medium text-gray-500 hover:text-blue-600 transition-colors mb-6">
+          &larr; Back to Blog
+        </a>
+
+        <header class="mb-8">
+          <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900 leading-tight">
+            How to Track Your Brand in ChatGPT, Perplexity &amp; Gemini (With Code)
+          </h1>
+          <p class="mt-4 text-sm text-gray-400">
+            By <span class="font-medium text-gray-600">IndexHot Team</span> &middot; <time datetime="2026-10-18">October 18, 2026</time>
+          </p>
+        </header>
+
+        <div class="text-lg text-gray-700 leading-relaxed border-l-4 border-blue-600 pl-4 mb-10">
+          <p>You don&rsquo;t need an enterprise contract to track your brand in AI search. With a fixed prompt list, a simple logger and a few API calls, you can build a repeatable mention, citation and rank tracker in an afternoon. Below are copy-ready Python and Node.js snippets.</p>
+        </div>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">What You&rsquo;ll Build</h2>
+          <p class="text-gray-600 leading-relaxed mb-3">
+            The script reads a list of governed prompts, sends each to the platforms, codes every answer, and writes one CSV row per prompt &times; platform. From that log you can compute Mention Rate, Citation Rate and the IndexHot Score described in the <a class="text-blue-600 hover:underline" href="/methodology/">methodology</a>.
+          </p>
+          <ul class="list-disc pl-5 space-y-2 text-gray-600 leading-relaxed marker:text-blue-500">
+            <li>Python 3.11+ with the <code class="rounded bg-gray-100 px-1.5 py-0.5 text-sm">requests</code> library, or Node.js 18+ (built-in <code class="rounded bg-gray-100 px-1.5 py-0.5 text-sm">fetch</code>).</li>
+            <li>API keys for the platforms you want to test; store them in environment variables, never in source.</li>
+            <li>A <code class="rounded bg-gray-100 px-1.5 py-0.5 text-sm">prompts.csv</code> file with one prompt per row.</li>
+          </ul>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Step 1: Create the Prompt Library</h2>
+          <p class="text-gray-600 leading-relaxed mb-3">
+            Start with 50 prompts &mdash; 10 branded, 40 non-branded &mdash; and tag each row with its type so you can report the two scores separately.
+          </p>
+          <pre class="bg-gray-900 text-gray-100 rounded-lg p-4 overflow-x-auto text-sm leading-relaxed"><code>type,prompt
+branded,Is IndexHot accurate?
+branded,What is IndexHot pricing?
+non-branded,best AI search visibility tool
+non-branded,how to check if ChatGPT mentions my brand
+non-branded,GEO measurement software for B2B SaaS</code></pre>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Step 2 &amp; 3: Run Prompts and Code Answers (Python)</h2>
+          <p class="text-gray-600 leading-relaxed mb-3">
+            OpenAI and Perplexity share the same chat-completions request shape (different base URL and key); Gemini uses its own endpoint, noted in the comments. Check each platform&rsquo;s current docs for the exact model name.
+          </p>
+          <pre class="bg-gray-900 text-gray-100 rounded-lg p-4 overflow-x-auto text-sm leading-relaxed"><code># pip install requests
+import csv, re, os, time, requests
+
+BRAND = "IndexHot"
+DOMAIN = "indexhot.com"
+
+# OpenAI-compatible endpoints (set keys in your environment)
+CLIENTS = {
+    "ChatGPT": ("https://api.openai.com/v1/chat/completions",
+                "gpt-4o", os.environ["OPENAI_API_KEY"]),
+    "Perplexity": ("https://api.perplexity.ai/chat/completions",
+                   "sonar", os.environ["PPLX_API_KEY"]),
+    # Gemini: https://generativelanguage.googleapis.com/v1beta/
+    #         models/gemini-2.0-flash:generateContent?key=...
+}
+
+def ask(base_url, model, key, prompt):
+    r = requests.post(
+        base_url,
+        headers={"Authorization": f"Bearer {key}"},
+        json={"model": model,
+              "messages": [{"role": "user", "content": prompt}]},
+        timeout=60)
+    r.raise_for_status()
+    return r.json()["choices"][0]["message"]["content"]
+
+def code_answer(text):
+    hits = [m.start() for m in re.finditer(rf"\b{re.escape(BRAND)}\b", text, re.I)]
+    mentioned = bool(hits)
+    cited = DOMAIN.lower() in text.lower()
+    rank = text[:hits[0]].count("\n") + 1 if hits else ""   # rough line rank
+    return mentioned, cited, rank
+
+rows = []
+with open("prompts.csv", newline="") as f:
+    for row in csv.DictReader(f):
+        for platform, (url, model, key) in CLIENTS.items():
+            answer = ask(url, model, key, row["prompt"])
+            mentioned, cited, rank = code_answer(answer)
+            rows.append({"platform": platform, "type": row["type"],
+                         "prompt": row["prompt"], "mentioned": mentioned,
+                         "cited": cited, "rank": rank})
+            time.sleep(1)  # be polite to rate limits
+
+with open("results.csv", "w", newline="") as f:
+    w = csv.DictWriter(f, fieldnames=rows[0].keys())
+    w.writeheader(); w.writerows(rows)</code></pre>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Same Tracker in Node.js</h2>
+          <pre class="bg-gray-900 text-gray-100 rounded-lg p-4 overflow-x-auto text-sm leading-relaxed"><code>// Node 18+, no dependencies: node track.mjs prompts.csv
+import fs from "node:fs";
+
+const BRAND = "IndexHot";
+const DOMAIN = "indexhot.com";
+
+async function ask(baseUrl, model, key, prompt) {
+  const res = await fetch(baseUrl, {
+    method: "POST",
+    headers: { "Authorization": `Bearer ${key}`, "Content-Type": "application/json" },
+    body: JSON.stringify({ model, messages: [{ role: "user", content: prompt }] }),
+  });
+  const data = await res.json();
+  return data.choices[0].message.content;
+}
+
+function codeAnswer(text) {
+  const re = new RegExp(`\\b${BRAND}\\b`, "ig");
+  const hits = [...text.matchAll(re)].map((m) => m.index);
+  return {
+    mentioned: hits.length > 0,
+    cited: text.toLowerCase().includes(DOMAIN),
+    rank: hits.length ? text.slice(0, hits[0]).split("\n").length : "",
+  };
+}
+
+const clients = {
+  ChatGPT: ["https://api.openai.com/v1/chat/completions", "gpt-4o", process.env.OPENAI_API_KEY],
+  Perplexity: ["https://api.perplexity.ai/chat/completions", "sonar", process.env.PPLX_API_KEY],
+};
+
+const lines = fs.readFileSync(process.argv[2], "utf8").trim().split("\n").slice(1);
+const out = [];
+for (const line of lines) {
+  const [type, ...rest] = line.split(",");
+  const prompt = rest.join(",");
+  for (const [platform, [url, model, key]] of Object.entries(clients)) {
+    const answer = await ask(url, model, key, prompt);
+    out.push({ platform, type, prompt, ...codeAnswer(answer) });
+    await new Promise((r) => setTimeout(r, 1000));
+  }
+}
+fs.writeFileSync("results.json", JSON.stringify(out, null, 2));</code></pre>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Step 4: Aggregate into Rates</h2>
+          <p class="text-gray-600 leading-relaxed mb-3">
+            With the log written, compute per-platform Mention Rate and Citation Rate. Add absorption scoring (see below) to complete the IndexHot formula.
+          </p>
+          <pre class="bg-gray-900 text-gray-100 rounded-lg p-4 overflow-x-auto text-sm leading-relaxed"><code>import csv
+
+with open("results.csv", newline="") as f:
+    rows = list(csv.DictReader(f))
+
+def rate(items, key):
+    return sum(1 for i in items if i[key] in ("True", "true", True)) / len(items)
+
+for platform in sorted({r["platform"] for r in rows}):
+    sub = [r for r in rows if r["platform"] == platform]
+    print(f"{platform}: MR={rate(sub, 'mentioned'):.0%}  CR={rate(sub, 'cited'):.0%}")</code></pre>
+          <p class="text-gray-600 leading-relaxed mt-3">
+            Then apply <code class="rounded bg-gray-100 px-1.5 py-0.5 text-sm">S = 100 &times; (0.30&middot;MR + 0.30&middot;CR + 0.40&middot;AR)</code> per platform and combine ChatGPT, Perplexity and Gemini with the published 0.40 / 0.30 / 0.30 weights.
+          </p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Scoring Absorption &mdash; the Honest Shortcut</h2>
+          <p class="text-gray-600 leading-relaxed mb-3">
+            Mention and citation are exact string checks; absorption is fuzzier. A practical first version is a claim-overlap heuristic: keep a list of distinctive phrases, numbers and product names from your own pages and count how many appear verbatim or near-verbatim in the answer.
+          </p>
+          <pre class="bg-gray-900 text-gray-100 rounded-lg p-4 overflow-x-auto text-sm leading-relaxed"><code>CLAIMS = ["40% visibility lift", "governed question library", "absorption depth"]
+
+def absorption(answer):
+    hits = sum(c.lower() in answer.lower() for c in CLAIMS)
+    return 2 if hits &gt;= 2 else 1 if hits == 1 else 0</code></pre>
+          <p class="text-gray-600 leading-relaxed mt-3">
+            Treat this as depth-1 evidence and reserve depth 2 for a distinctive claim or figure you can trace to a specific page. For production work, an LLM judge with a fixed rubric is more robust &mdash; just keep the rubric and model version logged.
+          </p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Frequently Asked Questions</h2>
+          <div class="space-y-5 mt-5">
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">Do I need official API access?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">For automated tracking, yes. OpenAI and Perplexity share an OpenAI-compatible chat-completions API and Gemini has its own endpoint. If you can&rsquo;t use APIs, drive the web apps with a browser-automation tool and feed the page text into the same coding functions.</p>
+            </div>
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">Will API results match the consumer web apps?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">Not exactly &mdash; model version, search settings and formatting can differ. Treat API runs as a consistent, reproducible signal and always log the surface and version so trends remain comparable.</p>
+            </div>
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">How do you detect absorption in code?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">Start with claim overlap: tokenize distinctive phrases, numbers and product names from your source pages and count matches in the answer. That is a solid depth-1 proxy; reserve depth 2 for a traceable distinctive claim or figure.</p>
+            </div>
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">How often should the tracker run?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">Monthly for the full library as a baseline, weekly during active GEO campaigns or around a model release. Run each prompt at least three times and keep the median.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="rounded-2xl bg-blue-600 px-6 py-8 text-center">
+          <h2 class="text-xl sm:text-2xl font-bold text-white leading-snug">Don&rsquo;t want to maintain the tracker yourself?</h2>
+          <p class="mt-2 text-blue-100 text-sm sm:text-base">Check your own brand&rsquo;s AI visibility for free.</p>
+          <a href="https://indexhot.com" class="mt-5 inline-block px-6 py-3 rounded-lg bg-white text-blue-700 font-semibold hover:bg-blue-50 transition-colors">
+            Check your brand on indexhot.com
+          </a>
+        </section>
+
+      </div>
+    </article>
+  </main>
+
+  <footer class="border-t border-gray-100 px-5 sm:px-6 py-8">
+    <div class="max-w-3xl mx-auto text-center text-sm text-gray-400">
+      © 2026 IndexHot. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var menuBtn = document.getElementById('menu-btn');
+      var mobileMenu = document.getElementById('mobile-menu');
+      menuBtn.addEventListener('click', function () {
+        var isHidden = mobileMenu.classList.toggle('hidden');
+        menuBtn.setAttribute('aria-expanded', String(!isHidden));
+      });
+      mobileMenu.addEventListener('click', function (e) {
+        if (e.target.tagName === 'A') {
+          mobileMenu.classList.add('hidden');
+          menuBtn.setAttribute('aria-expanded', 'false');
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

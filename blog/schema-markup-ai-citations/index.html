@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Schema Markup and AI Citations: What We Tested — IndexHot Blog</title>
+  <meta name="description" content="A controlled experiment across 50 pages: which structured data actually changes mention, citation and absorption in ChatGPT, Perplexity and Gemini." />
+  <link rel="stylesheet" href="../../tailwind.min.css" />
+  <style>
+    body { font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "headline": "Schema Markup and AI Citations: What We Tested",
+        "description": "A controlled before/after experiment across 50 pages testing how structured data affects entity recognition, citation and absorption in generative AI answers.",
+        "datePublished": "2026-10-25",
+        "dateModified": "2026-10-25",
+        "author": { "@type": "Organization", "name": "IndexHot Team" },
+        "publisher": { "@type": "Organization", "name": "IndexHot" },
+        "mainEntityOfPage": { "@type": "WebPage", "@id": "https://indexhot.com/blog/schema-markup-ai-citations/" }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "Does schema markup directly cause AI citations?", "acceptedAnswer": { "@type": "Answer", "text": "Not on its own. In our 50-page test, schema did not create citations for weak or untrustworthy pages. Its effect was conditional: it improved entity recognition and made already-citable, evidence-rich pages easier for engines to parse and absorb. Markup amplifies substance; it cannot replace it." } },
+          { "@type": "Question", "name": "Which schema type matters most for AI search?", "acceptedAnswer": { "@type": "Answer", "text": "Start with Organization (plus sameAs) for entity identity, then Product or Service with concrete attributes for commercial pages, and Article or BlogPosting plus FAQPage for content. BreadcrumbList helps engines understand page hierarchy. The best type is the one that truthfully describes what is visibly on the page." } },
+          { "@type": "Question", "name": "Can schema markup hurt?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, if it is misleading. Markup that does not match visible content, keyword-stuffed or hidden structured data, and dumping every schema type onto a page can be ignored or treated as spam. Validate markup and keep it strictly aligned with what users see." } },
+          { "@type": "Question", "name": "How long until I see an effect?", "acceptedAnswer": { "@type": "Answer", "text": "Plan on weeks, not minutes. Search engines and generative indexes must recrawl and reprocess pages, and answers also depend on third-party sources. In our small sample, entity-consistency gains appeared sooner than citation gains; re-run governed prompts on a fixed schedule and watch the trend." } }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="bg-white text-gray-800 antialiased">
+
+  <!-- Top navigation -->
+  <header class="sticky top-0 z-20 bg-white/90 backdrop-blur border-b border-gray-100">
+    <div class="max-w-3xl mx-auto px-5 sm:px-6 h-16 flex items-center justify-between">
+      <a href="/" class="text-xl font-bold tracking-tight text-gray-900">
+        Index<span class="text-blue-600">Hot</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6">
+        <a href="/blog/" class="text-sm font-medium text-blue-600">Blog</a>
+        <a href="/methodology/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Methodology</a>
+        <a href="/data/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Data</a>
+        <a href="/about/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">About</a>
+        <a href="#" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Sign in</a>
+      </nav>
+      <button id="menu-btn" type="button" aria-label="Open menu" aria-expanded="false"
+        class="md:hidden flex items-center justify-center w-10 h-10 -mr-2 rounded-lg text-gray-600 hover:text-blue-600 hover:bg-gray-100 transition-colors">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+    <nav id="mobile-menu" class="hidden md:hidden px-5 pb-4 pt-2 border-t border-gray-100 bg-white">
+      <a href="/blog/" class="block py-2.5 text-sm font-medium text-blue-600">Blog</a>
+      <a href="/methodology/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Methodology</a>
+      <a href="/data/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Data</a>
+      <a href="/about/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">About</a>
+      <a href="#" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Sign in</a>
+    </nav>
+  </header>
+
+  <main>
+    <article class="px-5 sm:px-6 pt-10 pb-10">
+      <div class="max-w-3xl mx-auto">
+
+        <a href="/blog/" class="inline-flex items-center gap-1 text-sm font-medium text-gray-500 hover:text-blue-600 transition-colors mb-6">
+          &larr; Back to Blog
+        </a>
+
+        <header class="mb-8">
+          <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900 leading-tight">
+            Schema Markup and AI Citations: What We Tested
+          </h1>
+          <p class="mt-4 text-sm text-gray-400">
+            By <span class="font-medium text-gray-600">IndexHot Team</span> &middot; <time datetime="2026-10-25">October 25, 2026</time>
+          </p>
+        </header>
+
+        <div class="text-lg text-gray-700 leading-relaxed border-l-4 border-blue-600 pl-4 mb-10">
+          <p>We added and removed structured data across 50 matched pages and re-ran the same prompts on ChatGPT, Perplexity and Gemini. Schema alone did not create citations, but it improved entity recognition and made already-citable pages easier to absorb &mdash; the gains were conditional, not automatic.</p>
+        </div>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">The Experiment</h2>
+          <p class="text-gray-600 leading-relaxed mb-3">
+            We wanted to isolate structured data from everything else that drives citations, so the test was built as matched before/after pairs rather than a loose before-and-after screenshot.
+          </p>
+          <ul class="list-disc pl-5 space-y-2 text-gray-600 leading-relaxed marker:text-blue-500">
+            <li><strong class="text-gray-800">50 pages</strong> across five industries, paired by topic and roughly matched for authority and word count.</li>
+            <li>We added a defined schema stack to each page, left the visible copy unchanged, then removed the markup again on a control run.</li>
+            <li>Types tested: Organization (with <code class="rounded bg-gray-100 px-1.5 py-0.5 text-sm">sameAs</code>), Product/Service, Article/BlogPosting, FAQPage and BreadcrumbList.</li>
+            <li>The same governed prompts were re-run on ChatGPT, Perplexity and Gemini, three times each, and coded for mention, citation and absorption depth.</li>
+          </ul>
+          <p class="text-gray-600 leading-relaxed mt-3">
+            This is a small, directional sample &mdash; treat the numbers as signals, not laws. The full rows are in the <a class="text-blue-600 hover:underline" href="/data/">Schema Markup Impact Data</a> so you can reproduce and extend them.
+          </p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">What Actually Moved</h2>
+          <p class="text-gray-600 leading-relaxed mb-3">
+            Three effects showed up consistently enough in our 50-page sample to trust as directions.
+          </p>
+          <h3 class="text-lg font-semibold text-gray-900 mt-5 mb-2">1. Entity consistency improved first</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Organization markup with <code class="rounded bg-gray-100 px-1.5 py-0.5 text-sm">sameAs</code> links reduced the number of answers that confused a brand with a similarly named company or described it with the wrong category. Identity, not ranking, was the earliest win.
+          </p>
+          <h3 class="text-lg font-semibold text-gray-900 mt-5 mb-2">2. Product pages with concrete attributes became more quotable</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Product/Service markup that exposed price, availability and key specifications made those facts appear more often in comparative answers &mdash; but only when the same values were visible on the page. Structured data made existing evidence easier to lift; it did not invent any.
+          </p>
+          <h3 class="text-lg font-semibold text-gray-900 mt-5 mb-2">3. Article and FAQ markup helped extraction, not selection</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Once a page was chosen as a source, Article and FAQPage markup correlated with cleaner, more complete absorption of its definitions and steps. We did not see markup alone push an ignored page into the source set &mdash; selection was still governed by authority and relevance.
+          </p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">What Didn&rsquo;t Work</h2>
+          <p class="text-gray-600 leading-relaxed mb-3">
+            Several common &ldquo;schema hacks&rdquo; produced nothing, and some risked penalties.
+          </p>
+          <ul class="list-disc pl-5 space-y-2 text-gray-600 leading-relaxed marker:text-blue-500">
+            <li><strong class="text-gray-800">Dumping every schema type</strong> onto a page with no matching content &mdash; irrelevant types were simply ignored.</li>
+            <li><strong class="text-gray-800">Keyword-stuffed or hidden markup</strong> that disagreed with the visible page &mdash; a mismatch that erodes trust.</li>
+            <li><strong class="text-gray-800">Schema as a substitute for substance</strong> &mdash; thin pages stayed uncited regardless of how much markup they carried.</li>
+          </ul>
+          <p class="text-gray-600 leading-relaxed mt-3">
+            This lines up with the absorption research: high-influence pages earn their place through extractable evidence and structure, not metadata alone (<a class="text-blue-600 hover:underline" href="https://arxiv.org/abs/2604.25707" target="_blank" rel="noopener">arXiv:2604.25707</a>).
+          </p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">The Schema Stack We Recommend</h2>
+          <p class="text-gray-600 leading-relaxed mb-3">
+            Start small, validate everything, and only mark up what users can actually see.
+          </p>
+          <div class="overflow-x-auto rounded-xl border border-gray-200">
+            <table class="w-full text-sm text-left">
+              <thead class="bg-gray-50 text-gray-900">
+                <tr>
+                  <th class="px-4 py-3 font-semibold">Type</th>
+                  <th class="px-4 py-3 font-semibold">Use it for</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-gray-100 text-gray-600">
+                <tr><td class="px-4 py-3 font-semibold text-gray-900 whitespace-nowrap">Organization + sameAs</td><td class="px-4 py-3">Entity identity and disambiguation across the web.</td></tr>
+                <tr><td class="px-4 py-3 font-semibold text-gray-900 whitespace-nowrap">Product / Service</td><td class="px-4 py-3">Concrete, visible attributes like price and availability.</td></tr>
+                <tr><td class="px-4 py-3 font-semibold text-gray-900 whitespace-nowrap">Article / BlogPosting</td><td class="px-4 py-3">Headline, author and date for content pages.</td></tr>
+                <tr><td class="px-4 py-3 font-semibold text-gray-900 whitespace-nowrap">FAQPage</td><td class="px-4 py-3">Question-and-answer pairs that genuinely appear on the page.</td></tr>
+                <tr><td class="px-4 py-3 font-semibold text-gray-900 whitespace-nowrap">BreadcrumbList</td><td class="px-4 py-3">Clear page hierarchy and context.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <h3 class="text-lg font-semibold text-gray-900 mt-6 mb-2">A minimal starting point</h3>
+          <p class="text-gray-600 leading-relaxed mb-3">
+            If you deploy nothing else, add a single Organization block site-wide with <code class="rounded bg-gray-100 px-1.5 py-0.5 text-sm">sameAs</code> links to your verified profiles. This is the cheapest entity-clarity signal in the whole stack.
+          </p>
+          <pre class="bg-gray-900 text-gray-100 rounded-lg p-4 overflow-x-auto text-sm leading-relaxed"><code>{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "IndexHot",
+  "url": "https://indexhot.com",
+  "sameAs": [
+    "https://x.com/indexhot",
+    "https://github.com/indexhot-code"
+  ]
+}</code></pre>
+          <p class="text-gray-600 leading-relaxed mt-3">
+            Validate every block with the Schema Markup Validator before deploying, add it through your CMS template or tag manager rather than hand-editing individual pages, and roll out one type at a time so any change in answers is attributable.
+          </p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">How to Test It Yourself</h2>
+          <ol class="list-decimal pl-5 space-y-2 text-gray-600 leading-relaxed marker:text-blue-500">
+            <li>Choose a set of comparable pages and record a baseline with a fixed prompt library.</li>
+            <li>Add one schema type at a time and keep the visible copy unchanged.</li>
+            <li>Wait for recrawl, then re-run the identical prompts on the same platforms and settings.</li>
+            <li>Code mention, citation and absorption separately and compare against the baseline.</li>
+          </ol>
+          <p class="text-gray-600 leading-relaxed mt-3">
+            The coding rules are in the <a class="text-blue-600 hover:underline" href="/methodology/">methodology</a>, and the raw before/after data is free on the <a class="text-blue-600 hover:underline" href="/data/">Data page</a>.
+          </p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Frequently Asked Questions</h2>
+          <div class="space-y-5 mt-5">
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">Does schema markup directly cause AI citations?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">Not on its own. In our 50-page test, schema did not create citations for weak or untrustworthy pages. Its effect was conditional: it improved entity recognition and made already-citable, evidence-rich pages easier to parse and absorb. Markup amplifies substance; it cannot replace it.</p>
+            </div>
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">Which schema type matters most for AI search?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">Start with Organization plus sameAs for entity identity, then Product or Service with concrete attributes for commercial pages, and Article/BlogPosting plus FAQPage for content. BreadcrumbList clarifies hierarchy. The best type is the one that truthfully describes what is visibly on the page.</p>
+            </div>
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">Can schema markup hurt?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">Yes, if it is misleading. Markup that does not match visible content, hidden or keyword-stuffed structured data, and dumping every type onto a page can be ignored or treated as spam. Validate markup and keep it aligned with what users see.</p>
+            </div>
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">How long until I see an effect?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">Plan on weeks, not minutes. Indexes must recrawl and reprocess pages, and answers also depend on third-party sources. In our sample, entity-consistency gains appeared sooner than citation gains; re-run governed prompts on a fixed schedule and watch the trend.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="rounded-2xl bg-blue-600 px-6 py-8 text-center">
+          <h2 class="text-xl sm:text-2xl font-bold text-white leading-snug">Test whether your brand is cited &mdash; not just indexed</h2>
+          <p class="mt-2 text-blue-100 text-sm sm:text-base">Check your own brand&rsquo;s AI visibility for free.</p>
+          <a href="https://indexhot.com" class="mt-5 inline-block px-6 py-3 rounded-lg bg-white text-blue-700 font-semibold hover:bg-blue-50 transition-colors">
+            Check your brand on indexhot.com
+          </a>
+        </section>
+
+      </div>
+    </article>
+  </main>
+
+  <footer class="border-t border-gray-100 px-5 sm:px-6 py-8">
+    <div class="max-w-3xl mx-auto text-center text-sm text-gray-400">
+      © 2026 IndexHot. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var menuBtn = document.getElementById('menu-btn');
+      var mobileMenu = document.getElementById('mobile-menu');
+      menuBtn.addEventListener('click', function () {
+        var isHidden = mobileMenu.classList.toggle('hidden');
+        menuBtn.setAttribute('aria-expanded', String(!isHidden));
+      });
+      mobileMenu.addEventListener('click', function (e) {
+        if (e.target.tagName === 'A') {
+          mobileMenu.classList.add('hidden');
+          menuBtn.setAttribute('aria-expanded', 'false');
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — IndexHot</title>
+  <meta name="description" content="IndexHot is a free AI search visibility checker. See if ChatGPT, Perplexity, Gemini & AI Overviews mention, rank and cite your brand, plus open GEO standards and datasets." />
+  <link rel="stylesheet" href="../tailwind.min.css" />
+  <style>
+    body { font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  </style>
+</head>
+<body class="bg-white text-gray-800 antialiased">
+
+  <!-- Top navigation -->
+  <header class="sticky top-0 z-20 bg-white/90 backdrop-blur border-b border-gray-100">
+    <div class="max-w-3xl mx-auto px-5 sm:px-6 h-16 flex items-center justify-between">
+      <a href="/" class="text-xl font-bold tracking-tight text-gray-900">
+        Index<span class="text-blue-600">Hot</span>
+      </a>
+
+      <!-- Desktop nav -->
+      <nav class="hidden md:flex items-center gap-6">
+        <a href="/blog/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Blog</a>
+        <a href="/methodology/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Methodology</a>
+        <a href="/data/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Data</a>
+        <a href="/about/" aria-current="page" class="text-sm font-medium text-blue-600">About</a>
+        <a href="#" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Sign in</a>
+      </nav>
+
+      <!-- Mobile menu toggle -->
+      <button id="menu-btn" type="button" aria-label="Open menu" aria-expanded="false"
+        class="md:hidden flex items-center justify-center w-10 h-10 -mr-2 rounded-lg text-gray-600 hover:text-blue-600 hover:bg-gray-100 transition-colors">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile menu -->
+    <nav id="mobile-menu" class="hidden md:hidden px-5 pb-4 pt-2 border-t border-gray-100 bg-white">
+      <a href="/blog/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Blog</a>
+      <a href="/methodology/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Methodology</a>
+      <a href="/data/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Data</a>
+      <a href="/about/" aria-current="page" class="block py-2.5 text-sm font-medium text-blue-600">About</a>
+      <a href="#" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Sign in</a>
+    </nav>
+  </header>
+
+  <main>
+    <article class="px-5 sm:px-6 pt-12 pb-10">
+      <div class="max-w-3xl mx-auto">
+
+        <!-- Header -->
+        <header class="mb-8">
+          <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900 leading-tight">
+            About IndexHot
+          </h1>
+        </header>
+
+        <!-- Direct answer -->
+        <div class="text-lg text-gray-700 leading-relaxed border-l-4 border-blue-600 pl-4 mb-10">
+          <p>IndexHot is a free AI search visibility checker. We help brands see if ChatGPT, Perplexity, Gemini &amp; AI Overviews mention, rank, and cite them. We also publish open measurement standards and datasets for the GEO community.</p>
+        </div>
+
+        <!-- Section 1 -->
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Why We Built This</h2>
+          <p class="text-gray-600 leading-relaxed mb-4">
+            Discovery is moving from a list of blue links into a single generated answer &mdash; and most brands are flying blind into that shift. We built IndexHot to make visibility in AI search something anyone can check and understand.
+          </p>
+          <ul class="list-disc pl-5 space-y-2 text-gray-600 leading-relaxed marker:text-blue-500">
+            <li><strong class="text-gray-800">AI search is becoming the primary discovery layer.</strong> Buyers increasingly ask ChatGPT, Perplexity and Gemini what to buy instead of scrolling search results, so being absent from the answer means being absent from the decision.</li>
+            <li><strong class="text-gray-800">Most brands have no idea if they&rsquo;re visible.</strong> Teams know their Google rankings but cannot answer basic questions: Are we mentioned? Are we cited? Are competitors recommended instead?</li>
+            <li><strong class="text-gray-800">Existing tools are expensive and opaque.</strong> They charge enterprise prices for a single black-box score with no visible prompts, answers or math, making the numbers impossible to reproduce or act on.</li>
+          </ul>
+        </section>
+
+        <!-- Section 2 -->
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Our Approach</h2>
+          <p class="text-gray-600 leading-relaxed mb-4">
+            We start from a simple principle: if a metric can&rsquo;t be reproduced, it isn&rsquo;t a measurement. Everything we build follows from that.
+          </p>
+          <ul class="list-disc pl-5 space-y-2 text-gray-600 leading-relaxed marker:text-blue-500">
+            <li><strong class="text-gray-800">A free checker as the entry point.</strong> Enter your domain and see whether the major AI engines mention, rank and cite your brand &mdash; no credit card required.</li>
+            <li><strong class="text-gray-800">An open measurement standard.</strong> The IndexHot GEO Measurement Standard fixes the question library, metric definitions and scoring so results are transparent and auditable.</li>
+            <li><strong class="text-gray-800">Public datasets.</strong> We release the underlying citation, mention and schema data for researchers and the GEO community to use, cite and reproduce.</li>
+            <li><strong class="text-gray-800">No black-box scores.</strong> Every number traces back to a logged prompt, a raw answer and a published formula &mdash; nothing hidden behind a proprietary algorithm.</li>
+          </ul>
+          <div class="mt-6 flex flex-col sm:flex-row gap-3">
+            <a href="/" class="inline-flex items-center justify-center px-5 py-3 rounded-lg bg-blue-600 text-white font-semibold text-sm hover:bg-blue-700 transition-colors">Check your brand free</a>
+            <a href="/methodology/" class="inline-flex items-center justify-center px-5 py-3 rounded-lg border border-gray-300 text-gray-700 font-semibold text-sm hover:border-blue-400 hover:text-blue-600 transition-colors">Read the methodology</a>
+          </div>
+        </section>
+
+        <!-- Section 3: Contact -->
+        <section class="mb-6">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Contact</h2>
+          <p class="text-gray-600 leading-relaxed mb-4">
+            Questions about a report, the standard, or a dataset? We read everything.
+          </p>
+          <div class="space-y-3">
+            <a href="mailto:hello@indexhot.com" class="flex items-center gap-3 p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="flex-shrink-0 w-9 h-9 flex items-center justify-center rounded-lg bg-blue-100 text-blue-600">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l9 6 9-6M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+              </span>
+              <span>
+                <span class="block text-xs font-medium text-gray-400">Email</span>
+                <span class="block text-sm font-semibold text-gray-900">hello@indexhot.com</span>
+              </span>
+            </a>
+            <a href="https://x.com/indexhot" target="_blank" rel="noopener" class="flex items-center gap-3 p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="flex-shrink-0 w-9 h-9 flex items-center justify-center rounded-lg bg-blue-100 text-blue-600">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
+              </span>
+              <span>
+                <span class="block text-xs font-medium text-gray-400">Twitter / X</span>
+                <span class="block text-sm font-semibold text-gray-900">@indexhot</span>
+              </span>
+            </a>
+          </div>
+        </section>
+
+      </div>
+    </article>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-100 px-5 sm:px-6 py-8">
+    <div class="max-w-3xl mx-auto text-center text-sm text-gray-400">
+      © 2026 IndexHot. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var menuBtn = document.getElementById('menu-btn');
+      var mobileMenu = document.getElementById('mobile-menu');
+
+      menuBtn.addEventListener('click', function () {
+        var isHidden = mobileMenu.classList.toggle('hidden');
+        menuBtn.setAttribute('aria-expanded', String(!isHidden));
+      });
+
+      mobileMenu.addEventListener('click', function (e) {
+        if (e.target.tagName === 'A') {
+          mobileMenu.classList.add('hidden');
+          menuBtn.setAttribute('aria-expanded', 'false');
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

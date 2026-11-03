@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Methodology — The IndexHot GEO Measurement Standard v1.0</title>
+  <meta name="description" content="A public, reproducible framework for measuring how brands appear in AI search. Governed question libraries, mention/citation/absorption metrics, and cross-platform scoring for ChatGPT, Perplexity and Gemini." />
+  <link rel="stylesheet" href="../tailwind.min.css" />
+  <style>
+    body { font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  </style>
+</head>
+<body class="bg-white text-gray-800 antialiased">
+
+  <!-- Top navigation -->
+  <header class="sticky top-0 z-20 bg-white/90 backdrop-blur border-b border-gray-100">
+    <div class="max-w-3xl mx-auto px-5 sm:px-6 h-16 flex items-center justify-between">
+      <a href="/" class="text-xl font-bold tracking-tight text-gray-900">
+        Index<span class="text-blue-600">Hot</span>
+      </a>
+
+      <!-- Desktop nav -->
+      <nav class="hidden md:flex items-center gap-6">
+        <a href="/blog/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Blog</a>
+        <a href="/methodology/" aria-current="page" class="text-sm font-medium text-blue-600">Methodology</a>
+        <a href="/data/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Data</a>
+        <a href="/about/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">About</a>
+        <a href="#" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Sign in</a>
+      </nav>
+
+      <!-- Mobile menu toggle -->
+      <button id="menu-btn" type="button" aria-label="Open menu" aria-expanded="false"
+        class="md:hidden flex items-center justify-center w-10 h-10 -mr-2 rounded-lg text-gray-600 hover:text-blue-600 hover:bg-gray-100 transition-colors">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile menu -->
+    <nav id="mobile-menu" class="hidden md:hidden px-5 pb-4 pt-2 border-t border-gray-100 bg-white">
+      <a href="/blog/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Blog</a>
+      <a href="/methodology/" aria-current="page" class="block py-2.5 text-sm font-medium text-blue-600">Methodology</a>
+      <a href="/data/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Data</a>
+      <a href="/about/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">About</a>
+      <a href="#" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Sign in</a>
+    </nav>
+  </header>
+
+  <main>
+    <article class="px-5 sm:px-6 pt-12 pb-10">
+      <div class="max-w-3xl mx-auto">
+
+        <!-- Header -->
+        <header class="mb-10">
+          <p class="text-sm font-semibold text-blue-600 mb-3">Methodology · Standard v1.0</p>
+          <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900 leading-tight">
+            The IndexHot GEO Measurement Standard v1.0
+          </h1>
+          <p class="mt-5 text-base sm:text-lg text-gray-500 leading-relaxed">
+            A public, reproducible framework for measuring how brands appear in AI search. It fixes the prompts, the definitions and the math so any team can recompute the same result. It is built to replace black-box scores with transparent, auditable metrics.
+          </p>
+          <p class="mt-3 text-sm text-gray-400">Version 1.0 · Last updated October 2026 · Maintained by IndexHot</p>
+        </header>
+
+        <!-- Section 1 -->
+        <section class="mb-12">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">1. Why a Standard Matters</h2>
+          <p class="text-gray-600 leading-relaxed mb-4">
+            Most GEO tools return a single &ldquo;visibility score&rdquo; with no visible prompts, answers or arithmetic. If you cannot reproduce a number, you cannot trust it, diagnose it, or optimize against it. A shared standard makes AI-search visibility measurable the same way click-through rate and domain authority became measurable for SEO.
+          </p>
+
+          <h3 class="text-lg font-semibold text-gray-900 mt-6 mb-2">Black-box scores cannot be acted on</h3>
+          <ul class="list-disc pl-5 space-y-2 text-gray-600 leading-relaxed marker:text-blue-500">
+            <li>Today&rsquo;s tools typically expose one aggregate score but hide the underlying question set, the raw answers and the weighting, so a change in score cannot be traced to a cause.</li>
+            <li>Without fixed inputs, two vendors testing the same brand on the same day can return different numbers, and there is no way to tell who is right.</li>
+            <li>Teams end up optimizing for the vendor&rsquo;s hidden formula rather than for real visibility, which is exactly the problem the original <a class="text-blue-600 hover:underline" href="https://arxiv.org/abs/2311.09735" target="_blank" rel="noopener">GEO research (arXiv:2311.09735)</a> warned against by publishing an open benchmark.</li>
+          </ul>
+
+          <h3 class="text-lg font-semibold text-gray-900 mt-6 mb-2">The industry is converging on governed, reproducible measurement</h3>
+          <p class="text-gray-600 leading-relaxed mb-3">
+            The <a class="text-blue-600 hover:underline" href="https://amecorg.com/amec-geo-hub/" target="_blank" rel="noopener">AMEC GEO Principles and Practitioner&rsquo;s Guide to GEO Measurement (2026)</a> explicitly call for measurement that avoids opaque scores and vanity rankings. A core requirement is a <strong class="text-gray-800">governed, reproducible question library</strong>: a fixed, versioned set of prompts run under logged conditions, rather than ad-hoc questions chosen to flatter a result.
+          </p>
+
+          <h3 class="text-lg font-semibold text-gray-900 mt-6 mb-2">Citation count alone is misleading</h3>
+          <p class="text-gray-600 leading-relaxed mb-3">
+            Peer-reviewed evidence shows that &ldquo;being cited&rdquo; and &ldquo;being absorbed into the answer&rdquo; are different outcomes. The study <a class="text-blue-600 hover:underline" href="https://arxiv.org/abs/2604.25707" target="_blank" rel="noopener">From Citation Selection to Citation Absorption (arXiv:2604.25707, 2026)</a> analysed 602 controlled prompts, 21,143 search-layer citations and 18,151 fetched pages across ChatGPT, Google AI Overviews/Gemini and Perplexity.
+          </p>
+          <ul class="list-disc pl-5 space-y-2 text-gray-600 leading-relaxed marker:text-blue-500">
+            <li><strong class="text-gray-800">Perplexity cites the most sources per prompt on average</strong>, yet shows the shallowest average absorption per source &mdash; breadth without depth.</li>
+            <li><strong class="text-gray-800">ChatGPT cites fewer sources</strong>, but each cited page shows substantially higher average influence on the final answer.</li>
+            <li>High-influence pages are longer, modular, semantically aligned with the question, and rich in extractable evidence such as definitions, statistics, comparisons and procedural steps.</li>
+          </ul>
+          <p class="text-gray-600 leading-relaxed mt-3">
+            The implication is direct: counting citations rewards the wrong behavior on Perplexity and understates real influence on ChatGPT. A credible standard must measure mention, citation <em>and</em> absorption separately on every platform.
+          </p>
+        </section>
+
+        <!-- Section 2 -->
+        <section class="mb-12">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">2. The Measurement Framework</h2>
+          <p class="text-gray-600 leading-relaxed mb-4">
+            The framework has three layers: a governed question library that fixes the inputs, citation metrics that define what is counted, and cross-platform scoring that combines platforms without hiding the components. Every layer produces a number you can recompute from the raw answer logs.
+          </p>
+
+          <h3 class="text-lg font-semibold text-gray-900 mt-6 mb-2">2.1 Governed Question Library</h3>
+          <p class="text-gray-600 leading-relaxed mb-3">
+            The library is the controlled variable of the whole measurement. It is versioned, frozen for each measurement cycle, and split into two prompt types that answer different business questions.
+          </p>
+          <ul class="list-disc pl-5 space-y-2 text-gray-600 leading-relaxed marker:text-blue-500">
+            <li><strong class="text-gray-800">Branded prompts</strong> contain the brand or exact product name (e.g., &ldquo;Is IndexHot accurate?&rdquo;). They test defensive coverage: does the AI describe you correctly when asked directly?</li>
+            <li><strong class="text-gray-800">Non-branded prompts</strong> express category intent without naming you (e.g., &ldquo;best AI search visibility tool&rdquo;). They test competitive discovery: are you surfaced when the buyer does not already know you?</li>
+          </ul>
+          <p class="text-gray-600 leading-relaxed mt-3 mb-2">Library construction rules:</p>
+          <ul class="list-disc pl-5 space-y-2 text-gray-600 leading-relaxed marker:text-blue-500">
+            <li>Seed prompts from real query logs, support tickets and keyword research, then stratify by intent: informational, commercial, comparative and navigational.</li>
+            <li>Freeze and version the set for a full cycle; never edit a prompt to improve a result mid-cycle.</li>
+            <li>Log the model version, platform, date, region, language and settings (web search on, no logged-in personalization) for every run.</li>
+            <li>Run each prompt at least three times to capture non-determinism, and report the median plus the spread.</li>
+          </ul>
+
+          <h3 class="text-lg font-semibold text-gray-900 mt-6 mb-2">2.2 Citation Metrics: Mention, Citation, Absorption</h3>
+          <p class="text-gray-600 leading-relaxed mb-3">
+            Each answer is coded against three nested, binary-per-answer metrics. They are nested in the sense that absorption implies a mention, but a mention does not imply a citation and a citation does not imply absorption.
+          </p>
+          <div class="overflow-x-auto rounded-xl border border-gray-200 mt-3">
+            <table class="w-full text-sm text-left">
+              <thead class="bg-gray-50 text-gray-900">
+                <tr>
+                  <th class="px-4 py-3 font-semibold">Metric</th>
+                  <th class="px-4 py-3 font-semibold">Definition</th>
+                  <th class="px-4 py-3 font-semibold">Pass criterion</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-gray-100 text-gray-600">
+                <tr>
+                  <td class="px-4 py-3 font-semibold text-gray-900 whitespace-nowrap">Mention</td>
+                  <td class="px-4 py-3">The brand or named entity appears in the answer text, with or without a link.</td>
+                  <td class="px-4 py-3 whitespace-nowrap">Brand named at least once.</td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3 font-semibold text-gray-900 whitespace-nowrap">Citation</td>
+                  <td class="px-4 py-3">The answer links or footnotes a domain you control, or an official designated profile.</td>
+                  <td class="px-4 py-3 whitespace-nowrap">Attributable source URL present.</td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3 font-semibold text-gray-900 whitespace-nowrap">Absorption</td>
+                  <td class="px-4 py-3">The answer adopts the brand&rsquo;s specific claim, language, number or structure &mdash; evidence, not just a name.</td>
+                  <td class="px-4 py-3 whitespace-nowrap">Verifiable evidence overlap (definition, stat, comparison or procedure).</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="text-gray-600 leading-relaxed mt-3">
+            Absorption is additionally given a depth score of 0&ndash;2: <strong class="text-gray-800">0</strong> none, <strong class="text-gray-800">1</strong> a generic or paraphrased idea, <strong class="text-gray-800">2</strong> a distinctive claim or figure traceable to the source. The first brand mention&rsquo;s rank position (1 = first named) is recorded separately.
+          </p>
+          <p class="text-gray-600 leading-relaxed mt-3 mb-2">Coding edge cases are decided by fixed rules so different reviewers agree:</p>
+          <ul class="list-disc pl-5 space-y-2 text-gray-600 leading-relaxed marker:text-blue-500">
+            <li>A misspelled or partial name counts as a mention only if a unique identifier (product name, domain or trademark) makes the reference unambiguous.</li>
+            <li>A link through an aggregator or review site counts as a citation only when it points to a page you own or an official profile you control; third-party listings are recorded separately as &ldquo;earned&rdquo; mentions.</li>
+            <li>When you and a competitor are named in the same answer, both receive a mention, but rank and absorption decide who the answer actually favors.</li>
+            <li>Any answer a second reviewer would code differently is flagged and arbitrated; the target inter-reviewer agreement is at least 90%.</li>
+          </ul>
+
+          <h3 class="text-lg font-semibold text-gray-900 mt-6 mb-2">2.3 Cross-Platform Scoring</h3>
+          <p class="text-gray-600 leading-relaxed mb-3">
+            Rates are first computed per platform, then combined with explicit, adjustable weights. Per-platform rates are:
+          </p>
+          <ul class="list-disc pl-5 space-y-2 text-gray-600 leading-relaxed marker:text-blue-500">
+            <li><strong class="text-gray-800">Mention Rate (MR)</strong> = answers mentioning the brand &divide; total prompts.</li>
+            <li><strong class="text-gray-800">Citation Rate (CR)</strong> = answers citing the brand domain &divide; total prompts.</li>
+            <li><strong class="text-gray-800">Absorption Rate (AR)</strong> = answers with depth &ge; 1 &divide; total prompts.</li>
+          </ul>
+          <p class="text-gray-600 leading-relaxed mt-3 mb-2">
+            The per-platform score weights absorption most heavily, reflecting the evidence that influence matters more than raw citation count:
+          </p>
+          <div class="rounded-xl bg-gray-50 border border-gray-100 p-5 my-3">
+            <p class="font-mono text-sm text-gray-800">S<sub>platform</sub> = 100 &times; (0.30&middot;MR + 0.30&middot;CR + 0.40&middot;AR)</p>
+            <p class="font-mono text-sm text-gray-800 mt-2">IndexHot Score = 0.40&middot;S<sub>ChatGPT</sub> + 0.30&middot;S<sub>Perplexity</sub> + 0.30&middot;S<sub>Gemini</sub></p>
+          </div>
+          <div class="overflow-x-auto rounded-xl border border-gray-200">
+            <table class="w-full text-sm text-left">
+              <thead class="bg-gray-50 text-gray-900">
+                <tr>
+                  <th class="px-4 py-3 font-semibold">Platform</th>
+                  <th class="px-4 py-3 font-semibold">Default weight</th>
+                  <th class="px-4 py-3 font-semibold">Rationale</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-gray-100 text-gray-600">
+                <tr><td class="px-4 py-3 font-semibold text-gray-900 whitespace-nowrap">ChatGPT</td><td class="px-4 py-3 whitespace-nowrap">0.40</td><td class="px-4 py-3">Highest per-source influence on the answer.</td></tr>
+                <tr><td class="px-4 py-3 font-semibold text-gray-900 whitespace-nowrap">Perplexity</td><td class="px-4 py-3 whitespace-nowrap">0.30</td><td class="px-4 py-3">High citation breadth; discovery-heavy.</td></tr>
+                <tr><td class="px-4 py-3 font-semibold text-gray-900 whitespace-nowrap">Gemini / AI Overviews</td><td class="px-4 py-3 whitespace-nowrap">0.30</td><td class="px-4 py-3">Large search audience; entity-verified answers.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="text-gray-600 leading-relaxed mt-3">
+            Default weights reflect audience reach and citation influence, but teams should reweight to match their own traffic mix. Weights must always be published alongside the score.
+          </p>
+        </section>
+
+        <!-- Section 3 -->
+        <section class="mb-12">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">3. How to Reproduce</h2>
+          <p class="text-gray-600 leading-relaxed mb-4">
+            You can reproduce a full baseline in an afternoon with a spreadsheet and three browser tabs. The goal is not a one-off number but a repeatable cycle you can run monthly to track trends.
+          </p>
+          <ol class="space-y-4">
+            <li class="flex gap-4">
+              <span class="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-lg bg-blue-100 text-blue-700 font-bold text-sm">1</span>
+              <div>
+                <p class="font-semibold text-gray-900">Build a 50-question library.</p>
+                <p class="text-gray-600 leading-relaxed mt-1">Create 10 branded prompts and 40 non-branded prompts, stratified across informational, commercial, comparative and navigational intent. Freeze the list and tag every prompt with its type and intent.</p>
+              </div>
+            </li>
+            <li class="flex gap-4">
+              <span class="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-lg bg-blue-100 text-blue-700 font-bold text-sm">2</span>
+              <div>
+                <p class="font-semibold text-gray-900">Run each prompt on all three platforms.</p>
+                <p class="text-gray-600 leading-relaxed mt-1">Execute the same 50 prompts separately on ChatGPT, Perplexity and Gemini (with AI Overviews where available), web search enabled and personalization off. Run each prompt three times and keep the median.</p>
+              </div>
+            </li>
+            <li class="flex gap-4">
+              <span class="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-lg bg-blue-100 text-blue-700 font-bold text-sm">3</span>
+              <div>
+                <p class="font-semibold text-gray-900">Record mentions, citation sources and rank.</p>
+                <p class="text-gray-600 leading-relaxed mt-1">For every answer log: mention (yes/no), citation (yes/no plus the source URL), absorption depth (0&ndash;2), the rank of the first brand mention, and which competitor was cited instead when you were absent.</p>
+              </div>
+            </li>
+            <li class="flex gap-4">
+              <span class="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-lg bg-blue-100 text-blue-700 font-bold text-sm">4</span>
+              <div>
+                <p class="font-semibold text-gray-900">Calculate the IndexHot Score.</p>
+                <p class="text-gray-600 leading-relaxed mt-1">Compute MR, CR and AR per platform, apply S<sub>platform</sub> = 100 &times; (0.30&middot;MR + 0.30&middot;CR + 0.40&middot;AR), then combine platforms with the published 0.40 / 0.30 / 0.30 weights. Save the raw logs so the score is fully auditable.</p>
+              </div>
+            </li>
+          </ol>
+          <div class="mt-6 rounded-xl border border-blue-200 bg-blue-50 p-5">
+            <p class="font-semibold text-gray-900">Open-source reference implementation</p>
+            <p class="text-gray-600 text-sm leading-relaxed mt-1 mb-2">The prompt template, coding sheet and scoring spreadsheet are maintained as a public repository. Issues and proposed changes to the standard are welcome.</p>
+            <a class="inline-flex items-center gap-2 text-sm font-semibold text-blue-700 hover:underline break-all" href="https://github.com/indexhot-code/measurement-standard" target="_blank" rel="noopener">
+              github.com/indexhot-code/measurement-standard
+            </a>
+          </div>
+          <p class="text-gray-600 leading-relaxed mt-6 mb-2">A complete run should leave you with three artifacts: the frozen question library, a raw answer log with one row per prompt &times; platform &times; repetition, and a one-page scorecard. Use the scorecard&rsquo;s bands only as a starting point for conversation, never as a verdict:</p>
+          <ul class="list-disc pl-5 space-y-2 text-gray-600 leading-relaxed marker:text-blue-500">
+            <li><strong class="text-gray-800">0&ndash;25 &mdash; Invisible:</strong> absent from most non-branded answers; focus on indexing and entity clarity first.</li>
+            <li><strong class="text-gray-800">26&ndash;55 &mdash; Mentioned:</strong> named often but rarely cited or absorbed; invest in evidence-rich, quotable content.</li>
+            <li><strong class="text-gray-800">56&ndash;80 &mdash; Cited:</strong> a regular source with competitive presence; optimize absorption depth and rank.</li>
+            <li><strong class="text-gray-800">81&ndash;100 &mdash; Recommended:</strong> frequently the first, most deeply absorbed answer; defend and broaden coverage.</li>
+          </ul>
+        </section>
+
+        <!-- Section 4: FAQ -->
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">4. Frequently Asked Questions</h2>
+          <p class="text-gray-600 leading-relaxed mb-6">
+            Short answers to the questions teams ask most often. The same answers are published as structured FAQ data for machine readability.
+          </p>
+          <div class="space-y-5">
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">What is GEO measurement?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">GEO (Generative Engine Optimization) measurement quantifies how often and how deeply a brand appears in AI-generated answers. Rather than tracking traditional search rankings, it records whether the brand is mentioned, cited and substantively absorbed across a fixed set of prompts and platforms.</p>
+            </div>
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">How is the IndexHot Score calculated?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">For each platform we compute a Mention Rate, Citation Rate and Absorption Rate, then score the platform as 100 &times; (0.30&middot;MR + 0.30&middot;CR + 0.40&middot;AR). The final IndexHot Score combines ChatGPT, Perplexity and Gemini with published default weights of 0.40, 0.30 and 0.30. Every input and weight is disclosed.</p>
+            </div>
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">Can I use this standard for my own tool?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">Yes. The standard is public and intended to be reused by in-house teams, agencies and competing tools. We ask only that you preserve the governed question library, keep the three metrics distinct, and publish the weights you use so results stay comparable and auditable.</p>
+            </div>
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">How often should I re-run measurements?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">Monthly is the practical baseline for most brands, because model versions and indexes change continuously. Run weekly if you are actively publishing GEO-targeted content or around a major model release, and always keep the question library fixed between cycles so trends reflect real change rather than new prompts.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Cite this standard -->
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Cite this standard</h2>
+          <p class="text-gray-600 leading-relaxed mb-4">
+            If you reference the IndexHot GEO Measurement Standard in research or reporting, please use one of the following formats.
+          </p>
+          <h3 class="text-sm font-semibold text-gray-900 mb-2">APA</h3>
+          <p class="rounded-lg bg-gray-50 border border-gray-200 p-4 text-sm text-gray-800 leading-relaxed">
+            IndexHot. (2026). <em>The IndexHot GEO Measurement Standard v1.0</em>. https://indexhot.com/methodology/
+          </p>
+          <h3 class="text-sm font-semibold text-gray-900 mt-5 mb-2">BibTeX</h3>
+          <pre class="font-mono bg-gray-900 text-gray-100 rounded-lg p-4 overflow-x-auto text-sm leading-relaxed"><code>@misc{indexhot2026standard,
+  title={The IndexHot GEO Measurement Standard v1.0},
+  author={IndexHot},
+  year={2026},
+  url={https://indexhot.com/methodology/}
+}</code></pre>
+        </section>
+
+        <!-- Version history -->
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Version history</h2>
+          <div class="overflow-x-auto rounded-xl border border-gray-200">
+            <table class="w-full text-sm text-left">
+              <thead class="bg-gray-50 text-gray-900">
+                <tr>
+                  <th class="px-4 py-3 font-semibold">Version</th>
+                  <th class="px-4 py-3 font-semibold">Date</th>
+                  <th class="px-4 py-3 font-semibold">Changes</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-gray-100 text-gray-600">
+                <tr>
+                  <td class="px-4 py-3 font-semibold text-gray-900 whitespace-nowrap">v1.0</td>
+                  <td class="px-4 py-3 whitespace-nowrap">Oct 2026</td>
+                  <td class="px-4 py-3">Initial release</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- Related resources -->
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Related resources</h2>
+          <div class="rounded-xl border border-gray-200 divide-y divide-gray-100 overflow-hidden">
+            <a href="/data/" class="flex items-center justify-between gap-4 px-5 py-4 hover:bg-gray-50 transition-colors">
+              <span>
+                <span class="block text-sm font-semibold text-gray-900">Data page</span>
+                <span class="block text-sm text-gray-500">Download the public GEO datasets</span>
+              </span>
+              <span class="flex-shrink-0 text-blue-600" aria-hidden="true">&rarr;</span>
+            </a>
+            <a href="/blog/" class="flex items-center justify-between gap-4 px-5 py-4 hover:bg-gray-50 transition-colors">
+              <span>
+                <span class="block text-sm font-semibold text-gray-900">Blog</span>
+                <span class="block text-sm text-gray-500">Technical deep dives and data discoveries</span>
+              </span>
+              <span class="flex-shrink-0 text-blue-600" aria-hidden="true">&rarr;</span>
+            </a>
+            <a href="https://github.com/indexhot-code/measurement-standard" target="_blank" rel="noopener" class="flex items-center justify-between gap-4 px-5 py-4 hover:bg-gray-50 transition-colors">
+              <span>
+                <span class="block text-sm font-semibold text-gray-900">GitHub repository</span>
+                <span class="block text-sm text-gray-500 break-all">Reference implementation, prompt templates and scoring sheet</span>
+              </span>
+              <span class="flex-shrink-0 text-blue-600" aria-hidden="true">&rarr;</span>
+            </a>
+          </div>
+        </section>
+
+        <!-- Back to top / home -->
+        <div class="border-t border-gray-100 pt-8 text-center">
+          <a href="/" class="inline-flex items-center gap-2 text-sm font-semibold text-blue-600 hover:text-blue-700 transition-colors">
+            &larr; Back to IndexHot home
+          </a>
+        </div>
+
+      </div>
+    </article>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-100 px-5 sm:px-6 py-8">
+    <div class="max-w-3xl mx-auto text-center text-sm text-gray-400">
+      © 2026 IndexHot. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- FAQ structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is GEO measurement?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "GEO (Generative Engine Optimization) measurement quantifies how often and how deeply a brand appears in AI-generated answers. Rather than tracking traditional search rankings, it records whether the brand is mentioned, cited and substantively absorbed across a fixed set of prompts and platforms."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is the IndexHot Score calculated?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For each platform we compute a Mention Rate, Citation Rate and Absorption Rate, then score the platform as 100 x (0.30 MR + 0.30 CR + 0.40 AR). The final IndexHot Score combines ChatGPT, Perplexity and Gemini with published default weights of 0.40, 0.30 and 0.30. Every input and weight is disclosed."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use this standard for my own tool?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The standard is public and intended to be reused by in-house teams, agencies and competing tools. We ask only that you preserve the governed question library, keep the three metrics distinct, and publish the weights you use so results stay comparable and auditable."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How often should I re-run measurements?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Monthly is the practical baseline for most brands, because model versions and indexes change continuously. Run weekly if you are actively publishing GEO-targeted content or around a major model release, and always keep the question library fixed between cycles so trends reflect real change rather than new prompts."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- TechArticle structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "The IndexHot GEO Measurement Standard v1.0",
+    "description": "A public, reproducible framework for measuring how brands appear in AI search, covering governed question libraries, mention/citation/absorption metrics, and cross-platform scoring for ChatGPT, Perplexity and Gemini.",
+    "author": { "@type": "Organization", "name": "IndexHot", "url": "https://indexhot.com" },
+    "publisher": { "@type": "Organization", "name": "IndexHot" },
+    "datePublished": "2026-10-01",
+    "version": "1.0",
+    "url": "https://indexhot.com/methodology/",
+    "about": ["Generative Engine Optimization", "AI search visibility", "Citation measurement"]
+  }
+  </script>
+
+  <script>
+    (function () {
+      var menuBtn = document.getElementById('menu-btn');
+      var mobileMenu = document.getElementById('mobile-menu');
+
+      menuBtn.addEventListener('click', function () {
+        var isHidden = mobileMenu.classList.toggle('hidden');
+        menuBtn.setAttribute('aria-expanded', String(!isHidden));
+      });
+
+      mobileMenu.addEventListener('click', function (e) {
+        if (e.target.tagName === 'A') {
+          mobileMenu.classList.add('hidden');
+          menuBtn.setAttribute('aria-expanded', 'false');
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
