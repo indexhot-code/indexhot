@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Technical Access for AI Search: Direct Answers — IndexHot Answers</title>
+  <meta name="description" content="Whether AI crawlers obey robots.txt, what to do about llms.txt, whether JavaScript blocks retrieval, and how CDN rules quietly suppress citation." />
+  <link rel="canonical" href="https://indexhot.com/answers/technical/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Technical Access for AI Search: Direct Answers — IndexHot Answers" />
+  <meta property="og:description" content="Whether AI crawlers obey robots.txt, what to do about llms.txt, whether JavaScript blocks retrieval, and how CDN rules quietly suppress citation." />
+  <meta property="og:url" content="https://indexhot.com/answers/technical/" />
+  <meta property="og:site_name" content="IndexHot" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Technical Access for AI Search: Direct Answers — IndexHot Answers" />
+  <meta name="twitter:description" content="Whether AI crawlers obey robots.txt, what to do about llms.txt, whether JavaScript blocks retrieval, and how CDN rules quietly suppress citation." />
+  <link rel="stylesheet" href="../../tailwind.min.css" />
+  <style>
+    body { font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "name": "Technical Access for AI Search: Direct Answers",
+      "url": "https://indexhot.com/answers/technical/",
+      "description": "Whether AI crawlers obey robots.txt, what to do about llms.txt, whether JavaScript blocks retrieval, and how CDN rules quietly suppress citation.",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "IndexHot",
+        "url": "https://indexhot.com/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://indexhot.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Answers",
+          "item": "https://indexhot.com/answers/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Technical Access for AI Search: Direct Answers",
+          "item": "https://indexhot.com/answers/technical/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Do AI crawlers respect robots.txt?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most named AI crawlers do, which is why an accidental block is common and invisible. OpenAI, Anthropic and Google publish their user-agent strings, and retrieval crawlers generally honour the directives. The complication is that some systems retrieve on behalf of a user rather than crawl on their own account, so a block aimed at one bot can affect a differently named fetcher."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which AI crawlers should I allow?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Allow the retrieval crawlers for the search products you want to appear in, and decide separately about training crawlers. Retrieval access is what produces citations; training access influences what the model remembers. Many publishers grant the first and restrict the second, which is a defensible position, provided the decision is deliberate rather than an unexamined default."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does llms.txt work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It is a proposed convention rather than an adopted standard, and no major engine has confirmed using it for retrieval. It costs little to publish a clean summary file, but it should not be treated as a substitute for crawlability, structured content and indexability. Teams that publish llms.txt and skip the fundamentals see no change."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does JavaScript block AI crawlers?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Often, yes. Many retrieval fetchers do not execute JavaScript, so content rendered client-side is invisible to them even when Google indexes it. Server-side rendering, static generation or pre-rendered HTML for the key claims is the reliable fix. Checking with a plain HTTP client that runs no scripts is the fastest way to see what a crawler actually gets."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need a CDN rule for AI bots?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Usually something needs changing, because bot protection frequently challenges or blocks non-browser user agents by default. Whitelisting verified AI crawlers, or serving them cached HTML, is often the difference between zero and full citation coverage. This is the single most common silent failure we find in audits."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does page speed affect AI citations?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Indirectly. Retrieval has time budgets, and a page that times out is a page that cannot be used. Very slow pages are therefore less likely to be retrieved, but the effect is threshold-based rather than a smooth gradient: a page at two seconds is not penalised against one at one second the way a ranking system might treat it."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do internal links affect AI retrieval?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, in the sense that internal links decide which pages are discovered, prioritised and treated as important. A page with one inbound internal link is rarely the page an engine reaches first. Internal linking is therefore a distribution tool for retrieval, not just a crawl tool, and it is one of the cheapest levers available."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body class="bg-white text-gray-800 antialiased">
+
+  <!-- Top navigation -->
+  <header class="sticky top-0 z-20 bg-white/90 backdrop-blur border-b border-gray-100">
+    <div class="max-w-3xl mx-auto px-5 sm:px-6 h-16 flex items-center justify-between">
+      <a href="/" class="text-xl font-bold tracking-tight text-gray-900">
+        Index<span class="text-blue-600">Hot</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6">
+        <a href="/blog/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Blog</a>
+        <a href="/answers/" class="text-sm font-medium text-blue-600">Answers</a>
+        <a href="/methodology/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Methodology</a>
+        <a href="/data/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Data</a>
+        <a href="/about/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">About</a>
+        <a href="#" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Sign in</a>
+      </nav>
+      <button id="menu-btn" type="button" aria-label="Open menu" aria-expanded="false"
+        class="md:hidden flex items-center justify-center w-10 h-10 -mr-2 rounded-lg text-gray-600 hover:text-blue-600 hover:bg-gray-100 transition-colors">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+    <nav id="mobile-menu" class="hidden md:hidden px-5 pb-4 pt-2 border-t border-gray-100 bg-white">
+      <a href="/blog/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Blog</a>
+      <a href="/answers/" class="block py-2.5 text-sm font-medium text-blue-600">Answers</a>
+      <a href="/methodology/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Methodology</a>
+      <a href="/data/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Data</a>
+      <a href="/about/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">About</a>
+      <a href="#" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Sign in</a>
+    </nav>
+  </header>
+  <main>
+    <article class="px-5 sm:px-6 pt-10 pb-10">
+      <div class="max-w-3xl mx-auto">
+
+        <nav class="mb-6 text-xs text-gray-500">
+          <a href="/" class="hover:text-blue-600">Home</a><span class="mx-1.5 text-gray-300">/</span><a href="/answers/" class="hover:text-blue-600">Answers</a>
+        </nav>
+
+        <header class="mb-8">
+          <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900 leading-tight">
+            Technical Access for AI Search: Direct Answers
+          </h1>
+          <p class="mt-3 text-sm text-gray-400">7 questions &middot; answered directly</p>
+        </header>
+
+        <div class="text-lg text-gray-700 leading-relaxed border-l-4 border-blue-600 pl-4 mb-10">
+          <p>Technical failures are the cheapest to fix and the most expensive to ignore, because they cap every other metric at zero. A page that cannot be fetched cannot be cited, and most sites we audit block at least one AI crawler without knowing it.</p>
+        </div>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Do AI crawlers respect robots.txt?</h2>
+          <p class="text-gray-600 leading-relaxed">Most named AI crawlers do, which is why an accidental block is common and invisible. OpenAI, Anthropic and Google publish their user-agent strings, and retrieval crawlers generally honour the directives. The complication is that some systems retrieve on behalf of a user rather than crawl on their own account, so a block aimed at one bot can affect a differently named fetcher.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Which AI crawlers should I allow?</h2>
+          <p class="text-gray-600 leading-relaxed">Allow the retrieval crawlers for the search products you want to appear in, and decide separately about training crawlers. Retrieval access is what produces citations; training access influences what the model remembers. Many publishers grant the first and restrict the second, which is a defensible position, provided the decision is deliberate rather than an unexamined default.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Does llms.txt work?</h2>
+          <p class="text-gray-600 leading-relaxed">It is a proposed convention rather than an adopted standard, and no major engine has confirmed using it for retrieval. It costs little to publish a clean summary file, but it should not be treated as a substitute for crawlability, structured content and indexability. Teams that publish llms.txt and skip the fundamentals see no change.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Does JavaScript block AI crawlers?</h2>
+          <p class="text-gray-600 leading-relaxed">Often, yes. Many retrieval fetchers do not execute JavaScript, so content rendered client-side is invisible to them even when Google indexes it. Server-side rendering, static generation or pre-rendered HTML for the key claims is the reliable fix. Checking with a plain HTTP client that runs no scripts is the fastest way to see what a crawler actually gets.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Do I need a CDN rule for AI bots?</h2>
+          <p class="text-gray-600 leading-relaxed">Usually something needs changing, because bot protection frequently challenges or blocks non-browser user agents by default. Whitelisting verified AI crawlers, or serving them cached HTML, is often the difference between zero and full citation coverage. This is the single most common silent failure we find in audits.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Does page speed affect AI citations?</h2>
+          <p class="text-gray-600 leading-relaxed">Indirectly. Retrieval has time budgets, and a page that times out is a page that cannot be used. Very slow pages are therefore less likely to be retrieved, but the effect is threshold-based rather than a smooth gradient: a page at two seconds is not penalised against one at one second the way a ranking system might treat it.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Do internal links affect AI retrieval?</h2>
+          <p class="text-gray-600 leading-relaxed">Yes, in the sense that internal links decide which pages are discovered, prioritised and treated as important. A page with one inbound internal link is rarely the page an engine reaches first. Internal linking is therefore a distribution tool for retrieval, not just a crawl tool, and it is one of the cheapest levers available.</p>
+        </section>
+
+        <section class="mt-12 pt-8 border-t border-gray-100">
+          <h2 class="text-lg font-semibold text-gray-900 mb-4">Keep reading</h2>
+          <div class="grid sm:grid-cols-2 gap-4">
+        <a href="/glossary/ai-crawler/" class="block p-5 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+          <span class="block text-sm font-semibold text-gray-900">AI Crawler</span>
+          <span class="block text-sm text-gray-500 mt-1">User agents and access rules.</span>
+        </a>
+        <a href="/blog/geo-audit-checklist/" class="block p-5 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+          <span class="block text-sm font-semibold text-gray-900">The 12-Point Audit</span>
+          <span class="block text-sm text-gray-500 mt-1">Where these checks sit in the sequence.</span>
+        </a>
+          </div>
+        </section>
+
+        <section class="mt-12 pt-8 border-t border-gray-100">
+          <h2 class="text-lg font-semibold text-gray-900 mb-4">Glossary terms behind this</h2>
+          <div class="flex flex-wrap gap-x-4 gap-y-2 text-sm">
+            <a href="/glossary/ai-crawler/" class="text-blue-600 hover:text-blue-700">AI Crawler</a>
+            <a href="/glossary/crawlability/" class="text-blue-600 hover:text-blue-700">Crawlability</a>
+            <a href="/glossary/indexability/" class="text-blue-600 hover:text-blue-700">Indexability</a>
+            <a href="/glossary/llms-txt/" class="text-blue-600 hover:text-blue-700">llms.txt</a>
+            <a href="/glossary/internal-linking/" class="text-blue-600 hover:text-blue-700">Internal Linking</a>
+          </div>
+        </section>
+
+        <section class="mt-10 rounded-xl border border-blue-200 bg-blue-50 p-6">
+          <h2 class="text-lg font-semibold text-gray-900">See where your brand shows up in AI answers</h2>
+          <p class="mt-2 text-sm text-gray-600">Run a checked baseline across ChatGPT, Perplexity, Gemini and AI Overviews.</p>
+          <a href="https://indexhot.com" class="mt-4 inline-block px-5 py-3 rounded-lg bg-blue-600 text-white font-semibold text-sm hover:bg-blue-700 transition-colors">Check your brand free</a>
+        </section>
+
+      </div>
+    </article>
+  </main>
+
+  <footer class="border-t border-gray-100 px-5 sm:px-6 py-8">
+    <div class="max-w-3xl mx-auto text-center text-sm text-gray-400">
+      © 2026 IndexHot. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var menuBtn = document.getElementById('menu-btn');
+      var mobileMenu = document.getElementById('mobile-menu');
+      menuBtn.addEventListener('click', function () {
+        var isHidden = mobileMenu.classList.toggle('hidden');
+        menuBtn.setAttribute('aria-expanded', String(!isHidden));
+      });
+      mobileMenu.addEventListener('click', function (e) {
+        if (e.target.tagName === 'A') {
+          mobileMenu.classList.add('hidden');
+          menuBtn.setAttribute('aria-expanded', 'false');
+        }
+      });
+    })();
+  </script>
+</body>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How We Score Citation Absorption: Method, Rubric, and Failure Modes — IndexHot Blog</title>
+  <meta name="description" content="Absorption is judgement, not arithmetic. Here is the four-level rubric we use, how two coders apply it, and the five ways scoring goes wrong." />
+  <link rel="canonical" href="https://indexhot.com/blog/citation-absorption-method/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="How We Score Citation Absorption: Method, Rubric, and Failure Modes — IndexHot Blog" />
+  <meta property="og:description" content="Absorption is judgement, not arithmetic. Here is the four-level rubric we use, how two coders apply it, and the five ways scoring goes wrong." />
+  <meta property="og:url" content="https://indexhot.com/blog/citation-absorption-method/" />
+  <meta property="og:site_name" content="IndexHot" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="How We Score Citation Absorption: Method, Rubric, and Failure Modes — IndexHot Blog" />
+  <meta name="twitter:description" content="Absorption is judgement, not arithmetic. Here is the four-level rubric we use, how two coders apply it, and the five ways scoring goes wrong." />
+  <link rel="stylesheet" href="../../tailwind.min.css" />
+  <style>
+    body { font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "headline": "How We Score Citation Absorption: Method, Rubric, and Failure Modes",
+      "description": "Absorption is judgement, not arithmetic. Here is the four-level rubric we use, how two coders apply it, and the five ways scoring goes wrong.",
+      "datePublished": "2026-11-05",
+      "dateModified": "2026-11-05",
+      "author": {
+        "@type": "Organization",
+        "name": "IndexHot Team"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "IndexHot"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://indexhot.com/blog/citation-absorption-method/"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is absorption scoring subjective?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It is judgement-based, which is not the same as arbitrary. A written rubric, a calibration set and two coders make it reproducible within roughly one level, which is enough for trend decisions but not for precise rankings."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can absorption be automated with an LLM judge?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Partly. A model can flag candidate claim overlap quickly, but it tends to over-reward paraphrase and under-detect negation. We use it for triage and keep human coding for the sample that drives decisions."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What absorption rate should we expect?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "On source-heavy engines, single digits are common even for strong brands. On source-light engines, twenty to forty percent is achievable. The number matters only against your own baseline and your competitors'."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body class="bg-white text-gray-800 antialiased">
+
+  <!-- Top navigation -->
+  <header class="sticky top-0 z-20 bg-white/90 backdrop-blur border-b border-gray-100">
+    <div class="max-w-3xl mx-auto px-5 sm:px-6 h-16 flex items-center justify-between">
+      <a href="/" class="text-xl font-bold tracking-tight text-gray-900">
+        Index<span class="text-blue-600">Hot</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6">
+        <a href="/blog/" class="text-sm font-medium text-blue-600">Blog</a>
+        <a href="/answers/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Answers</a>
+        <a href="/methodology/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Methodology</a>
+        <a href="/data/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Data</a>
+        <a href="/about/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">About</a>
+        <a href="#" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Sign in</a>
+      </nav>
+      <button id="menu-btn" type="button" aria-label="Open menu" aria-expanded="false"
+        class="md:hidden flex items-center justify-center w-10 h-10 -mr-2 rounded-lg text-gray-600 hover:text-blue-600 hover:bg-gray-100 transition-colors">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+    <nav id="mobile-menu" class="hidden md:hidden px-5 pb-4 pt-2 border-t border-gray-100 bg-white">
+      <a href="/blog/" class="block py-2.5 text-sm font-medium text-blue-600">Blog</a>
+      <a href="/answers/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Answers</a>
+      <a href="/methodology/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Methodology</a>
+      <a href="/data/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Data</a>
+      <a href="/about/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">About</a>
+      <a href="#" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Sign in</a>
+    </nav>
+  </header>
+  <main>
+    <article class="px-5 sm:px-6 pt-10 pb-10">
+      <div class="max-w-3xl mx-auto">
+
+        <header class="mb-8">
+          <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900 leading-tight">
+            How We Score Citation Absorption: Method, Rubric, and Failure Modes
+          </h1>
+          <p class="mt-4 text-sm text-gray-400">
+            By <span class="font-medium text-gray-600">IndexHot Team</span> &middot; <time datetime="2026-11-05">November 5, 2026</time>
+          </p>
+        </header>
+
+        <div class="text-lg text-gray-700 leading-relaxed border-l-4 border-blue-600 pl-4 mb-10">
+          <p>Citation absorption is the one GEO metric that cannot be automated reliably, because it asks whether an answer adopted your meaning rather than whether it linked your domain. We score it with a four-level rubric applied by two independent coders, and we report the distribution rather than a mean. Without that discipline the number drifts toward whatever the analyst expected to find.</p>
+        </div>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Why a citation is not enough</h2>
+          <p class="text-gray-600 leading-relaxed ">A citation proves a source was attached. It does not prove the source changed the answer. Engines that attach ten sources per response produce high citation counts regardless of whether any single source contributed a sentence.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">Absorption is the metric that distinguishes recognition from influence. An answer that repeats your specific threshold, your framing or your recommendation persuades on your behalf. An answer that lists your domain at the bottom does not.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">This distinction is also what makes the metric useful for content decisions: absorption responds to specificity, while citation count responds to structure and access. They need different fixes, so they need to be measured separately.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">The four-level rubric</h2>
+          <p class="text-gray-600 leading-relaxed ">Level 0, none: the domain is attached but nothing from the page appears in the answer beyond the name or a generic category label.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">Level 1, topical: the answer uses a topic or theme associated with your page, but the wording could have come from any competitor in the category.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">Level 2, claim-level: a specific, checkable claim from your page appears in the answer in substance, such as a figure, a threshold or a defined condition, even if paraphrased.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">Level 3, recommendation-level: the answer adopts your positioning or recommendation, for example naming you as the choice for a specific use case, or reproducing your reasoning about trade-offs.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">The gap between level 1 and level 2 is where most reporting is inflated. Level 1 feels like success in a coding sheet and represents almost no influence in reality.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">How to code an answer</h2>
+          <p class="text-gray-600 leading-relaxed ">Before scoring, write down five to eight claims from the source page that are distinctive enough that a competitor could not plausibly supply them. These become the anchor list for the whole sample.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">Then read the answer with the source page beside it, and mark the highest level reached anywhere in the answer. Do not average across sentences; a single level-3 sentence is a level-3 answer.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">Two coders score the same twenty-answer calibration set independently. Where they disagree by more than one level, the rubric gets an example, not an argument. Only after calibration does the bulk of the scoring begin.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Five failure modes</h2>
+          <p class="text-gray-600 leading-relaxed ">Keyword matching: counting the brand name or a product term as evidence of absorption. Naming you is not using you.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">Generic claims: scoring absorption on a statement any competitor could supply, which turns level 2 into a level 1 with better marketing.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">Single-coder drift: one analyst scoring a long sample alone, where the standard slowly relaxes as fatigue sets in.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">Averaging over incongruent cases: reporting a mean of 1.4 when the sample is half zeros and half threes, which describes no actual answer.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">No re-baselining: changing the rubric mid-study and reporting the trend as continuous.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">How we report it</h2>
+          <p class="text-gray-600 leading-relaxed ">We publish absorption rate as the share of prompts reaching level 2 or above, plus the distribution across all four levels. A single mean hides whether the movement came from converting zeros into ones or ones into threes.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">We also report absorption per platform, because the engines differ structurally: source-heavy engines compress more and score lower, while source-light engines score higher on the same content.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">Finally, we keep the coded answers. A number without the underlying text cannot be audited by anyone else, and an unauditable number is not a measurement.</p>
+        </section>
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Frequently Asked Questions</h2>
+          <div class="space-y-4 mt-4">
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">Is absorption scoring subjective?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">It is judgement-based, which is not the same as arbitrary. A written rubric, a calibration set and two coders make it reproducible within roughly one level, which is enough for trend decisions but not for precise rankings.</p>
+            </div>
+
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">Can absorption be automated with an LLM judge?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">Partly. A model can flag candidate claim overlap quickly, but it tends to over-reward paraphrase and under-detect negation. We use it for triage and keep human coding for the sample that drives decisions.</p>
+            </div>
+
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">What absorption rate should we expect?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">On source-heavy engines, single digits are common even for strong brands. On source-light engines, twenty to forty percent is achievable. The number matters only against your own baseline and your competitors'.</p>
+            </div>
+          </div>
+        </section>
+        <section class="rounded-2xl bg-blue-600 px-6 py-8 text-center">
+          <h2 class="text-xl sm:text-2xl font-bold text-white leading-snug">See where your brand shows up in AI answers</h2>
+          <p class="mt-2 text-blue-100 text-sm sm:text-base">Run fifty governed prompts and get the first three at no cost.</p>
+          <a href="https://indexhot.com" class="mt-5 inline-block px-6 py-3 rounded-lg bg-white text-blue-700 font-semibold hover:bg-blue-50 transition-colors">
+            Check your brand on indexhot.com
+          </a>
+        </section>
+
+        <section class="mt-12 pt-8 border-t border-gray-100">
+          <h2 class="text-lg font-semibold text-gray-900 mb-4">Glossary terms behind this</h2>
+          <div class="flex flex-wrap gap-x-4 gap-y-2 text-sm">
+            <a href="/glossary/citation-absorption/" class="text-blue-600 hover:text-blue-700">Citation Absorption</a>
+            <a href="/glossary/absorption-rate/" class="text-blue-600 hover:text-blue-700">Absorption Rate</a>
+            <a href="/glossary/citation/" class="text-blue-600 hover:text-blue-700">Citation</a>
+            <a href="/glossary/mention-rate/" class="text-blue-600 hover:text-blue-700">Mention Rate</a>
+            <a href="/glossary/content-extractability/" class="text-blue-600 hover:text-blue-700">Content Extractability</a>
+          </div>
+        </section>
+
+        <section class="mt-12 pt-8 border-t border-gray-100">
+          <h2 class="text-lg font-semibold text-gray-900 mb-4">Keep reading</h2>
+          <div class="grid sm:grid-cols-2 gap-4">
+        <a href="/blog/ai-answers-analysis/" class="block p-5 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+          <span class="block text-sm font-semibold text-gray-900">We Analyzed 1,000 AI Answers</span>
+          <span class="block text-sm text-gray-500 mt-1">Where the absorption gap first showed up.</span>
+        </a>
+        <a href="/methodology/" class="block p-5 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+          <span class="block text-sm font-semibold text-gray-900">The IndexHot Measurement Standard</span>
+          <span class="block text-sm text-gray-500 mt-1">The full scoring framework.</span>
+        </a>
+          </div>
+        </section>
+
+      </div>
+    </article>
+  </main>
+
+  <footer class="border-t border-gray-100 px-5 sm:px-6 py-8">
+    <div class="max-w-3xl mx-auto text-center text-sm text-gray-400">
+      © 2026 IndexHot. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var menuBtn = document.getElementById('menu-btn');
+      var mobileMenu = document.getElementById('mobile-menu');
+      menuBtn.addEventListener('click', function () {
+        var isHidden = mobileMenu.classList.toggle('hidden');
+        menuBtn.setAttribute('aria-expanded', String(!isHidden));
+      });
+      mobileMenu.addEventListener('click', function (e) {
+        if (e.target.tagName === 'A') {
+          mobileMenu.classList.add('hidden');
+          menuBtn.setAttribute('aria-expanded', 'false');
+        }
+      });
+    })();
+  </script>
+</body>

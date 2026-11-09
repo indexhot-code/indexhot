@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fixing Entity Confusion: A Practical Guide for Brands Models Keep Misidentifying — IndexHot Blog</title>
+  <meta name="description" content="When models confuse your brand with a competitor or an unrelated company, the cause is usually contradictory entity signals rather than thin content. Here is the fix sequence." />
+  <link rel="canonical" href="https://indexhot.com/blog/entity-clarity-fix/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Fixing Entity Confusion: A Practical Guide for Brands Models Keep Misidentifying — IndexHot Blog" />
+  <meta property="og:description" content="When models confuse your brand with a competitor or an unrelated company, the cause is usually contradictory entity signals rather than thin content. Here is the fix sequence." />
+  <meta property="og:url" content="https://indexhot.com/blog/entity-clarity-fix/" />
+  <meta property="og:site_name" content="IndexHot" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Fixing Entity Confusion: A Practical Guide for Brands Models Keep Misidentifying — IndexHot Blog" />
+  <meta name="twitter:description" content="When models confuse your brand with a competitor or an unrelated company, the cause is usually contradictory entity signals rather than thin content. Here is the fix sequence." />
+  <link rel="stylesheet" href="../../tailwind.min.css" />
+  <style>
+    body { font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "headline": "Fixing Entity Confusion: A Practical Guide for Brands Models Keep Misidentifying",
+      "description": "When models confuse your brand with a competitor or an unrelated company, the cause is usually contradictory entity signals rather than thin content. Here is the fix sequence.",
+      "datePublished": "2026-11-09",
+      "dateModified": "2026-11-09",
+      "author": {
+        "@type": "Organization",
+        "name": "IndexHot Team"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "IndexHot"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://indexhot.com/blog/entity-clarity-fix/"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I know whether the problem is entity confusion or thin content?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ask identity questions rather than product questions. If the model cannot state what you sell or confuses you with another company, it is an entity problem. If it describes you correctly but never recommends you, it is a coverage or content problem."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does a Wikipedia page solve entity confusion?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It helps when one exists and is accurate, but it is not required. Consistent naming, structured data, explicit relationship statements and corrected third-party sources can resolve an entity without a Wikipedia entry."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long should I wait before re-testing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Four weeks for on-site changes, eight to twelve for third-party corrections. Re-testing sooner produces noise and encourages changing the fix before it has had a chance to work."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body class="bg-white text-gray-800 antialiased">
+
+  <!-- Top navigation -->
+  <header class="sticky top-0 z-20 bg-white/90 backdrop-blur border-b border-gray-100">
+    <div class="max-w-3xl mx-auto px-5 sm:px-6 h-16 flex items-center justify-between">
+      <a href="/" class="text-xl font-bold tracking-tight text-gray-900">
+        Index<span class="text-blue-600">Hot</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6">
+        <a href="/blog/" class="text-sm font-medium text-blue-600">Blog</a>
+        <a href="/answers/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Answers</a>
+        <a href="/methodology/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Methodology</a>
+        <a href="/data/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Data</a>
+        <a href="/about/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">About</a>
+        <a href="#" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Sign in</a>
+      </nav>
+      <button id="menu-btn" type="button" aria-label="Open menu" aria-expanded="false"
+        class="md:hidden flex items-center justify-center w-10 h-10 -mr-2 rounded-lg text-gray-600 hover:text-blue-600 hover:bg-gray-100 transition-colors">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+    <nav id="mobile-menu" class="hidden md:hidden px-5 pb-4 pt-2 border-t border-gray-100 bg-white">
+      <a href="/blog/" class="block py-2.5 text-sm font-medium text-blue-600">Blog</a>
+      <a href="/answers/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Answers</a>
+      <a href="/methodology/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Methodology</a>
+      <a href="/data/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Data</a>
+      <a href="/about/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">About</a>
+      <a href="#" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Sign in</a>
+    </nav>
+  </header>
+  <main>
+    <article class="px-5 sm:px-6 pt-10 pb-10">
+      <div class="max-w-3xl mx-auto">
+
+        <header class="mb-8">
+          <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900 leading-tight">
+            Fixing Entity Confusion: A Practical Guide for Brands Models Keep Misidentifying
+          </h1>
+          <p class="mt-4 text-sm text-gray-400">
+            By <span class="font-medium text-gray-600">IndexHot Team</span> &middot; <time datetime="2026-11-09">November 9, 2026</time>
+          </p>
+        </header>
+
+        <div class="text-lg text-gray-700 leading-relaxed border-l-4 border-blue-600 pl-4 mb-10">
+          <p>When an assistant confuses your brand with a competitor, describes a product you do not sell, or attributes your facts to someone else, the cause is almost always contradictory entity signals rather than thin content. Entity confusion caps every other metric, because a model that cannot resolve you cannot cite you confidently. The fix is consolidation and corroboration, and it usually moves faster than content work.</p>
+        </div>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">What entity confusion looks like</h2>
+          <p class="text-gray-600 leading-relaxed ">Four symptoms recur in our audits. The model describes you as belonging to a different category than the one you sell into. It names a product that belongs to a competitor. It merges you with a similarly named company, often one in another country. It states facts that were true years ago and were never corrected anywhere.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">Each symptom has a different cause, but they share one property: they survive content improvements. Publishing a better page does not resolve an entity that is represented inconsistently across a dozen sources, because the model weighs those sources against each other.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">This is why entity work often produces a step change where content work produces a slope. You are not adding information, you are removing contradiction.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">The three causes</h2>
+          <p class="text-gray-600 leading-relaxed ">Multiple names. A legal entity, a trading name and an acronym used interchangeably across site, social, directories and press. Each variant is a separate candidate entity, and the model may treat them as different companies.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">Product independence. A product with its own domain, its own social accounts and its own pricing, with no statement anywhere connecting it to the parent. The model has no edge to traverse, so it describes the product as an independent startup and omits the credentials that actually drive the purchase.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">Third-party conflict. A directory listing with a former address, a review site with a discontinued product, a press mention with the old legal name. These outrank your own site in the model's estimation more often than teams expect, because they look like independent corroboration.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">The fix sequence</h2>
+          <p class="text-gray-600 leading-relaxed ">Step one: decide one display name and one canonical domain, and write down the mapping from every legacy variant. This is a decision, not a cleanup task, and it needs someone with authority to make it.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">Step two: publish Organization markup on the homepage with the exact display name, an absolute logo URL, and sameAs links to profiles you control and that are live. Values must match the visible page.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">Step three: state relationships in prose, not only in markup. A sentence naming the parent company and the product, repeated on both pages, gives the model an edge it can traverse. Markup alone is often not enough.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">Step four: correct the third-party layer. Update directories, review profiles and press boilerplate. Where you cannot edit, publish a page that states the correct facts clearly enough to be retrievable as a counterweight.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">Step five: test with questions rather than markup validators. Ask four assistants who you are, what you sell, who your competitors are and whether a named product belongs to you. Any contradiction is the next fix.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">How to test it</h2>
+          <p class="text-gray-600 leading-relaxed ">Run a fixed identity question set monthly: identity, category, ownership, pricing, and the relationship between parent and product. Record the answer verbatim rather than scoring it, because the specific wording is what shows which source the model is leaning on.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">Add a confusion test: ask about a similarly named company and see whether the answers cross-contaminate. If they do, disambiguation needs to be explicit on-site, for example a line distinguishing the two entities by country and category.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">Repeat across engines. Confusion is usually worst on the engine that relies most on third-party corpora, and cleanest on the engine that retrieves your own pages most aggressively.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Timeline expectations</h2>
+          <p class="text-gray-600 leading-relaxed ">On-site consolidation shows up in four to eight weeks, because retrieval picks up the new consistency quickly. Third-party correction takes longer, often two to four months, because it depends on other sites updating and on caches expiring.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">Markup changes alone rarely move anything within a month. They reduce ambiguity in the pipeline but do not overwrite what other sources say, which is why the sequence puts corroboration after declaration.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">If nothing changes after eight weeks, the usual cause is an uncorrected third-party source that outweighs your site. The next step is to identify which page the answers are echoing, then either correct it or publish something more specific.</p>
+        </section>
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Frequently Asked Questions</h2>
+          <div class="space-y-4 mt-4">
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">How do I know whether the problem is entity confusion or thin content?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">Ask identity questions rather than product questions. If the model cannot state what you sell or confuses you with another company, it is an entity problem. If it describes you correctly but never recommends you, it is a coverage or content problem.</p>
+            </div>
+
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">Does a Wikipedia page solve entity confusion?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">It helps when one exists and is accurate, but it is not required. Consistent naming, structured data, explicit relationship statements and corrected third-party sources can resolve an entity without a Wikipedia entry.</p>
+            </div>
+
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">How long should I wait before re-testing?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">Four weeks for on-site changes, eight to twelve for third-party corrections. Re-testing sooner produces noise and encourages changing the fix before it has had a chance to work.</p>
+            </div>
+          </div>
+        </section>
+        <section class="rounded-2xl bg-blue-600 px-6 py-8 text-center">
+          <h2 class="text-xl sm:text-2xl font-bold text-white leading-snug">See where your brand shows up in AI answers</h2>
+          <p class="mt-2 text-blue-100 text-sm sm:text-base">Run fifty governed prompts and get the first three at no cost.</p>
+          <a href="https://indexhot.com" class="mt-5 inline-block px-6 py-3 rounded-lg bg-white text-blue-700 font-semibold hover:bg-blue-50 transition-colors">
+            Check your brand on indexhot.com
+          </a>
+        </section>
+
+        <section class="mt-12 pt-8 border-t border-gray-100">
+          <h2 class="text-lg font-semibold text-gray-900 mb-4">Glossary terms behind this</h2>
+          <div class="flex flex-wrap gap-x-4 gap-y-2 text-sm">
+            <a href="/glossary/entity-clarity/" class="text-blue-600 hover:text-blue-700">Entity Clarity</a>
+            <a href="/glossary/brand-entity/" class="text-blue-600 hover:text-blue-700">Brand Entity</a>
+            <a href="/glossary/organization-schema/" class="text-blue-600 hover:text-blue-700">Organization Schema</a>
+            <a href="/glossary/knowledge-graph/" class="text-blue-600 hover:text-blue-700">Knowledge Graph</a>
+            <a href="/glossary/hallucination/" class="text-blue-600 hover:text-blue-700">Hallucination</a>
+          </div>
+        </section>
+
+        <section class="mt-12 pt-8 border-t border-gray-100">
+          <h2 class="text-lg font-semibold text-gray-900 mb-4">Keep reading</h2>
+          <div class="grid sm:grid-cols-2 gap-4">
+        <a href="/blog/schema-markup-ai-citations/" class="block p-5 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+          <span class="block text-sm font-semibold text-gray-900">Schema Markup and AI Citations</span>
+          <span class="block text-sm text-gray-500 mt-1">What structured data does and does not fix.</span>
+        </a>
+        <a href="/glossary/brand-entity/" class="block p-5 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+          <span class="block text-sm font-semibold text-gray-900">Brand Entity</span>
+          <span class="block text-sm text-gray-500 mt-1">The object the model has to resolve.</span>
+        </a>
+          </div>
+        </section>
+
+      </div>
+    </article>
+  </main>
+
+  <footer class="border-t border-gray-100 px-5 sm:px-6 py-8">
+    <div class="max-w-3xl mx-auto text-center text-sm text-gray-400">
+      © 2026 IndexHot. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var menuBtn = document.getElementById('menu-btn');
+      var mobileMenu = document.getElementById('mobile-menu');
+      menuBtn.addEventListener('click', function () {
+        var isHidden = mobileMenu.classList.toggle('hidden');
+        menuBtn.setAttribute('aria-expanded', String(!isHidden));
+      });
+      mobileMenu.addEventListener('click', function (e) {
+        if (e.target.tagName === 'A') {
+          mobileMenu.classList.add('hidden');
+          menuBtn.setAttribute('aria-expanded', 'false');
+        }
+      });
+    })();
+  </script>
+</body>

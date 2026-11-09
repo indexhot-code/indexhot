@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The 12-Point GEO Audit We Run Before Any Content Work — IndexHot Blog</title>
+  <meta name="description" content="Most AI invisibility is not a content problem. The twelve checks we run first, across technical, entity, measurement and content, and how to prioritise the results." />
+  <link rel="canonical" href="https://indexhot.com/blog/geo-audit-checklist/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="The 12-Point GEO Audit We Run Before Any Content Work — IndexHot Blog" />
+  <meta property="og:description" content="Most AI invisibility is not a content problem. The twelve checks we run first, across technical, entity, measurement and content, and how to prioritise the results." />
+  <meta property="og:url" content="https://indexhot.com/blog/geo-audit-checklist/" />
+  <meta property="og:site_name" content="IndexHot" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="The 12-Point GEO Audit We Run Before Any Content Work — IndexHot Blog" />
+  <meta name="twitter:description" content="Most AI invisibility is not a content problem. The twelve checks we run first, across technical, entity, measurement and content, and how to prioritise the results." />
+  <link rel="stylesheet" href="../../tailwind.min.css" />
+  <style>
+    body { font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "headline": "The 12-Point GEO Audit We Run Before Any Content Work",
+      "description": "Most AI invisibility is not a content problem. The twelve checks we run first, across technical, entity, measurement and content, and how to prioritise the results.",
+      "datePublished": "2026-11-02",
+      "dateModified": "2026-11-02",
+      "author": {
+        "@type": "Organization",
+        "name": "IndexHot Team"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "IndexHot"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://indexhot.com/blog/geo-audit-checklist/"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How long does the audit take?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "About a day for a small site and two to three days for one with a few hundred pages, mostly spent on the fetch tests, robots review and the directory comparison."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I run this without a technical team?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Checks nine through twelve and most of the entity cluster can be done by a marketer with a browser and a text editor. Checks one to five usually need someone who can query server logs or adjust CDN rules."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How often should the audit be repeated?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Quarterly, and always after a migration, a rebrand or a platform change. The audit is cheap to repeat and the failure modes are the ones that recur silently."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body class="bg-white text-gray-800 antialiased">
+
+  <!-- Top navigation -->
+  <header class="sticky top-0 z-20 bg-white/90 backdrop-blur border-b border-gray-100">
+    <div class="max-w-3xl mx-auto px-5 sm:px-6 h-16 flex items-center justify-between">
+      <a href="/" class="text-xl font-bold tracking-tight text-gray-900">
+        Index<span class="text-blue-600">Hot</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6">
+        <a href="/blog/" class="text-sm font-medium text-blue-600">Blog</a>
+        <a href="/answers/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Answers</a>
+        <a href="/methodology/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Methodology</a>
+        <a href="/data/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Data</a>
+        <a href="/about/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">About</a>
+        <a href="#" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Sign in</a>
+      </nav>
+      <button id="menu-btn" type="button" aria-label="Open menu" aria-expanded="false"
+        class="md:hidden flex items-center justify-center w-10 h-10 -mr-2 rounded-lg text-gray-600 hover:text-blue-600 hover:bg-gray-100 transition-colors">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+    <nav id="mobile-menu" class="hidden md:hidden px-5 pb-4 pt-2 border-t border-gray-100 bg-white">
+      <a href="/blog/" class="block py-2.5 text-sm font-medium text-blue-600">Blog</a>
+      <a href="/answers/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Answers</a>
+      <a href="/methodology/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Methodology</a>
+      <a href="/data/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Data</a>
+      <a href="/about/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">About</a>
+      <a href="#" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Sign in</a>
+    </nav>
+  </header>
+  <main>
+    <article class="px-5 sm:px-6 pt-10 pb-10">
+      <div class="max-w-3xl mx-auto">
+
+        <header class="mb-8">
+          <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900 leading-tight">
+            The 12-Point GEO Audit We Run Before Any Content Work
+          </h1>
+          <p class="mt-4 text-sm text-gray-400">
+            By <span class="font-medium text-gray-600">IndexHot Team</span> &middot; <time datetime="2026-11-02">November 2, 2026</time>
+          </p>
+        </header>
+
+        <div class="text-lg text-gray-700 leading-relaxed border-l-4 border-blue-600 pl-4 mb-10">
+          <p>We run a twelve-point audit before writing anything, because most cases of AI invisibility are not content problems. In the audits we have done, crawl and entity issues account for more of the gap than thin content does, and fixing them first changes what the content work even needs to be. The audit takes roughly a day and prevents weeks of editing the wrong layer.</p>
+        </div>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Why audit before content</h2>
+          <p class="text-gray-600 leading-relaxed ">Content work is expensive and slow to show up in measurement. Technical and entity fixes are cheap and often visible within weeks. Doing both at once makes it impossible to tell which produced the change, and makes it easy to conclude that content does not work when the real blocker was a robots rule.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">The audit is also a calibration exercise. It tells you whether your benchmark should be a competitor with 400 pages or with 4,000, and whether your category is citation-concentrated or fragmented. Without that context, a score of 30 out of 100 means nothing.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">The four clusters</h2>
+          <p class="text-gray-600 leading-relaxed ">Technical covers whether the page can be fetched, indexed and read. Entity covers whether a system can identify the brand at all. Measurement covers whether you can reproduce a result. Content covers whether there is anything worth citing.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">Each cluster has a different owner in most organisations, which is why audits that stay inside one cluster tend to miss the actual constraint. A marketing team optimising copy cannot fix a noindex tag, and an engineering team fixing crawl cannot invent a distinctive claim.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">The ordering matters because the clusters gate each other: technical failures make entity work invisible, entity ambiguity makes measurement unreliable, and unreliable measurement makes content decisions guesswork.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">The twelve checks</h2>
+          <p class="text-gray-600 leading-relaxed ">Technical: (1) fetch key pages with a plain HTTP client and confirm body text is present; (2) check robots.txt against each named AI user-agent; (3) verify CDN or WAF does not challenge bot traffic; (4) confirm one canonical per page, absolute and self-referencing; (5) check that new pages have at least three inbound internal links.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">Entity: (6) confirm one display name and one legal name used consistently on-site; (7) verify Organization markup with an absolute logo and live sameAs profiles; (8) state the parent-to-product relationship in text, not only in markup.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">Measurement: (9) freeze and version a prompt library of fifty, split ten branded and forty non-branded; (10) record every run with date, platform and model version.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">Content: (11) check that each key claim survives being copied out of the page alone; (12) confirm that the pages actually cited in your category are formats you also publish.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Scoring and prioritising</h2>
+          <p class="text-gray-600 leading-relaxed ">Score each check as pass, partial or fail, then order the failures by blast radius rather than by ease. A robots rule blocking one crawler affects every page at once; a missing FAQ block affects one page. Blast radius first, effort second.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">In practice, the first three or four fixes are usually technical, and they change the measurement baseline. Re-run the baseline before starting content work, or you will later be unable to separate the effect of the fixes from the effect of the writing.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">Anything that cannot be scored reproducibly should be dropped from the audit. A check that two analysts score differently is not a check, it is an opinion with a number attached.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">What to do with the results</h2>
+          <p class="text-gray-600 leading-relaxed ">If technical checks fail, do not brief content yet. Fix access and canonicalisation, wait two to four weeks, and re-measure. Publishing into a broken crawl wastes both the content and the measurement.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">If technical passes and entity is ambiguous, the work is naming and corroboration: consolidate the name, publish the markup, correct the directories. This is usually faster than content and higher leverage, because ambiguity caps every downstream metric.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">Only when the first two clusters pass does content become the constraint, and at that point the audit tells you which format is missing: specification tables, comparisons, or dated policy pages. That is a far narrower brief than 'write more'.</p>
+        </section>
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Frequently Asked Questions</h2>
+          <div class="space-y-4 mt-4">
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">How long does the audit take?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">About a day for a small site and two to three days for one with a few hundred pages, mostly spent on the fetch tests, robots review and the directory comparison.</p>
+            </div>
+
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">Can I run this without a technical team?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">Checks nine through twelve and most of the entity cluster can be done by a marketer with a browser and a text editor. Checks one to five usually need someone who can query server logs or adjust CDN rules.</p>
+            </div>
+
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">How often should the audit be repeated?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">Quarterly, and always after a migration, a rebrand or a platform change. The audit is cheap to repeat and the failure modes are the ones that recur silently.</p>
+            </div>
+          </div>
+        </section>
+        <section class="rounded-2xl bg-blue-600 px-6 py-8 text-center">
+          <h2 class="text-xl sm:text-2xl font-bold text-white leading-snug">See where your brand shows up in AI answers</h2>
+          <p class="mt-2 text-blue-100 text-sm sm:text-base">Run fifty governed prompts and get the first three at no cost.</p>
+          <a href="https://indexhot.com" class="mt-5 inline-block px-6 py-3 rounded-lg bg-white text-blue-700 font-semibold hover:bg-blue-50 transition-colors">
+            Check your brand on indexhot.com
+          </a>
+        </section>
+
+        <section class="mt-12 pt-8 border-t border-gray-100">
+          <h2 class="text-lg font-semibold text-gray-900 mb-4">Glossary terms behind this</h2>
+          <div class="flex flex-wrap gap-x-4 gap-y-2 text-sm">
+            <a href="/glossary/crawlability/" class="text-blue-600 hover:text-blue-700">Crawlability</a>
+            <a href="/glossary/indexability/" class="text-blue-600 hover:text-blue-700">Indexability</a>
+            <a href="/glossary/entity-clarity/" class="text-blue-600 hover:text-blue-700">Entity Clarity</a>
+            <a href="/glossary/organization-schema/" class="text-blue-600 hover:text-blue-700">Organization Schema</a>
+            <a href="/glossary/governed-question-library/" class="text-blue-600 hover:text-blue-700">Governed Question Library</a>
+          </div>
+        </section>
+
+        <section class="mt-12 pt-8 border-t border-gray-100">
+          <h2 class="text-lg font-semibold text-gray-900 mb-4">Keep reading</h2>
+          <div class="grid sm:grid-cols-2 gap-4">
+        <a href="/blog/why-geo-needs-standard/" class="block p-5 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+          <span class="block text-sm font-semibold text-gray-900">Why GEO Needs a Public Measurement Standard</span>
+          <span class="block text-sm text-gray-500 mt-1">The measurement half of the audit.</span>
+        </a>
+        <a href="/glossary/entity-clarity/" class="block p-5 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+          <span class="block text-sm font-semibold text-gray-900">Entity Clarity</span>
+          <span class="block text-sm text-gray-500 mt-1">Why identity problems cap every other metric.</span>
+        </a>
+          </div>
+        </section>
+
+      </div>
+    </article>
+  </main>
+
+  <footer class="border-t border-gray-100 px-5 sm:px-6 py-8">
+    <div class="max-w-3xl mx-auto text-center text-sm text-gray-400">
+      © 2026 IndexHot. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var menuBtn = document.getElementById('menu-btn');
+      var mobileMenu = document.getElementById('mobile-menu');
+      menuBtn.addEventListener('click', function () {
+        var isHidden = mobileMenu.classList.toggle('hidden');
+        menuBtn.setAttribute('aria-expanded', String(!isHidden));
+      });
+      mobileMenu.addEventListener('click', function (e) {
+        if (e.target.tagName === 'A') {
+          mobileMenu.classList.add('hidden');
+          menuBtn.setAttribute('aria-expanded', 'false');
+        }
+      });
+    })();
+  </script>
+</body>

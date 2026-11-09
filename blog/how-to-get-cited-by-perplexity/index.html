@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How to Get Cited by Perplexity (and Why Citations Don't Guarantee Influence) — IndexHot Blog</title>
+  <meta name="description" content="Perplexity attaches more sources per answer than any engine we track, which makes it easy to be cited and hard to influence. Here is what its citations actually reward." />
+  <link rel="canonical" href="https://indexhot.com/blog/how-to-get-cited-by-perplexity/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="How to Get Cited by Perplexity (and Why Citations Don't Guarantee Influence) — IndexHot Blog" />
+  <meta property="og:description" content="Perplexity attaches more sources per answer than any engine we track, which makes it easy to be cited and hard to influence. Here is what its citations actually reward." />
+  <meta property="og:url" content="https://indexhot.com/blog/how-to-get-cited-by-perplexity/" />
+  <meta property="og:site_name" content="IndexHot" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="How to Get Cited by Perplexity (and Why Citations Don't Guarantee Influence) — IndexHot Blog" />
+  <meta name="twitter:description" content="Perplexity attaches more sources per answer than any engine we track, which makes it easy to be cited and hard to influence. Here is what its citations actually reward." />
+  <link rel="stylesheet" href="../../tailwind.min.css" />
+  <style>
+    body { font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "headline": "How to Get Cited by Perplexity (and Why Citations Don't Guarantee Influence)",
+      "description": "Perplexity attaches more sources per answer than any engine we track, which makes it easy to be cited and hard to influence. Here is what its citations actually reward.",
+      "datePublished": "2026-11-02",
+      "dateModified": "2026-11-02",
+      "author": {
+        "@type": "Organization",
+        "name": "IndexHot Team"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "IndexHot"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://indexhot.com/blog/how-to-get-cited-by-perplexity/"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Do I need a Perplexity account to check my brand?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You can run queries without an account, but logged-out results can differ from logged-in ones because personalisation and model version differ. For comparable measurements, run the same prompts from the same state each time and record the date."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why was I cited last week and gone this week?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Source selection is not stable. A single model update, a fresher competing page or a slightly different wording of the prompt can change the source list. This is why measurement needs a fixed prompt library and repeated runs rather than one-off checks."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Perplexity's citation list ranked by importance?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Position in the source list usually reflects retrieval order rather than influence. A first-listed source is not necessarily the one whose wording dominates the answer, which is exactly why absorption has to be scored by reading the answer."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body class="bg-white text-gray-800 antialiased">
+
+  <!-- Top navigation -->
+  <header class="sticky top-0 z-20 bg-white/90 backdrop-blur border-b border-gray-100">
+    <div class="max-w-3xl mx-auto px-5 sm:px-6 h-16 flex items-center justify-between">
+      <a href="/" class="text-xl font-bold tracking-tight text-gray-900">
+        Index<span class="text-blue-600">Hot</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6">
+        <a href="/blog/" class="text-sm font-medium text-blue-600">Blog</a>
+        <a href="/answers/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Answers</a>
+        <a href="/methodology/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Methodology</a>
+        <a href="/data/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Data</a>
+        <a href="/about/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">About</a>
+        <a href="#" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Sign in</a>
+      </nav>
+      <button id="menu-btn" type="button" aria-label="Open menu" aria-expanded="false"
+        class="md:hidden flex items-center justify-center w-10 h-10 -mr-2 rounded-lg text-gray-600 hover:text-blue-600 hover:bg-gray-100 transition-colors">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+    <nav id="mobile-menu" class="hidden md:hidden px-5 pb-4 pt-2 border-t border-gray-100 bg-white">
+      <a href="/blog/" class="block py-2.5 text-sm font-medium text-blue-600">Blog</a>
+      <a href="/answers/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Answers</a>
+      <a href="/methodology/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Methodology</a>
+      <a href="/data/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Data</a>
+      <a href="/about/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">About</a>
+      <a href="#" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Sign in</a>
+    </nav>
+  </header>
+  <main>
+    <article class="px-5 sm:px-6 pt-10 pb-10">
+      <div class="max-w-3xl mx-auto">
+
+        <header class="mb-8">
+          <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900 leading-tight">
+            How to Get Cited by Perplexity (and Why Citations Don't Guarantee Influence)
+          </h1>
+          <p class="mt-4 text-sm text-gray-400">
+            By <span class="font-medium text-gray-600">IndexHot Team</span> &middot; <time datetime="2026-11-02">November 2, 2026</time>
+          </p>
+        </header>
+
+        <div class="text-lg text-gray-700 leading-relaxed border-l-4 border-blue-600 pl-4 mb-10">
+          <p>Perplexity attaches more sources per answer than any other engine we measure, which makes it the easiest surface to earn a citation on and the hardest to actually influence. Being listed is not the same as being used: the same study that counted 21,143 citations across 602 prompts found Perplexity's reuse of each source to be the shallowest of the platforms tested. Optimising for the citation count alone produces a flattering number and very little influence.</p>
+        </div>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">What Perplexity actually rewards</h2>
+          <p class="text-gray-600 leading-relaxed ">Perplexity retrieves per sub-question and then attaches a source list, so citation volume is high by design rather than by generosity. Pages that win repeatedly in our sample share three traits: one verifiable claim per section, a visible date attached to time-sensitive facts, and a heading that matches the phrasing of the question.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">It also rewards freshness more visibly than the other engines. Questions about pricing, availability or policy tend to cite pages that state a date near the answer, and undated pages are frequently skipped in favour of a competitor's dated equivalent. A page from 2024 with no revision date loses to a thinner page published last month.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">The practical implication is uncomfortable for brand marketers: the pages that earn citations are usually documentation, specification tables and comparison charts, not campaign landing pages. Once we started auditing which URLs were cited rather than which pages we considered important, the pattern became obvious and repeatable.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">The three page types that get cited</h2>
+          <p class="text-gray-600 leading-relaxed ">Across the categories we track, three formats account for the large majority of citations. The first is the specification table: exact dimensions, tolerances, prices or compatibility stated as text with units. These are the pages answers can lift a number from without any interpretation.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">The second is the comparison page. When a question implies a choice, Perplexity tends to retrieve a page that lays out the options side by side, and it will cite that page even when the page belongs to one of the vendors, provided the comparison is specific enough to be usable.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">The third is the dated policy or FAQ page. Eligibility rules, refund windows and coverage limits generate a large share of questions, and a page that states them plainly with a revision date becomes the default source for that cluster.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">All three share one property: they answer a question completely inside a single page, without requiring the reader to assemble the answer from several places. That is what makes them retrievable and quotable.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Why citations don't buy influence</h2>
+          <p class="text-gray-600 leading-relaxed ">The study that tracked 602 prompts and 21,143 citations across engines found a clear inverse relationship between how many sources an engine attaches and how deeply it uses any one of them. Perplexity cited the most and absorbed the least; ChatGPT cited far fewer and reused more of each cited page.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">This matters because the two outcomes are commercially different. A citation is evidence that your page was consulted. Absorption is evidence that your framing entered the answer. A brand can be cited hundreds of times and never have a single claim repeated, and that brand has bought visibility without persuasion.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">The mechanism is straightforward: an engine that synthesises across ten sources must compress each one, so no single source dominates the wording. An engine that uses two sources can afford to keep more of what each says. Citation count and citation depth therefore pull in opposite directions, and which one you want depends on whether you need reach or influence.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">A 30-day plan</h2>
+          <p class="text-gray-600 leading-relaxed ">Days 1 to 5: inventory the prompts where you are mentioned but not cited, and read what those answers do cite. This tells you which content shape is missing: a table, a comparison, or a dated FAQ.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">Days 6 to 15: publish or restructure two pages in the winning shape. Convert any specification currently living in an image or PDF into HTML text with units and a revision date.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">Days 16 to 25: fix entity ambiguity. Perplexity still needs to know which company a page belongs to before it will credit it, so confirm one canonical name, absolute canonical URLs and Organization markup consistent with the visible page.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">Days 26 to 30: re-run the same prompts and compare citation targets, not just citation counts. Success is a citation landing on a page you control, not a citation appearing somewhere in the answer.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">How to verify it worked</h2>
+          <p class="text-gray-600 leading-relaxed ">Re-run the identical prompt set rather than a new one, and record three things separately per prompt: whether you were named, whether your domain was cited, and whether any distinctive claim of yours appeared in the text.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">If citation rate rises but absorption stays flat, you have entered the source list without changing what the answer says. That is a content-shape problem, not a distribution problem, and the fix is to make claims more specific and self-contained rather than to publish more pages.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">Expect four to eight weeks before a structural change shows up consistently in Perplexity's citations. Faster movement usually means the change was cosmetic or the prompt set changed without being recorded.</p>
+        </section>
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Frequently Asked Questions</h2>
+          <div class="space-y-4 mt-4">
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">Do I need a Perplexity account to check my brand?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">You can run queries without an account, but logged-out results can differ from logged-in ones because personalisation and model version differ. For comparable measurements, run the same prompts from the same state each time and record the date.</p>
+            </div>
+
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">Why was I cited last week and gone this week?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">Source selection is not stable. A single model update, a fresher competing page or a slightly different wording of the prompt can change the source list. This is why measurement needs a fixed prompt library and repeated runs rather than one-off checks.</p>
+            </div>
+
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">Is Perplexity's citation list ranked by importance?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">Position in the source list usually reflects retrieval order rather than influence. A first-listed source is not necessarily the one whose wording dominates the answer, which is exactly why absorption has to be scored by reading the answer.</p>
+            </div>
+          </div>
+        </section>
+        <section class="rounded-2xl bg-blue-600 px-6 py-8 text-center">
+          <h2 class="text-xl sm:text-2xl font-bold text-white leading-snug">See where your brand shows up in AI answers</h2>
+          <p class="mt-2 text-blue-100 text-sm sm:text-base">Run fifty governed prompts and get the first three at no cost.</p>
+          <a href="https://indexhot.com" class="mt-5 inline-block px-6 py-3 rounded-lg bg-white text-blue-700 font-semibold hover:bg-blue-50 transition-colors">
+            Check your brand on indexhot.com
+          </a>
+        </section>
+
+        <section class="mt-12 pt-8 border-t border-gray-100">
+          <h2 class="text-lg font-semibold text-gray-900 mb-4">Glossary terms behind this</h2>
+          <div class="flex flex-wrap gap-x-4 gap-y-2 text-sm">
+            <a href="/glossary/citation-rate/" class="text-blue-600 hover:text-blue-700">Citation Rate</a>
+            <a href="/glossary/citation-absorption/" class="text-blue-600 hover:text-blue-700">Citation Absorption</a>
+            <a href="/glossary/citation-source-diversity/" class="text-blue-600 hover:text-blue-700">Citation Source Diversity</a>
+            <a href="/glossary/content-freshness/" class="text-blue-600 hover:text-blue-700">Content Freshness</a>
+            <a href="/glossary/ai-crawler/" class="text-blue-600 hover:text-blue-700">AI Crawler</a>
+          </div>
+        </section>
+
+        <section class="mt-12 pt-8 border-t border-gray-100">
+          <h2 class="text-lg font-semibold text-gray-900 mb-4">Keep reading</h2>
+          <div class="grid sm:grid-cols-2 gap-4">
+        <a href="/blog/why-geo-needs-standard/" class="block p-5 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+          <span class="block text-sm font-semibold text-gray-900">Why GEO Needs a Public Measurement Standard</span>
+          <span class="block text-sm text-gray-500 mt-1">The framework this analysis is built on.</span>
+        </a>
+        <a href="/glossary/citation-absorption/" class="block p-5 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+          <span class="block text-sm font-semibold text-gray-900">Citation Absorption</span>
+          <span class="block text-sm text-gray-500 mt-1">How deeply a cited source is actually reused.</span>
+        </a>
+          </div>
+        </section>
+
+      </div>
+    </article>
+  </main>
+
+  <footer class="border-t border-gray-100 px-5 sm:px-6 py-8">
+    <div class="max-w-3xl mx-auto text-center text-sm text-gray-400">
+      © 2026 IndexHot. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var menuBtn = document.getElementById('menu-btn');
+      var mobileMenu = document.getElementById('mobile-menu');
+      menuBtn.addEventListener('click', function () {
+        var isHidden = mobileMenu.classList.toggle('hidden');
+        menuBtn.setAttribute('aria-expanded', String(!isHidden));
+      });
+      mobileMenu.addEventListener('click', function (e) {
+        if (e.target.tagName === 'A') {
+          mobileMenu.classList.add('hidden');
+          menuBtn.setAttribute('aria-expanded', 'false');
+        }
+      });
+    })();
+  </script>
+</body>

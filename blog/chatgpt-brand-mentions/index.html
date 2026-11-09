@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ChatGPT Mentions vs Citations: What Actually Moves Buyers — IndexHot Blog</title>
+  <meta name="description" content="ChatGPT cites fewer sources per answer than other engines, so each citation is scarcer and carries more of the final wording. What that means for measurement and content." />
+  <link rel="canonical" href="https://indexhot.com/blog/chatgpt-brand-mentions/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="ChatGPT Mentions vs Citations: What Actually Moves Buyers — IndexHot Blog" />
+  <meta property="og:description" content="ChatGPT cites fewer sources per answer than other engines, so each citation is scarcer and carries more of the final wording. What that means for measurement and content." />
+  <meta property="og:url" content="https://indexhot.com/blog/chatgpt-brand-mentions/" />
+  <meta property="og:site_name" content="IndexHot" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="ChatGPT Mentions vs Citations: What Actually Moves Buyers — IndexHot Blog" />
+  <meta name="twitter:description" content="ChatGPT cites fewer sources per answer than other engines, so each citation is scarcer and carries more of the final wording. What that means for measurement and content." />
+  <link rel="stylesheet" href="../../tailwind.min.css" />
+  <style>
+    body { font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "headline": "ChatGPT Mentions vs Citations: What Actually Moves Buyers",
+      "description": "ChatGPT cites fewer sources per answer than other engines, so each citation is scarcer and carries more of the final wording. What that means for measurement and content.",
+      "datePublished": "2026-11-05",
+      "dateModified": "2026-11-05",
+      "author": {
+        "@type": "Organization",
+        "name": "IndexHot Team"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "IndexHot"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://indexhot.com/blog/chatgpt-brand-mentions/"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Does ChatGPT show sources for every answer?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Many answers carry no citations at all, especially conceptual ones where the model answers from training data. Absence of a citation does not mean nothing was retrieved, and it does not mean you were outranked."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which matters more for pipeline: mentions or citations?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Mentions reach buyers who never click. Citations produce the links and the verification that make a recommendation credible. In our sample, brands with strong absorption converted better than brands with high citation counts and low absorption, but both metrics need tracking."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How many prompts should I run before trusting a result?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Fifty is a practical default: ten branded and forty non-branded, covering problem, comparison, budget and use-case intents. Fewer than thirty makes single-prompt noise look like a trend."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body class="bg-white text-gray-800 antialiased">
+
+  <!-- Top navigation -->
+  <header class="sticky top-0 z-20 bg-white/90 backdrop-blur border-b border-gray-100">
+    <div class="max-w-3xl mx-auto px-5 sm:px-6 h-16 flex items-center justify-between">
+      <a href="/" class="text-xl font-bold tracking-tight text-gray-900">
+        Index<span class="text-blue-600">Hot</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6">
+        <a href="/blog/" class="text-sm font-medium text-blue-600">Blog</a>
+        <a href="/answers/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Answers</a>
+        <a href="/methodology/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Methodology</a>
+        <a href="/data/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Data</a>
+        <a href="/about/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">About</a>
+        <a href="#" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Sign in</a>
+      </nav>
+      <button id="menu-btn" type="button" aria-label="Open menu" aria-expanded="false"
+        class="md:hidden flex items-center justify-center w-10 h-10 -mr-2 rounded-lg text-gray-600 hover:text-blue-600 hover:bg-gray-100 transition-colors">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+    <nav id="mobile-menu" class="hidden md:hidden px-5 pb-4 pt-2 border-t border-gray-100 bg-white">
+      <a href="/blog/" class="block py-2.5 text-sm font-medium text-blue-600">Blog</a>
+      <a href="/answers/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Answers</a>
+      <a href="/methodology/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Methodology</a>
+      <a href="/data/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Data</a>
+      <a href="/about/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">About</a>
+      <a href="#" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Sign in</a>
+    </nav>
+  </header>
+  <main>
+    <article class="px-5 sm:px-6 pt-10 pb-10">
+      <div class="max-w-3xl mx-auto">
+
+        <header class="mb-8">
+          <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900 leading-tight">
+            ChatGPT Mentions vs Citations: What Actually Moves Buyers
+          </h1>
+          <p class="mt-4 text-sm text-gray-400">
+            By <span class="font-medium text-gray-600">IndexHot Team</span> &middot; <time datetime="2026-11-05">November 5, 2026</time>
+          </p>
+        </header>
+
+        <div class="text-lg text-gray-700 leading-relaxed border-l-4 border-blue-600 pl-4 mb-10">
+          <p>ChatGPT cites fewer sources per answer than Perplexity, so a citation there is scarcer and tends to carry more of the final wording. In our runs it reused more of each cited page than any other surface, which means fewer links but deeper influence. Reading only the citation count therefore understates ChatGPT and overstates the engines that cite everything.</p>
+        </div>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Three levels, not one number</h2>
+          <p class="text-gray-600 leading-relaxed ">Mention means your brand name appears in the answer. Citation means your domain is attributed as a source. Absorption means your specific facts, framing or recommendation entered the answer text. These are three different achievements and they move independently.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">A brand can be mentioned in most answers and cited in few, which points to an extractability or crawl problem. It can be cited often and absorbed rarely, which points to generic content that the engine can use as evidence but not as argument. Collapsing the three into one score hides which of those is happening.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">We report all three per platform, never averaged, because the platforms behave differently enough that an average describes nothing in particular.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Why ChatGPT cites so few sources</h2>
+          <p class="text-gray-600 leading-relaxed ">Its answers are usually longer and more explanatory than a search-engine summary, which means more of the response is written from reasoning rather than lifted from sources. Fewer attached links is the visible consequence of that style, not a signal that nothing was retrieved.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">In some answers no sources are attached at all, particularly when the question is conceptual or when the model is drawing on training data rather than fresh retrieval. That is a different failure mode from being outranked: there is no page to displace, because no page was consulted.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">Because each citation is scarcer, the marginal value of earning one is higher. A single well-structured page can shape a whole cluster of related questions in a way that would take dozens of citations on a source-heavy engine.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Where a mention comes from</h2>
+          <p class="text-gray-600 leading-relaxed ">There are three sources of a mention, and they respond to different fixes. The first is training memory: the brand was present in data the model learned from, so it can name you without retrieving anything current.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">The second is live retrieval: a page of yours, or a third-party page about you, was fetched and used. This is the case you can influence directly, and it is the case where chronology matters, because the model may prefer a recently dated page.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">The third is third-party corroboration: a review site, directory or publication states something about you, and the model treats that as the reliable description. This is the most common source of mentions for brands whose own site is thin, and the hardest to correct quickly.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">Branded prompts mostly exercise the first and third of these. Non-branded prompts exercise the second, which is why they are the honest test of whether the model would ever introduce you.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">What moves it</h2>
+          <p class="text-gray-600 leading-relaxed ">Entity consistency comes first. One display name, one canonical domain, Organization markup whose values match the visible page, and sameAs profiles that are live. Without this, a model may know the category but not attach it to your brand.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">Second, publish pages that state your differentiator as a checkable fact. 'Faster onboarding' is not checkable; 'median setup time of 14 days for a 50-seat deployment, measured across 120 accounts in 2025' is. Specific claims survive compression, and compressed claims are what a mention turns into.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">Third, secure corroboration off-site. A review profile, a directory listing or an independent comparison that states the same facts gives the model a second source to agree with yours, and agreement is what makes a fact stable.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">Fourth, keep the pages fresh. A dated page can be preferred over an undated one even when the undated page is more detailed, because a model that cannot date a claim has to hedge it.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Measurement caveat</h2>
+          <p class="text-gray-600 leading-relaxed ">Training memory and live retrieval are not separable from the outside. If your brand is mentioned without any citation, you cannot tell whether the model remembered you or retrieved a page and chose not to attribute it.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">The practical response is repetition: run the same prompt several times and record the modal answer, and compare across months rather than days. A mention that appears in every run for a year is memory; one that appears only after you publish a page is retrieval.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">This is also why a single audit is not a verdict. It is a baseline, and its value comes entirely from being repeated against the same question set.</p>
+        </section>
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Frequently Asked Questions</h2>
+          <div class="space-y-4 mt-4">
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">Does ChatGPT show sources for every answer?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">No. Many answers carry no citations at all, especially conceptual ones where the model answers from training data. Absence of a citation does not mean nothing was retrieved, and it does not mean you were outranked.</p>
+            </div>
+
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">Which matters more for pipeline: mentions or citations?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">Mentions reach buyers who never click. Citations produce the links and the verification that make a recommendation credible. In our sample, brands with strong absorption converted better than brands with high citation counts and low absorption, but both metrics need tracking.</p>
+            </div>
+
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">How many prompts should I run before trusting a result?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">Fifty is a practical default: ten branded and forty non-branded, covering problem, comparison, budget and use-case intents. Fewer than thirty makes single-prompt noise look like a trend.</p>
+            </div>
+          </div>
+        </section>
+        <section class="rounded-2xl bg-blue-600 px-6 py-8 text-center">
+          <h2 class="text-xl sm:text-2xl font-bold text-white leading-snug">See where your brand shows up in AI answers</h2>
+          <p class="mt-2 text-blue-100 text-sm sm:text-base">Run fifty governed prompts and get the first three at no cost.</p>
+          <a href="https://indexhot.com" class="mt-5 inline-block px-6 py-3 rounded-lg bg-white text-blue-700 font-semibold hover:bg-blue-50 transition-colors">
+            Check your brand on indexhot.com
+          </a>
+        </section>
+
+        <section class="mt-12 pt-8 border-t border-gray-100">
+          <h2 class="text-lg font-semibold text-gray-900 mb-4">Glossary terms behind this</h2>
+          <div class="flex flex-wrap gap-x-4 gap-y-2 text-sm">
+            <a href="/glossary/mention-rate/" class="text-blue-600 hover:text-blue-700">Mention Rate</a>
+            <a href="/glossary/citation-rate/" class="text-blue-600 hover:text-blue-700">Citation Rate</a>
+            <a href="/glossary/absorption-rate/" class="text-blue-600 hover:text-blue-700">Absorption Rate</a>
+            <a href="/glossary/entity-clarity/" class="text-blue-600 hover:text-blue-700">Entity Clarity</a>
+            <a href="/glossary/branded-prompt/" class="text-blue-600 hover:text-blue-700">Branded Prompt</a>
+          </div>
+        </section>
+
+        <section class="mt-12 pt-8 border-t border-gray-100">
+          <h2 class="text-lg font-semibold text-gray-900 mb-4">Keep reading</h2>
+          <div class="grid sm:grid-cols-2 gap-4">
+        <a href="/blog/ai-answers-analysis/" class="block p-5 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+          <span class="block text-sm font-semibold text-gray-900">We Analyzed 1,000 AI Answers</span>
+          <span class="block text-sm text-gray-500 mt-1">The dataset behind these findings.</span>
+        </a>
+        <a href="/blog/track-brand-ai-search/" class="block p-5 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+          <span class="block text-sm font-semibold text-gray-900">How to Track Your Brand in AI Search</span>
+          <span class="block text-sm text-gray-500 mt-1">Code and method for running your own baseline.</span>
+        </a>
+          </div>
+        </section>
+
+      </div>
+    </article>
+  </main>
+
+  <footer class="border-t border-gray-100 px-5 sm:px-6 py-8">
+    <div class="max-w-3xl mx-auto text-center text-sm text-gray-400">
+      © 2026 IndexHot. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var menuBtn = document.getElementById('menu-btn');
+      var mobileMenu = document.getElementById('mobile-menu');
+      menuBtn.addEventListener('click', function () {
+        var isHidden = mobileMenu.classList.toggle('hidden');
+        menuBtn.setAttribute('aria-expanded', String(!isHidden));
+      });
+      mobileMenu.addEventListener('click', function (e) {
+        if (e.target.tagName === 'A') {
+          mobileMenu.classList.add('hidden');
+          menuBtn.setAttribute('aria-expanded', 'false');
+        }
+      });
+    })();
+  </script>
+</body>
