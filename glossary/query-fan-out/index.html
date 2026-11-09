@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>What is Query Fan-Out? — IndexHot Glossary</title>
-  <meta name="description" content="Query Fan-Out: Query fan-out is the technique of decomposing a single user query into multiple related sub-queries, retrieving results for each, and then synthesisin..." />
+  <meta name="description" content="Query Fan-Out: Query fan-out is the technique of decomposing a single user query into multiple related sub-queries, retrieving results for each, and then…" />
   <link rel="canonical" href="https://indexhot.com/glossary/query-fan-out/" />
   <meta property="og:type" content="article" />
   <meta property="og:title" content="What is Query Fan-Out? — IndexHot Glossary" />
@@ -132,6 +132,8 @@
           </h1>
         </header>
 
+        <p class="text-xs text-gray-400 mb-6">Last updated November 2026 · Reviewed against the IndexHot GEO Measurement Standard v1.0</p>
+
         <div class="text-lg text-gray-700 leading-relaxed border-l-4 border-blue-600 pl-4 mb-8">
           <p>Query fan-out is the technique of decomposing a single user query into multiple related sub-queries, retrieving results for each, and then synthesising one answer from the combined evidence.</p>
         </div>
@@ -156,6 +158,37 @@
             <li>Writing one page that tries to answer every sub-question superficially.</li>
             <li>Leaving obvious follow-up questions unanswered on the page.</li>
             <li>Ignoring long-tail variants of your head term.</li>
+          </ul>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Real example</h2>
+          <p class="text-gray-600 leading-relaxed">A single page targeting 'best payroll software' received no citations, while six narrow pages on contractor pay, multi-state tax and PEO comparison were cited for composite questions. The broad page lost to specialist pages answering the sub-queries the system actually ran.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">How to measure it</h2>
+          <p class="text-gray-600 leading-relaxed">List the sub-questions implied by your head term, then check which of your pages answers each one in isolation. Gaps in that list are the real content plan.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Where it breaks</h2>
+          <p class="text-gray-600 leading-relaxed">Fan-out varies by engine and phrasing. Decomposition that happens for one question may not happen for a near-equivalent one, so coverage needs redundancy rather than one perfect page.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">How it differs from adjacent terms</h2>
+          <p class="text-gray-600 leading-relaxed">Semantic Search is the matching technique; query fan-out is the decomposition that happens before matching. Compared with Topical Authority, fan-out explains why coverage breadth matters mechanically rather than reputationally: each sub-query needs a page because each is retrieved separately. A single comprehensive page can lose to six narrow pages even when it is better written, because the narrow pages match individual retrievals more closely.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Quick checklist</h2>
+          <ul class="list-disc pl-5 space-y-2 text-gray-600 leading-relaxed marker:text-blue-500">
+            <li>Head term decomposed into its implied sub-questions.</li>
+            <li>Each sub-question has a page that answers it alone.</li>
+            <li>Hub links to each sub-page and each links back.</li>
+            <li>No sub-question answered only inside a long paragraph.</li>
+            <li>Near-duplicate phrasings covered, since decomposition varies.</li>
           </ul>
         </section>
 
@@ -187,6 +220,14 @@
             <a href="/glossary/topical-authority/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
               <span class="block text-sm font-semibold text-gray-900">Topical Authority</span>
               <span class="block mt-1 text-xs text-gray-500 leading-relaxed">depth and consistency of coverage across a topic</span>
+            </a>
+            <a href="/glossary/retrieval-augmented-generation/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Retrieval-Augmented Generation</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">retrieving external documents before generating an answer</span>
+            </a>
+            <a href="/glossary/grounding/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Grounding</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">anchoring generated output to verifiable external sources</span>
             </a>
           </div>
           <a href="/glossary/" class="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 transition-colors">

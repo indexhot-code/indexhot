@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>What is Chunking? — IndexHot Glossary</title>
-  <meta name="description" content="Chunking: Chunking is the process of dividing a document into smaller passages, typically a few sentences or a paragraph, so each can be embedded, retrieved and..." />
+  <meta name="description" content="Chunking: Chunking is the process of dividing a document into smaller passages, typically a few sentences or a paragraph, so each can be embedded…" />
   <link rel="canonical" href="https://indexhot.com/glossary/chunking/" />
   <meta property="og:type" content="article" />
   <meta property="og:title" content="What is Chunking? — IndexHot Glossary" />
@@ -132,6 +132,8 @@
           </h1>
         </header>
 
+        <p class="text-xs text-gray-400 mb-6">Last updated November 2026 · Reviewed against the IndexHot GEO Measurement Standard v1.0</p>
+
         <div class="text-lg text-gray-700 leading-relaxed border-l-4 border-blue-600 pl-4 mb-8">
           <p>Chunking is the process of dividing a document into smaller passages, typically a few sentences or a paragraph, so each can be embedded, retrieved and passed to a model independently.</p>
         </div>
@@ -156,6 +158,37 @@
             <li>Writing answers that only make sense after reading the previous two sections.</li>
             <li>Putting critical facts in a table that fragments badly when split.</li>
             <li>Burying the direct answer in the middle of a long paragraph.</li>
+          </ul>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Real example</h2>
+          <p class="text-gray-600 leading-relaxed">An answer to a warranty question quoted the wrong duration because the qualifying sentence sat in the following paragraph, outside the retrieved chunk. Merging the condition into the same sentence fixed the error permanently.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">How to measure it</h2>
+          <p class="text-gray-600 leading-relaxed">Go through your top pages and mark where a claim spans a heading boundary. Each of those boundaries is a place where the machine can lose half the meaning.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Where it breaks</h2>
+          <p class="text-gray-600 leading-relaxed">Over-splitting also hurts. Paragraphs of one sentence each fragment the reasoning, so the model sees isolated facts with no relation between them.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">How it differs from adjacent terms</h2>
+          <p class="text-gray-600 leading-relaxed">Vector Embeddings measure similarity between chunks; chunking decides what a chunk is. Compared with Content Extractability, chunking is a mechanical property of the page while extractability is whether the resulting passage still makes sense alone. A page can be split cleanly and still produce chunks that are meaningless out of context.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Quick checklist</h2>
+          <ul class="list-disc pl-5 space-y-2 text-gray-600 leading-relaxed marker:text-blue-500">
+            <li>Each claim contained within one paragraph.</li>
+            <li>Headings describe the question the section answers.</li>
+            <li>Conditions and qualifiers inside the same sentence as the claim.</li>
+            <li>Tables accompanied by a plain-text summary.</li>
+            <li>Section length kept under roughly 150 words unless a list.</li>
           </ul>
         </section>
 
@@ -187,6 +220,14 @@
             <a href="/glossary/vector-embeddings/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
               <span class="block text-sm font-semibold text-gray-900">Vector Embeddings</span>
               <span class="block mt-1 text-xs text-gray-500 leading-relaxed">numeric representations of text used for similarity matching</span>
+            </a>
+            <a href="/glossary/grounding/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Grounding</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">anchoring generated output to verifiable external sources</span>
+            </a>
+            <a href="/glossary/hallucination/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Hallucination</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">confidently stated output with no basis in the sources</span>
             </a>
           </div>
           <a href="/glossary/" class="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 transition-colors">

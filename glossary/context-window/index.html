@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>What is Context Window? — IndexHot Glossary</title>
-  <meta name="description" content="Context Window: A context window is the maximum number of tokens a language model can process in a single request, covering the system instruction, the user query, re..." />
+  <meta name="description" content="Context Window: A context window is the maximum number of tokens a language model can process in a single request, covering the system instruction, the…" />
   <link rel="canonical" href="https://indexhot.com/glossary/context-window/" />
   <meta property="og:type" content="article" />
   <meta property="og:title" content="What is Context Window? — IndexHot Glossary" />
@@ -132,6 +132,8 @@
           </h1>
         </header>
 
+        <p class="text-xs text-gray-400 mb-6">Last updated November 2026 · Reviewed against the IndexHot GEO Measurement Standard v1.0</p>
+
         <div class="text-lg text-gray-700 leading-relaxed border-l-4 border-blue-600 pl-4 mb-8">
           <p>A context window is the maximum number of tokens a language model can process in a single request, covering the system instruction, the user query, retrieved passages and the generated answer together.</p>
         </div>
@@ -156,6 +158,37 @@
             <li>Assuming longer pages get more of themselves into the context.</li>
             <li>Padding sections with restated introductions that consume budget.</li>
             <li>Splitting one claim across multiple paragraphs so no single passage carries it.</li>
+          </ul>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Real example</h2>
+          <p class="text-gray-600 leading-relaxed">A 2,000-word guide buried its key benchmark in the final section. Assistants consistently quoted a shorter competitor page that stated the same benchmark in its second paragraph. Truncation, not quality, decided the outcome.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">How to measure it</h2>
+          <p class="text-gray-600 leading-relaxed">Put the single most important claim in the first two sentences of its section. If it only appears after a long build-up, assume it will be cut.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Where it breaks</h2>
+          <p class="text-gray-600 leading-relaxed">Larger windows do not remove the incentive to be concise. Systems still select few passages because precision and cost dominate, so length rarely buys inclusion.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">How it differs from adjacent terms</h2>
+          <p class="text-gray-600 leading-relaxed">Chunking decides the units; the context window decides how many of them fit. Compared with Content Extractability, context is a hard budget rather than a quality judgement: content beyond the limit is simply never seen. This is why the placement of a claim inside a section matters as much as the claim itself.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Quick checklist</h2>
+          <ul class="list-disc pl-5 space-y-2 text-gray-600 leading-relaxed marker:text-blue-500">
+            <li>Most important claim within the first two sentences of a section.</li>
+            <li>No essential fact in the final third of a long page.</li>
+            <li>Repeated intros and restatements removed.</li>
+            <li>Tables and lists kept compact enough to travel intact.</li>
+            <li>Page length justified by information, not word count.</li>
           </ul>
         </section>
 
@@ -187,6 +220,14 @@
             <a href="/glossary/content-extractability/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
               <span class="block text-sm font-semibold text-gray-900">Content Extractability</span>
               <span class="block mt-1 text-xs text-gray-500 leading-relaxed">how easily a machine can isolate, quote and reuse your content</span>
+            </a>
+            <a href="/glossary/grounding/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Grounding</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">anchoring generated output to verifiable external sources</span>
+            </a>
+            <a href="/glossary/hallucination/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Hallucination</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">confidently stated output with no basis in the sources</span>
             </a>
           </div>
           <a href="/glossary/" class="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 transition-colors">

@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>What is Content Extractability? — IndexHot Glossary</title>
-  <meta name="description" content="Content Extractability: Content extractability is the degree to which a machine can isolate a meaningful passage from your page, understand it without surrounding context, an..." />
+  <meta name="description" content="Content Extractability: Content extractability is the degree to which a machine can isolate a meaningful passage from your page, understand it without…" />
   <link rel="canonical" href="https://indexhot.com/glossary/content-extractability/" />
   <meta property="og:type" content="article" />
   <meta property="og:title" content="What is Content Extractability? — IndexHot Glossary" />
@@ -132,6 +132,8 @@
           </h1>
         </header>
 
+        <p class="text-xs text-gray-400 mb-6">Last updated November 2026 · Reviewed against the IndexHot GEO Measurement Standard v1.0</p>
+
         <div class="text-lg text-gray-700 leading-relaxed border-l-4 border-blue-600 pl-4 mb-8">
           <p>Content extractability is the degree to which a machine can isolate a meaningful passage from your page, understand it without surrounding context, and reuse it accurately in a generated answer.</p>
         </div>
@@ -156,6 +158,37 @@
             <li>Putting specifications or pricing inside images and PDFs.</li>
             <li>Writing paragraphs that depend on the previous paragraph to make sense.</li>
             <li>Splitting a claim across a heading boundary so no chunk contains it whole.</li>
+          </ul>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Real example</h2>
+          <p class="text-gray-600 leading-relaxed">A manufacturer's specification table existed only as a JPG inside a brochure. Assistants quoted a competitor's numbers for three quarters. Publishing the same data as HTML lifted the brand into answers for twelve component queries.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">How to measure it</h2>
+          <p class="text-gray-600 leading-relaxed">Paste your key claim into an empty document with no surrounding context and read it aloud. If it is incomplete, ambiguous or unattributed, it will not survive extraction.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Where it breaks</h2>
+          <p class="text-gray-600 leading-relaxed">Extractability favours simple claims. Complex, conditional statements may be technically extractable but will be simplified into something less accurate.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">How it differs from adjacent terms</h2>
+          <p class="text-gray-600 leading-relaxed">Chunking is the mechanical split; extractability is whether the result still means something alone. Compared with an AI Snippet, extractability is the property and a snippet is one possible output. A page can be chunked perfectly and remain unextractable if its claims depend on a narrative built across sections.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Quick checklist</h2>
+          <ul class="list-disc pl-5 space-y-2 text-gray-600 leading-relaxed marker:text-blue-500">
+            <li>Key claims copied into a blank document and read alone.</li>
+            <li>No critical data locked inside images or PDFs.</li>
+            <li>Pronouns replaced with explicit subjects.</li>
+            <li>Qualifications kept in the same sentence as the claim.</li>
+            <li>Tables paired with a text summary of their main point.</li>
           </ul>
         </section>
 
@@ -187,6 +220,14 @@
             <a href="/glossary/crawlability/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
               <span class="block text-sm font-semibold text-gray-900">Crawlability</span>
               <span class="block mt-1 text-xs text-gray-500 leading-relaxed">whether crawlers can discover and fetch your pages</span>
+            </a>
+            <a href="/glossary/indexability/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Indexability</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">whether a page is eligible to be stored in a search index</span>
+            </a>
+            <a href="/glossary/canonical-tag/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Canonical Tag</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">a signal declaring the preferred URL for a piece of content</span>
             </a>
           </div>
           <a href="/glossary/" class="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 transition-colors">

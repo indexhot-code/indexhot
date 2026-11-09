@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>What is Grounding? — IndexHot Glossary</title>
-  <meta name="description" content="Grounding: Grounding is the process of anchoring a model's output to verifiable external sources, so that claims in the answer can be traced back to a document r..." />
+  <meta name="description" content="Grounding: Grounding is the process of anchoring a model's output to verifiable external sources, so that claims in the answer can be traced back to a…" />
   <link rel="canonical" href="https://indexhot.com/glossary/grounding/" />
   <meta property="og:type" content="article" />
   <meta property="og:title" content="What is Grounding? — IndexHot Glossary" />
@@ -132,6 +132,8 @@
           </h1>
         </header>
 
+        <p class="text-xs text-gray-400 mb-6">Last updated November 2026 · Reviewed against the IndexHot GEO Measurement Standard v1.0</p>
+
         <div class="text-lg text-gray-700 leading-relaxed border-l-4 border-blue-600 pl-4 mb-8">
           <p>Grounding is the process of anchoring a model's output to verifiable external sources, so that claims in the answer can be traced back to a document rather than invented.</p>
         </div>
@@ -156,6 +158,37 @@
             <li>Publishing claims with no traceable evidence, which gives the model nothing safe to ground on.</li>
             <li>Contradicting your own pages, which makes grounding unreliable.</li>
             <li>Assuming a link in the answer guarantees your wording was used.</li>
+          </ul>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Real example</h2>
+          <p class="text-gray-600 leading-relaxed">A health brand published an unsourced claim about recovery times. Assistants either omitted it or attributed a clinic's figure instead. Adding a dated study reference and a methods note made the claim citable, and it began appearing verbatim in answers within a month.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">How to measure it</h2>
+          <p class="text-gray-600 leading-relaxed">For each claim you want repeated, ask: could a careful reader verify this from the page alone, including the date and the source? If not, it will not ground reliably.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Where it breaks</h2>
+          <p class="text-gray-600 leading-relaxed">Grounding favours the simple over the nuanced. Pages that hedge every statement with caveats often get replaced by a clearer, less accurate competitor.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">How it differs from adjacent terms</h2>
+          <p class="text-gray-600 leading-relaxed">A citation is the visible attribution; grounding is the underlying process that produces it. An answer can cite a page it barely used, and it can use a page it never links. Compared with RAG, grounding is the objective while RAG is one common means of achieving it. For brands, the practical test is whether your specific claim can be traced to your page, not whether your domain appears in a source list.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Quick checklist</h2>
+          <ul class="list-disc pl-5 space-y-2 text-gray-600 leading-relaxed marker:text-blue-500">
+            <li>Every factual claim has a date and a named source.</li>
+            <li>Numbers stated with units, region and eligibility.</li>
+            <li>No page on the site contradicts another on a core fact.</li>
+            <li>Claims specific enough that a competitor could not supply them.</li>
+            <li>Superseded figures removed rather than left in place.</li>
           </ul>
         </section>
 
@@ -187,6 +220,14 @@
             <a href="/glossary/citation/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
               <span class="block text-sm font-semibold text-gray-900">Citation</span>
               <span class="block mt-1 text-xs text-gray-500 leading-relaxed">attribution of a domain as a source inside an AI answer</span>
+            </a>
+            <a href="/glossary/query-fan-out/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Query Fan-Out</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">splitting one query into several sub-queries searched in parallel</span>
+            </a>
+            <a href="/glossary/semantic-search/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Semantic Search</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">retrieval by meaning rather than exact keyword match</span>
             </a>
           </div>
           <a href="/glossary/" class="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 transition-colors">

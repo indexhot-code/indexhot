@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>What is llms.txt? — IndexHot Glossary</title>
-  <meta name="description" content="llms.txt: llms.txt is a proposed convention for placing a plain-text file at a site's root that summarises its purpose and links key content, intended to help l..." />
+  <meta name="description" content="llms.txt: llms.txt is a proposed convention for placing a plain-text file at a site's root that summarises its purpose and links key content, intended to…" />
   <link rel="canonical" href="https://indexhot.com/glossary/llms-txt/" />
   <meta property="og:type" content="article" />
   <meta property="og:title" content="What is llms.txt? — IndexHot Glossary" />
@@ -132,6 +132,8 @@
           </h1>
         </header>
 
+        <p class="text-xs text-gray-400 mb-6">Last updated November 2026 · Reviewed against the IndexHot GEO Measurement Standard v1.0</p>
+
         <div class="text-lg text-gray-700 leading-relaxed border-l-4 border-blue-600 pl-4 mb-8">
           <p>llms.txt is a proposed convention for placing a plain-text file at a site's root that summarises its purpose and links key content, intended to help language models understand and navigate the site.</p>
         </div>
@@ -156,6 +158,37 @@
             <li>Assuming llms.txt is officially supported and prioritising it over fundamentals.</li>
             <li>Dumping the entire site structure instead of curating what matters.</li>
             <li>Publishing it once and letting links rot.</li>
+          </ul>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Real example</h2>
+          <p class="text-gray-600 leading-relaxed">A documentation site published llms.txt listing 40 curated pages. Crawl logs showed two AI user-agents requesting it, and no measurable change in citation rates over one quarter. The effort was small, the return was close to zero.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">How to measure it</h2>
+          <p class="text-gray-600 leading-relaxed">Check server logs for requests to the file. If no crawler fetches it, the file is doing nothing regardless of how well it is written.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Where it breaks</h2>
+          <p class="text-gray-600 leading-relaxed">Treating llms.txt as a ranking lever is a category error. It is an unendorsed proposal, and crawlability plus entity clarity remain the actual determinants.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">How it differs from adjacent terms</h2>
+          <p class="text-gray-600 leading-relaxed">Crawlability is access; llms.txt is a curated summary that assumes access already works. Compared with Indexability, which determines whether pages can be stored, llms.txt influences nothing structural and is not an endorsed specification. Treating it as a substitute for crawl and index fundamentals inverts the priority order.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Quick checklist</h2>
+          <ul class="list-disc pl-5 space-y-2 text-gray-600 leading-relaxed marker:text-blue-500">
+            <li>Server logs checked for actual requests to the file.</li>
+            <li>Curation limited to genuinely important pages.</li>
+            <li>Links verified and kept current.</li>
+            <li>Fundamentals handled first: robots, status codes, internal links.</li>
+            <li>Claims about its effect kept proportional to evidence.</li>
           </ul>
         </section>
 
@@ -187,6 +220,14 @@
             <a href="/glossary/content-extractability/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
               <span class="block text-sm font-semibold text-gray-900">Content Extractability</span>
               <span class="block mt-1 text-xs text-gray-500 leading-relaxed">how easily a machine can isolate, quote and reuse your content</span>
+            </a>
+            <a href="/glossary/entity-clarity/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Entity Clarity</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">how unambiguously a model can identify your brand as a distinct entity</span>
+            </a>
+            <a href="/glossary/knowledge-graph/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Knowledge Graph</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">a structured network of entities and their relationships</span>
             </a>
           </div>
           <a href="/glossary/" class="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 transition-colors">

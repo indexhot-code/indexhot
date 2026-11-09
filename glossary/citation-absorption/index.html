@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>What is Citation Absorption? — IndexHot Glossary</title>
-  <meta name="description" content="Citation Absorption: Citation absorption describes how much of a cited source's substance is actually incorporated into an AI answer, ranging from a bare link with no reus..." />
+  <meta name="description" content="Citation Absorption: Citation absorption describes how much of a cited source's substance is actually incorporated into an AI answer, ranging from a bare…" />
   <link rel="canonical" href="https://indexhot.com/glossary/citation-absorption/" />
   <meta property="og:type" content="article" />
   <meta property="og:title" content="What is Citation Absorption? — IndexHot Glossary" />
@@ -132,6 +132,8 @@
           </h1>
         </header>
 
+        <p class="text-xs text-gray-400 mb-6">Last updated November 2026 · Reviewed against the IndexHot GEO Measurement Standard v1.0</p>
+
         <div class="text-lg text-gray-700 leading-relaxed border-l-4 border-blue-600 pl-4 mb-8">
           <p>Citation absorption describes how much of a cited source's substance is actually incorporated into an AI answer, ranging from a bare link with no reuse to a claim or recommendation lifted almost intact.</p>
         </div>
@@ -156,6 +158,37 @@
             <li>Assuming a citation implies endorsement.</li>
             <li>Optimising for citation volume in systems that cite everything.</li>
             <li>Ignoring absorption because it is harder to automate.</li>
+          </ul>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Real example</h2>
+          <p class="text-gray-600 leading-relaxed">The same 602-prompt study found Perplexity attaching far more citations per answer than ChatGPT, while ChatGPT reused more of each cited source. Citation volume and citation depth were inverse, so a single metric could not describe either engine.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">How to measure it</h2>
+          <p class="text-gray-600 leading-relaxed">Score absorption on an explicit scale from none to full claim reuse, then report the distribution. A mean hides whether citations are cosmetic or substantive.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Where it breaks</h2>
+          <p class="text-gray-600 leading-relaxed">Absorption of a brand name is not absorption of a claim. Naming you in a list is the weakest form and should not be scored alongside adopting your reasoning.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">How it differs from adjacent terms</h2>
+          <p class="text-gray-600 leading-relaxed">Absorption Rate is the aggregate; citation absorption is the property being measured at the level of a single answer. Compared with Citation, which records that a source was attached, absorption records whether attaching it changed what the answer says. The gap between those two is where most inflated GEO reporting lives.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Quick checklist</h2>
+          <ul class="list-disc pl-5 space-y-2 text-gray-600 leading-relaxed marker:text-blue-500">
+            <li>Absorption scale defined in writing before coding starts.</li>
+            <li>Bare attribution scored separately from claim reuse.</li>
+            <li>Answers that name you without using your content scored low.</li>
+            <li>Distribution reported, not only the mean.</li>
+            <li>A sample re-coded after any rubric change.</li>
           </ul>
         </section>
 
@@ -187,6 +220,14 @@
             <a href="/glossary/content-extractability/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
               <span class="block text-sm font-semibold text-gray-900">Content Extractability</span>
               <span class="block mt-1 text-xs text-gray-500 leading-relaxed">how easily a machine can isolate, quote and reuse your content</span>
+            </a>
+            <a href="/glossary/mention-rate/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Mention Rate</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">the share of tracked prompts in which your brand is named</span>
+            </a>
+            <a href="/glossary/citation-rate/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Citation Rate</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">the share of prompts in which your domain is linked as a source</span>
             </a>
           </div>
           <a href="/glossary/" class="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 transition-colors">

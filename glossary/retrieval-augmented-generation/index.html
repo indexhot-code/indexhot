@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>What is Retrieval-Augmented Generation (RAG)? — IndexHot Glossary</title>
-  <meta name="description" content="Retrieval-Augmented Generation: Retrieval-Augmented Generation (RAG) is an architecture in which a language model retrieves relevant documents from an external index before generatin..." />
+  <title>What is Retrieval-Augmented Generation? — IndexHot Glossary</title>
+  <meta name="description" content="Retrieval-Augmented Generation: Retrieval-Augmented Generation (RAG) is an architecture in which a language model retrieves relevant documents from an…" />
   <link rel="canonical" href="https://indexhot.com/glossary/retrieval-augmented-generation/" />
   <meta property="og:type" content="article" />
-  <meta property="og:title" content="What is Retrieval-Augmented Generation (RAG)? — IndexHot Glossary" />
+  <meta property="og:title" content="What is Retrieval-Augmented Generation? — IndexHot Glossary" />
   <meta property="og:description" content="Retrieval-Augmented Generation: Retrieval-Augmented Generation (RAG) is an architecture in which a language model retrieves relevant documents from an external index before generatin..." />
   <meta property="og:url" content="https://indexhot.com/glossary/retrieval-augmented-generation/" />
   <meta property="og:site_name" content="IndexHot" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="What is Retrieval-Augmented Generation (RAG)? — IndexHot Glossary" />
+  <meta name="twitter:title" content="What is Retrieval-Augmented Generation? — IndexHot Glossary" />
   <meta name="twitter:description" content="Retrieval-Augmented Generation: Retrieval-Augmented Generation (RAG) is an architecture in which a language model retrieves relevant documents from an external index before generatin..." />
   <link rel="stylesheet" href="../../tailwind.min.css" />
   <style>
@@ -132,6 +132,8 @@
           </h1>
         </header>
 
+        <p class="text-xs text-gray-400 mb-6">Last updated November 2026 · Reviewed against the IndexHot GEO Measurement Standard v1.0</p>
+
         <div class="text-lg text-gray-700 leading-relaxed border-l-4 border-blue-600 pl-4 mb-8">
           <p>Retrieval-Augmented Generation (RAG) is an architecture in which a language model retrieves relevant documents from an external index before generating a response, using those documents as evidence.</p>
         </div>
@@ -156,6 +158,37 @@
             <li>Assuming training-data presence is enough and ignoring fresh retrieval.</li>
             <li>Publishing content that only works as a whole document, not as passages.</li>
             <li>Blocking crawlers that feed retrieval indexes.</li>
+          </ul>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Real example</h2>
+          <p class="text-gray-600 leading-relaxed">A documentation site blocked one AI crawler during a migration and forgot to reverse it. Citation rate fell from 34 to 3 percent of prompts and stayed there for eleven weeks, even after the content was rewritten twice. Restoring crawl access recovered most of it in nine days.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">How to measure it</h2>
+          <p class="text-gray-600 leading-relaxed">Fetch your key pages with a plain HTTP client, no JavaScript, and confirm the body text is present. Then check robots.txt against each named AI user-agent.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Where it breaks</h2>
+          <p class="text-gray-600 leading-relaxed">RAG does not guarantee freshness. Some pipelines retrieve from cached indexes that update on their own schedule, so a page published today may not be retrievable for days.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">How it differs from adjacent terms</h2>
+          <p class="text-gray-600 leading-relaxed">Grounding is what RAG is for; RAG is the mechanism that makes grounding possible. A system can ground without retrieval by citing training data, and it can retrieve without grounding by fetching pages and ignoring them. Compared with Semantic Search, RAG is the full pipeline while semantic search is one retrieval strategy inside it, alongside keyword and hybrid approaches.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Quick checklist</h2>
+          <ul class="list-disc pl-5 space-y-2 text-gray-600 leading-relaxed marker:text-blue-500">
+            <li>Primary content served in the initial HTML, no JavaScript needed.</li>
+            <li>robots.txt checked against each named AI user-agent.</li>
+            <li>No CDN challenge served to non-browser clients.</li>
+            <li>Key pages within three internal clicks of the homepage.</li>
+            <li>Retrieval confirmed by asking questions your page answers.</li>
           </ul>
         </section>
 
@@ -187,6 +220,14 @@
             <a href="/glossary/semantic-search/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
               <span class="block text-sm font-semibold text-gray-900">Semantic Search</span>
               <span class="block mt-1 text-xs text-gray-500 leading-relaxed">retrieval by meaning rather than exact keyword match</span>
+            </a>
+            <a href="/glossary/hallucination/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Hallucination</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">confidently stated output with no basis in the sources</span>
+            </a>
+            <a href="/glossary/query-fan-out/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Query Fan-Out</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">splitting one query into several sub-queries searched in parallel</span>
             </a>
           </div>
           <a href="/glossary/" class="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 transition-colors">

@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>What is Organization Schema? — IndexHot Glossary</title>
-  <meta name="description" content="Organization Schema: Organization schema is structured data using the Schema.org Organization type to declare an organisation's name, URL, logo, social profiles and other ..." />
+  <meta name="description" content="Organization Schema: Organization schema is structured data using the Schema.org Organization type to declare an organisation's name, URL, logo, social…" />
   <link rel="canonical" href="https://indexhot.com/glossary/organization-schema/" />
   <meta property="og:type" content="article" />
   <meta property="og:title" content="What is Organization Schema? — IndexHot Glossary" />
@@ -132,6 +132,8 @@
           </h1>
         </header>
 
+        <p class="text-xs text-gray-400 mb-6">Last updated November 2026 · Reviewed against the IndexHot GEO Measurement Standard v1.0</p>
+
         <div class="text-lg text-gray-700 leading-relaxed border-l-4 border-blue-600 pl-4 mb-8">
           <p>Organization schema is structured data using the Schema.org Organization type to declare an organisation's name, URL, logo, social profiles and other identifying attributes in machine-readable form.</p>
         </div>
@@ -156,6 +158,37 @@
             <li>Using a relative logo path that cannot be resolved externally.</li>
             <li>Listing sameAs profiles that are dormant or belong to another entity.</li>
             <li>Declaring a legal name that appears nowhere on the page.</li>
+          </ul>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Real example</h2>
+          <p class="text-gray-600 leading-relaxed">An agency's Organization block used a relative logo path and listed four dormant social accounts. After switching to an absolute URL and three active profiles, entity descriptions across assistants stabilised and the logo appeared correctly in one interface.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">How to measure it</h2>
+          <p class="text-gray-600 leading-relaxed">Fetch your homepage JSON-LD, resolve every URL as an external client would, and open each sameAs profile to confirm it is live and represents the same entity.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Where it breaks</h2>
+          <p class="text-gray-600 leading-relaxed">Markup cannot fix inconsistency elsewhere. If your directory listings disagree with the markup, the conflict remains and the markup simply adds a fourth version.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">How it differs from adjacent terms</h2>
+          <p class="text-gray-600 leading-relaxed">Schema Markup is the general practice; Organization schema is the specific type every site needs first. Compared with a Brand Entity, markup declares attributes while the entity is what systems infer from everything they see. A single well-formed Organization block saves an enormous amount of ambiguity for very little effort.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Quick checklist</h2>
+          <ul class="list-disc pl-5 space-y-2 text-gray-600 leading-relaxed marker:text-blue-500">
+            <li>One Organization block on the homepage only.</li>
+            <li>Absolute logo URL that resolves publicly.</li>
+            <li>sameAs limited to live profiles you control.</li>
+            <li>Name identical to the visible brand name.</li>
+            <li>Founding date and address included where accurate.</li>
           </ul>
         </section>
 
@@ -187,6 +220,14 @@
             <a href="/glossary/brand-entity/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
               <span class="block text-sm font-semibold text-gray-900">Brand Entity</span>
               <span class="block mt-1 text-xs text-gray-500 leading-relaxed">your brand as a machine-resolvable object with attributes and relations</span>
+            </a>
+            <a href="/glossary/entity-clarity/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Entity Clarity</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">how unambiguously a model can identify your brand as a distinct entity</span>
+            </a>
+            <a href="/glossary/knowledge-graph/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Knowledge Graph</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">a structured network of entities and their relationships</span>
             </a>
           </div>
           <a href="/glossary/" class="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 transition-colors">

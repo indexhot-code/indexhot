@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>What is Crawlability? — IndexHot Glossary</title>
-  <meta name="description" content="Crawlability: Crawlability is the degree to which automated crawlers can discover your URLs and fetch their content, determined by robots directives, internal links..." />
+  <meta name="description" content="Crawlability: Crawlability is the degree to which automated crawlers can discover your URLs and fetch their content, determined by robots directives…" />
   <link rel="canonical" href="https://indexhot.com/glossary/crawlability/" />
   <meta property="og:type" content="article" />
   <meta property="og:title" content="What is Crawlability? — IndexHot Glossary" />
@@ -132,6 +132,8 @@
           </h1>
         </header>
 
+        <p class="text-xs text-gray-400 mb-6">Last updated November 2026 · Reviewed against the IndexHot GEO Measurement Standard v1.0</p>
+
         <div class="text-lg text-gray-700 leading-relaxed border-l-4 border-blue-600 pl-4 mb-8">
           <p>Crawlability is the degree to which automated crawlers can discover your URLs and fetch their content, determined by robots directives, internal links, server responses and rendering requirements.</p>
         </div>
@@ -156,6 +158,37 @@
             <li>Blocking AI crawlers in robots.txt while expecting citations.</li>
             <li>Relying on client-side rendering for primary content.</li>
             <li>Leaving important pages reachable only through search or filters.</li>
+          </ul>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Real example</h2>
+          <p class="text-gray-600 leading-relaxed">A site's CDN returned a JavaScript challenge to non-browser clients. Google indexed the pages normally, but AI crawlers received an empty shell, so citation rate stayed near zero despite good rankings. Whitelisting verified crawlers fixed it within days.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">How to measure it</h2>
+          <p class="text-gray-600 leading-relaxed">Fetch a page with curl and no JavaScript. If the body text is missing, assume at least one AI crawler sees the same empty response.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Where it breaks</h2>
+          <p class="text-gray-600 leading-relaxed">Crawl access is binary but crawl frequency is not. A page can be crawlable and still fetched rarely, which slows every content change you make.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">How it differs from adjacent terms</h2>
+          <p class="text-gray-600 leading-relaxed">Indexability is the next gate; crawlability is whether a bot can fetch the page at all. Compared with a Canonical Tag, crawl access is binary while canonicalisation is a signal about which URL to prefer. A crawler that cannot fetch the page never reaches the canonical decision.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Quick checklist</h2>
+          <ul class="list-disc pl-5 space-y-2 text-gray-600 leading-relaxed marker:text-blue-500">
+            <li>Pages fetched with a plain client and no JavaScript.</li>
+            <li>robots.txt reviewed per user-agent, not globally.</li>
+            <li>CDN and WAF checked for challenges on bot traffic.</li>
+            <li>Status codes verified after every migration.</li>
+            <li>Sitemap entries matching live, crawlable URLs.</li>
           </ul>
         </section>
 
@@ -187,6 +220,14 @@
             <a href="/glossary/canonical-tag/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
               <span class="block text-sm font-semibold text-gray-900">Canonical Tag</span>
               <span class="block mt-1 text-xs text-gray-500 leading-relaxed">a signal declaring the preferred URL for a piece of content</span>
+            </a>
+            <a href="/glossary/internal-linking/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Internal Linking</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">links between your own pages that distribute authority and signal structure</span>
+            </a>
+            <a href="/glossary/ai-referral-traffic/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">AI Referral Traffic</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">visits that arrive from an AI answer or assistant</span>
             </a>
           </div>
           <a href="/glossary/" class="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 transition-colors">

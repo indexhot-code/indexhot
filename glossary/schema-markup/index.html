@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>What is Schema Markup? — IndexHot Glossary</title>
-  <meta name="description" content="Schema Markup: Schema markup is structured data added to a page, using a shared vocabulary such as Schema.org, that describes the page's entities, relationships and ..." />
+  <meta name="description" content="Schema Markup: Schema markup is structured data added to a page, using a shared vocabulary such as Schema.org, that describes the page's entities…" />
   <link rel="canonical" href="https://indexhot.com/glossary/schema-markup/" />
   <meta property="og:type" content="article" />
   <meta property="og:title" content="What is Schema Markup? — IndexHot Glossary" />
@@ -132,6 +132,8 @@
           </h1>
         </header>
 
+        <p class="text-xs text-gray-400 mb-6">Last updated November 2026 · Reviewed against the IndexHot GEO Measurement Standard v1.0</p>
+
         <div class="text-lg text-gray-700 leading-relaxed border-l-4 border-blue-600 pl-4 mb-8">
           <p>Schema markup is structured data added to a page, using a shared vocabulary such as Schema.org, that describes the page's entities, relationships and attributes in a machine-readable form.</p>
         </div>
@@ -156,6 +158,37 @@
             <li>Marking up content that is not visible on the page.</li>
             <li>Declaring FAQ markup for questions the page does not answer.</li>
             <li>Using conflicting names or prices between markup and copy.</li>
+          </ul>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Real example</h2>
+          <p class="text-gray-600 leading-relaxed">An e-commerce site marked up FAQPage on pages where the FAQs were collapsed and duplicated from a template. No rich results appeared, and the markup consumed crawl attention. Removing it and marking only visible, page-specific Q&A restored normal processing.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">How to measure it</h2>
+          <p class="text-gray-600 leading-relaxed">Validate every block after publishing and compare each declared value against the visible text. Mismatch is the most common cause of silent rejection.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Where it breaks</h2>
+          <p class="text-gray-600 leading-relaxed">Markup describes, it does not persuade. A thin page with perfect structured data remains thin, and the markup will not create authority that the content lacks.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">How it differs from adjacent terms</h2>
+          <p class="text-gray-600 leading-relaxed">JSON-LD is one serialisation format; schema markup is the vocabulary being expressed. Compared with Entity Clarity, markup is a declaration while clarity is an outcome that also depends on corroboration elsewhere. Perfect markup on a site whose directories disagree with it produces a fourth version of the facts, not resolution.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Quick checklist</h2>
+          <ul class="list-disc pl-5 space-y-2 text-gray-600 leading-relaxed marker:text-blue-500">
+            <li>Every declared value also visible on the page.</li>
+            <li>Markup types matched to page purpose, not applied uniformly.</li>
+            <li>Invalid JSON caught before publication.</li>
+            <li>No duplicate entity blocks with conflicting values.</li>
+            <li>FAQ markup limited to questions actually answered on the page.</li>
           </ul>
         </section>
 
@@ -187,6 +220,14 @@
             <a href="/glossary/knowledge-graph/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
               <span class="block text-sm font-semibold text-gray-900">Knowledge Graph</span>
               <span class="block mt-1 text-xs text-gray-500 leading-relaxed">a structured network of entities and their relationships</span>
+            </a>
+            <a href="/glossary/llms-txt/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">llms.txt</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">a proposed file that summarises a site for language models</span>
+            </a>
+            <a href="/glossary/topical-authority/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Topical Authority</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">depth and consistency of coverage across a topic</span>
             </a>
           </div>
           <a href="/glossary/" class="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 transition-colors">

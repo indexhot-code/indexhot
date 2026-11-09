@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>What is Vector Embeddings? — IndexHot Glossary</title>
-  <meta name="description" content="Vector Embeddings: A vector embedding is a numeric representation of text, produced by a model, that places semantically similar content close together in a high-dimensi..." />
+  <meta name="description" content="Vector Embeddings: A vector embedding is a numeric representation of text, produced by a model, that places semantically similar content close together in…" />
   <link rel="canonical" href="https://indexhot.com/glossary/vector-embeddings/" />
   <meta property="og:type" content="article" />
   <meta property="og:title" content="What is Vector Embeddings? — IndexHot Glossary" />
@@ -132,6 +132,8 @@
           </h1>
         </header>
 
+        <p class="text-xs text-gray-400 mb-6">Last updated November 2026 · Reviewed against the IndexHot GEO Measurement Standard v1.0</p>
+
         <div class="text-lg text-gray-700 leading-relaxed border-l-4 border-blue-600 pl-4 mb-8">
           <p>A vector embedding is a numeric representation of text, produced by a model, that places semantically similar content close together in a high-dimensional space so retrieval can compare meaning numerically.</p>
         </div>
@@ -156,6 +158,37 @@
             <li>Mixing several topics in one long block, which blurs the embedding.</li>
             <li>Front-loading navigation and boilerplate into the main content area.</li>
             <li>Assuming embedding quality can compensate for vague writing.</li>
+          </ul>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Real example</h2>
+          <p class="text-gray-600 leading-relaxed">A page that mixed pricing, integration details and compliance notes in one 900-word block was rarely retrieved. Splitting it into three pages, each covering one idea, produced citations for all three within a month.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">How to measure it</h2>
+          <p class="text-gray-600 leading-relaxed">Check whether each section of your page could be moved to another page without rewriting. If a section only works inside a longer argument, its embedding is diluted.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Where it breaks</h2>
+          <p class="text-gray-600 leading-relaxed">Embeddings flatten negation and conditions. 'No setup fee for annual plans' can retrieve as 'setup fee', so critical exclusions need explicit, repeated phrasing.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">How it differs from adjacent terms</h2>
+          <p class="text-gray-600 leading-relaxed">Semantic Search is the application; vector embeddings are the numeric substrate. Compared with Chunking, embeddings operate on whatever units chunking produces, so a poor split degrades the embedding before retrieval even begins. This ordering matters: fixing chunk structure usually improves retrieval more than rewriting prose, because it changes what gets embedded.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Quick checklist</h2>
+          <ul class="list-disc pl-5 space-y-2 text-gray-600 leading-relaxed marker:text-blue-500">
+            <li>One concept per section, movable without rewriting.</li>
+            <li>Navigation and boilerplate kept out of the main content.</li>
+            <li>Negations stated explicitly, not implied.</li>
+            <li>Short sections merged when they express half an idea.</li>
+            <li>Retrieval tested with paraphrases, not exact phrases.</li>
           </ul>
         </section>
 
@@ -187,6 +220,14 @@
             <a href="/glossary/retrieval-augmented-generation/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
               <span class="block text-sm font-semibold text-gray-900">Retrieval-Augmented Generation</span>
               <span class="block mt-1 text-xs text-gray-500 leading-relaxed">retrieving external documents before generating an answer</span>
+            </a>
+            <a href="/glossary/grounding/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Grounding</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">anchoring generated output to verifiable external sources</span>
+            </a>
+            <a href="/glossary/hallucination/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Hallucination</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">confidently stated output with no basis in the sources</span>
             </a>
           </div>
           <a href="/glossary/" class="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 transition-colors">

@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>What is Hybrid Search? — IndexHot Glossary</title>
-  <meta name="description" content="Hybrid Search: Hybrid search combines sparse keyword matching with dense vector similarity, merging both result sets so that retrieval catches exact terms and paraph..." />
+  <meta name="description" content="Hybrid Search: Hybrid search combines sparse keyword matching with dense vector similarity, merging both result sets so that retrieval catches exact terms…" />
   <link rel="canonical" href="https://indexhot.com/glossary/hybrid-search/" />
   <meta property="og:type" content="article" />
   <meta property="og:title" content="What is Hybrid Search? — IndexHot Glossary" />
@@ -132,6 +132,8 @@
           </h1>
         </header>
 
+        <p class="text-xs text-gray-400 mb-6">Last updated November 2026 · Reviewed against the IndexHot GEO Measurement Standard v1.0</p>
+
         <div class="text-lg text-gray-700 leading-relaxed border-l-4 border-blue-600 pl-4 mb-8">
           <p>Hybrid search combines sparse keyword matching with dense vector similarity, merging both result sets so that retrieval catches exact terms and paraphrased meaning at the same time.</p>
         </div>
@@ -156,6 +158,37 @@
             <li>Writing keyword-dense copy with no explanatory prose.</li>
             <li>Putting specifications only in images, where neither path can read them.</li>
             <li>Using internal shorthand instead of the words buyers actually type.</li>
+          </ul>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Real example</h2>
+          <p class="text-gray-600 leading-relaxed">A hardware brand listed part numbers only inside a PDF catalogue. Keyword retrieval could not read them and vector retrieval had no text to embed. Publishing an HTML specification table brought the products into answers for exact-model queries within two weeks.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">How to measure it</h2>
+          <p class="text-gray-600 leading-relaxed">Search your own pages for the exact identifiers buyers use: model numbers, SKUs, standards, prices. If they exist only in files or images, both retrieval paths are blind.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Where it breaks</h2>
+          <p class="text-gray-600 leading-relaxed">Hybrid retrieval can over-reward exact matches, pushing thin pages with the right string above substantive pages without it. Precision needs substance beside it.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">How it differs from adjacent terms</h2>
+          <p class="text-gray-600 leading-relaxed">Semantic Search covers the vector half of retrieval; hybrid search adds keyword matching to it. Compared with Vector Embeddings, hybrid retrieval does not depend on meaning alone, which is why exact identifiers still matter. The two failure modes are opposite: a purely vector system misses part numbers, a purely keyword system misses paraphrased intent.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Quick checklist</h2>
+          <ul class="list-disc pl-5 space-y-2 text-gray-600 leading-relaxed marker:text-blue-500">
+            <li>Model numbers, SKUs and standards published as HTML text.</li>
+            <li>Each identifier accompanied by a plain-language explanation.</li>
+            <li>Specifications duplicated out of PDFs into pages.</li>
+            <li>Internal shorthand replaced with buyer terminology.</li>
+            <li>Exact-match and paraphrase queries both tested.</li>
           </ul>
         </section>
 
@@ -187,6 +220,14 @@
             <a href="/glossary/re-ranking/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
               <span class="block text-sm font-semibold text-gray-900">Re-ranking</span>
               <span class="block mt-1 text-xs text-gray-500 leading-relaxed">a second pass that re-scores retrieved passages for relevance</span>
+            </a>
+            <a href="/glossary/retrieval-augmented-generation/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Retrieval-Augmented Generation</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">retrieving external documents before generating an answer</span>
+            </a>
+            <a href="/glossary/grounding/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Grounding</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">anchoring generated output to verifiable external sources</span>
             </a>
           </div>
           <a href="/glossary/" class="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 transition-colors">

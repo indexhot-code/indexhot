@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>What is AI Crawler? — IndexHot Glossary</title>
-  <meta name="description" content="AI Crawler: An AI crawler is an automated agent operated by a model provider to fetch web content, either to build training data or to serve live retrieval for an..." />
+  <meta name="description" content="AI Crawler: An AI crawler is an automated agent operated by a model provider to fetch web content, either to build training data or to serve live retrieval…" />
   <link rel="canonical" href="https://indexhot.com/glossary/ai-crawler/" />
   <meta property="og:type" content="article" />
   <meta property="og:title" content="What is AI Crawler? — IndexHot Glossary" />
@@ -132,6 +132,8 @@
           </h1>
         </header>
 
+        <p class="text-xs text-gray-400 mb-6">Last updated November 2026 · Reviewed against the IndexHot GEO Measurement Standard v1.0</p>
+
         <div class="text-lg text-gray-700 leading-relaxed border-l-4 border-blue-600 pl-4 mb-8">
           <p>An AI crawler is an automated agent operated by a model provider to fetch web content, either to build training data or to serve live retrieval for answers, identified in server logs by a specific user-agent.</p>
         </div>
@@ -156,6 +158,37 @@
             <li>Blocking all bots with a single wildcard rule during a staging setup and never reversing it.</li>
             <li>Assuming a WAF or CDN challenge does not affect legitimate crawlers.</li>
             <li>Treating training access and retrieval access as the same decision.</li>
+          </ul>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Real example</h2>
+          <p class="text-gray-600 leading-relaxed">A publisher blocked all non-Google bots in 2023 to stop scrapers. Two years later its AI citation rate was zero across every tracked prompt, while competitors with open access dominated the category's answers.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">How to measure it</h2>
+          <p class="text-gray-600 leading-relaxed">Audit server logs for 403 and 429 responses grouped by user-agent. Silent blocking at the CDN or WAF layer is common and leaves no robots.txt trace.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Where it breaks</h2>
+          <p class="text-gray-600 leading-relaxed">Crawler policy is a business trade-off, not a technical default. Blocking training while allowing retrieval is only possible where the provider exposes separate tokens.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">How it differs from adjacent terms</h2>
+          <p class="text-gray-600 leading-relaxed">Crawlability describes the site's accessibility; an AI crawler is one specific client making the request. Compared with Indexability, crawler policy is a business decision about who may use your content, not only a technical setting. The practical trap is treating all bots as one category when training and retrieval access are separable.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Quick checklist</h2>
+          <ul class="list-disc pl-5 space-y-2 text-gray-600 leading-relaxed marker:text-blue-500">
+            <li>Logs audited for 403 and 429 responses by user-agent.</li>
+            <li>robots.txt rules reviewed per named crawler.</li>
+            <li>WAF and CDN rules tested with non-browser clients.</li>
+            <li>Training and retrieval access decided separately where possible.</li>
+            <li>Any block documented with an owner and a review date.</li>
           </ul>
         </section>
 
@@ -187,6 +220,14 @@
             <a href="/glossary/llms-txt/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
               <span class="block text-sm font-semibold text-gray-900">llms.txt</span>
               <span class="block mt-1 text-xs text-gray-500 leading-relaxed">a proposed file that summarises a site for language models</span>
+            </a>
+            <a href="/glossary/content-extractability/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Content Extractability</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">how easily a machine can isolate, quote and reuse your content</span>
+            </a>
+            <a href="/glossary/canonical-tag/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Canonical Tag</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">a signal declaring the preferred URL for a piece of content</span>
             </a>
           </div>
           <a href="/glossary/" class="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 transition-colors">

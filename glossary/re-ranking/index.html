@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>What is Re-ranking? — IndexHot Glossary</title>
-  <meta name="description" content="Re-ranking: Re-ranking is the second stage of retrieval in which an initial set of candidate passages is re-scored by a stronger, more expensive model so that onl..." />
+  <meta name="description" content="Re-ranking: Re-ranking is the second stage of retrieval in which an initial set of candidate passages is re-scored by a stronger, more expensive model so…" />
   <link rel="canonical" href="https://indexhot.com/glossary/re-ranking/" />
   <meta property="og:type" content="article" />
   <meta property="og:title" content="What is Re-ranking? — IndexHot Glossary" />
@@ -132,6 +132,8 @@
           </h1>
         </header>
 
+        <p class="text-xs text-gray-400 mb-6">Last updated November 2026 · Reviewed against the IndexHot GEO Measurement Standard v1.0</p>
+
         <div class="text-lg text-gray-700 leading-relaxed border-l-4 border-blue-600 pl-4 mb-8">
           <p>Re-ranking is the second stage of retrieval in which an initial set of candidate passages is re-scored by a stronger, more expensive model so that only the most query-relevant passages reach the generation step.</p>
         </div>
@@ -156,6 +158,37 @@
             <li>Assuming that being retrieved as a candidate is the same as being used.</li>
             <li>Burying the passage that answers the query under unrelated background.</li>
             <li>Writing headings that describe the section vaguely, so the re-scorer cannot match it to the question.</li>
+          </ul>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Real example</h2>
+          <p class="text-gray-600 leading-relaxed">A page was retrieved for 22 prompts but used in only 4. Its sections were titled vaguely ('Considerations') and opened with background rather than the answer. Rewriting headings to match the question and moving the answer to the first line lifted usage to 13 of 22.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">How to measure it</h2>
+          <p class="text-gray-600 leading-relaxed">Compare how often your page enters the candidate set with how often it is actually quoted. A large gap is a re-ranking problem, not a discovery problem.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Where it breaks</h2>
+          <p class="text-gray-600 leading-relaxed">Re-ranking rewards passages that look like answers, which can favour confident but shallow text over careful analysis. Depth still has to survive compression.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">How it differs from adjacent terms</h2>
+          <p class="text-gray-600 leading-relaxed">Retrieval-Augmented Generation covers the whole pipeline; re-ranking is one stage inside it. Compared with Chunking, re-ranking judges passages that chunking has already produced, so section titles and opening sentences are the signals it scores. Improving those is usually faster than adding content, because it changes how existing material is judged.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Quick checklist</h2>
+          <ul class="list-disc pl-5 space-y-2 text-gray-600 leading-relaxed marker:text-blue-500">
+            <li>Section headings phrased as the question being answered.</li>
+            <li>Answer in the first sentence, background after it.</li>
+            <li>One topic per section, no mixed intent.</li>
+            <li>Extractable count of candidates versus citations tracked.</li>
+            <li>Comparison against the pages currently winning the slot.</li>
           </ul>
         </section>
 
@@ -187,6 +220,14 @@
             <a href="/glossary/hybrid-search/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
               <span class="block text-sm font-semibold text-gray-900">Hybrid Search</span>
               <span class="block mt-1 text-xs text-gray-500 leading-relaxed">combining keyword matching and vector similarity in one retrieval pass</span>
+            </a>
+            <a href="/glossary/grounding/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Grounding</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">anchoring generated output to verifiable external sources</span>
+            </a>
+            <a href="/glossary/hallucination/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Hallucination</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">confidently stated output with no basis in the sources</span>
             </a>
           </div>
           <a href="/glossary/" class="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 transition-colors">

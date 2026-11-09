@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>What is JSON-LD? — IndexHot Glossary</title>
-  <meta name="description" content="JSON-LD: JSON-LD is a JSON-based format for expressing linked data, and the recommended way to embed Schema.org structured data in a web page inside a script b..." />
+  <meta name="description" content="JSON-LD: JSON-LD is a JSON-based format for expressing linked data, and the recommended way to embed Schema.org structured data in a web page inside a…" />
   <link rel="canonical" href="https://indexhot.com/glossary/json-ld/" />
   <meta property="og:type" content="article" />
   <meta property="og:title" content="What is JSON-LD? — IndexHot Glossary" />
@@ -132,6 +132,8 @@
           </h1>
         </header>
 
+        <p class="text-xs text-gray-400 mb-6">Last updated November 2026 · Reviewed against the IndexHot GEO Measurement Standard v1.0</p>
+
         <div class="text-lg text-gray-700 leading-relaxed border-l-4 border-blue-600 pl-4 mb-8">
           <p>JSON-LD is a JSON-based format for expressing linked data, and the recommended way to embed Schema.org structured data in a web page inside a script block.</p>
         </div>
@@ -156,6 +158,37 @@
             <li>Producing invalid JSON that silently fails parsing.</li>
             <li>Duplicating the same entity with conflicting values across blocks.</li>
             <li>Using JSON-LD to claim facts the page does not support.</li>
+          </ul>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Real example</h2>
+          <p class="text-gray-600 leading-relaxed">A site's product markup failed silently for eight months because a trailing comma made the block invalid JSON. Readers saw nothing unusual; crawlers saw no structured data at all. A single character fix restored eligibility.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">How to measure it</h2>
+          <p class="text-gray-600 leading-relaxed">Parse each block as strict JSON before shipping it, then run a structured-data validator. Reading the page in a browser will never reveal this class of failure.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Where it breaks</h2>
+          <p class="text-gray-600 leading-relaxed">JSON-LD is passive data. Publishing it does not guarantee extraction, and blocks that contradict the visible page are worse than none.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">How it differs from adjacent terms</h2>
+          <p class="text-gray-600 leading-relaxed">Schema Markup is the vocabulary; JSON-LD is the syntax. Compared with a Knowledge Graph, JSON-LD is a claim you publish while the graph is what a system assembles from many claims. This distinction explains why a technically valid block can be ignored: the system weighs your declaration against everything else it knows.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Quick checklist</h2>
+          <ul class="list-disc pl-5 space-y-2 text-gray-600 leading-relaxed marker:text-blue-500">
+            <li>Blocks parsed as strict JSON in the build or review step.</li>
+            <li>One authoritative block per entity, not several.</li>
+            <li>Absolute URLs for images and identifiers.</li>
+            <li>Values regenerated whenever visible copy changes.</li>
+            <li>Structured-data validator run after every deployment.</li>
           </ul>
         </section>
 
@@ -187,6 +220,14 @@
             <a href="/glossary/entity-clarity/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
               <span class="block text-sm font-semibold text-gray-900">Entity Clarity</span>
               <span class="block mt-1 text-xs text-gray-500 leading-relaxed">how unambiguously a model can identify your brand as a distinct entity</span>
+            </a>
+            <a href="/glossary/llms-txt/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">llms.txt</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">a proposed file that summarises a site for language models</span>
+            </a>
+            <a href="/glossary/topical-authority/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Topical Authority</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">depth and consistency of coverage across a topic</span>
             </a>
           </div>
           <a href="/glossary/" class="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 transition-colors">

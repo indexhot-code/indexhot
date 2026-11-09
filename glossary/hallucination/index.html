@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>What is Hallucination? — IndexHot Glossary</title>
-  <meta name="description" content="Hallucination: A hallucination is a model output that is stated confidently but has no basis in the retrieved sources or the underlying data, such as an invented fea..." />
+  <meta name="description" content="Hallucination: A hallucination is a model output that is stated confidently but has no basis in the retrieved sources or the underlying data, such as an…" />
   <link rel="canonical" href="https://indexhot.com/glossary/hallucination/" />
   <meta property="og:type" content="article" />
   <meta property="og:title" content="What is Hallucination? — IndexHot Glossary" />
@@ -132,6 +132,8 @@
           </h1>
         </header>
 
+        <p class="text-xs text-gray-400 mb-6">Last updated November 2026 · Reviewed against the IndexHot GEO Measurement Standard v1.0</p>
+
         <div class="text-lg text-gray-700 leading-relaxed border-l-4 border-blue-600 pl-4 mb-8">
           <p>A hallucination is a model output that is stated confidently but has no basis in the retrieved sources or the underlying data, such as an invented feature, price or partnership.</p>
         </div>
@@ -156,6 +158,37 @@
             <li>Leaving key facts implicit, so the model fills gaps itself.</li>
             <li>Publishing outdated figures that contradict third-party sources.</li>
             <li>Using inconsistent product or entity names across pages.</li>
+          </ul>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Real example</h2>
+          <p class="text-gray-600 leading-relaxed">An AI answer described a mid-size CRM as offering an enterprise SSO tier it did not sell. The error traced to a two-year-old pricing page still indexed and never marked as superseded. Removing the page and publishing a dated replacement corrected the answer in most surfaces.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">How to measure it</h2>
+          <p class="text-gray-600 leading-relaxed">Ask ten identity questions about your brand monthly, such as what you sell, who you serve and what you charge. Any contradiction with your own site is a live hallucination risk, not a curiosity.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Where it breaks</h2>
+          <p class="text-gray-600 leading-relaxed">Correction is slow and incomplete. Deletion removes a source, but cached copies and third-party repeats can keep the error alive for months.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">How it differs from adjacent terms</h2>
+          <p class="text-gray-600 leading-relaxed">Grounding is the defence; hallucination is the failure it defends against. Compared with Entity Clarity, hallucination is broader: an entity can be perfectly resolved and still be described with invented facts, which is why accuracy must be measured separately from identity. Schema Markup reduces ambiguity about structured attributes, but it does not prevent invented prose about things the page never states.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Quick checklist</h2>
+          <ul class="list-disc pl-5 space-y-2 text-gray-600 leading-relaxed marker:text-blue-500">
+            <li>Ten identity questions asked monthly across all engines.</li>
+            <li>Every contradiction logged with the page that caused it.</li>
+            <li>Archived pages taken down rather than left to rot.</li>
+            <li>Structured data values matching visible copy exactly.</li>
+            <li>Third-party directories audited for outdated facts.</li>
           </ul>
         </section>
 
@@ -187,6 +220,14 @@
             <a href="/glossary/schema-markup/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
               <span class="block text-sm font-semibold text-gray-900">Schema Markup</span>
               <span class="block mt-1 text-xs text-gray-500 leading-relaxed">structured data vocabulary embedded in pages to describe entities</span>
+            </a>
+            <a href="/glossary/retrieval-augmented-generation/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Retrieval-Augmented Generation</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">retrieving external documents before generating an answer</span>
+            </a>
+            <a href="/glossary/query-fan-out/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Query Fan-Out</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">splitting one query into several sub-queries searched in parallel</span>
             </a>
           </div>
           <a href="/glossary/" class="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 transition-colors">

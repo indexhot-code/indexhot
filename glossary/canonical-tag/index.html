@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>What is Canonical Tag? — IndexHot Glossary</title>
-  <meta name="description" content="Canonical Tag: A canonical tag is an HTML link element that declares which URL is the preferred version of a page, consolidating ranking and retrieval signals when d..." />
+  <meta name="description" content="Canonical Tag: A canonical tag is an HTML link element that declares which URL is the preferred version of a page, consolidating ranking and retrieval…" />
   <link rel="canonical" href="https://indexhot.com/glossary/canonical-tag/" />
   <meta property="og:type" content="article" />
   <meta property="og:title" content="What is Canonical Tag? — IndexHot Glossary" />
@@ -132,6 +132,8 @@
           </h1>
         </header>
 
+        <p class="text-xs text-gray-400 mb-6">Last updated November 2026 · Reviewed against the IndexHot GEO Measurement Standard v1.0</p>
+
         <div class="text-lg text-gray-700 leading-relaxed border-l-4 border-blue-600 pl-4 mb-8">
           <p>A canonical tag is an HTML link element that declares which URL is the preferred version of a page, consolidating ranking and retrieval signals when duplicates or variants exist.</p>
         </div>
@@ -156,6 +158,37 @@
             <li>Omitting canonical tags and relying on defaults.</li>
             <li>Canonicalising to a URL that returns a redirect or an error.</li>
             <li>Using conflicting signals between canonical, sitemap and internal links.</li>
+          </ul>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Real example</h2>
+          <p class="text-gray-600 leading-relaxed">A site served the same article at four URLs with tracking parameters and no canonical. Assistants cited two different variants in the same week, splitting whatever authority the page had. A single absolute self-canonical consolidated the signals.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">How to measure it</h2>
+          <p class="text-gray-600 leading-relaxed">Compare your canonical value, sitemap entry and internal links for one page. All three should name the same absolute URL, including trailing slash and protocol.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Where it breaks</h2>
+          <p class="text-gray-600 leading-relaxed">A canonical is a hint, not a command. Conflicting signals elsewhere can cause a different URL to be chosen despite the tag.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">How it differs from adjacent terms</h2>
+          <p class="text-gray-600 leading-relaxed">Indexability is the outcome; a canonical tag is one of the signals feeding it. Compared with Internal Linking, canonicalisation resolves duplicates while internal links distribute attention, and conflicting signals between the two create exactly the ambiguity the tag is meant to remove.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Quick checklist</h2>
+          <ul class="list-disc pl-5 space-y-2 text-gray-600 leading-relaxed marker:text-blue-500">
+            <li>Absolute URL, matching protocol and trailing slash.</li>
+            <li>Canonical value agreeing with sitemap and internal links.</li>
+            <li>No canonical pointing to a redirect or an error page.</li>
+            <li>One canonical per page, never chained.</li>
+            <li>Parameter and variant URLs consolidated at source.</li>
           </ul>
         </section>
 
@@ -187,6 +220,14 @@
             <a href="/glossary/internal-linking/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
               <span class="block text-sm font-semibold text-gray-900">Internal Linking</span>
               <span class="block mt-1 text-xs text-gray-500 leading-relaxed">links between your own pages that distribute authority and signal structure</span>
+            </a>
+            <a href="/glossary/content-extractability/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Content Extractability</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">how easily a machine can isolate, quote and reuse your content</span>
+            </a>
+            <a href="/glossary/ai-referral-traffic/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">AI Referral Traffic</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">visits that arrive from an AI answer or assistant</span>
             </a>
           </div>
           <a href="/glossary/" class="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 transition-colors">
