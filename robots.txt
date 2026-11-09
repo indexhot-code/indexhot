@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Binary bundle, not a content page
+Disallow: /*.zip
+
+Sitemap: https://indexhot.com/sitemap.xml
