@@ -67,6 +67,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://indexhot.com/glossary/ai-crawler/</loc>
+    <lastmod>2026-11-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://indexhot.com/glossary/ai-overviews/</loc>
     <lastmod>2026-11-09</lastmod>
     <changefreq>monthly</changefreq>
@@ -91,6 +97,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://indexhot.com/glossary/ai-visibility-index/</loc>
+    <lastmod>2026-11-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://indexhot.com/glossary/answer-engine-optimization/</loc>
     <lastmod>2026-11-09</lastmod>
     <changefreq>monthly</changefreq>
@@ -98,6 +110,18 @@
   </url>
   <url>
     <loc>https://indexhot.com/glossary/answer-engine/</loc>
+    <lastmod>2026-11-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://indexhot.com/glossary/answer-sentiment/</loc>
+    <lastmod>2026-11-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://indexhot.com/glossary/brand-entity/</loc>
     <lastmod>2026-11-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -127,7 +151,19 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://indexhot.com/glossary/citation-gap/</loc>
+    <lastmod>2026-11-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://indexhot.com/glossary/citation-rate/</loc>
+    <lastmod>2026-11-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://indexhot.com/glossary/citation-source-diversity/</loc>
     <lastmod>2026-11-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -151,6 +187,18 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://indexhot.com/glossary/content-freshness/</loc>
+    <lastmod>2026-11-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://indexhot.com/glossary/context-window/</loc>
+    <lastmod>2026-11-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://indexhot.com/glossary/crawlability/</loc>
     <lastmod>2026-11-09</lastmod>
     <changefreq>monthly</changefreq>
@@ -158,6 +206,12 @@
   </url>
   <url>
     <loc>https://indexhot.com/glossary/entity-clarity/</loc>
+    <lastmod>2026-11-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://indexhot.com/glossary/faq-schema/</loc>
     <lastmod>2026-11-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -193,6 +247,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://indexhot.com/glossary/hybrid-search/</loc>
+    <lastmod>2026-11-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://indexhot.com/glossary/indexability/</loc>
     <lastmod>2026-11-09</lastmod>
     <changefreq>monthly</changefreq>
@@ -223,6 +283,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://indexhot.com/glossary/long-tail-prompt/</loc>
+    <lastmod>2026-11-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://indexhot.com/glossary/mention-rate/</loc>
     <lastmod>2026-11-09</lastmod>
     <changefreq>monthly</changefreq>
@@ -235,7 +301,19 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://indexhot.com/glossary/organization-schema/</loc>
+    <lastmod>2026-11-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://indexhot.com/glossary/query-fan-out/</loc>
+    <lastmod>2026-11-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://indexhot.com/glossary/re-ranking/</loc>
     <lastmod>2026-11-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
