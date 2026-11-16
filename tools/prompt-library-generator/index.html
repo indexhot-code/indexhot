@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prompt Library Generator — IndexHot Tools</title>
+  <meta name="description" content="Generate a fifty-prompt AI visibility baseline: ten branded and forty non-branded prompts across eight intent clusters." />
+  <link rel="canonical" href="https://indexhot.com/tools/prompt-library-generator/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Prompt Library Generator — IndexHot Tools" />
+  <meta property="og:description" content="Generate a fifty-prompt AI visibility baseline: ten branded and forty non-branded prompts across eight intent clusters." />
+  <meta property="og:url" content="https://indexhot.com/tools/prompt-library-generator/" />
+  <meta property="og:site_name" content="IndexHot" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Prompt Library Generator — IndexHot Tools" />
+  <meta name="twitter:description" content="Generate a fifty-prompt AI visibility baseline: ten branded and forty non-branded prompts across eight intent clusters." />
+  <link rel="stylesheet" href="../../tailwind.min.css" />
+  <style>
+    body { font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "Prompt Library Generator",
+      "url": "https://indexhot.com/tools/prompt-library-generator/",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "description": "Generate a fifty-prompt AI visibility baseline: ten branded and forty non-branded prompts by intent.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "IndexHot",
+        "url": "https://indexhot.com/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://indexhot.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tools",
+          "item": "https://indexhot.com/tools/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Prompt Library Generator",
+          "item": "https://indexhot.com/tools/prompt-library-generator/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Why ten branded and forty non-branded prompts?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Branded prompts are a sanity check on whether the model describes you correctly when asked directly. The forty non-branded prompts carry the signal, because they test whether the model would surface you for a question you did not write."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use my own prompts instead?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, and you should add prompts drawn from real sales calls and support tickets. The value is the shape and the ratio, not the exact wording, provided the final list is frozen and dated."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is fifty enough for reliable conclusions?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Enough for trend decisions at cluster level, not enough for a confident single-cluster claim."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body class="bg-white text-gray-800 antialiased">
+
+  <!-- Top navigation -->
+  <header class="sticky top-0 z-20 bg-white/90 backdrop-blur border-b border-gray-100">
+    <div class="max-w-3xl mx-auto px-5 sm:px-6 h-16 flex items-center justify-between">
+      <a href="/" class="text-xl font-bold tracking-tight text-gray-900">
+        Index<span class="text-blue-600">Hot</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6">
+        <a href="/blog/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Blog</a>
+        <a href="/answers/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Answers</a>
+        <a href="/tools/" class="text-sm font-medium text-blue-600">Tools</a>
+        <a href="/methodology/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Methodology</a>
+        <a href="/data/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Data</a>
+        <a href="/about/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">About</a>
+        <a href="#" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Sign in</a>
+      </nav>
+      <button id="menu-btn" type="button" aria-label="Open menu" aria-expanded="false"
+        class="md:hidden flex items-center justify-center w-10 h-10 -mr-2 rounded-lg text-gray-600 hover:text-blue-600 hover:bg-gray-100 transition-colors">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+    <nav id="mobile-menu" class="hidden md:hidden px-5 pb-4 pt-2 border-t border-gray-100 bg-white">
+      <a href="/blog/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Blog</a>
+      <a href="/answers/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Answers</a>
+      <a href="/tools/" class="block py-2.5 text-sm font-medium text-blue-600">Tools</a>
+      <a href="/methodology/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Methodology</a>
+      <a href="/data/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Data</a>
+      <a href="/about/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">About</a>
+      <a href="#" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Sign in</a>
+    </nav>
+  </header>
+  <main>
+    <article class="px-5 sm:px-6 pt-10 pb-10">
+      <div class="max-w-3xl mx-auto">
+        <nav class="mb-6 text-xs text-gray-500">
+          <a href="/" class="hover:text-blue-600">Home</a><span class="mx-1.5 text-gray-300">/</span><a href="/tools/" class="hover:text-blue-600">Tools</a><span class="mx-1.5 text-gray-300">/</span><span class="text-gray-700">Prompt Library Generator</span>
+        </nav>
+
+        <header class="mb-8">
+          <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900 leading-tight">
+            Prompt Library Generator
+          </h1>
+          <p class="mt-4 text-base sm:text-lg text-gray-500 leading-relaxed">
+            Build a fifty-prompt baseline: ten branded prompts and forty non-branded, grouped by intent.
+          </p>
+        </header>
+
+        <div class="text-lg text-gray-700 leading-relaxed border-l-4 border-blue-600 pl-4 mb-10">
+          <p>The split matters. Branded prompts test what the model already believes about you; non-branded prompts test whether it would ever introduce you. A library that only asks about your own name measures recognition, not acquisition. The forty non-branded prompts below follow the eight intent clusters we use in every published run.</p>
+        </div>
+
+        <section class="rounded-2xl border border-gray-200 bg-gray-50 p-5 sm:p-6 mb-10">
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label for="brand" class="block text-sm font-semibold text-gray-900">Brand name</label>
+              <input id="brand" type="text" value=""
+                class="mt-2 w-full rounded-lg border border-gray-300 bg-white px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                placeholder="Acme" />
+            </div>
+            <div>
+              <label for="industry" class="block text-sm font-semibold text-gray-900">Category</label>
+              <input id="industry" type="text" value=""
+                class="mt-2 w-full rounded-lg border border-gray-300 bg-white px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                placeholder="project management software" />
+            </div>
+            <div>
+              <label for="comp1" class="block text-sm font-semibold text-gray-900">Competitor (optional)</label>
+              <input id="comp1" type="text" value=""
+                class="mt-2 w-full rounded-lg border border-gray-300 bg-white px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                placeholder="Asana" />
+            </div>
+            <div>
+              <label for="comp2" class="block text-sm font-semibold text-gray-900">Second competitor (optional)</label>
+              <input id="comp2" type="text" value=""
+                class="mt-2 w-full rounded-lg border border-gray-300 bg-white px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                placeholder="Monday.com" />
+            </div>
+          </div>
+          <div class="mt-5 flex flex-wrap items-center gap-3">
+            <button id="gen" type="button"
+              class="px-5 py-3 rounded-lg bg-blue-600 text-white font-semibold text-sm hover:bg-blue-700 transition-colors">Build the library</button>
+            <button id="copy" type="button"
+              class="px-4 py-3 rounded-lg border border-gray-300 text-gray-700 font-medium text-sm hover:bg-gray-100 transition-colors">Copy all</button>
+            <span id="count" class="text-sm text-gray-500"></span>
+          </div>
+        </section>
+
+        <div id="out" class="mb-10"></div>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Why these eight clusters</h2>
+          <p class="text-gray-600 leading-relaxed">They follow the order a buyer actually moves through: awareness, comparison, budget, implementation, trouble, switching, risk, and fit. Each cluster fails differently, which is why they stay separate rather than being averaged into one number.</p>
+          <ul class="list-disc pl-5 space-y-2 text-gray-600 leading-relaxed marker:text-blue-500 mt-4">
+            <li><span class="font-medium text-gray-900">Category and comparison</span> decide whether you exist in the consideration set at all.</li>
+            <li><span class="font-medium text-gray-900">Pricing and implementation</span> are where technical documentation beats marketing pages, and where most brands are absent.</li>
+            <li><span class="font-medium text-gray-900">Trouble and switching</span> capture buyers already in motion, the group with the shortest path to a decision.</li>
+            <li><span class="font-medium text-gray-900">Risk and fit</span> turn a mention into a shortlist position, because they carry the reassurance a buyer needs.</li>
+          </ul>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">How to use it once generated</h2>
+          <p class="text-gray-600 leading-relaxed">Freeze the list before the first run and version it. Rewording a prompt between cycles is the fastest way to produce a trend line that describes your edits rather than the market.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">Run every prompt three times per surface and code the median answer, recording the date and model version beside each row. Record mention, citation and absorption in three separate columns: they fail for different reasons, and a single pass or fail hides which one applies.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Frequently Asked Questions</h2>
+          <div class="space-y-4 mt-4">
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">Why ten branded and forty non-branded?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">Branded prompts are a cheap sanity check: if a model cannot describe you correctly when asked directly, nothing else is measurable. The other forty carry the actual signal, because they test whether the model would surface you for a question you did not write.</p>
+            </div>
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">Can I use my own prompts instead?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">Yes, and you should add prompts drawn from real sales calls and support tickets. The value of this tool is the shape and the ratio, not the exact wording. What matters is that the final list is frozen and dated.</p>
+            </div>
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">Is fifty enough for reliable conclusions?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">Enough for trend decisions at cluster level, not enough for a confident single-cluster claim. If one cluster holds five prompts, treat a change of one prompt as noise until it repeats across two cycles.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="mt-10 rounded-xl border border-blue-200 bg-blue-50 p-6">
+          <h2 class="text-lg font-semibold text-gray-900">Run the library you just built</h2>
+          <p class="mt-2 text-sm text-gray-600">Fifty prompts, four surfaces, one baseline. The report is free for the first twenty brands.</p>
+          <a href="https://indexhot.com" class="mt-4 inline-block px-5 py-3 rounded-lg bg-blue-600 text-white font-semibold text-sm hover:bg-blue-700 transition-colors">Check your brand free</a>
+        </section>
+
+      </div>
+    </article>
+  </main>
+
+  <footer class="border-t border-gray-100 px-5 sm:px-6 py-8">
+    <div class="max-w-3xl mx-auto text-center text-sm text-gray-400">
+      © 2026 IndexHot. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var menuBtn = document.getElementById('menu-btn');
+      var mobileMenu = document.getElementById('mobile-menu');
+      menuBtn.addEventListener('click', function () {
+        var isHidden = mobileMenu.classList.toggle('hidden');
+        menuBtn.setAttribute('aria-expanded', String(!isHidden));
+      });
+      mobileMenu.addEventListener('click', function (e) {
+        if (e.target.tagName === 'A') {
+          mobileMenu.classList.add('hidden');
+          menuBtn.setAttribute('aria-expanded', 'false');
+        }
+      });
+    })();
+  </script>
+<script>
+(function () {
+  var GROUPS = [
+    { title: 'Branded — identity', branded: true, items: [
+      'What does {brand} do?',
+      'Is {brand} a good choice for {industry}?',
+      'Who are {brand}\'s main competitors?',
+      'What is {brand} best known for?',
+      'How much does {brand} cost?',
+      'What problems does {brand} solve?',
+      'Is {brand} suitable for small teams?',
+      'What do reviews say about {brand}?',
+      'How does {brand} compare with {comp1}?',
+      'What are the alternatives to {brand}?'
+    ]},
+    { title: 'Category discovery', items: [
+      'What are the best {industry} tools right now?',
+      'Which {industry} providers are most widely used?',
+      'What should a company look for in an {industry} provider?',
+      'Who are the leading {industry} companies?',
+      'Which {industry} platform is best for growing teams?'
+    ]},
+    { title: 'Comparison', items: [
+      'How does {comp1} compare with {comp2} for {industry}?',
+      'Which is better, {comp1} or {comp2}?',
+      'What are the main differences between {comp1} and {comp2}?',
+      'Is {comp1} or {comp2} more suitable for enterprises?',
+      'Which {industry} provider has the strongest feature set?'
+    ]},
+    { title: 'Pricing and budget', items: [
+      'How much do {industry} tools typically cost?',
+      'What is a reasonable budget for {industry} software?',
+      'Which {industry} provider offers the best value for money?',
+      'Are there affordable {industry} options for startups?',
+      'What hidden costs should I expect with {industry} tools?'
+    ]},
+    { title: 'Implementation', items: [
+      'How long does it take to implement {industry} software?',
+      'What is required to set up an {industry} platform?',
+      'Which {industry} tools integrate with existing systems?',
+      'How hard is migration from an older {industry} system?',
+      'What support is available during onboarding?'
+    ]},
+    { title: 'Problem and symptom', items: [
+      'Why is my {industry} workflow so slow?',
+      'How do I fix duplicate data in {industry} systems?',
+      'What causes reporting errors in {industry} tools?',
+      'How can I reduce manual work in {industry}?',
+      'What is the most common failure in {industry} projects?'
+    ]},
+    { title: 'Alternatives and switching', items: [
+      'What are the best alternatives to {comp1}?',
+      'Which {industry} tools are replacing legacy systems?',
+      'What should I switch to if {comp1} is too expensive?',
+      'Which {industry} platforms are growing fastest?',
+      'What are people using instead of {comp1}?'
+    ]},
+    { title: 'Trust and risk', items: [
+      'Which {industry} providers are most reliable?',
+      'What certifications should an {industry} vendor have?',
+      'How do I evaluate the security of an {industry} platform?',
+      'Which {industry} companies have the best track record?',
+      'What are the risks of switching {industry} vendors?'
+    ]},
+    { title: 'Fit and segment', items: [
+      'Which {industry} tool is best for small businesses?',
+      'What is the best {industry} option for enterprise teams?',
+      'Which {industry} platform works best internationally?',
+      'What should a nonprofit use for {industry}?',
+      'Which {industry} provider suits regulated industries?'
+    ]}
+  ];
+
+  function read(id, fallback) {
+    var v = document.getElementById(id).value.trim();
+    return v || fallback;
+  }
+
+  function fill(tpl, o) {
+    return tpl.replace(/\{brand\}/g, o.brand)
+               .replace(/\{industry\}/g, o.industry)
+               .replace(/\{comp1\}/g, o.comp1)
+               .replace(/\{comp2\}/g, o.comp2);
+  }
+
+  var lastText = '';
+
+  function build() {
+    var o = {
+      brand: read('brand', 'your brand'),
+      industry: read('industry', 'your category'),
+      comp1: read('comp1', 'the market leader'),
+      comp2: read('comp2', 'the leading alternative')
+    };
+    var out = document.getElementById('out');
+    out.innerHTML = '';
+    var total = 0;
+    var plain = [];
+    GROUPS.forEach(function (g) {
+      var wrap = document.createElement('section');
+      wrap.className = 'mb-8';
+      var h = document.createElement('h2');
+      h.className = 'text-lg font-semibold text-gray-900 mb-2';
+      h.textContent = g.title + ' (' + g.items.length + ')';
+      wrap.appendChild(h);
+      var ol = document.createElement('ol');
+      ol.className = 'space-y-1 text-sm text-gray-600 leading-relaxed list-decimal pl-5 marker:text-blue-500';
+      g.items.forEach(function (tpl) {
+        var q = fill(tpl, o);
+        var li = document.createElement('li');
+        li.textContent = q;
+        ol.appendChild(li);
+        plain.push((g.branded ? '[branded] ' : '[non-branded] ') + q);
+        total++;
+      });
+      wrap.appendChild(ol);
+      out.appendChild(wrap);
+    });
+    lastText = plain.join('\n');
+    document.getElementById('count').textContent = total + ' prompts generated';
+  }
+
+  document.getElementById('gen').addEventListener('click', build);
+  document.getElementById('copy').addEventListener('click', function () {
+    var btn = document.getElementById('copy');
+    if (!lastText) { build(); }
+    var ok = function () { btn.textContent = 'Copied'; setTimeout(function () { btn.textContent = 'Copy all'; }, 1500); };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(lastText).then(ok, function () {});
+    } else {
+      var ta = document.createElement('textarea');
+      ta.value = lastText; document.body.appendChild(ta); ta.select();
+      try { document.execCommand('copy'); ok(); } catch (e) {}
+      document.body.removeChild(ta);
+    }
+  });
+  build();
+})();
+</script>
+</body>

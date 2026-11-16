@@ -553,6 +553,30 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://indexhot.com/tools/citation-extractability-checker/</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://indexhot.com/tools/geo-score-calculator/</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://indexhot.com/tools/</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://indexhot.com/tools/prompt-library-generator/</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://indexhot.com/vs/</loc>
     <lastmod>2026-11-16</lastmod>
     <changefreq>weekly</changefreq>

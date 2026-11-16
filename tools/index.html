@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free GEO Tools — IndexHot</title>
+  <meta name="description" content="Three free browser-based GEO tools: score calculator, prompt library generator and citation extractability checker. No account needed." />
+  <link rel="canonical" href="https://indexhot.com/tools/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Free GEO Tools — IndexHot" />
+  <meta property="og:description" content="Three free browser-based GEO tools: score calculator, prompt library generator and citation extractability checker. No account needed." />
+  <meta property="og:url" content="https://indexhot.com/tools/" />
+  <meta property="og:site_name" content="IndexHot" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Free GEO Tools — IndexHot" />
+  <meta name="twitter:description" content="Three free browser-based GEO tools: score calculator, prompt library generator and citation extractability checker. No account needed." />
+  <link rel="stylesheet" href="../tailwind.min.css" />
+  <style>
+    body { font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "name": "Free GEO tools",
+      "url": "https://indexhot.com/tools/",
+      "description": "Three free browser-based tools: GEO score calculator, prompt library generator, citation extractability checker.",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "IndexHot",
+        "url": "https://indexhot.com/"
+      },
+      "hasPart": [
+        {
+          "@type": "WebApplication",
+          "name": "GEO Score Calculator",
+          "url": "https://indexhot.com/tools/geo-score-calculator/"
+        },
+        {
+          "@type": "WebApplication",
+          "name": "Prompt Library Generator",
+          "url": "https://indexhot.com/tools/prompt-library-generator/"
+        },
+        {
+          "@type": "WebApplication",
+          "name": "Citation Extractability Checker",
+          "url": "https://indexhot.com/tools/citation-extractability-checker/"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://indexhot.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tools",
+          "item": "https://indexhot.com/tools/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Are these tools really free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, with no account and no usage limit. They run locally in the browser, so there is no server cost to recover."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do they work offline?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The site is static HTML with a local stylesheet, so the tools keep working without a connection once loaded."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is my pasted text stored anywhere?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. The checker uses regular expressions and word counts in memory; nothing is transmitted or saved."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body class="bg-white text-gray-800 antialiased">
+
+  <!-- Top navigation -->
+  <header class="sticky top-0 z-20 bg-white/90 backdrop-blur border-b border-gray-100">
+    <div class="max-w-3xl mx-auto px-5 sm:px-6 h-16 flex items-center justify-between">
+      <a href="/" class="text-xl font-bold tracking-tight text-gray-900">
+        Index<span class="text-blue-600">Hot</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6">
+        <a href="/blog/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Blog</a>
+        <a href="/answers/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Answers</a>
+        <a href="/tools/" class="text-sm font-medium text-blue-600">Tools</a>
+        <a href="/methodology/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Methodology</a>
+        <a href="/data/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Data</a>
+        <a href="/about/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">About</a>
+        <a href="#" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Sign in</a>
+      </nav>
+      <button id="menu-btn" type="button" aria-label="Open menu" aria-expanded="false"
+        class="md:hidden flex items-center justify-center w-10 h-10 -mr-2 rounded-lg text-gray-600 hover:text-blue-600 hover:bg-gray-100 transition-colors">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+    <nav id="mobile-menu" class="hidden md:hidden px-5 pb-4 pt-2 border-t border-gray-100 bg-white">
+      <a href="/blog/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Blog</a>
+      <a href="/answers/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Answers</a>
+      <a href="/tools/" class="block py-2.5 text-sm font-medium text-blue-600">Tools</a>
+      <a href="/methodology/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Methodology</a>
+      <a href="/data/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Data</a>
+      <a href="/about/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">About</a>
+      <a href="#" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Sign in</a>
+    </nav>
+  </header>
+  <main>
+    <article class="px-5 sm:px-6 pt-10 pb-10">
+      <div class="max-w-3xl mx-auto">
+        <nav class="mb-6 text-xs text-gray-500">
+          <a href="/" class="hover:text-blue-600">Home</a><span class="mx-1.5 text-gray-300">/</span><span class="text-gray-700">Tools</span>
+        </nav>
+
+        <header class="mb-8">
+          <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900 leading-tight">
+            Free GEO tools
+          </h1>
+          <p class="mt-3 text-sm text-gray-400">Three tools &middot; no account &middot; runs in your browser</p>
+        </header>
+
+        <div class="text-lg text-gray-700 leading-relaxed border-l-4 border-blue-600 pl-4 mb-10">
+          <p>None of these tools sends your input anywhere. They exist because the three hardest parts of this work — knowing what a score means, knowing what to ask, and knowing whether a page can be quoted — are cheap to compute and expensive to get wrong. Use them before you buy anything.</p>
+        </div>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">The tools</h2>
+          <div class="grid sm:grid-cols-1 gap-4 mt-4">
+        <a href="/tools/geo-score-calculator/" class="block p-6 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+          <span class="block text-sm font-semibold text-gray-900">GEO Score Calculator</span>
+          <span class="block text-sm text-gray-500 mt-1">Turn mention, citation and absorption rates into an IndexHot Score and a band.</span>
+        </a>
+        <a href="/tools/prompt-library-generator/" class="block p-6 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+          <span class="block text-sm font-semibold text-gray-900">Prompt Library Generator</span>
+          <span class="block text-sm text-gray-500 mt-1">Build the fifty-prompt baseline, split ten branded and forty non-branded.</span>
+        </a>
+        <a href="/tools/citation-extractability-checker/" class="block p-6 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+          <span class="block text-sm font-semibold text-gray-900">Citation Extractability Checker</span>
+          <span class="block text-sm text-gray-500 mt-1">Paste a page section and see whether a summary could lift a usable claim.</span>
+        </a>
+          </div>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">What they will not do</h2>
+          <p class="text-gray-600 leading-relaxed">They do not query ChatGPT, Perplexity, Gemini or AI Overviews, because no browser tool can do that on your behalf without an account and without violating those platforms' terms. What they do is the reasoning around the measurement: the arithmetic, the question set, and the structural check.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">The actual running of prompts is manual, and it stays manual here on purpose. Fifty prompts across four surfaces takes about three hours, and doing it yourself is what makes the numbers yours rather than a vendor's.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Frequently Asked Questions</h2>
+          <div class="space-y-4 mt-4">
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">Are these tools really free?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">Yes, with no account and no usage limit. They run locally in your browser, so there is no server cost to recover.</p>
+            </div>
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">Do they work offline?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">Yes. The whole site is static HTML with a local stylesheet. Load the page once and the tools keep working without a connection.</p>
+            </div>
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">Is my pasted text stored anywhere?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">No. The checker uses regular expressions and word counts in memory. Nothing is transmitted, logged or saved.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="mt-10 rounded-xl border border-blue-200 bg-blue-50 p-6">
+          <h2 class="text-lg font-semibold text-gray-900">Run the library you just built</h2>
+          <p class="mt-2 text-sm text-gray-600">Fifty prompts, four surfaces, one baseline. The report is free for the first twenty brands.</p>
+          <a href="https://indexhot.com" class="mt-4 inline-block px-5 py-3 rounded-lg bg-blue-600 text-white font-semibold text-sm hover:bg-blue-700 transition-colors">Check your brand free</a>
+        </section>
+
+      </div>
+    </article>
+  </main>
+
+  <footer class="border-t border-gray-100 px-5 sm:px-6 py-8">
+    <div class="max-w-3xl mx-auto text-center text-sm text-gray-400">
+      © 2026 IndexHot. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var menuBtn = document.getElementById('menu-btn');
+      var mobileMenu = document.getElementById('mobile-menu');
+      menuBtn.addEventListener('click', function () {
+        var isHidden = mobileMenu.classList.toggle('hidden');
+        menuBtn.setAttribute('aria-expanded', String(!isHidden));
+      });
+      mobileMenu.addEventListener('click', function (e) {
+        if (e.target.tagName === 'A') {
+          mobileMenu.classList.add('hidden');
+          menuBtn.setAttribute('aria-expanded', 'false');
+        }
+      });
+    })();
+  </script>
+</body>

@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GEO Score Calculator — IndexHot Tools</title>
+  <meta name="description" content="Enter mention, citation and absorption rates to calculate an IndexHot Score, with band thresholds and the arithmetic behind them." />
+  <link rel="canonical" href="https://indexhot.com/tools/geo-score-calculator/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="GEO Score Calculator — IndexHot Tools" />
+  <meta property="og:description" content="Enter mention, citation and absorption rates to calculate an IndexHot Score, with band thresholds and the arithmetic behind them." />
+  <meta property="og:url" content="https://indexhot.com/tools/geo-score-calculator/" />
+  <meta property="og:site_name" content="IndexHot" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="GEO Score Calculator — IndexHot Tools" />
+  <meta name="twitter:description" content="Enter mention, citation and absorption rates to calculate an IndexHot Score, with band thresholds and the arithmetic behind them." />
+  <link rel="stylesheet" href="../../tailwind.min.css" />
+  <style>
+    body { font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "GEO Score Calculator",
+      "url": "https://indexhot.com/tools/geo-score-calculator/",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "description": "Calculate an IndexHot Score from mention, citation and absorption rates.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "IndexHot",
+        "url": "https://indexhot.com/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://indexhot.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tools",
+          "item": "https://indexhot.com/tools/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "GEO Score Calculator",
+          "item": "https://indexhot.com/tools/geo-score-calculator/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Why does absorption carry 40 percent?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Because it is the only component that measures influence rather than presence. A brand cited many times whose claims never appear has bought distribution without persuasion."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use this score for my own tool?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The formula and band thresholds are published under the measurement standard and can be reproduced."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What if my rates come from different prompt sets?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Then the score is not comparable to anything, including your own previous score. All three rates must come from the same frozen library and the same run."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body class="bg-white text-gray-800 antialiased">
+
+  <!-- Top navigation -->
+  <header class="sticky top-0 z-20 bg-white/90 backdrop-blur border-b border-gray-100">
+    <div class="max-w-3xl mx-auto px-5 sm:px-6 h-16 flex items-center justify-between">
+      <a href="/" class="text-xl font-bold tracking-tight text-gray-900">
+        Index<span class="text-blue-600">Hot</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6">
+        <a href="/blog/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Blog</a>
+        <a href="/answers/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Answers</a>
+        <a href="/tools/" class="text-sm font-medium text-blue-600">Tools</a>
+        <a href="/methodology/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Methodology</a>
+        <a href="/data/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Data</a>
+        <a href="/about/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">About</a>
+        <a href="#" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Sign in</a>
+      </nav>
+      <button id="menu-btn" type="button" aria-label="Open menu" aria-expanded="false"
+        class="md:hidden flex items-center justify-center w-10 h-10 -mr-2 rounded-lg text-gray-600 hover:text-blue-600 hover:bg-gray-100 transition-colors">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+    <nav id="mobile-menu" class="hidden md:hidden px-5 pb-4 pt-2 border-t border-gray-100 bg-white">
+      <a href="/blog/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Blog</a>
+      <a href="/answers/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Answers</a>
+      <a href="/tools/" class="block py-2.5 text-sm font-medium text-blue-600">Tools</a>
+      <a href="/methodology/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Methodology</a>
+      <a href="/data/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Data</a>
+      <a href="/about/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">About</a>
+      <a href="#" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Sign in</a>
+    </nav>
+  </header>
+  <main>
+    <article class="px-5 sm:px-6 pt-10 pb-10">
+      <div class="max-w-3xl mx-auto">
+        <nav class="mb-6 text-xs text-gray-500">
+          <a href="/" class="hover:text-blue-600">Home</a><span class="mx-1.5 text-gray-300">/</span><a href="/tools/" class="hover:text-blue-600">Tools</a><span class="mx-1.5 text-gray-300">/</span><span class="text-gray-700">GEO Score Calculator</span>
+        </nav>
+
+        <header class="mb-8">
+          <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900 leading-tight">
+            GEO Score Calculator
+          </h1>
+          <p class="mt-4 text-base sm:text-lg text-gray-500 leading-relaxed">
+            Enter your mention, citation and absorption rates to get an IndexHot Score and the band it falls into.
+          </p>
+        </header>
+
+        <div class="text-lg text-gray-700 leading-relaxed border-l-4 border-blue-600 pl-4 mb-10">
+          <p>The IndexHot Score is <span class="font-mono text-base">100 &times; (0.30 &middot; MR + 0.30 &middot; CR + 0.40 &middot; AR)</span>, where the three rates are expressed as fractions of the prompts you ran. Because absorption carries the largest weight, a brand that is named often but never quoted will score lower than a brand that appears less often and is quoted more.</p>
+        </div>
+
+        <section class="rounded-2xl border border-gray-200 bg-gray-50 p-5 sm:p-6 mb-10">
+          <div class="space-y-6">
+
+            <div>
+              <div class="flex items-baseline justify-between gap-3">
+                <label for="mr" class="text-sm font-semibold text-gray-900">Mention rate</label>
+                <span id="mrVal" class="text-sm font-mono text-blue-600 tabular-nums">0%</span>
+              </div>
+              <input id="mr" type="range" min="0" max="100" step="1" value="0" class="mt-2 w-full accent-blue-600" />
+              <p class="mt-1 text-xs text-gray-500">Share of prompts where your brand is named in the answer at all.</p>
+            </div>
+
+            <div>
+              <div class="flex items-baseline justify-between gap-3">
+                <label for="cr" class="text-sm font-semibold text-gray-900">Citation rate</label>
+                <span id="crVal" class="text-sm font-mono text-blue-600 tabular-nums">0%</span>
+              </div>
+              <input id="cr" type="range" min="0" max="100" step="1" value="0" class="mt-2 w-full accent-blue-600" />
+              <p class="mt-1 text-xs text-gray-500">Share of prompts where a domain you own is attached as a source.</p>
+            </div>
+
+            <div>
+              <div class="flex items-baseline justify-between gap-3">
+                <label for="ar" class="text-sm font-semibold text-gray-900">Absorption rate</label>
+                <span id="arVal" class="text-sm font-mono text-blue-600 tabular-nums">0%</span>
+              </div>
+              <input id="ar" type="range" min="0" max="100" step="1" value="0" class="mt-2 w-full accent-blue-600" />
+              <p class="mt-1 text-xs text-gray-500">Share of prompts where a distinctive claim of yours survives into the answer text (level 2 or above).</p>
+            </div>
+
+          </div>
+
+          <div class="mt-8 pt-6 border-t border-gray-200">
+            <div class="flex items-baseline gap-2">
+              <span class="text-sm text-gray-500">IndexHot Score</span>
+              <span id="score" class="text-4xl font-bold tracking-tight text-gray-900 tabular-nums">0.0</span>
+              <span class="text-sm text-gray-400">/ 100</span>
+            </div>
+            <div class="mt-3 flex flex-wrap items-center gap-3">
+              <span id="band" class="inline-flex px-2.5 py-1 rounded-full text-xs font-semibold bg-gray-100 text-gray-700">Invisible</span>
+              <span id="note" class="text-sm text-gray-600">No presence recorded yet.</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">What the bands mean</h2>
+          <p class="text-gray-600 leading-relaxed">The four bands describe what a score implies for a buyer, not how much work you have done.</p>
+          <div class="overflow-x-auto mt-4">
+            <table class="w-full text-sm border-collapse min-w-[520px]">
+              <thead>
+                <tr>
+                  <th class="py-3 pr-4 text-left text-xs font-semibold uppercase tracking-wide text-gray-400 border-b border-gray-200">Score</th>
+                  <th class="py-3 pr-4 text-left text-xs font-semibold uppercase tracking-wide text-gray-400 border-b border-gray-200">Band</th>
+                  <th class="py-3 text-left text-xs font-semibold uppercase tracking-wide text-gray-400 border-b border-gray-200">What it implies</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="py-3 pr-4 font-mono text-gray-600 align-top border-b border-gray-100">0&ndash;25</td>
+                  <td class="py-3 pr-4 font-medium text-gray-900 align-top border-b border-gray-100">Invisible</td>
+                  <td class="py-3 text-gray-600 align-top border-b border-gray-100">The model does not name you for these prompts. Usually an access or entity problem before it is a content problem.</td>
+                </tr>
+                <tr>
+                  <td class="py-3 pr-4 font-mono text-gray-600 align-top border-b border-gray-100">26&ndash;55</td>
+                  <td class="py-3 pr-4 font-medium text-gray-900 align-top border-b border-gray-100">Mentioned</td>
+                  <td class="py-3 text-gray-600 align-top border-b border-gray-100">You are named, but rarely attached as a source. Your pages are not being treated as evidence.</td>
+                </tr>
+                <tr>
+                  <td class="py-3 pr-4 font-mono text-gray-600 align-top border-b border-gray-100">56&ndash;80</td>
+                  <td class="py-3 pr-4 font-medium text-gray-900 align-top border-b border-gray-100">Cited</td>
+                  <td class="py-3 text-gray-600 align-top border-b border-gray-100">Sources are landing on pages you own. The next constraint is usually extractability rather than distribution.</td>
+                </tr>
+                <tr>
+                  <td class="py-3 pr-4 font-mono text-gray-600 align-top border-b border-gray-100">81&ndash;100</td>
+                  <td class="py-3 pr-4 font-medium text-gray-900 align-top border-b border-gray-100">Recommended</td>
+                  <td class="py-3 text-gray-600 align-top border-b border-gray-100">Your framing is being repeated. This is the band where a mention turns into a shortlist position.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Combining three platforms</h2>
+          <p class="text-gray-600 leading-relaxed">For a cross-platform figure, score each platform separately and average with default weights of ChatGPT 0.40, Perplexity 0.30 and Gemini 0.30. Do not average the raw rates across platforms first: a mention on one surface and a citation on another are different achievements that cancel out when blended.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">Where a fourth surface matters commercially, add it as an explicit weight and record the change, because a silently reweighted composite is indistinguishable from a methodology change when someone reads last quarter's number.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Frequently Asked Questions</h2>
+          <div class="space-y-4 mt-4">
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">Why does absorption carry 40 percent?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">Because it is the only component that measures influence rather than presence. A brand cited a hundred times whose claims never appear in the answer has bought distribution without persuasion, and the weighting is designed to make that visible rather than flattering.</p>
+            </div>
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">Can I use this score for my own tool?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">Yes. The formula and band thresholds are published under the measurement standard and can be reproduced without attribution. What we ask is that you keep the three inputs separate in your reporting, because a single blended number is not auditable.</p>
+            </div>
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">What if my rates come from different prompt sets?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">Then the score is not comparable to anything, including your own previous score. All three rates must come from the same frozen library and the same run, which is the only condition this calculator assumes.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="mt-12 pt-8 border-t border-gray-100">
+          <h2 class="text-lg font-semibold text-gray-900 mb-4">Keep reading</h2>
+          <div class="grid sm:grid-cols-2 gap-4">
+            <a href="/methodology/" class="block p-5 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">The Measurement Standard</span>
+              <span class="block text-sm text-gray-500 mt-1">Definitions and arithmetic in full.</span>
+            </a>
+            <a href="/answers/measurement/" class="block p-5 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Measurement Questions</span>
+              <span class="block text-sm text-gray-500 mt-1">How to produce the three rates.</span>
+            </a>
+          </div>
+        </section>
+
+        <section class="mt-10 rounded-xl border border-blue-200 bg-blue-50 p-6">
+          <h2 class="text-lg font-semibold text-gray-900">Looked at your own numbers yet?</h2>
+          <p class="mt-2 text-sm text-gray-600">The calculator shows what the score means once you have the three rates. Running fifty prompts is how you get them.</p>
+          <a href="https://indexhot.com" class="mt-4 inline-block px-5 py-3 rounded-lg bg-blue-600 text-white font-semibold text-sm hover:bg-blue-700 transition-colors">Check your brand free</a>
+        </section>
+
+      </div>
+    </article>
+  </main>
+
+  <footer class="border-t border-gray-100 px-5 sm:px-6 py-8">
+    <div class="max-w-3xl mx-auto text-center text-sm text-gray-400">
+      © 2026 IndexHot. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var menuBtn = document.getElementById('menu-btn');
+      var mobileMenu = document.getElementById('mobile-menu');
+      menuBtn.addEventListener('click', function () {
+        var isHidden = mobileMenu.classList.toggle('hidden');
+        menuBtn.setAttribute('aria-expanded', String(!isHidden));
+      });
+      mobileMenu.addEventListener('click', function (e) {
+        if (e.target.tagName === 'A') {
+          mobileMenu.classList.add('hidden');
+          menuBtn.setAttribute('aria-expanded', 'false');
+        }
+      });
+    })();
+  </script>
+<script>
+(function () {
+  var ids = ['mr', 'cr', 'ar'];
+  function num(id) { return Number(document.getElementById(id).value) || 0; }
+  function calc() {
+    var mr = num('mr'), cr = num('cr'), ar = num('ar');
+    document.getElementById('mrVal').textContent = mr + '%';
+    document.getElementById('crVal').textContent = cr + '%';
+    document.getElementById('arVal').textContent = ar + '%';
+    var s = 100 * (0.30 * mr / 100 + 0.30 * cr / 100 + 0.40 * ar / 100);
+    document.getElementById('score').textContent = s.toFixed(1);
+    var band, cls, note;
+    if (s <= 25) {
+      band = 'Invisible'; cls = 'bg-gray-100 text-gray-700';
+      note = 'Not named for these prompts. Check access and entity identity before rewriting pages.';
+    } else if (s <= 55) {
+      band = 'Mentioned'; cls = 'bg-amber-100 text-amber-800';
+      note = 'Named but not cited. Your pages are not being used as evidence, which is usually an extractability problem.';
+    } else if (s <= 80) {
+      band = 'Cited'; cls = 'bg-blue-100 text-blue-800';
+      note = 'Citations are landing on owned pages. The next constraint is whether your claims survive the summary.';
+    } else {
+      band = 'Recommended'; cls = 'bg-emerald-100 text-emerald-800';
+      note = 'Your framing is being repeated. Protect it with dated facts and keep the pages fresh.';
+    }
+    document.getElementById('band').textContent = band;
+    document.getElementById('band').className = 'inline-flex px-2.5 py-1 rounded-full text-xs font-semibold ' + cls;
+    document.getElementById('note').textContent = note;
+  }
+  ids.forEach(function (id) { document.getElementById(id).addEventListener('input', calc); });
+  calc();
+})();
+</script>
+</body>

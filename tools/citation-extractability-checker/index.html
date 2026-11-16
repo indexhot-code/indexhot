@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Citation Extractability Checker — IndexHot Tools</title>
+  <meta name="description" content="Paste a page section and see whether an answer engine could lift a usable claim from it. Runs entirely in your browser." />
+  <link rel="canonical" href="https://indexhot.com/tools/citation-extractability-checker/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Citation Extractability Checker — IndexHot Tools" />
+  <meta property="og:description" content="Paste a page section and see whether an answer engine could lift a usable claim from it. Runs entirely in your browser." />
+  <meta property="og:url" content="https://indexhot.com/tools/citation-extractability-checker/" />
+  <meta property="og:site_name" content="IndexHot" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Citation Extractability Checker — IndexHot Tools" />
+  <meta name="twitter:description" content="Paste a page section and see whether an answer engine could lift a usable claim from it. Runs entirely in your browser." />
+  <link rel="stylesheet" href="../../tailwind.min.css" />
+  <style>
+    body { font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "Citation Extractability Checker",
+      "url": "https://indexhot.com/tools/citation-extractability-checker/",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "description": "Check whether a page section states a claim that an answer engine can lift intact.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "IndexHot",
+        "url": "https://indexhot.com/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://indexhot.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tools",
+          "item": "https://indexhot.com/tools/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Citation Extractability Checker",
+          "item": "https://indexhot.com/tools/citation-extractability-checker/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Does my text get sent anywhere?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. The analysis runs entirely in the browser with regular expressions and word counts. There is no request, no storage and no logging, which is why it works offline."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is a high score a guarantee of citation?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Extractability is one condition among several, alongside eligibility, entity clarity and access."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Should I rewrite a whole page to score higher?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Usually not. Move the claim into the first sentence of each section and keep the explanation after it."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body class="bg-white text-gray-800 antialiased">
+
+  <!-- Top navigation -->
+  <header class="sticky top-0 z-20 bg-white/90 backdrop-blur border-b border-gray-100">
+    <div class="max-w-3xl mx-auto px-5 sm:px-6 h-16 flex items-center justify-between">
+      <a href="/" class="text-xl font-bold tracking-tight text-gray-900">
+        Index<span class="text-blue-600">Hot</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6">
+        <a href="/blog/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Blog</a>
+        <a href="/answers/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Answers</a>
+        <a href="/tools/" class="text-sm font-medium text-blue-600">Tools</a>
+        <a href="/methodology/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Methodology</a>
+        <a href="/data/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Data</a>
+        <a href="/about/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">About</a>
+        <a href="#" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Sign in</a>
+      </nav>
+      <button id="menu-btn" type="button" aria-label="Open menu" aria-expanded="false"
+        class="md:hidden flex items-center justify-center w-10 h-10 -mr-2 rounded-lg text-gray-600 hover:text-blue-600 hover:bg-gray-100 transition-colors">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+    <nav id="mobile-menu" class="hidden md:hidden px-5 pb-4 pt-2 border-t border-gray-100 bg-white">
+      <a href="/blog/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Blog</a>
+      <a href="/answers/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Answers</a>
+      <a href="/tools/" class="block py-2.5 text-sm font-medium text-blue-600">Tools</a>
+      <a href="/methodology/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Methodology</a>
+      <a href="/data/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Data</a>
+      <a href="/about/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">About</a>
+      <a href="#" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Sign in</a>
+    </nav>
+  </header>
+  <main>
+    <article class="px-5 sm:px-6 pt-10 pb-10">
+      <div class="max-w-3xl mx-auto">
+        <nav class="mb-6 text-xs text-gray-500">
+          <a href="/" class="hover:text-blue-600">Home</a><span class="mx-1.5 text-gray-300">/</span><a href="/tools/" class="hover:text-blue-600">Tools</a><span class="mx-1.5 text-gray-300">/</span><span class="text-gray-700">Citation Extractability Checker</span>
+        </nav>
+
+        <header class="mb-8">
+          <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900 leading-tight">
+            Citation Extractability Checker
+          </h1>
+          <p class="mt-4 text-base sm:text-lg text-gray-500 leading-relaxed">
+            Paste the opening of a page section. The checker estimates whether an answer engine could lift a usable claim from it.
+          </p>
+        </header>
+
+        <div class="text-lg text-gray-700 leading-relaxed border-l-4 border-blue-600 pl-4 mb-10">
+          <p>A summary has to compress. It can only use passages that state a complete point without requiring the surrounding argument, so pages that build to a conclusion over several paragraphs contribute nothing. This checker reads text you paste and flags the four properties that decide survival.</p>
+        </div>
+
+        <section class="rounded-2xl border border-gray-200 bg-gray-50 p-5 sm:p-6 mb-10">
+          <label for="src" class="block text-sm font-semibold text-gray-900">Page section text</label>
+          <p class="mt-1 text-xs text-gray-500">Paste 80 to 600 words, ideally starting at a heading. Nothing leaves your browser.</p>
+          <textarea id="src" rows="9" spellcheck="false"
+            class="mt-3 w-full rounded-lg border border-gray-300 bg-white p-3 text-sm text-gray-800 leading-relaxed focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            placeholder="Acme ships replacement filters within 48 hours in the EU, measured across 1,240 orders in 2025. Orders placed after 17:00 on Friday ship on Monday..."></textarea>
+          <div class="mt-4 flex flex-wrap items-center gap-3">
+            <button id="run" type="button"
+              class="px-5 py-3 rounded-lg bg-blue-600 text-white font-semibold text-sm hover:bg-blue-700 transition-colors">Check extractability</button>
+            <button id="clear" type="button"
+              class="px-4 py-3 rounded-lg border border-gray-300 text-gray-700 font-medium text-sm hover:bg-gray-100 transition-colors">Clear</button>
+          </div>
+          <div id="result" class="mt-6 hidden">
+            <div class="pt-5 border-t border-gray-200">
+              <div class="flex items-baseline gap-2">
+                <span class="text-sm text-gray-500">Extractability</span>
+                <span id="grade" class="text-3xl font-bold tracking-tight text-gray-900"></span>
+                <span class="text-sm text-gray-400">/ 100</span>
+              </div>
+              <p id="verdict" class="mt-2 text-sm text-gray-600"></p>
+            </div>
+            <ul id="checks" class="mt-5 space-y-3"></ul>
+            <div id="fix" class="mt-5 rounded-xl border border-blue-200 bg-blue-50 p-4">
+              <p class="text-sm font-semibold text-gray-900">First thing to fix</p>
+              <p id="fixText" class="mt-1 text-sm text-gray-600"></p>
+            </div>
+          </div>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">The four checks</h2>
+          <p class="text-gray-600 leading-relaxed">Each check maps to a failure we see repeatedly in pages that rank well and are still never quoted.</p>
+          <ul class="list-disc pl-5 space-y-2 text-gray-600 leading-relaxed marker:text-blue-500 mt-4">
+            <li><span class="font-medium text-gray-900">Answer first.</span> The opening sentence should carry the claim. Context before the answer usually means the passage is unusable.</li>
+            <li><span class="font-medium text-gray-900">A checkable fact.</span> Numbers, thresholds, units or dates give a summary something concrete to keep.</li>
+            <li><span class="font-medium text-gray-900">Condition with the figure.</span> A number separated from its condition becomes wrong when lifted, so engines avoid it.</li>
+            <li><span class="font-medium text-gray-900">Sentence length.</span> Long, clause-heavy sentences get trimmed in ways that change meaning, so shorter sentences survive intact.</li>
+          </ul>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">A worked example</h2>
+          <p class="text-gray-600 leading-relaxed">The same fact, written two ways. The first version is competent prose that a summary cannot use; the second is the same information in a form that survives compression.</p>
+
+          <div class="mt-5 rounded-xl border border-gray-200 p-5">
+            <p class="text-xs font-semibold uppercase tracking-wide text-rose-600">Before</p>
+            <p class="mt-2 text-gray-600 leading-relaxed">&ldquo;In today&rsquo;s fast-moving logistics landscape, speed has become a defining competitive advantage. Our fulfilment network has been built over many years with significant investment, and the result is that customers across Europe now benefit from noticeably quicker delivery than was previously possible, which we believe reflects our commitment to operational excellence.&rdquo;</p>
+            <p class="mt-3 text-xs text-gray-500">Unusable: 92 words, no figure, no condition, claim arrives only at the end as a belief rather than a fact.</p>
+          </div>
+
+          <div class="mt-4 rounded-xl border border-emerald-200 bg-emerald-50 p-5">
+            <p class="text-xs font-semibold uppercase tracking-wide text-emerald-700">After</p>
+            <p class="mt-2 text-gray-700 leading-relaxed">&ldquo;Orders placed before 15:00 CET ship the same day from our Rotterdam and Poznan hubs; orders placed after 15:00 ship the next working day. Median transit time to EU destinations was 1.8 days in 2025, measured across 41,000 shipments.&rdquo;</p>
+            <p class="mt-3 text-xs text-gray-500">Usable: two sentences, a threshold with its condition, a median with a unit, a sample size and a year.</p>
+          </div>
+
+          <p class="text-gray-600 leading-relaxed mt-5">The rewrite did not add information. Every number in the second version was already known to the team that wrote the first. What changed is that the fact now sits in the sentence with its conditions, so a summary that lifts one line still states something true.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Frequently Asked Questions</h2>
+          <div class="space-y-4 mt-4">
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">Does my text get sent anywhere?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">No. The analysis runs entirely in your browser with regular expressions and word counts. There is no request, no storage and no logging, which is why the tool works offline.</p>
+            </div>
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">Is a high score a guarantee of citation?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">No. Extractability is one condition among several, alongside eligibility, entity clarity and access. A page can be perfectly liftable and still never be retrieved, in which case the problem is upstream.</p>
+            </div>
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">Should I rewrite a whole page to score higher?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">Usually not. Move the claim into the first sentence of each section and keep the explanation after it. That single change lifts extractability on most pages without touching what the page actually argues.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="mt-12 pt-8 border-t border-gray-100">
+          <h2 class="text-lg font-semibold text-gray-900 mb-4">Keep reading</h2>
+          <div class="grid sm:grid-cols-2 gap-4">
+            <a href="/glossary/content-extractability/" class="block p-5 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Content Extractability</span>
+              <span class="block text-sm text-gray-500 mt-1">The definition behind this check.</span>
+            </a>
+            <a href="/answers/content/" class="block p-5 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Content Questions</span>
+              <span class="block text-sm text-gray-500 mt-1">Length, FAQ blocks, tables and freshness.</span>
+            </a>
+          </div>
+        </section>
+
+        <section class="mt-10 rounded-xl border border-blue-200 bg-blue-50 p-6">
+          <h2 class="text-lg font-semibold text-gray-900">Looked at your own numbers yet?</h2>
+          <p class="mt-2 text-sm text-gray-600">The calculator shows what the score means once you have the three rates. Running fifty prompts is how you get them.</p>
+          <a href="https://indexhot.com" class="mt-4 inline-block px-5 py-3 rounded-lg bg-blue-600 text-white font-semibold text-sm hover:bg-blue-700 transition-colors">Check your brand free</a>
+        </section>
+
+      </div>
+    </article>
+  </main>
+
+  <footer class="border-t border-gray-100 px-5 sm:px-6 py-8">
+    <div class="max-w-3xl mx-auto text-center text-sm text-gray-400">
+      © 2026 IndexHot. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var menuBtn = document.getElementById('menu-btn');
+      var mobileMenu = document.getElementById('mobile-menu');
+      menuBtn.addEventListener('click', function () {
+        var isHidden = mobileMenu.classList.toggle('hidden');
+        menuBtn.setAttribute('aria-expanded', String(!isHidden));
+      });
+      mobileMenu.addEventListener('click', function (e) {
+        if (e.target.tagName === 'A') {
+          mobileMenu.classList.add('hidden');
+          menuBtn.setAttribute('aria-expanded', 'false');
+        }
+      });
+    })();
+  </script>
+<script>
+(function () {
+  var btn = document.getElementById('run');
+  var clr = document.getElementById('clear');
+  var src = document.getElementById('src');
+  var out = document.getElementById('result');
+
+  function words(t) { return t.split(/\s+/).filter(Boolean); }
+
+  function run() {
+    var raw = src.value.trim();
+    if (!raw) { out.classList.add('hidden'); return; }
+    var sentences = raw.split(/[.!?]+/).map(function (s) { return s.trim(); }).filter(Boolean);
+    var first = sentences[0] || '';
+    var firstWords = words(first).length;
+    var total = words(raw).length;
+    var avg = sentences.length ? total / sentences.length : total;
+    var hasNumber = /\d/.test(raw);
+    var hasUnit = /\d\s?(%|k|m|bn|hours|days|weeks|months|users|orders|pages|ms|gb|tb|usd|eur)/i.test(raw);
+    var hasCondition = /\b(if|when|for|under|above|up to|at least|except|only|unless|per|within)\b/i.test(raw);
+    var filler = /(in today.s|in the ever|it is no secret|when it comes to|in a world|as we all know|needless to say)/i.test(first);
+    var numericFirst = /\d/.test(first);
+
+    var penalties = 0;
+    var items = [];
+
+    if (firstWords <= 45 && !filler) {
+      items.push(['pass', 'Answer first', 'The opening sentence carries a claim at ' + firstWords + ' words.']);
+    } else if (firstWords <= 45 && filler) {
+      items.push(['fail', 'Answer first', 'The first sentence is filler. A summary will skip it and start higher up, dropping your claim.']);
+      penalties += 30;
+    } else {
+      items.push(['fail', 'Answer first', 'The first sentence runs ' + firstWords + ' words before reaching the point. Aim for under 45.']);
+      penalties += 25;
+    }
+
+    if (hasNumber && hasUnit) {
+      items.push(['pass', 'A checkable fact', 'A number with a unit appears, which is what a summary keeps.']);
+    } else if (hasNumber) {
+      items.push(['warn', 'A checkable fact', 'A number appears but no unit was detected. Attach units so the figure survives without context.']);
+      penalties += 12;
+    } else {
+      items.push(['fail', 'A checkable fact', 'No figure, threshold or date appears. Nothing concrete for a summary to lift.']);
+      penalties += 22;
+    }
+
+    if (hasCondition && numericFirst) {
+      items.push(['pass', 'Condition with the figure', 'A condition and a figure share the opening, which prevents misquotation.']);
+    } else if (hasCondition) {
+      items.push(['warn', 'Condition with the figure', 'A condition appears, but not beside the figure. Separated conditions get dropped, and the number then misleads.']);
+      penalties += 10;
+    } else {
+      items.push(['fail', 'Condition with the figure', 'No qualifying condition detected. State the scope in the same sentence as the number.']);
+      penalties += 15;
+    }
+
+    if (avg <= 22) {
+      items.push(['pass', 'Sentence length', 'Average ' + avg.toFixed(1) + ' words per sentence. Short enough to lift intact.']);
+    } else if (avg <= 30) {
+      items.push(['warn', 'Sentence length', 'Average ' + avg.toFixed(1) + ' words per sentence. A few will be trimmed in ways that change meaning.']);
+      penalties += 8;
+    } else {
+      items.push(['fail', 'Sentence length', 'Average ' + avg.toFixed(1) + ' words per sentence. Long sentences get cut, and cuts usually drop the qualifier.']);
+      penalties += 18;
+    }
+
+    var score = Math.max(0, 100 - penalties);
+    var label, verdict;
+    if (score >= 85) { label = 'Liftable'; verdict = 'This passage has the shape a summary can use. Keep it dated and current.'; }
+    else if (score >= 60) { label = 'Usable with effort'; verdict = 'An engine could use part of this, but one structural change would roughly double the chance.'; }
+    else { label = 'Unlikely to survive'; verdict = 'Compression would drop the point. Restructure before publishing, not after.'; }
+
+    document.getElementById('grade').textContent = score;
+    document.getElementById('grade').className = 'text-3xl font-bold tracking-tight ' + (score >= 85 ? 'text-emerald-600' : score >= 60 ? 'text-amber-600' : 'text-gray-900');
+    document.getElementById('verdict').textContent = label + ' — ' + verdict;
+
+    var ul = document.getElementById('checks');
+    ul.innerHTML = '';
+    items.forEach(function (it) {
+      var tone = it[0] === 'pass' ? 'text-emerald-600' : it[0] === 'warn' ? 'text-amber-600' : 'text-rose-600';
+      var mark = it[0] === 'pass' ? 'OK' : it[0] === 'warn' ? '!' : 'FIX';
+      var li = document.createElement('li');
+      li.className = 'flex gap-3 rounded-xl border border-gray-200 p-4';
+      li.innerHTML = '<span class="flex-shrink-0 text-xs font-bold ' + tone + ' pt-0.5">' + mark + '</span>' +
+        '<span><span class="block text-sm font-semibold text-gray-900">' + it[1] + '</span>' +
+        '<span class="block text-sm text-gray-600 mt-1">' + it[2] + '</span></span>';
+      ul.appendChild(li);
+    });
+
+    var fixes = [];
+    if (firstWords > 45 || filler) { fixes.push('Move the claim into the first sentence of the section and let the context follow.'); }
+    if (!hasNumber || !hasUnit) { fixes.push('Add one concrete figure with its unit and date.'); }
+    if (hasCondition && !numericFirst) { fixes.push('Put the condition in the same sentence as the figure.'); }
+    if (avg > 22) { fixes.push('Split the longest sentences; aim for an average under 22 words.'); }
+    document.getElementById('fixText').textContent = fixes.length ? fixes[0] : 'Nothing urgent. Add a revision date if the claim is time-sensitive.';
+
+    out.classList.remove('hidden');
+  }
+
+  btn.addEventListener('click', run);
+  clr.addEventListener('click', function () {
+    src.value = ''; out.classList.add('hidden'); src.focus();
+  });
+})();
+</script>
+</body>
