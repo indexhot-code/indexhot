@@ -159,6 +159,21 @@
           </p>
         </section>
 
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">What is in each dataset</h2>
+          <p class="text-gray-600 leading-relaxed">Every dataset is published at row level rather than as an aggregate, so a reader can recompute any figure we report.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">The citation behaviour dataset has one row per prompt-platform run: prompt id, intent cluster, platform, run date, whether the brand was named, which domains were cited and in what order, and the coded absorption level. That is enough to rebuild mention, citation and absorption rates without trusting our arithmetic.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">The industry mention dataset aggregates the same run by category and brand, which makes cross-industry comparison possible without exposing brand identity. The schema experiment adds one row per page with the markup variant applied and the citation outcome observed.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">All three are licensed for reuse with attribution, and each ships with its column definitions rather than relying on a README that drifts.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Method and limitations</h2>
+          <p class="text-gray-600 leading-relaxed">The sample is twenty brands across fifty governed prompts and three platforms, run in the third quarter of 2026.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">It is a convenience sample, not a random one. The brands were chosen to span B2B, e-commerce, regulated categories and agencies, which makes the cross-industry comparison useful and makes any claim about market share unsound. We say this on the page rather than in a footnote because it changes how the numbers should be read.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">Absorption is human-coded against a written rubric, which introduces judgement. Two coders score a calibration set and disagreements are resolved with an example, which keeps variation within roughly one level. That is adequate for trend decisions and not adequate for fine rankings.</p>
+        </section>
+
         <!-- Related resources -->
         <section class="mt-10">
           <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Related resources</h2>

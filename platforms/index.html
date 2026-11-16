@@ -122,7 +122,22 @@
           </a>
         </div>
 
-        <section class="mt-12 rounded-xl border border-blue-200 bg-blue-50 p-6">
+                <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">What we measure on each surface</h2>
+          <p class="text-gray-600 leading-relaxed">Each platform page reports the same three outcomes, because the same question matters on all four: was the brand named, was a source of ours attached, and did anything we said survive into the answer.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">On ChatGPT we report the mention-to-citation ratio, which is unusually wide because many answers carry no sources at all. On Perplexity we report citation rate alongside absorption, because that surface attaches many sources and compresses each of them.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">Gemini and AI Overviews are measured in two layers: eligibility in ordinary search results, then use in the generated surface. A page that fails the first layer cannot pass the second, and reporting them as one number is how teams end up rewriting content that was never in the pool.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">All four pages use the same fifty-prompt library, so a comparison across surfaces reflects platform behaviour rather than four different question sets.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Why these four and not others</h2>
+          <p class="text-gray-600 leading-relaxed">We cover the surfaces that account for the large majority of generative answer consumption, and we would rather measure four well than twenty badly.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">Copilot, Claude, Grok and the various regional assistants are real surfaces with real share. Including them would roughly double the manual workload for a measurement whose variance is already the main constraint. When the library can be run cheaply at that scale, they get pages.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">The inclusion test we apply is simple: does the surface retrieve and cite, or does it answer from memory only? A surface that never attributes a source can still name brands, but it cannot be measured for citation and absorption, which are the outcomes this standard exists to score.</p>
+        </section>
+
+<section class="mt-12 rounded-xl border border-blue-200 bg-blue-50 p-6">
           <h2 class="text-lg font-semibold text-gray-900">Measure it for your own brand</h2>
           <p class="mt-2 text-sm text-gray-600 leading-relaxed">The free checker runs the same governed question library across ChatGPT, Perplexity, Gemini and AI Overviews, then reports mention, citation and absorption separately.</p>
           <a href="/" class="mt-4 inline-flex items-center justify-center px-5 py-3 rounded-lg bg-blue-600 text-white font-semibold text-sm hover:bg-blue-700 transition-colors">Run the free check</a>
