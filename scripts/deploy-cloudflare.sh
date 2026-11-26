@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 # Deploy the static site to Cloudflare Pages (project: indexhot) via wrangler.
 #
+# Release order: commit -> git push (Gitee) -> this script. The script aborts if
+# the working tree is dirty or if local commits have not reached the remote, so
+# Cloudflare can never serve a version that is not in the repository.
+#
 # Usage:  ./scripts/deploy-cloudflare.sh
 #
 # Token: reads CLOUDFLARE_API_TOKEN from the environment, or falls back to
@@ -19,6 +23,22 @@ export CLOUDFLARE_API_TOKEN
 
 # wrangler lives outside the default PATH on some hosts
 export PATH="$PATH:$HOME/.npm-global/bin:/usr/local/bin"
+
+# Order matters: commit and push to Gitee first, then deploy. Refuse to ship
+# anything that is not already in the remote branch.
+BRANCH="$(git -C "$ROOT" rev-parse --abbrev-ref HEAD)"
+if [ -n "$(git -C "$ROOT" status --porcelain)" ]; then
+  echo "abort: working tree has uncommitted changes — commit and push first." >&2
+  git -C "$ROOT" status --short >&2
+  exit 1
+fi
+git -C "$ROOT" fetch -q origin "$BRANCH"
+AHEAD="$(git -C "$ROOT" rev-list --count "origin/$BRANCH..$BRANCH")"
+if [ "$AHEAD" != "0" ]; then
+  echo "abort: $AHEAD local commit(s) not pushed. Run: git push origin $BRANCH" >&2
+  exit 1
+fi
+echo "[git] $BRANCH clean, in sync with origin/$(git -C "$ROOT" rev-parse --short "$BRANCH")"
 
 STAGE="$(mktemp -d)"
 trap 'rm -rf "$STAGE"' EXIT
