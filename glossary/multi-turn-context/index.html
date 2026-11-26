@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What is Multi-turn Context? — IndexHot Glossary</title>
+  <meta name="description" content="The accumulated conversation state that shapes how a later question is interpreted and." />
+  <link rel="canonical" href="https://indexhot.com/glossary/multi-turn-context/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="What is Multi-turn Context? — IndexHot Glossary" />
+  <meta property="og:description" content="The accumulated conversation state that shapes how a later question is interpreted and answered." />
+  <meta property="og:url" content="https://indexhot.com/glossary/multi-turn-context/" />
+  <meta property="og:site_name" content="IndexHot" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="What is Multi-turn Context? — IndexHot Glossary" />
+  <meta name="twitter:description" content="The accumulated conversation state that shapes how a later question is interpreted and answered." />
+  <link rel="stylesheet" href="../../tailwind.min.css" />
+  <style>
+    body { font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "Multi-turn Context",
+  "description": "Multi-turn context is the set of earlier turns a system carries forward. A follow-up question is interpreted relative to what was already said, so the same words can retrieve different sources depending on the conversation that preceded them.",
+  "url": "https://indexhot.com/glossary/multi-turn-context/",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "The IndexHot GEO Glossary",
+    "url": "https://indexhot.com/glossary/"
+  }
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://indexhot.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Glossary",
+      "item": "https://indexhot.com/glossary/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Multi-turn Context",
+      "item": "https://indexhot.com/glossary/multi-turn-context/"
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can a brand recover if absent at turn one?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sometimes, if a later turn is specific enough to trigger fresh retrieval. Recovery is unreliable, which is why first-turn presence matters."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do all surfaces carry context?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most chat surfaces do within a session. Search-like surfaces with independent queries do not, so the same prompt behaves differently."
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body class="bg-white text-gray-800 antialiased">
+
+  <header class="sticky top-0 z-20 bg-white/90 backdrop-blur border-b border-gray-100">
+    <div class="max-w-3xl mx-auto px-5 sm:px-6 h-16 flex items-center justify-between">
+      <a href="/" class="text-xl font-bold tracking-tight text-gray-900">
+        Index<span class="text-blue-600">Hot</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6">
+        <a href="/blog/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Blog</a>
+        <a href="/guides/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Guides</a>
+        <a href="/answers/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Answers</a>
+        <a href="/tools/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Tools</a>
+        <a href="/methodology/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Methodology</a>
+        <a href="/data/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Data</a>
+        <a href="/about/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">About</a>
+        <a href="#" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Sign in</a>
+      </nav>
+      <button id="menu-btn" type="button" aria-label="Open menu" aria-expanded="false"
+        class="md:hidden flex items-center justify-center w-10 h-10 -mr-2 rounded-lg text-gray-600 hover:text-blue-600 hover:bg-gray-100 transition-colors">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+    <nav id="mobile-menu" class="hidden md:hidden px-5 pb-4 pt-2 border-t border-gray-100 bg-white">
+      <a href="/blog/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Blog</a>
+      <a href="/guides/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Guides</a>
+      <a href="/answers/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Answers</a>
+      <a href="/tools/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Tools</a>
+      <a href="/methodology/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Methodology</a>
+      <a href="/data/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Data</a>
+      <a href="/about/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">About</a>
+      <a href="#" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Sign in</a>
+    </nav>
+  </header>
+  <main>
+    <article class="px-5 sm:px-6 pt-10 pb-10">
+      <div class="max-w-3xl mx-auto">
+
+        <nav aria-label="Breadcrumb" class="mb-6 text-xs text-gray-500">
+          <a href="/" class="hover:text-blue-600 transition-colors">Home</a>
+          <span class="mx-1.5 text-gray-300">/</span>
+          <a href="/glossary/" class="hover:text-blue-600 transition-colors">Glossary</a>
+          <span class="mx-1.5 text-gray-300">/</span>
+          <span class="text-gray-700">Multi-turn Context</span>
+        </nav>
+
+        <header class="mb-8">
+          <p class="text-sm font-semibold text-blue-600 mb-3">Glossary · <a href="/glossary/category/retrieval-and-models/" class="hover:underline">Retrieval and models</a></p>
+          <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900 leading-tight">
+            What is Multi-turn Context?
+          </h1>
+        </header>
+
+        <p class="text-xs text-gray-400 mb-6">Last updated November 2026 · Reviewed against the IndexHot GEO Measurement Standard v1.0</p>
+
+        <div class="text-lg text-gray-700 leading-relaxed border-l-4 border-blue-600 pl-4 mb-8">
+          <p>Multi-turn context is the set of earlier turns a system carries forward. A follow-up question is interpreted relative to what was already said, so the same words can retrieve different sources depending on the conversation that preceded them.</p>
+        </div>
+
+        <p class="text-gray-600 leading-relaxed mb-10">
+          In short: The accumulated conversation state that shapes how a later question is interpreted and answered.
+        </p>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Why it matters</h2>
+          <p class="text-gray-600 leading-relaxed mt-4">It means a brand's presence early in a conversation has persistent value: later turns elaborate within the entity set already established, rather than building a new one.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">It also means isolated prompt measurement can overstate or understate reality, because real usage is conversational and the first turn sets much of the trajectory.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">How to work with it</h2>
+          <p class="text-gray-600 leading-relaxed mt-4">Simulate two-turn and three-turn conversations rather than isolated prompts.</p>
+          <ul class="list-disc pl-5 space-y-2 text-gray-600 leading-relaxed marker:text-blue-500 mt-4">
+            <li>Record the answer at each turn and note whether sources narrow, hold or change.</li>
+            <li>Check whether an entity named at turn one survives to turn three.</li>
+            <li>Test whether a brand absent at turn one can be introduced by a later, more specific question.</li>
+          </ul>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Common mistakes</h2>
+          <ul class="list-disc pl-5 space-y-2 text-gray-600 leading-relaxed marker:text-blue-500">
+            <li>Measuring single prompts and assuming the numbers describe conversational use.</li>
+            <li>Treating a follow-up as an independent search, which ignores that the earlier answer constrains retrieval.</li>
+            <li>Ignoring that a wrong fact introduced at turn one propagates through later turns.</li>
+          </ul>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">FAQ</h2>
+          <div class="space-y-4">
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">Can a brand recover if absent at turn one?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">Sometimes, if a later turn is specific enough to trigger fresh retrieval. Recovery is unreliable, which is why first-turn presence matters.</p>
+            </div>
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">Do all surfaces carry context?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">Most chat surfaces do within a session. Search-like surfaces with independent queries do not, so the same prompt behaves differently.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-4">Related terms</h2>
+          <div class="grid sm:grid-cols-3 gap-3">
+            <a href="/glossary/query-refinement/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">query-refinement</span>
+            </a>
+            <a href="/glossary/context-window/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Context Window</span>
+            </a>
+            <a href="/glossary/query-fan-out/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Query Fan-Out</span>
+            </a>
+          </div>
+          <p class="mt-4 text-sm text-gray-500">
+            Browse all <a href="/glossary/" class="text-blue-600 hover:underline">50 plus terms</a>, or start with the
+            <a href="/guides/geo-complete-guide/" class="text-blue-600 hover:underline">complete GEO guide</a>.
+          </p>
+        </section>
+
+        <section class="mt-10 rounded-xl border border-blue-200 bg-blue-50 p-6">
+          <h2 class="text-lg font-semibold text-gray-900">See how this shows up for your brand</h2>
+          <p class="mt-2 text-sm text-gray-600">Fifty prompts, four surfaces, one baseline. Free report for the first twenty brands.</p>
+          <a href="https://indexhot.com" class="mt-4 inline-block px-5 py-3 rounded-lg bg-blue-600 text-white font-semibold text-sm hover:bg-blue-700 transition-colors">Check your brand free</a>
+        </section>
+
+      </div>
+    </article>
+  </main>
+
+  <footer class="border-t border-gray-100 px-5 sm:px-6 py-8">
+    <div class="max-w-3xl mx-auto text-center text-sm text-gray-400">
+      © 2026 IndexHot. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var menuBtn = document.getElementById('menu-btn');
+      var mobileMenu = document.getElementById('mobile-menu');
+
+      menuBtn.addEventListener('click', function () {
+        var isHidden = mobileMenu.classList.toggle('hidden');
+        menuBtn.setAttribute('aria-expanded', String(!isHidden));
+      });
+
+      mobileMenu.addEventListener('click', function (e) {
+        if (e.target.tagName === 'A') {
+          mobileMenu.classList.add('hidden');
+          menuBtn.setAttribute('aria-expanded', 'false');
+        }
+      });
+    })();
+  </script>
+</body>

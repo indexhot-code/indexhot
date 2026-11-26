@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How Often Do AI Answers Change? Three Sources of Noise — IndexHot</title>
+  <meta name="description" content="Three distinct causes move AI answers: sampling, index updates and model releases. How to separate them, and why weekly reporting on a moving target misleads." />
+  <link rel="canonical" href="https://indexhot.com/blog/how-often-do-ai-answers-change/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="How Often Do AI Answers Change? Three Sources of Noise — IndexHot" />
+  <meta property="og:description" content="Three distinct causes move AI answers: sampling, index updates and model releases. How to separate them, and why weekly reporting on a moving target misleads." />
+  <meta property="og:url" content="https://indexhot.com/blog/how-often-do-ai-answers-change/" />
+  <meta property="og:site_name" content="IndexHot" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="How Often Do AI Answers Change? Three Sources of Noise — IndexHot" />
+  <meta name="twitter:description" content="Three distinct causes move AI answers: sampling, index updates and model releases. How to separate them, and why weekly reporting on a moving target misleads." />
+  <link rel="stylesheet" href="../../tailwind.min.css" />
+  <style>
+    body { font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "headline": "How often do AI answers change, and why it matters for GEO",
+      "description": "Three distinct causes move AI answers: sampling, index updates and model releases. How to separate them, and why weekly reporting on a moving target misleads.",
+      "url": "https://indexhot.com/blog/how-often-do-ai-answers-change/",
+      "datePublished": "2026-11-26",
+      "dateModified": "2026-11-26",
+      "author": {
+        "@type": "Organization",
+        "name": "IndexHot Team",
+        "url": "https://indexhot.com/about/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "IndexHot",
+        "url": "https://indexhot.com/"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://indexhot.com/blog/how-often-do-ai-answers-change/"
+      },
+      "isPartOf": {
+        "@type": "Blog",
+        "name": "IndexHot Blog",
+        "url": "https://indexhot.com/blog/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://indexhot.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://indexhot.com/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "How often do AI answers change, and why it matters for GEO",
+          "item": "https://indexhot.com/blog/how-often-do-ai-answers-change/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How many runs are enough?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Three per prompt per surface for a working read. More runs reduce sampling noise but cannot resolve an unsettled retrieval set."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Should I worry when answers change?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Only when the change persists across two cycles with the same library and no release in between. Otherwise it is variance."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does instability mean the category is open?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Often yes. Volatile prompts tend to be ones where no source has established authority, which is where entry is cheapest."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body class="bg-white text-gray-800 antialiased">
+
+  <header class="sticky top-0 z-20 bg-white/90 backdrop-blur border-b border-gray-100">
+    <div class="max-w-3xl mx-auto px-5 sm:px-6 h-16 flex items-center justify-between">
+      <a href="/" class="text-xl font-bold tracking-tight text-gray-900">
+        Index<span class="text-blue-600">Hot</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6">
+        <a href="/blog/" class="text-sm font-medium text-blue-600">Blog</a>
+        <a href="/guides/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Guides</a>
+        <a href="/answers/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Answers</a>
+        <a href="/tools/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Tools</a>
+        <a href="/methodology/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Methodology</a>
+        <a href="/data/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Data</a>
+        <a href="/about/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">About</a>
+        <a href="#" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Sign in</a>
+      </nav>
+      <button id="menu-btn" type="button" aria-label="Open menu" aria-expanded="false"
+        class="md:hidden flex items-center justify-center w-10 h-10 -mr-2 rounded-lg text-gray-600 hover:text-blue-600 hover:bg-gray-100 transition-colors">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+    <nav id="mobile-menu" class="hidden md:hidden px-5 pb-4 pt-2 border-t border-gray-100 bg-white">
+      <a href="/blog/" class="block py-2.5 text-sm font-medium text-blue-600">Blog</a>
+      <a href="/guides/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Guides</a>
+      <a href="/answers/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Answers</a>
+      <a href="/tools/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Tools</a>
+      <a href="/methodology/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Methodology</a>
+      <a href="/data/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Data</a>
+      <a href="/about/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">About</a>
+      <a href="#" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Sign in</a>
+    </nav>
+  </header>
+  <main>
+    <article class="px-5 sm:px-6 pt-10 pb-10">
+      <div class="max-w-3xl mx-auto">
+
+        <nav class="mb-6 text-xs text-gray-500">
+          <a href="/" class="hover:text-blue-600 transition-colors">Home</a>
+          <span class="mx-1.5 text-gray-300">/</span>
+          <a href="/blog/" class="hover:text-blue-600 transition-colors">Blog</a>
+        </nav>
+
+        <header class="mb-8">
+          <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900 leading-tight">
+            How often do AI answers change, and why it matters for GEO
+          </h1>
+          <p class="mt-4 text-sm text-gray-400">
+            By <span class="font-medium text-gray-600">IndexHot Team</span> &middot; <time datetime="2026-11-26">November 26, 2026</time> &middot; 8 min read
+          </p>
+        </header>
+
+        <div class="text-lg text-gray-700 leading-relaxed border-l-4 border-blue-600 pl-4 mb-10">
+          <p>Ask the same question twice and you may get different brand lists. That instability is not a bug in your measurement, it is a property of the system, and it has three separate causes that need three separate responses. Teams that treat all of it as one thing end up rewriting pages to fix a model release.</p>
+        </div>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Three causes, three symptoms</h2>
+          <div class="overflow-x-auto mt-5">
+            <table class="w-full text-sm border-collapse min-w-[520px]">
+              <thead>
+                <tr>
+                  <th class="py-3 pr-4 text-left text-xs font-semibold uppercase tracking-wide text-gray-400 border-b border-gray-200">Cause</th>                  <th class="py-3 pr-4 text-left text-xs font-semibold uppercase tracking-wide text-gray-400 border-b border-gray-200">What you see</th>                  <th class="py-3 pr-4 text-left text-xs font-semibold uppercase tracking-wide text-gray-400 border-b border-gray-200">What it means</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="py-3 pr-4 text-sm text-gray-600 align-top border-b border-gray-100">Sampling</td>                  <td class="py-3 pr-4 text-sm text-gray-600 align-top border-b border-gray-100">Same prompt, same hour, different wording or brand order</td>                  <td class="py-3 pr-4 text-sm text-gray-600 align-top border-b border-gray-100">The answer is unsettled; a single run is one sample</td>
+                </tr>
+                <tr>
+                  <td class="py-3 pr-4 text-sm text-gray-600 align-top border-b border-gray-100">Index change</td>                  <td class="py-3 pr-4 text-sm text-gray-600 align-top border-b border-gray-100">Sources appear or disappear over days to weeks</td>                  <td class="py-3 pr-4 text-sm text-gray-600 align-top border-b border-gray-100">Retrieval is moving; freshness and crawl matter</td>
+                </tr>
+                <tr>
+                  <td class="py-3 pr-4 text-sm text-gray-600 align-top border-b border-gray-100">Model release</td>                  <td class="py-3 pr-4 text-sm text-gray-600 align-top border-b border-gray-100">Unrelated prompts move together on one date</td>                  <td class="py-3 pr-4 text-sm text-gray-600 align-top border-b border-gray-100">A release happened; your baseline is invalid</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="text-gray-600 leading-relaxed mt-4">The distinction matters because only one of these responds to your work. Sampling noise responds to more runs. Index movement responds to publishing and to access. A model release responds to nothing you can do, and the honest response is to re-baseline rather than to explain it.</p>
+        </section>
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">What normal instability looks like</h2>
+          <p class="text-gray-600 leading-relaxed mt-4">In a fifty-prompt set, expect a handful of prompts to be genuinely unsettled at any given time: two runs name you, one does not. That is not failure, it is a prompt where the retrieval set is thin or where two sources disagree.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">The practical rule is to code the median of three runs and to flag the prompt. A prompt that returns three different brand sets is unsettled regardless of how many more runs you add, and reporting it as a percentage implies a precision it does not have.</p>
+          <ul class="list-disc pl-5 space-y-2 text-gray-600 leading-relaxed marker:text-blue-500 mt-4">
+            <li>Stable: three runs agree on brand presence, even if wording differs.</li>
+            <li>Unsettled: presence changes across runs, order may or may not change.</li>
+            <li>Volatile: three runs produce three different brand sets.</li>
+          </ul>
+          <p class="text-gray-600 leading-relaxed mt-4">Volatile prompts are not useless. They usually mark the part of the category where no source has established itself, which is exactly where a specific page can win a durable slot. Stable prompts, by contrast, are usually owned by an incumbent and are expensive to move.</p>
+        </section>
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Why weekly reporting misleads</h2>
+          <p class="text-gray-600 leading-relaxed mt-4">If a typical prompt has a five-point chance of flipping between runs, twenty prompts produce movements that look like trends and are not. A team reporting weekly sees a two-point decline, commissions a fix, and then sees a two-point recovery that was the same noise moving back.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">Monthly is the shortest interval worth reporting for a fifty-prompt library, and quarterly is better for anything involving absorption, which is judgement-coded and drifts with fatigue. The exception is an active change: if you shipped a restructure last week, run weekly for three weeks to see whether it moved, then return to monthly.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">The exception has a discipline attached. Announce the reason for the higher cadence in advance, and stop when the window closes. Otherwise the weekly cadence becomes permanent and the team spends its attention on noise.</p>
+        </section>
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Recording what makes the numbers interpretable</h2>
+          <p class="text-gray-600 leading-relaxed mt-4">Four fields per row: prompt id, surface, run date, and the model or version where the interface exposes it. Six months later these are the difference between an explanation and a guess.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">Fix account state too. Logged-in and logged-out answers differ because personalisation and model version differ, so a cycle run from a different state is not comparable with the previous one, even when every prompt is identical.</p>
+          <ul class="list-disc pl-5 space-y-2 text-gray-600 leading-relaxed marker:text-blue-500 mt-4">
+            <li>Freeze the prompt library. Reworded prompts produce a trend that describes your edits.</li>
+            <li>Mark releases on the chart. A vertical line at the release date prevents misattribution.</li>
+            <li>Keep the raw answers. Coding rules change, and recoding from responses is cheaper than re-running.</li>
+          </ul>
+        </section>
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Frequently asked questions</h2>
+          <div class="space-y-4">
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">How many runs are enough?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">Three per prompt per surface for a working read. More runs reduce sampling noise but cannot resolve an unsettled retrieval set.</p>
+            </div>
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">Should I worry when answers change?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">Only when the change persists across two cycles with the same library and no release in between. Otherwise it is variance.</p>
+            </div>
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">Does instability mean the category is open?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">Often yes. Volatile prompts tend to be ones where no source has established authority, which is where entry is cheapest.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="mt-12 pt-8 border-t border-gray-100">
+          <h2 class="text-lg font-semibold text-gray-900 mb-4">Keep reading</h2>
+          <div class="grid sm:grid-cols-2 gap-4">
+          <a href="/guides/geo-measurement-playbook/" class="block p-5 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+            <span class="block text-sm font-semibold text-gray-900">The measurement playbook</span>
+            <span class="block text-sm text-gray-500 mt-1">How to run a cycle that survives this noise.</span>
+          </a>
+          <a href="/blog/track-brand-ai-search/" class="block p-5 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+            <span class="block text-sm font-semibold text-gray-900">How to track your brand in AI search</span>
+            <span class="block text-sm text-gray-500 mt-1">The protocol in practice.</span>
+          </a>
+          </div>
+        </section>
+
+        <section class="mt-12 pt-8 border-t border-gray-100">
+          <h2 class="text-lg font-semibold text-gray-900 mb-4">Glossary terms behind this</h2>
+          <div class="flex flex-wrap gap-x-4 gap-y-2 text-sm">
+            <a href="/glossary/answer-drift/" class="text-blue-600 hover:underline">Answer Drift</a>
+            <a href="/glossary/model-version-drift/" class="text-blue-600 hover:underline">Model Version Drift</a>
+            <a href="/glossary/governed-question-library/" class="text-blue-600 hover:underline">Governed Question Library</a>
+            <a href="/glossary/citation-rate/" class="text-blue-600 hover:underline">Citation Rate</a>
+          </div>
+        </section>
+
+        <section class="mt-10 rounded-xl border border-blue-200 bg-blue-50 p-6">
+          <h2 class="text-lg font-semibold text-gray-900">Run this against your own brand</h2>
+          <p class="mt-2 text-sm text-gray-600">Fifty prompts, four surfaces, one baseline. Free report for the first twenty brands.</p>
+          <a href="https://indexhot.com" class="mt-4 inline-block px-5 py-3 rounded-lg bg-blue-600 text-white font-semibold text-sm hover:bg-blue-700 transition-colors">Check your brand free</a>
+        </section>
+
+      </div>
+    </article>
+  </main>
+
+  <footer class="border-t border-gray-100 px-5 sm:px-6 py-8">
+    <div class="max-w-3xl mx-auto text-center text-sm text-gray-400">
+      © 2026 IndexHot. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var menuBtn = document.getElementById('menu-btn');
+      var mobileMenu = document.getElementById('mobile-menu');
+      menuBtn.addEventListener('click', function () {
+        var isHidden = mobileMenu.classList.toggle('hidden');
+        menuBtn.setAttribute('aria-expanded', String(!isHidden));
+      });
+      mobileMenu.addEventListener('click', function (e) {
+        if (e.target.tagName === 'A') {
+          mobileMenu.classList.add('hidden');
+          menuBtn.setAttribute('aria-expanded', 'false');
+        }
+      });
+    })();
+  </script>
+</body>
