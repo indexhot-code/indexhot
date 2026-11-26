@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What is GEO Audit? — IndexHot Glossary</title>
+  <meta name="description" content="A structured review of why a site is absent from AI answers, run in stage order rather than content." />
+  <link rel="canonical" href="https://indexhot.com/glossary/geo-audit/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="What is GEO Audit? — IndexHot Glossary" />
+  <meta property="og:description" content="A structured review of why a site is absent from AI answers, run in stage order rather than content order." />
+  <meta property="og:url" content="https://indexhot.com/glossary/geo-audit/" />
+  <meta property="og:site_name" content="IndexHot" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="What is GEO Audit? — IndexHot Glossary" />
+  <meta name="twitter:description" content="A structured review of why a site is absent from AI answers, run in stage order rather than content order." />
+  <link rel="stylesheet" href="../../tailwind.min.css" />
+  <style>
+    body { font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "GEO Audit",
+  "description": "A GEO audit checks the conditions an answer depends on, in sequence: can the page be fetched, is it eligible, does it produce usable chunks, does it supply distinctive claims, and is it attributed. It is ordered that way because a later fix cannot rescue an earlier failure.",
+  "url": "https://indexhot.com/glossary/geo-audit/",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "The IndexHot GEO Glossary",
+    "url": "https://indexhot.com/glossary/"
+  }
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://indexhot.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Glossary",
+      "item": "https://indexhot.com/glossary/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "GEO Audit",
+      "item": "https://indexhot.com/glossary/geo-audit/"
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How long does a full audit take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Half a day for ten pages if the checks are scripted. The raw-HTML check is the one that most often ends the exercise early."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can an audit be automated?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The first three stages can be. Distinctiveness needs judgement, because it requires knowing what the category already says."
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body class="bg-white text-gray-800 antialiased">
+
+  <header class="sticky top-0 z-20 bg-white/90 backdrop-blur border-b border-gray-100">
+    <div class="max-w-3xl mx-auto px-5 sm:px-6 h-16 flex items-center justify-between">
+      <a href="/" class="text-xl font-bold tracking-tight text-gray-900">
+        Index<span class="text-blue-600">Hot</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6">
+        <a href="/blog/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Blog</a>
+        <a href="/guides/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Guides</a>
+        <a href="/answers/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Answers</a>
+        <a href="/tools/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Tools</a>
+        <a href="/methodology/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Methodology</a>
+        <a href="/data/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Data</a>
+        <a href="/about/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">About</a>
+        <a href="#" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Sign in</a>
+      </nav>
+      <button id="menu-btn" type="button" aria-label="Open menu" aria-expanded="false"
+        class="md:hidden flex items-center justify-center w-10 h-10 -mr-2 rounded-lg text-gray-600 hover:text-blue-600 hover:bg-gray-100 transition-colors">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+    <nav id="mobile-menu" class="hidden md:hidden px-5 pb-4 pt-2 border-t border-gray-100 bg-white">
+      <a href="/blog/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Blog</a>
+      <a href="/guides/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Guides</a>
+      <a href="/answers/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Answers</a>
+      <a href="/tools/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Tools</a>
+      <a href="/methodology/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Methodology</a>
+      <a href="/data/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Data</a>
+      <a href="/about/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">About</a>
+      <a href="#" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Sign in</a>
+    </nav>
+  </header>
+  <main>
+    <article class="px-5 sm:px-6 pt-10 pb-10">
+      <div class="max-w-3xl mx-auto">
+
+        <nav aria-label="Breadcrumb" class="mb-6 text-xs text-gray-500">
+          <a href="/" class="hover:text-blue-600 transition-colors">Home</a>
+          <span class="mx-1.5 text-gray-300">/</span>
+          <a href="/glossary/" class="hover:text-blue-600 transition-colors">Glossary</a>
+          <span class="mx-1.5 text-gray-300">/</span>
+          <span class="text-gray-700">GEO Audit</span>
+        </nav>
+
+        <header class="mb-8">
+          <p class="text-sm font-semibold text-blue-600 mb-3">Glossary · <a href="/glossary/category/core-concepts/" class="hover:underline">Core concepts</a></p>
+          <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900 leading-tight">
+            What is GEO Audit?
+          </h1>
+        </header>
+
+        <p class="text-xs text-gray-400 mb-6">Last updated November 2026 · Reviewed against the IndexHot GEO Measurement Standard v1.0</p>
+
+        <div class="text-lg text-gray-700 leading-relaxed border-l-4 border-blue-600 pl-4 mb-8">
+          <p>A GEO audit checks the conditions an answer depends on, in sequence: can the page be fetched, is it eligible, does it produce usable chunks, does it supply distinctive claims, and is it attributed. It is ordered that way because a later fix cannot rescue an earlier failure.</p>
+        </div>
+
+        <p class="text-gray-600 leading-relaxed mb-10">
+          In short: A structured review of why a site is absent from AI answers, run in stage order rather than content order.
+        </p>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Why it matters</h2>
+          <p class="text-gray-600 leading-relaxed mt-4">Most audits fail by starting with content. A team rewrites ten pages and sees nothing move, because the pages were never readable by a fetcher, which a five-minute check would have shown.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">The audit's second value is that it produces a finite work list. Each stage has a check and a verdict, so the output is a ranked set of defects rather than a list of suggestions.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">How to work with it</h2>
+          <p class="text-gray-600 leading-relaxed mt-4">Run four checks in order and stop at the first failure.</p>
+          <ul class="list-disc pl-5 space-y-2 text-gray-600 leading-relaxed marker:text-blue-500 mt-4">
+            <li>Fetch the URL as raw HTML and confirm the substance is present without scripts.</li>
+            <li>Check the status code and canonical for the path, and whether the page is in the sitemap.</li>
+            <li>Read one section as a standalone passage: does it name its subject and state a claim?</li>
+            <li>Compare the claim to two competitor pages: is it distinctive or common to the category?</li>
+          </ul>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Common mistakes</h2>
+          <ul class="list-disc pl-5 space-y-2 text-gray-600 leading-relaxed marker:text-blue-500">
+            <li>Starting with writing, which is the most expensive stage and the least likely to be the problem.</li>
+            <li>Auditing with a browser that executes JavaScript, which hides the access failure entirely.</li>
+            <li>Producing a list of fifty recommendations with no order, which no team can act on.</li>
+          </ul>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">FAQ</h2>
+          <div class="space-y-4">
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">How long does a full audit take?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">Half a day for ten pages if the checks are scripted. The raw-HTML check is the one that most often ends the exercise early.</p>
+            </div>
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">Can an audit be automated?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">The first three stages can be. Distinctiveness needs judgement, because it requires knowing what the category already says.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-4">Related terms</h2>
+          <div class="grid sm:grid-cols-3 gap-3">
+            <a href="/glossary/content-extractability/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Content Extractability</span>
+            </a>
+            <a href="/glossary/chunking/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Chunking</span>
+            </a>
+            <a href="/glossary/citation-rate/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Citation Rate</span>
+            </a>
+          </div>
+          <p class="mt-4 text-sm text-gray-500">
+            Browse all <a href="/glossary/" class="text-blue-600 hover:underline">50 plus terms</a>, or start with the
+            <a href="/guides/geo-complete-guide/" class="text-blue-600 hover:underline">complete GEO guide</a>.
+          </p>
+        </section>
+
+        <section class="mt-10 rounded-xl border border-blue-200 bg-blue-50 p-6">
+          <h2 class="text-lg font-semibold text-gray-900">See how this shows up for your brand</h2>
+          <p class="mt-2 text-sm text-gray-600">Fifty prompts, four surfaces, one baseline. Free report for the first twenty brands.</p>
+          <a href="https://indexhot.com" class="mt-4 inline-block px-5 py-3 rounded-lg bg-blue-600 text-white font-semibold text-sm hover:bg-blue-700 transition-colors">Check your brand free</a>
+        </section>
+
+      </div>
+    </article>
+  </main>
+
+  <footer class="border-t border-gray-100 px-5 sm:px-6 py-8">
+    <div class="max-w-3xl mx-auto text-center text-sm text-gray-400">
+      © 2026 IndexHot. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var menuBtn = document.getElementById('menu-btn');
+      var mobileMenu = document.getElementById('mobile-menu');
+
+      menuBtn.addEventListener('click', function () {
+        var isHidden = mobileMenu.classList.toggle('hidden');
+        menuBtn.setAttribute('aria-expanded', String(!isHidden));
+      });
+
+      mobileMenu.addEventListener('click', function (e) {
+        if (e.target.tagName === 'A') {
+          mobileMenu.classList.add('hidden');
+          menuBtn.setAttribute('aria-expanded', 'false');
+        }
+      });
+    })();
+  </script>
+</body>

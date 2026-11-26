@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How to Audit a Competitor's AI Visibility Without Their Data — IndexHot</title>
+  <meta name="description" content="Five steps using only public answers: build the prompt set, code the competitor set, read the cited pages, compare structure and find uncovered sub-questions." />
+  <link rel="canonical" href="https://indexhot.com/blog/how-to-audit-a-competitor-in-ai-search/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="How to Audit a Competitor's AI Visibility Without Their Data — IndexHot" />
+  <meta property="og:description" content="Five steps using only public answers: build the prompt set, code the competitor set, read the pages being cited, compare structure, and find the sub-questions nobody covers." />
+  <meta property="og:url" content="https://indexhot.com/blog/how-to-audit-a-competitor-in-ai-search/" />
+  <meta property="og:site_name" content="IndexHot" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="How to Audit a Competitor's AI Visibility Without Their Data — IndexHot" />
+  <meta name="twitter:description" content="Five steps using only public answers: build the prompt set, code the competitor set, read the pages being cited, compare structure, and find the sub-questions nobody covers." />
+  <link rel="stylesheet" href="../../tailwind.min.css" />
+  <style>
+    body { font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "headline": "How to audit a competitor's AI visibility without their data",
+      "description": "Five steps using only public answers: build the prompt set, code the competitor set, read the pages being cited, compare structure, and find the sub-questions nobody covers.",
+      "url": "https://indexhot.com/blog/how-to-audit-a-competitor-in-ai-search/",
+      "datePublished": "2026-11-26",
+      "dateModified": "2026-11-26",
+      "author": {
+        "@type": "Organization",
+        "name": "IndexHot Team",
+        "url": "https://indexhot.com/about/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "IndexHot",
+        "url": "https://indexhot.com/"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://indexhot.com/blog/how-to-audit-a-competitor-in-ai-search/"
+      },
+      "isPartOf": {
+        "@type": "Blog",
+        "name": "IndexHot Blog",
+        "url": "https://indexhot.com/blog/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://indexhot.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://indexhot.com/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "How to audit a competitor's AI visibility without their data",
+          "item": "https://indexhot.com/blog/how-to-audit-a-competitor-in-ai-search/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is this ethical?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Every input is a public answer and a public page. Nothing here requires access to their analytics or private data."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How often should I re-run a competitor audit?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Quarterly, on the same library. More often produces drift rather than insight, and the competitor's own content changes slowly."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What if the competitor is cited everywhere and we are absent?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Then step 5 is your whole strategy for a quarter. Entering a closed set through the sub-questions is cheaper than contesting the headline question."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body class="bg-white text-gray-800 antialiased">
+
+  <header class="sticky top-0 z-20 bg-white/90 backdrop-blur border-b border-gray-100">
+    <div class="max-w-3xl mx-auto px-5 sm:px-6 h-16 flex items-center justify-between">
+      <a href="/" class="text-xl font-bold tracking-tight text-gray-900">
+        Index<span class="text-blue-600">Hot</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6">
+        <a href="/blog/" class="text-sm font-medium text-blue-600">Blog</a>
+        <a href="/guides/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Guides</a>
+        <a href="/answers/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Answers</a>
+        <a href="/tools/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Tools</a>
+        <a href="/methodology/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Methodology</a>
+        <a href="/data/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Data</a>
+        <a href="/about/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">About</a>
+        <a href="#" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Sign in</a>
+      </nav>
+      <button id="menu-btn" type="button" aria-label="Open menu" aria-expanded="false"
+        class="md:hidden flex items-center justify-center w-10 h-10 -mr-2 rounded-lg text-gray-600 hover:text-blue-600 hover:bg-gray-100 transition-colors">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+    <nav id="mobile-menu" class="hidden md:hidden px-5 pb-4 pt-2 border-t border-gray-100 bg-white">
+      <a href="/blog/" class="block py-2.5 text-sm font-medium text-blue-600">Blog</a>
+      <a href="/guides/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Guides</a>
+      <a href="/answers/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Answers</a>
+      <a href="/tools/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Tools</a>
+      <a href="/methodology/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Methodology</a>
+      <a href="/data/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Data</a>
+      <a href="/about/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">About</a>
+      <a href="#" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Sign in</a>
+    </nav>
+  </header>
+  <main>
+    <article class="px-5 sm:px-6 pt-10 pb-10">
+      <div class="max-w-3xl mx-auto">
+
+        <nav class="mb-6 text-xs text-gray-500">
+          <a href="/" class="hover:text-blue-600 transition-colors">Home</a>
+          <span class="mx-1.5 text-gray-300">/</span>
+          <a href="/blog/" class="hover:text-blue-600 transition-colors">Blog</a>
+        </nav>
+
+        <header class="mb-8">
+          <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900 leading-tight">
+            How to audit a competitor's AI visibility without their data
+          </h1>
+          <p class="mt-4 text-sm text-gray-400">
+            By <span class="font-medium text-gray-600">IndexHot Team</span> &middot; <time datetime="2026-11-26">November 26, 2026</time> &middot; 8 min read
+          </p>
+        </header>
+
+        <div class="text-lg text-gray-700 leading-relaxed border-l-4 border-blue-600 pl-4 mb-10">
+          <p>You cannot see a competitor's internal reporting, but you can see almost everything that matters: which answers name them, which pages the answers cite, and what those pages contain. That is enough to reconstruct why they win and where the gap is, using only public information.</p>
+        </div>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Step 1: build one prompt set for the category</h2>
+          <p class="text-gray-600 leading-relaxed mt-4">Use your own library rather than a competitor-specific one, so the comparison is same-run and same-date. Fifty prompts across the eight intent clusters is enough; the point is coverage of the decision, not volume.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">Record the answers verbatim. Screenshots lose the text that coding depends on, and the sentences matter more than the layout.</p>
+        </section>
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Step 2: code the competitor set, not just the brand</h2>
+          <p class="text-gray-600 leading-relaxed mt-4">For each answer, note every brand named, in order, and whether each is described or merely listed. The competitor's pattern is the finding: if they appear in seven of eight clusters and are described in five, their strength is breadth plus extractable facts.</p>
+          <ul class="list-disc pl-5 space-y-2 text-gray-600 leading-relaxed marker:text-blue-500 mt-4">
+            <li>Which clusters they own outright, and which they are absent from.</li>
+            <li>Whether they are named only, or described with a claim.</li>
+            <li>Whether their presence is stable across three runs or unsettled.</li>
+          </ul>
+        </section>
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Step 3: read the pages that get cited</h2>
+          <p class="text-gray-600 leading-relaxed mt-4">This is the most informative step and the one most often skipped. For each answer citing the competitor, open the cited page and look at four things: does the claim appear in the first sentence of a section, is it in text rather than an image, does the section name its subject, and is there a table.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">You will usually find that the winning pages are not better written. They are more cuttable: each section states a claim that survives being read alone.</p>
+        </section>
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Step 4: compare structure, not quality</h2>
+          <p class="text-gray-600 leading-relaxed mt-4">Put one of their cited pages beside one of yours and compare the same attributes: heading-as-question, claim in the first sentence, table with labelled columns, date visible, schema present.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">This reframes the problem from they write better to their pages are structured for extraction, which is a fixable difference and a cheaper one than a content programme.</p>
+        </section>
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Step 5: find the sub-questions nobody covers</h2>
+          <p class="text-gray-600 leading-relaxed mt-4">The gap is rarely the headline question. It is the follow-ups: migration, limits, support terms, integration specifics, pricing at a particular scale. Those are separate retrievals, and incumbents frequently neglect them because they wrote one comprehensive page years ago.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">List five such sub-questions where the competitor is absent. That list is your content brief, and it is more valuable than a share-of-voice figure, because it names work that would change the number.</p>
+        </section>
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Frequently asked questions</h2>
+          <div class="space-y-4">
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">Is this ethical?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">Yes. Every input is a public answer and a public page. Nothing here requires access to their analytics or private data.</p>
+            </div>
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">How often should I re-run a competitor audit?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">Quarterly, on the same library. More often produces drift rather than insight, and the competitor's own content changes slowly.</p>
+            </div>
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">What if the competitor is cited everywhere and we are absent?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">Then step 5 is your whole strategy for a quarter. Entering a closed set through the sub-questions is cheaper than contesting the headline question.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="mt-12 pt-8 border-t border-gray-100">
+          <h2 class="text-lg font-semibold text-gray-900 mb-4">Keep reading</h2>
+          <div class="grid sm:grid-cols-2 gap-4">
+          <a href="/guides/geo-measurement-playbook/" class="block p-5 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+            <span class="block text-sm font-semibold text-gray-900">The measurement playbook</span>
+            <span class="block text-sm text-gray-500 mt-1">How to run the comparable cycle.</span>
+          </a>
+          <a href="/vs/" class="block p-5 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+            <span class="block text-sm font-semibold text-gray-900">Comparisons</span>
+            <span class="block text-sm text-gray-500 mt-1">How we write comparison pages that survive scrutiny.</span>
+          </a>
+          </div>
+        </section>
+
+        <section class="mt-12 pt-8 border-t border-gray-100">
+          <h2 class="text-lg font-semibold text-gray-900 mb-4">Glossary terms behind this</h2>
+          <div class="flex flex-wrap gap-x-4 gap-y-2 text-sm">
+            <a href="/glossary/competitor-set/" class="text-blue-600 hover:underline">Competitor Set</a>
+            <a href="/glossary/source-concentration/" class="text-blue-600 hover:underline">Source Concentration</a>
+            <a href="/glossary/content-extractability/" class="text-blue-600 hover:underline">Content Extractability</a>
+            <a href="/glossary/prompt-cluster/" class="text-blue-600 hover:underline">Prompt Cluster</a>
+          </div>
+        </section>
+
+        <section class="mt-10 rounded-xl border border-blue-200 bg-blue-50 p-6">
+          <h2 class="text-lg font-semibold text-gray-900">Run this against your own brand</h2>
+          <p class="mt-2 text-sm text-gray-600">Fifty prompts, four surfaces, one baseline. Free report for the first twenty brands.</p>
+          <a href="https://indexhot.com" class="mt-4 inline-block px-5 py-3 rounded-lg bg-blue-600 text-white font-semibold text-sm hover:bg-blue-700 transition-colors">Check your brand free</a>
+        </section>
+
+      </div>
+    </article>
+  </main>
+
+  <footer class="border-t border-gray-100 px-5 sm:px-6 py-8">
+    <div class="max-w-3xl mx-auto text-center text-sm text-gray-400">
+      © 2026 IndexHot. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var menuBtn = document.getElementById('menu-btn');
+      var mobileMenu = document.getElementById('mobile-menu');
+      menuBtn.addEventListener('click', function () {
+        var isHidden = mobileMenu.classList.toggle('hidden');
+        menuBtn.setAttribute('aria-expanded', String(!isHidden));
+      });
+      mobileMenu.addEventListener('click', function (e) {
+        if (e.target.tagName === 'A') {
+          mobileMenu.classList.add('hidden');
+          menuBtn.setAttribute('aria-expanded', 'false');
+        }
+      });
+    })();
+  </script>
+</body>

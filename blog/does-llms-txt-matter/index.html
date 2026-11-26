@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Does llms.txt Actually Matter? What the Evidence Shows — IndexHot</title>
+  <meta name="description" content="llms.txt is a proposal, not a standard. What it claims to do, what evidence exists that answer engines read it, and where it is genuinely useful." />
+  <link rel="canonical" href="https://indexhot.com/blog/does-llms-txt-matter/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Does llms.txt Actually Matter? What the Evidence Shows — IndexHot" />
+  <meta property="og:description" content="llms.txt is a proposal, not a standard. What it claims to do, what evidence exists that answer engines read it, and where it is genuinely useful." />
+  <meta property="og:url" content="https://indexhot.com/blog/does-llms-txt-matter/" />
+  <meta property="og:site_name" content="IndexHot" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Does llms.txt Actually Matter? What the Evidence Shows — IndexHot" />
+  <meta name="twitter:description" content="llms.txt is a proposal, not a standard. What it claims to do, what evidence exists that answer engines read it, and where it is genuinely useful." />
+  <link rel="stylesheet" href="../../tailwind.min.css" />
+  <style>
+    body { font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "headline": "Does llms.txt actually matter? What the evidence shows",
+      "description": "llms.txt is a proposal, not a standard. What it claims to do, what evidence exists that answer engines read it, and where it is genuinely useful.",
+      "url": "https://indexhot.com/blog/does-llms-txt-matter/",
+      "datePublished": "2026-11-26",
+      "dateModified": "2026-11-26",
+      "author": {
+        "@type": "Organization",
+        "name": "IndexHot Team",
+        "url": "https://indexhot.com/about/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "IndexHot",
+        "url": "https://indexhot.com/"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://indexhot.com/blog/does-llms-txt-matter/"
+      },
+      "isPartOf": {
+        "@type": "Blog",
+        "name": "IndexHot Blog",
+        "url": "https://indexhot.com/blog/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://indexhot.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://indexhot.com/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Does llms.txt actually matter? What the evidence shows",
+          "item": "https://indexhot.com/blog/does-llms-txt-matter/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Will publishing llms.txt hurt anything?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Not measurably. It is a static text file. The cost is the opportunity cost of the time, which is trivial for one page and significant for a programme."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Should I wait for a standard?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Make the file if it helps the inventory, but do not gate other work on adoption that has not happened."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is it the same as robots.txt?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. robots.txt governs access and is honoured by crawlers. llms.txt proposes curation and has no enforcement behind it."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body class="bg-white text-gray-800 antialiased">
+
+  <header class="sticky top-0 z-20 bg-white/90 backdrop-blur border-b border-gray-100">
+    <div class="max-w-3xl mx-auto px-5 sm:px-6 h-16 flex items-center justify-between">
+      <a href="/" class="text-xl font-bold tracking-tight text-gray-900">
+        Index<span class="text-blue-600">Hot</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6">
+        <a href="/blog/" class="text-sm font-medium text-blue-600">Blog</a>
+        <a href="/guides/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Guides</a>
+        <a href="/answers/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Answers</a>
+        <a href="/tools/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Tools</a>
+        <a href="/methodology/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Methodology</a>
+        <a href="/data/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Data</a>
+        <a href="/about/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">About</a>
+        <a href="#" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Sign in</a>
+      </nav>
+      <button id="menu-btn" type="button" aria-label="Open menu" aria-expanded="false"
+        class="md:hidden flex items-center justify-center w-10 h-10 -mr-2 rounded-lg text-gray-600 hover:text-blue-600 hover:bg-gray-100 transition-colors">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+    <nav id="mobile-menu" class="hidden md:hidden px-5 pb-4 pt-2 border-t border-gray-100 bg-white">
+      <a href="/blog/" class="block py-2.5 text-sm font-medium text-blue-600">Blog</a>
+      <a href="/guides/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Guides</a>
+      <a href="/answers/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Answers</a>
+      <a href="/tools/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Tools</a>
+      <a href="/methodology/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Methodology</a>
+      <a href="/data/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Data</a>
+      <a href="/about/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">About</a>
+      <a href="#" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Sign in</a>
+    </nav>
+  </header>
+  <main>
+    <article class="px-5 sm:px-6 pt-10 pb-10">
+      <div class="max-w-3xl mx-auto">
+
+        <nav class="mb-6 text-xs text-gray-500">
+          <a href="/" class="hover:text-blue-600 transition-colors">Home</a>
+          <span class="mx-1.5 text-gray-300">/</span>
+          <a href="/blog/" class="hover:text-blue-600 transition-colors">Blog</a>
+        </nav>
+
+        <header class="mb-8">
+          <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900 leading-tight">
+            Does llms.txt actually matter? What the evidence shows
+          </h1>
+          <p class="mt-4 text-sm text-gray-400">
+            By <span class="font-medium text-gray-600">IndexHot Team</span> &middot; <time datetime="2026-11-26">November 26, 2026</time> &middot; 7 min read
+          </p>
+        </header>
+
+        <div class="text-lg text-gray-700 leading-relaxed border-l-4 border-blue-600 pl-4 mb-10">
+          <p>llms.txt is a plain-text file at the site root that proposes telling AI systems which pages matter. It is widely recommended and thinly evidenced. This is what it actually does, what we have been able to observe, and the one job it performs well regardless of whether any model reads it.</p>
+        </div>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">What the proposal claims</h2>
+          <p class="text-gray-600 leading-relaxed mt-4">The file proposes a curated index: a list of the pages a site considers most useful to an AI system, with short descriptions, in a format that is cheap to parse.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">The reasoning is plausible. A retrieval pipeline that could read such a file would skip navigation, boilerplate and abandoned pages. The problem is that plausibility is not adoption, and no major answer engine has published a commitment to reading it.</p>
+          <ul class="list-disc pl-5 space-y-2 text-gray-600 leading-relaxed marker:text-blue-500 mt-4">
+            <li>It is a community proposal, not a specification maintained by a standards body.</li>
+            <li>No platform has documented consuming it as a retrieval input.</li>
+            <li>Absence of adoption does not prove it is ignored; it means the effect is unmeasurable from outside.</li>
+          </ul>
+        </section>
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">What we can and cannot observe</h2>
+          <p class="text-gray-600 leading-relaxed mt-4">We can observe whether a file is requested: server logs show fetches by user agents, and a crawler that reads the file leaves a trace. Across the sites we have access to, requests for llms.txt are rare and predominantly from tooling rather than from answer engines.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">We cannot observe internal use. A system could consume the file without a distinguishable request pattern, or could read it and ignore it. So the honest statement is narrower than either camp: there is no evidence of benefit, and no proof of harm.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">That places llms.txt in the same category as several other speculative signals. Publishing it costs ten minutes and a text file. The mistake is spending a quarter on it, or treating it as a substitute for making pages fetchable.</p>
+        </section>
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Where it is genuinely useful</h2>
+          <p class="text-gray-600 leading-relaxed mt-4">The file forces a decision most sites never make: which twenty pages would you want a machine to read first. Answering that question produces an editorial inventory, and the inventory is valuable whether or not the file is ever consumed.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">It also surfaces duplication. Sites that cannot produce a coherent short list usually have forty pages that all claim to be the definitive overview, which is a real problem independent of llms.txt.</p>
+          <ul class="list-disc pl-5 space-y-2 text-gray-600 leading-relaxed marker:text-blue-500 mt-4">
+            <li>Use it as a maintenance checklist: the listed pages should be the ones with the most extractable substance.</li>
+            <li>Keep the descriptions factual, because they are also readable by humans who open the file.</li>
+            <li>Update it when pages move, or the inventory decays into a list of redirects.</li>
+          </ul>
+        </section>
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">What to do instead, in priority order</h2>
+          <ol class="list-decimal pl-5 space-y-2 text-gray-600 leading-relaxed marker:text-blue-500 mt-4">
+            <li>Make sure the pages return real HTML with the substance in it. This is the condition that decides everything else.</li>
+            <li>Fix status codes and canonical tags so the crawlable set equals the indexable set.</li>
+            <li>Put the key facts in the first sentence of each section, where a chunk can carry them.</li>
+            <li>Publish schema that states the entity, the author and the page type.</li>
+            <li>Then, if you have ten minutes left, write llms.txt as an inventory.</li>
+          </ol>
+          <p class="text-gray-600 leading-relaxed mt-4">That order is not a dismissal. It is the order in which the failures actually occur, and llms.txt sits near the end because its effect is unmeasurable while the earlier items are testable in an afternoon.</p>
+        </section>
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Frequently asked questions</h2>
+          <div class="space-y-4">
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">Will publishing llms.txt hurt anything?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">Not measurably. It is a static text file. The cost is the opportunity cost of the time, which is trivial for one page and significant for a programme.</p>
+            </div>
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">Should I wait for a standard?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">No. Make the file if it helps the inventory, but do not gate other work on adoption that has not happened.</p>
+            </div>
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">Is it the same as robots.txt?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">No. robots.txt governs access and is honoured by crawlers. llms.txt proposes curation and has no enforcement behind it.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="mt-12 pt-8 border-t border-gray-100">
+          <h2 class="text-lg font-semibold text-gray-900 mb-4">Keep reading</h2>
+          <div class="grid sm:grid-cols-2 gap-4">
+          <a href="/guides/how-ai-search-works/" class="block p-5 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+            <span class="block text-sm font-semibold text-gray-900">How AI search works</span>
+            <span class="block text-sm text-gray-500 mt-1">What retrieval actually reads.</span>
+          </a>
+          <a href="/tools/citation-extractability-checker/" class="block p-5 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+            <span class="block text-sm font-semibold text-gray-900">Extractability checker</span>
+            <span class="block text-sm text-gray-500 mt-1">Test a passage instead of a file.</span>
+          </a>
+          </div>
+        </section>
+
+        <section class="mt-12 pt-8 border-t border-gray-100">
+          <h2 class="text-lg font-semibold text-gray-900 mb-4">Glossary terms behind this</h2>
+          <div class="flex flex-wrap gap-x-4 gap-y-2 text-sm">
+            <a href="/glossary/ai-crawler/" class="text-blue-600 hover:underline">AI Crawler</a>
+            <a href="/glossary/crawlability/" class="text-blue-600 hover:underline">Crawlability</a>
+            <a href="/glossary/content-extractability/" class="text-blue-600 hover:underline">Content Extractability</a>
+            <a href="/glossary/indexability/" class="text-blue-600 hover:underline">Indexability</a>
+          </div>
+        </section>
+
+        <section class="mt-10 rounded-xl border border-blue-200 bg-blue-50 p-6">
+          <h2 class="text-lg font-semibold text-gray-900">Run this against your own brand</h2>
+          <p class="mt-2 text-sm text-gray-600">Fifty prompts, four surfaces, one baseline. Free report for the first twenty brands.</p>
+          <a href="https://indexhot.com" class="mt-4 inline-block px-5 py-3 rounded-lg bg-blue-600 text-white font-semibold text-sm hover:bg-blue-700 transition-colors">Check your brand free</a>
+        </section>
+
+      </div>
+    </article>
+  </main>
+
+  <footer class="border-t border-gray-100 px-5 sm:px-6 py-8">
+    <div class="max-w-3xl mx-auto text-center text-sm text-gray-400">
+      © 2026 IndexHot. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var menuBtn = document.getElementById('menu-btn');
+      var mobileMenu = document.getElementById('mobile-menu');
+      menuBtn.addEventListener('click', function () {
+        var isHidden = mobileMenu.classList.toggle('hidden');
+        menuBtn.setAttribute('aria-expanded', String(!isHidden));
+      });
+      mobileMenu.addEventListener('click', function (e) {
+        if (e.target.tagName === 'A') {
+          mobileMenu.classList.add('hidden');
+          menuBtn.setAttribute('aria-expanded', 'false');
+        }
+      });
+    })();
+  </script>
+</body>
