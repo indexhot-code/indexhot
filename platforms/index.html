@@ -4,16 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AI Search Platforms We Measure — IndexHot</title>
-  <meta name="description" content="Platform-by-platform guides to how ChatGPT, Perplexity, Gemini and Google AI Overviews select, cite and absorb brand sources." />
+  <meta name="description" content="Platform guides to how ChatGPT, Perplexity, Gemini, Google AI Overviews, Claude and Microsoft Copilot select, cite and absorb brand sources." />
   <link rel="canonical" href="https://indexhot.com/platforms/" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="AI Search Platforms We Measure — IndexHot" />
-  <meta property="og:description" content="Platform-by-platform guides to how ChatGPT, Perplexity, Gemini and Google AI Overviews select, cite and absorb brand sources." />
+  <meta property="og:description" content="Platform guides to how ChatGPT, Perplexity, Gemini, Google AI Overviews, Claude and Microsoft Copilot select, cite and absorb brand sources." />
   <meta property="og:url" content="https://indexhot.com/platforms/" />
   <meta property="og:site_name" content="IndexHot" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="AI Search Platforms We Measure — IndexHot" />
-  <meta name="twitter:description" content="Platform-by-platform guides to how ChatGPT, Perplexity, Gemini and Google AI Overviews select, cite and absorb brand sources." />
+  <meta name="twitter:description" content="Platform guides to how ChatGPT, Perplexity, Gemini, Google AI Overviews, Claude and Microsoft Copilot select, cite and absorb brand sources." />
   <link rel="stylesheet" href="../tailwind.min.css" />
   <style>
     body { font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
@@ -23,7 +23,7 @@
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   "name": "AI search platforms we measure",
-  "description": "Platform-by-platform guides to how ChatGPT, Perplexity, Gemini and Google AI Overviews select, cite and absorb brand sources.",
+  "description": "Platform guides to how ChatGPT, Perplexity, Gemini, Google AI Overviews, Claude and Microsoft Copilot select, cite and absorb brand sources.",
   "url": "https://indexhot.com/platforms/",
   "isPartOf": {
     "@type": "WebSite",
@@ -100,8 +100,9 @@
           <span class="text-gray-700">Platforms</span>
         </nav>
 
-        <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900 leading-tight">AI search platforms we measure</h1>
+        <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900 leading-tight">AI search platforms we track</h1>
         <p class="mt-4 text-base sm:text-lg text-gray-500 leading-relaxed">Each engine retrieves and cites differently. These guides explain the mechanism behind each one and what actually changes your visibility.</p>
+        <p class="mt-3 text-sm text-gray-500 leading-relaxed">The v1.0 standard panel scores four of them — ChatGPT, Perplexity, Gemini and Google AI Overviews. Claude and Microsoft Copilot are tracked as optional extensions, coded with the same rules and reported separately.</p>
 
         <div class="mt-9 space-y-3">
           <a href="/platforms/chatgpt/" class="block p-5 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
@@ -124,11 +125,21 @@
             <span class="block mt-1 text-sm text-gray-600 leading-relaxed">Two gates: ranking eligibility and content extractability.</span>
             <span class="mt-2 inline-flex items-center gap-1 text-sm font-semibold text-blue-600">Read the guide <span aria-hidden="true">&rarr;</span></span>
           </a>
+          <a href="/platforms/claude/" class="block p-5 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+            <span class="block text-base font-semibold text-gray-900">Claude</span>
+            <span class="block mt-1 text-sm text-gray-600 leading-relaxed">Fewer citations, longer answers: why one well-documented page beats ten marketing ones.</span>
+            <span class="mt-2 inline-flex items-center gap-1 text-sm font-semibold text-blue-600">Read the guide <span aria-hidden="true">&rarr;</span></span>
+          </a>
+          <a href="/platforms/copilot/" class="block p-5 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+            <span class="block text-base font-semibold text-gray-900">Microsoft Copilot</span>
+            <span class="block mt-1 text-sm text-gray-600 leading-relaxed">Grounded in the Bing index with a visible source list: the one surface where classic SEO still applies.</span>
+            <span class="mt-2 inline-flex items-center gap-1 text-sm font-semibold text-blue-600">Read the guide <span aria-hidden="true">&rarr;</span></span>
+          </a>
         </div>
 
                 <section class="mb-10">
           <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">What we measure on each surface</h2>
-          <p class="text-gray-600 leading-relaxed">Each platform page reports the same three outcomes, because the same question matters on all four: was the brand named, was a source of ours attached, and did anything we said survive into the answer.</p>
+          <p class="text-gray-600 leading-relaxed">Each platform page reports the same three outcomes, because the same question matters on all six: was the brand named, was a source of ours attached, and did anything we said survive into the answer.</p>
           <p class="text-gray-600 leading-relaxed mt-4">On ChatGPT we report the mention-to-citation ratio, which is unusually wide because many answers carry no sources at all. On Perplexity we report citation rate alongside absorption, because that surface attaches many sources and compresses each of them.</p>
           <p class="text-gray-600 leading-relaxed mt-4">Gemini and AI Overviews are measured in two layers: eligibility in ordinary search results, then use in the generated surface. A page that fails the first layer cannot pass the second, and reporting them as one number is how teams end up rewriting content that was never in the pool.</p>
           <p class="text-gray-600 leading-relaxed mt-4">All four pages use the same fifty-prompt library, so a comparison across surfaces reflects platform behaviour rather than four different question sets.</p>

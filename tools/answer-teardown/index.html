@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Answer Teardown Tool — Score Any Answer — IndexHot</title>
+  <meta name="description" content="Paste one AI answer and score it on naming, citation, substance and structure. See exactly which of the four checks your page fails, in your browser." />
+  <link rel="canonical" href="https://indexhot.com/tools/answer-teardown/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="AI Answer Teardown Tool — Score Any Answer — IndexHot" />
+  <meta property="og:description" content="Paste one AI answer and score it on naming, citation, substance and structure. See exactly which of the four checks your page fails, in your browser." />
+  <meta property="og:url" content="https://indexhot.com/tools/answer-teardown/" />
+  <meta property="og:site_name" content="IndexHot" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="AI Answer Teardown Tool — Score Any Answer — IndexHot" />
+  <meta name="twitter:description" content="Paste one AI answer and score it on naming, citation, substance and structure. See exactly which of the four checks your page fails, in your browser." />
+  <link rel="stylesheet" href="../../tailwind.min.css" />
+  <style>
+    body { font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "Answer Teardown",
+      "url": "https://indexhot.com/tools/answer-teardown/",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Any (browser)",
+      "description": "Paste one AI answer and score it on naming, citation, substance and structure. See exactly which of the four checks your page fails, in your browser.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "IndexHot",
+        "url": "https://indexhot.com/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://indexhot.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tools",
+          "item": "https://indexhot.com/tools/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Answer Teardown",
+          "item": "https://indexhot.com/tools/answer-teardown/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is this the same as your manual coding?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The same four dimensions, scored mechanically. Manual coding adds absorption level, which requires judging whether the answer adopts your framing or merely lists you."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why does a citation score separately from a mention?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Because the two fail independently and need different fixes. A brand can be described accurately and never used as the source, which means the evidence sits elsewhere."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I paste an AI Overview?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Paste the overview text and any links shown with it. Overviews cite sparsely, so a missing citation there is less informative than on a surface with a source list."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body class="bg-white text-gray-800 antialiased">
+
+  <!-- Top navigation -->
+  <header class="sticky top-0 z-20 bg-white/90 backdrop-blur border-b border-gray-100">
+    <div class="max-w-3xl mx-auto px-5 sm:px-6 h-16 flex items-center justify-between">
+      <a href="/" class="text-xl font-bold tracking-tight text-gray-900">
+        Index<span class="text-blue-600">Hot</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6">
+        <a href="/blog/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Blog</a>
+        <a href="/guides/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Guides</a>
+        <a href="/answers/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Answers</a>
+        <a href="/tools/" class="text-sm font-medium text-blue-600">Tools</a>
+        <a href="/methodology/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Methodology</a>
+        <a href="/data/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Data</a>
+        <a href="/about/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">About</a>
+        <a href="#" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Sign in</a>
+      </nav>
+      <button id="menu-btn" type="button" aria-label="Open menu" aria-expanded="false"
+        class="md:hidden flex items-center justify-center w-10 h-10 -mr-2 rounded-lg text-gray-600 hover:text-blue-600 hover:bg-gray-100 transition-colors">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+    <nav id="mobile-menu" class="hidden md:hidden px-5 pb-4 pt-2 border-t border-gray-100 bg-white">
+      <a href="/blog/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Blog</a>
+      <a href="/guides/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Guides</a>
+      <a href="/answers/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Answers</a>
+      <a href="/tools/" class="block py-2.5 text-sm font-medium text-blue-600">Tools</a>
+      <a href="/methodology/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Methodology</a>
+      <a href="/data/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Data</a>
+      <a href="/about/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">About</a>
+      <a href="#" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Sign in</a>
+    </nav>
+  </header>
+  <main>
+    <article class="px-5 sm:px-6 pt-10 pb-10">
+      <div class="max-w-3xl mx-auto">
+                <nav aria-label="Breadcrumb" class="mb-6 text-xs text-gray-500">
+          <a href="/" class="hover:text-blue-600 transition-colors">Home</a>
+          <span class="mx-1.5 text-gray-300">/</span>
+          <a href="/tools/" class="hover:text-blue-600 transition-colors">Tools</a>
+          <span class="mx-1.5 text-gray-300">/</span>
+          <span class="text-gray-700">Answer Teardown</span>
+        </nav>
+
+        <header class="mb-8">
+          <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900 leading-tight">
+            AI Answer Teardown Tool
+          </h1>
+          <p class="mt-4 text-base sm:text-lg text-gray-500 leading-relaxed">
+            Paste any AI answer and the tool scores it the way we code answers manually: named, cited, substantive, structured. It reports which check failed and what that failure usually means.
+          </p>
+        </header>
+
+        <section class="rounded-2xl border border-gray-200 bg-gray-50 p-5 sm:p-6 mb-10">
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div>
+              <label for="brand" class="text-sm font-semibold text-gray-900">Your brand name</label>
+              <input id="brand" type="text" placeholder="Acme" class="mt-2 w-full rounded-lg border border-gray-300 px-3 py-2 text-sm" />
+            </div>
+            <div>
+              <label for="domain" class="text-sm font-semibold text-gray-900">Your domain</label>
+              <input id="domain" type="text" placeholder="acme.com" class="mt-2 w-full rounded-lg border border-gray-300 px-3 py-2 text-sm" />
+            </div>
+            <div>
+              <label for="rivals" class="text-sm font-semibold text-gray-900">Competitors (comma separated)</label>
+              <input id="rivals" type="text" placeholder="Globex, Initech" class="mt-2 w-full rounded-lg border border-gray-300 px-3 py-2 text-sm" />
+            </div>
+          </div>
+          <div class="mt-4">
+            <label for="answer" class="text-sm font-semibold text-gray-900">Paste one AI answer</label>
+            <textarea id="answer" rows="7" placeholder="Copy the full answer from ChatGPT, Claude or an AI Overview, including any source list shown beneath it." class="mt-2 w-full rounded-lg border border-gray-300 px-3 py-2 text-sm font-mono"></textarea>
+          </div>
+          <div class="mt-4 flex flex-wrap items-center gap-3">
+            <button id="run" type="button" class="inline-flex items-center justify-center px-5 py-2.5 rounded-lg bg-blue-600 text-white font-semibold text-sm hover:bg-blue-700 transition-colors">Tear this answer down</button>
+            <span id="empty" class="text-sm text-gray-500" hidden></span>
+          </div>
+          <div id="out" class="mt-6" hidden>
+            <div class="flex items-baseline gap-3">
+              <span id="scoreNum" class="text-4xl font-bold text-gray-900">0</span>
+              <span class="text-sm text-gray-500">out of 100, weighted for answer-level visibility</span>
+            </div>
+            <p id="verdict" class="mt-2 text-gray-700 leading-relaxed"></p>
+            <p id="facts" class="mt-1 text-xs text-gray-500"></p>
+            <div id="rows" class="mt-5 space-y-3"></div>
+          </div>
+          <p class="mt-5 text-xs text-gray-400">Runs entirely in your browser. Nothing is uploaded, and no answer text is stored.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">What the four checks mean</h2>
+          <p class="text-gray-600 leading-relaxed mb-4">The tool scores an answer against the same four things we code manually: whether the brand is named, whether your domain is among the sources, whether the answer contains repeatable substance, and whether it is structured so a passage can be lifted without losing its meaning.</p>
+          <ul class="list-disc pl-5 space-y-2 text-gray-600 leading-relaxed marker:text-blue-500">
+            <li><strong class="text-gray-800">Named (30).</strong> A case-insensitive scan of the answer text. Naming is necessary and never sufficient.</li>
+            <li><strong class="text-gray-800">Cited (30).</strong> Domain extraction from the answer plus any source list pasted with it. This is the check most people skip, because a mention feels like a win.</li>
+            <li><strong class="text-gray-800">Substance (25).</strong> Numbers, units and dates. An answer built from your page usually carries some of them; a competitor's vague page contributes none.</li>
+            <li><strong class="text-gray-800">Structure (15).</strong> Words per sentence and whether the answer has parts. Long unbroken sentences are the typical reason a correct claim still fails to survive summarisation.</li>
+          </ul>
+          <p class="text-gray-600 leading-relaxed mb-4">Weights are deliberate and arguable. Substance outranks structure because a well-formed sentence with nothing in it is still nothing; if you weight differently, change the numbers in the page rather than the reasoning.</p>
+        </section>
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">How to read the output</h2>
+          <p class="text-gray-600 leading-relaxed mb-4">A score under 25 is not a content problem. It is an access or identity problem, and rewriting copy will not move it. Check crawl access, then check that the page states plainly what the product is and who it is for.</p>
+          <p class="text-gray-600 leading-relaxed mb-4">Between 25 and 55, the brand is appearing incidentally. Something on the page is readable enough to describe you and not specific enough to be used as evidence. That is usually where the fix belongs.</p>
+          <p class="text-gray-600 leading-relaxed mb-4">The failure mode at the top of the range is subtler: a high score on a single answer that does not repeat on the next run. One good answer is an anecdote. Run the same prompt five times before treating it as a position.</p>
+        </section>
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">What this tool cannot tell you</h2>
+          <p class="text-gray-600 leading-relaxed mb-4">It reads one answer, once. It cannot tell you how often that answer appears, whether it is stable across runs, or whether the same prompt at a different time produces a different brand. All three matter, and all three need repeated runs rather than a single paste.</p>
+          <p class="text-gray-600 leading-relaxed mb-4">It also cannot see answers you never pasted, and it cannot distinguish a citation in passing from a citation that supplied the argument. That distinction is what absorption coding exists for, and it needs a human read.</p>
+        </section>
+
+        <section class="mt-12 pt-8 border-t border-gray-100">
+          <h2 class="text-lg font-semibold text-gray-900 mb-4">Keep reading</h2>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <a href="/tools/geo-score-calculator/" class="p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">GEO score calculator</span>
+              <span class="block mt-1 text-sm text-gray-500">Turn the same four dimensions into a 0&ndash;100 position score.</span>
+            </a>
+            <a href="/guides/geo-measurement-playbook/" class="p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">The measurement playbook</span>
+              <span class="block mt-1 text-sm text-gray-500">How to run the prompt set and code answers consistently.</span>
+            </a>
+          </div>
+        </section>
+
+        <section class="mt-12">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-6">Frequently asked questions</h2>
+          <div class="space-y-5">
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">Is this the same as your manual coding?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">The same four dimensions, scored mechanically. Manual coding adds absorption level, which requires judging whether the answer adopts your framing or merely lists you.</p>
+            </div>
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">Why does a citation score separately from a mention?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">Because the two fail independently and need different fixes. A brand can be described accurately and never used as the source, which means the evidence sits elsewhere.</p>
+            </div>
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">Can I paste an AI Overview?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">Yes. Paste the overview text and any links shown with it. Overviews cite sparsely, so a missing citation there is less informative than on a surface with a source list.</p>
+            </div>
+          </div>
+        </section>
+
+  </main>
+
+  <footer class="border-t border-gray-100 px-5 sm:px-6 py-8">
+    <div class="max-w-3xl mx-auto text-center text-sm text-gray-400">
+      © 2026 IndexHot. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var menuBtn = document.getElementById('menu-btn');
+      var mobileMenu = document.getElementById('mobile-menu');
+      menuBtn.addEventListener('click', function () {
+        var isHidden = mobileMenu.classList.toggle('hidden');
+        menuBtn.setAttribute('aria-expanded', String(!isHidden));
+      });
+      mobileMenu.addEventListener('click', function (e) {
+        if (e.target.tagName === 'A') {
+          mobileMenu.classList.add('hidden');
+          menuBtn.setAttribute('aria-expanded', 'false');
+        }
+      });
+    })();
+  </script><script>
+
+(function () {
+  var brand = document.getElementById('brand');
+  var domain = document.getElementById('domain');
+  var text = document.getElementById('answer');
+  var out = document.getElementById('out');
+  var empty = document.getElementById('empty');
+
+  function esc(s) {
+    return String(s).replace(/[&<>"]/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c];
+    });
+  }
+  function count(re, s) { var m = s.match(re); return m ? m.length : 0; }
+
+  function analyse() {
+    var t = text.value.trim();
+    var b = brand.value.trim();
+    var d = domain.value.trim().replace(/^https?:\/\//, '').replace(/\/.*$/, '').toLowerCase();
+    if (t.length < 40) {
+      empty.hidden = false; empty.textContent = 'Paste at least a few sentences of the answer.';
+      out.hidden = true; return;
+    }
+    empty.hidden = true; out.hidden = false;
+
+    var lower = t.toLowerCase();
+    var sentences = t.split(/[.!?]+(?=\s|$)/).filter(function (s) { return s.trim().length > 1; });
+    var words = t.split(/\s+/).filter(Boolean).length;
+    var avg = sentences.length ? Math.round(words / sentences.length) : words;
+
+    var mentioned = b ? lower.indexOf(b.toLowerCase()) !== -1 : false;
+    var brandHits = b ? count(new RegExp(b.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g'), t) : 0;
+
+    var urls = t.match(/\b(?:https?:\/\/)?(?:[a-z0-9-]+\.)+[a-z]{2,}\b/gi) || [];
+    var domains = {};
+    urls.forEach(function (u) {
+      var h = u.replace(/^https?:\/\//, '').replace(/\/.*$/, '').toLowerCase();
+      domains[h] = (domains[h] || 0) + 1;
+    });
+    var cited = d ? Object.prototype.hasOwnProperty.call(domains, d) : false;
+    var sourceCount = Object.keys(domains).length;
+
+    var numbers = count(/\b\d+(?:[.,]\d+)?(?:[%$€£]|\s?(?:x|ms|gb|gb|k|m|kg|mm|cm|km|w|kw)?)\b/gi, t);
+    var unitWords = count(/\b(?:percent|percentage|users|customers|seats|minutes|hours|days|months|years|dollars|euros)\b/gi, t);
+    var dated = count(/\b(?:january|february|march|april|may|june|july|august|september|october|november|december|20\d\d)\b/gi, t);
+    var hedges = count(/\b(?:may|might|depends|depending|typically|generally|usually|often|in some cases|can vary)\b/gi, t);
+    var listy = /\n\s*[-*\u2022]|^\s*\d+\.|;\s*\n/.test(t);
+    var namedOthers = 0;
+    var rivals = document.getElementById('rivals').value.split(',').map(function (s) { return s.trim(); }).filter(Boolean);
+    rivals.forEach(function (r) {
+      if (lower.indexOf(r.toLowerCase()) !== -1) { namedOthers += 1; }
+    });
+
+    var checks = [
+      { k: 'Named', pass: mentioned, w: 30, detail: mentioned ? ('Brand appears ' + brandHits + ' time(s).') : 'Brand does not appear anywhere in this answer.', fix: 'This is a retrieval or entity problem, not a copy problem. Check that the page answering this question is crawlable and unambiguous about what it sells.' },
+      { k: 'Cited', pass: cited, w: 30, detail: d ? (cited ? 'Your domain is in the source set.' : (sourceCount ? (sourceCount + ' source(s) present, none of them yours.') : 'No source list attached.')) : 'No domain entered, so citation could not be checked.', fix: 'You are being described without being the evidence. Tighten the passage that answers this question so it can be lifted whole.' },
+      { k: 'Substance', pass: (numbers + unitWords >= 2), w: 25, detail: (numbers + ' numeric token(s), ' + unitWords + ' unit word(s), ' + dated + ' date reference(s).'), fix: 'Answers built on vague claims are hard to repeat. Add quantities, ranges, dates and named inputs to the passage you want used.' },
+      { k: 'Structure', pass: (avg <= 28 && (listy || sentences.length >= 3)), w: 15, detail: (sentences.length + ' sentence(s), ' + avg + ' words per sentence' + (listy ? ', contains list structure' : ', no list structure')).replace(/  +/g, ' '), fix: 'Long unbroken sentences get cut mid-thought. Split the answer into one claim per sentence and use a short list where the answer has parts.' }
+    ];
+
+    var score = 0;
+    checks.forEach(function (c) { if (c.pass) { score += c.w; } });
+
+    var rows = checks.map(function (c) {
+      var badge = c.pass
+        ? '<span class="inline-flex px-2 py-0.5 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800">pass</span>'
+        : '<span class="inline-flex px-2 py-0.5 rounded-full text-xs font-semibold bg-amber-100 text-amber-800">gap</span>';
+      var fix = c.pass ? '' : '<p class="mt-2 text-sm text-gray-600 leading-relaxed"><strong class="text-gray-800">What to fix:</strong> ' + c.fix + '</p>';
+      return '<div class="rounded-xl border border-gray-200 p-4">' +
+        '<div class="flex items-center justify-between gap-3"><span class="text-sm font-semibold text-gray-900">' + c.k + ' <span class="text-gray-400 font-normal">(' + c.w + ')</span></span>' + badge + '</div>' +
+        '<p class="mt-1 text-sm text-gray-600 leading-relaxed">' + esc(c.detail) + '</p>' + fix + '</div>';
+    }).join('');
+
+    var verdict;
+    if (score >= 85) { verdict = 'This answer is working for you. Keep the page dated and re-run monthly.'; }
+    else if (score >= 55) { verdict = 'Partly working. The brand is present but the evidence is not yours, so the framing can move to a competitor without notice.'; }
+    else if (score >= 25) { verdict = 'Weak. Presence is incidental rather than earned: fix the cited page before adding anything new.'; }
+    else { verdict = 'Absent. Treat this as an indexing and entity problem first, content second.'; }
+
+    document.getElementById('scoreNum').textContent = score;
+    document.getElementById('verdict').textContent = verdict;
+    document.getElementById('rows').innerHTML = rows;
+    document.getElementById('facts').textContent =
+      'Words: ' + words + ' · Sentences: ' + sentences.length + ' · Hedges: ' + hedges +
+      ' · Domains cited: ' + sourceCount + (rivals.length ? ' · Competitors named: ' + namedOthers : '');
+  }
+
+  document.getElementById('run').addEventListener('click', analyse);
+})();
+
+</script>
+</body>
+</html>

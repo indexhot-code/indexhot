@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A worked example: rewriting a product section for extraction — IndexHot</title>
+  <meta name="description" content="One fabricated product passage that fails on naming, quantity, condition and scope, plus the rewrite that passes all four tests and what each change buys." />
+  <link rel="canonical" href="https://indexhot.com/examples/product-page-extraction-rewrite/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="A worked example: rewriting a product section for extraction — IndexHot" />
+  <meta property="og:description" content="One fabricated product passage that fails on naming, quantity, condition and scope, plus the rewrite that passes all four tests and what each change buys." />
+  <meta property="og:url" content="https://indexhot.com/examples/product-page-extraction-rewrite/" />
+  <meta property="og:site_name" content="IndexHot" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="A worked example: rewriting a product section for extraction — IndexHot" />
+  <meta name="twitter:description" content="One fabricated product passage that fails on naming, quantity, condition and scope, plus the rewrite that passes all four tests and what each change buys." />
+  <link rel="stylesheet" href="../../tailwind.min.css" />
+  <style>
+    body { font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "name": "Rewriting a product section",
+      "url": "https://indexhot.com/examples/product-page-extraction-rewrite/",
+      "description": "One fabricated product passage that fails on naming, quantity, condition and scope, plus the rewrite that passes all four tests and what each change buys.",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "IndexHot",
+        "url": "https://indexhot.com/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "IndexHot",
+        "url": "https://indexhot.com/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://indexhot.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Examples",
+          "item": "https://indexhot.com/examples/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Rewriting a product section",
+          "item": "https://indexhot.com/examples/product-page-extraction-rewrite/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Does adding numbers make pages less persuasive?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Usually the opposite. A dated interval and a stated ceiling read as evidence; four adjectives read as copy."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Should every section state a limit?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Sections that describe a capability should state a scope; sections that describe a process can simply be specific about the steps."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is this the same as the extractability checker?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The checker measures the symptoms. This example shows the rewrite that removes them."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body class="bg-white text-gray-800 antialiased">
+
+  <!-- Top navigation -->
+  <header class="sticky top-0 z-20 bg-white/90 backdrop-blur border-b border-gray-100">
+    <div class="max-w-3xl mx-auto px-5 sm:px-6 h-16 flex items-center justify-between">
+      <a href="/" class="text-xl font-bold tracking-tight text-gray-900">
+        Index<span class="text-blue-600">Hot</span>
+      </a>
+
+      <!-- Desktop nav -->
+      <nav class="hidden md:flex items-center gap-6">
+        <a href="/blog/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Blog</a>
+        <a href="/guides/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Guides</a>
+        <a href="/answers/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Answers</a>
+        <a href="/tools/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Tools</a>
+        <a href="/methodology/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Methodology</a>
+        <a href="/data/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Data</a>
+        <a href="/about/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">About</a>
+        <a href="#" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Sign in</a>
+      </nav>
+
+      <!-- Mobile menu toggle -->
+      <button id="menu-btn" type="button" aria-label="Open menu" aria-expanded="false"
+        class="md:hidden flex items-center justify-center w-10 h-10 -mr-2 rounded-lg text-gray-600 hover:text-blue-600 hover:bg-gray-100 transition-colors">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile menu -->
+    <nav id="mobile-menu" class="hidden md:hidden px-5 pb-4 pt-2 border-t border-gray-100 bg-white">
+      <a href="/blog/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Blog</a>
+      <a href="/guides/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Guides</a>
+      <a href="/answers/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Answers</a>
+      <a href="/tools/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Tools</a>
+      <a href="/methodology/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Methodology</a>
+      <a href="/data/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Data</a>
+      <a href="/about/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">About</a>
+      <a href="#" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Sign in</a>
+    </nav>
+  </header>
+
+  <main>
+    <article class="px-5 sm:px-6 pt-10 pb-10">
+      <div class="max-w-3xl mx-auto">
+
+        <!-- Breadcrumb -->
+                <nav aria-label="Breadcrumb" class="mb-6 text-xs text-gray-500">
+          <a href="/" class="hover:text-blue-600 transition-colors">Home</a>
+          <span class="mx-1.5 text-gray-300">/</span>
+          <a href="/examples/" class="hover:text-blue-600 transition-colors">Examples</a>
+          <span class="mx-1.5 text-gray-300">/</span>
+          <span class="text-gray-700">Rewriting a product section</span>
+        </nav>
+
+        <header class="mb-8">
+          <p class="text-sm font-semibold text-blue-600 mb-3">Worked example</p>
+          <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900 leading-tight">
+            A worked example: rewriting a product section for extraction
+          </h1>
+        </header>
+
+        <div class="text-lg text-gray-700 leading-relaxed border-l-4 border-blue-600 pl-4 mb-10">
+          <p>Extraction fails at the level of a sentence. This example takes one passage, shows the four tests it fails, and rewrites it with four additions that make it quotable.</p>
+        </div>
+
+        <div class="rounded-xl border border-amber-200 bg-amber-50 p-5 mb-10">
+          <p class="text-sm text-amber-900 leading-relaxed"><strong>Illustrative example.</strong> The brand, the prompts and every number below are constructed to demonstrate the method. No client data is used, no real company is being analysed, and none of the figures should be read as a benchmark.</p>
+        </div>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">The passage before</h2>
+          <p class="text-gray-600 leading-relaxed mb-4">This is a passage of the kind that fails extraction while looking perfectly reasonable to a human reader. It is a fabricated product blurb, written the way most category pages are written.</p>
+          <pre class="mt-2 mb-4 rounded-xl border border-gray-200 bg-gray-50 p-5 text-sm text-gray-700 overflow-x-auto whitespace-pre-wrap">Our platform is the most reliable choice for teams that need dependable inventory synchronisation. We combine powerful automation with a flexible architecture, so you can scale confidently as your business grows.</pre>
+        </section>        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Why it fails four tests</h2>
+          <ul class="list-disc pl-5 space-y-2 text-gray-600 leading-relaxed marker:text-blue-500">
+            <li><strong class="text-gray-800">Named, but not distinguishable.</strong> Nothing here identifies the product against any alternative; the same sentence could sit on a competitor's site unchanged.</li>
+            <li><strong class="text-gray-800">No quantity.</strong> Reliable, dependable, powerful, flexible: four adjectives and no number. Nothing can be verified or repeated.</li>
+            <li><strong class="text-gray-800">No condition.</strong> There is no statement of where this holds, so an engine that prefers to hedge has nothing to hedge around.</li>
+            <li><strong class="text-gray-800">No unit of work.</strong> Synchronisation of what, how often, at what scale. The reader cannot tell whether this is a tool for four stores or four thousand.</li>
+          </ul>
+          <p class="text-gray-600 leading-relaxed mb-4">A summariser facing this passage has one option: paraphrase it into category language. That is why so many product pages produce answers that describe the category and never the product.</p>
+        </section>        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">The passage after</h2>
+          <pre class="mt-2 mb-4 rounded-xl border border-gray-200 bg-gray-50 p-5 text-sm text-gray-700 overflow-x-auto whitespace-pre-wrap">Northwind Sync reconciles inventory across storefronts and marketplaces every 60 seconds, with a per-account ceiling of 25,000 SKUs as of March 2026. It is built for catalogues between 2,000 and 25,000 SKUs; below that, a scheduled CSV export is cheaper, and above it, a dedicated middleware layer is the better fit.</pre>
+          <p class="text-gray-600 leading-relaxed mb-4">Four things changed and nothing else: a specific interval, a stated ceiling, a date, and a condition naming who this is not for. The sentence is duller and far more useful.</p>
+        </section>        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">What each change buys</h2>
+          <div class="overflow-x-auto">
+            <table class="w-full text-sm border-collapse min-w-[520px]">
+              <thead><tr class="border-b border-gray-200 text-left text-gray-500"><th class="py-2 pr-4 font-medium">Change</th><th class="py-2 pr-4 font-medium">What an engine can now do with it</th></tr></thead>
+              <tbody class="text-gray-700">
+                <tr class="border-b border-gray-100"><td class="py-2 pr-4">6</td><td class="py-2 pr-4">0</td><td class="py-2 pr-4">-</td><td class="py-2 pr-4">s</td><td class="py-2 pr-4">e</td><td class="py-2 pr-4">c</td><td class="py-2 pr-4">o</td><td class="py-2 pr-4">n</td><td class="py-2 pr-4">d</td><td class="py-2 pr-4"> </td><td class="py-2 pr-4">i</td><td class="py-2 pr-4">n</td><td class="py-2 pr-4">t</td><td class="py-2 pr-4">e</td><td class="py-2 pr-4">r</td><td class="py-2 pr-4">v</td><td class="py-2 pr-4">a</td><td class="py-2 pr-4">l</td></tr>
+                <tr class="border-b border-gray-100"><td class="py-2 pr-4">R</td><td class="py-2 pr-4">e</td><td class="py-2 pr-4">p</td><td class="py-2 pr-4">e</td><td class="py-2 pr-4">a</td><td class="py-2 pr-4">t</td><td class="py-2 pr-4"> </td><td class="py-2 pr-4">t</td><td class="py-2 pr-4">h</td><td class="py-2 pr-4">e</td><td class="py-2 pr-4"> </td><td class="py-2 pr-4">c</td><td class="py-2 pr-4">a</td><td class="py-2 pr-4">d</td><td class="py-2 pr-4">e</td><td class="py-2 pr-4">n</td><td class="py-2 pr-4">c</td><td class="py-2 pr-4">e</td><td class="py-2 pr-4"> </td><td class="py-2 pr-4">a</td><td class="py-2 pr-4">s</td><td class="py-2 pr-4"> </td><td class="py-2 pr-4">a</td><td class="py-2 pr-4"> </td><td class="py-2 pr-4">f</td><td class="py-2 pr-4">a</td><td class="py-2 pr-4">c</td><td class="py-2 pr-4">t</td><td class="py-2 pr-4"> </td><td class="py-2 pr-4">i</td><td class="py-2 pr-4">n</td><td class="py-2 pr-4">s</td><td class="py-2 pr-4">t</td><td class="py-2 pr-4">e</td><td class="py-2 pr-4">a</td><td class="py-2 pr-4">d</td><td class="py-2 pr-4"> </td><td class="py-2 pr-4">o</td><td class="py-2 pr-4">f</td><td class="py-2 pr-4"> </td><td class="py-2 pr-4">a</td><td class="py-2 pr-4">n</td><td class="py-2 pr-4"> </td><td class="py-2 pr-4">a</td><td class="py-2 pr-4">d</td><td class="py-2 pr-4">j</td><td class="py-2 pr-4">e</td><td class="py-2 pr-4">c</td><td class="py-2 pr-4">t</td><td class="py-2 pr-4">i</td><td class="py-2 pr-4">v</td><td class="py-2 pr-4">e</td><td class="py-2 pr-4">.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="text-gray-600 leading-relaxed mb-4">The last row is the counter-intuitive one. Telling an engine when you are not the answer is what makes it comfortable naming you when you are, because the claim now has boundaries it can verify against.</p>
+        </section>        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">How to check your own version</h2>
+          <p class="text-gray-600 leading-relaxed mb-4">Paste the section into the extractability checker, then read the output as a list of missing elements rather than a grade. Anything the checker flags that you cannot fix by adding a fact is usually a sign the section is doing too many jobs at once.</p>
+          <p class="text-gray-600 leading-relaxed mb-4">The test that survives every tool: cover the brand name and read the sentence again. If it could belong to any competitor, it carries no information, and no amount of markup will change that.</p>
+        </section>
+        <section class="mt-12 pt-8 border-t border-gray-100">
+          <h2 class="text-lg font-semibold text-gray-900 mb-4">Keep reading</h2>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <a href="/examples/b2b-saas-visibility-audit/" class="p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">The audit that found this</span>
+              <span class="block mt-1 text-sm text-gray-500">How one weak passage becomes a cluster-level failure.</span>
+            </a>
+            <a href="/tools/citation-extractability-checker/" class="p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Extractability checker</span>
+              <span class="block mt-1 text-sm text-gray-500">Run the same test on your own section.</span>
+            </a>
+          </div>
+        </section>
+
+        <section class="mt-12">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-6">Frequently asked questions</h2>
+          <div class="space-y-5">
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">Does adding numbers make pages less persuasive?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">Usually the opposite. A dated interval and a stated ceiling read as evidence; four adjectives read as copy.</p>
+            </div>
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">Should every section state a limit?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">No. Sections that describe a capability should state a scope; sections that describe a process can simply be specific about the steps.</p>
+            </div>
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">Is this the same as the extractability checker?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">The checker measures the symptoms. This example shows the rewrite that removes them.</p>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </article>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-100 px-5 sm:px-6 py-8">
+    <div class="max-w-3xl mx-auto text-center text-sm text-gray-400">
+      © 2026 IndexHot. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var menuBtn = document.getElementById('menu-btn');
+      var mobileMenu = document.getElementById('mobile-menu');
+
+      menuBtn.addEventListener('click', function () {
+        var isHidden = mobileMenu.classList.toggle('hidden');
+        menuBtn.setAttribute('aria-expanded', String(!isHidden));
+      });
+
+      mobileMenu.addEventListener('click', function (e) {
+        if (e.target.tagName === 'A') {
+          mobileMenu.classList.add('hidden');
+          menuBtn.setAttribute('aria-expanded', 'false');
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

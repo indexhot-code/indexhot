@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Branded vs Unbranded Visibility Gap Calculator — IndexHot</title>
+  <meta name="description" content="Compare branded and unbranded mention rates across AI answers, see the gap in points and whether it is a category problem or a content one." />
+  <link rel="canonical" href="https://indexhot.com/tools/visibility-gap-calculator/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Branded vs Unbranded Visibility Gap Calculator — IndexHot" />
+  <meta property="og:description" content="Compare branded and unbranded mention rates across AI answers, see the gap in points and whether it is a category problem or a content one." />
+  <meta property="og:url" content="https://indexhot.com/tools/visibility-gap-calculator/" />
+  <meta property="og:site_name" content="IndexHot" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Branded vs Unbranded Visibility Gap Calculator — IndexHot" />
+  <meta name="twitter:description" content="Compare branded and unbranded mention rates across AI answers, see the gap in points and whether it is a category problem or a content one." />
+  <link rel="stylesheet" href="../../tailwind.min.css" />
+  <style>
+    body { font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "Visibility Gap Calculator",
+      "url": "https://indexhot.com/tools/visibility-gap-calculator/",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Any (browser)",
+      "description": "Compare branded and unbranded mention rates across AI answers, see the gap in points and whether it is a category problem or a content one.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "IndexHot",
+        "url": "https://indexhot.com/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://indexhot.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tools",
+          "item": "https://indexhot.com/tools/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Visibility Gap Calculator",
+          "item": "https://indexhot.com/tools/visibility-gap-calculator/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What counts as a branded prompt?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Any prompt that contains your brand or product name. Everything else is unbranded, including category questions, comparison questions and problem-first questions."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How many prompts do I need?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Enough that one answer changing does not move the rate by more than a few points. Ten branded and forty unbranded is a workable starting shape, not a standard."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Should I include the same prompts on every platform?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, and report each platform separately. A blended rate across surfaces hides which engine is actually carrying you."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body class="bg-white text-gray-800 antialiased">
+
+  <!-- Top navigation -->
+  <header class="sticky top-0 z-20 bg-white/90 backdrop-blur border-b border-gray-100">
+    <div class="max-w-3xl mx-auto px-5 sm:px-6 h-16 flex items-center justify-between">
+      <a href="/" class="text-xl font-bold tracking-tight text-gray-900">
+        Index<span class="text-blue-600">Hot</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6">
+        <a href="/blog/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Blog</a>
+        <a href="/guides/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Guides</a>
+        <a href="/answers/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Answers</a>
+        <a href="/tools/" class="text-sm font-medium text-blue-600">Tools</a>
+        <a href="/methodology/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Methodology</a>
+        <a href="/data/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Data</a>
+        <a href="/about/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">About</a>
+        <a href="#" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Sign in</a>
+      </nav>
+      <button id="menu-btn" type="button" aria-label="Open menu" aria-expanded="false"
+        class="md:hidden flex items-center justify-center w-10 h-10 -mr-2 rounded-lg text-gray-600 hover:text-blue-600 hover:bg-gray-100 transition-colors">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+    <nav id="mobile-menu" class="hidden md:hidden px-5 pb-4 pt-2 border-t border-gray-100 bg-white">
+      <a href="/blog/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Blog</a>
+      <a href="/guides/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Guides</a>
+      <a href="/answers/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Answers</a>
+      <a href="/tools/" class="block py-2.5 text-sm font-medium text-blue-600">Tools</a>
+      <a href="/methodology/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Methodology</a>
+      <a href="/data/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Data</a>
+      <a href="/about/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">About</a>
+      <a href="#" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Sign in</a>
+    </nav>
+  </header>
+  <main>
+    <article class="px-5 sm:px-6 pt-10 pb-10">
+      <div class="max-w-3xl mx-auto">
+                <nav aria-label="Breadcrumb" class="mb-6 text-xs text-gray-500">
+          <a href="/" class="hover:text-blue-600 transition-colors">Home</a>
+          <span class="mx-1.5 text-gray-300">/</span>
+          <a href="/tools/" class="hover:text-blue-600 transition-colors">Tools</a>
+          <span class="mx-1.5 text-gray-300">/</span>
+          <span class="text-gray-700">Visibility Gap Calculator</span>
+        </nav>
+
+        <header class="mb-8">
+          <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900 leading-tight">
+            Branded vs Unbranded Visibility Gap Calculator
+          </h1>
+          <p class="mt-4 text-base sm:text-lg text-gray-500 leading-relaxed">
+            Branded rate says whether the engine knows you. Unbranded rate says whether it thinks of you when the buyer does not name you. This tool shows both and the gap between them.
+          </p>
+        </header>
+
+        <section class="rounded-2xl border border-gray-200 bg-gray-50 p-5 sm:p-6 mb-10">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label for="bn" class="text-sm font-semibold text-gray-900">Branded prompts tested</label>
+              <input id="bn" type="number" min="0" value="10" class="mt-2 w-full rounded-lg border border-gray-300 px-3 py-2 text-sm" />
+            </div>
+            <div>
+              <label for="bm" class="text-sm font-semibold text-gray-900">Branded prompts that named you</label>
+              <input id="bm" type="number" min="0" value="8" class="mt-2 w-full rounded-lg border border-gray-300 px-3 py-2 text-sm" />
+            </div>
+            <div>
+              <label for="un" class="text-sm font-semibold text-gray-900">Unbranded prompts tested</label>
+              <input id="un" type="number" min="0" value="40" class="mt-2 w-full rounded-lg border border-gray-300 px-3 py-2 text-sm" />
+            </div>
+            <div>
+              <label for="um" type="number" class="text-sm font-semibold text-gray-900">Unbranded prompts that named you</label>
+              <input id="um" type="number" min="0" value="6" class="mt-2 w-full rounded-lg border border-gray-300 px-3 py-2 text-sm" />
+            </div>
+          </div>
+          <div class="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <div class="rounded-xl border border-gray-200 bg-white p-4">
+              <span class="block text-xs uppercase tracking-wide text-gray-400">Branded mention rate</span>
+              <span id="brOut" class="block mt-1 text-2xl font-bold text-gray-900">—</span>
+            </div>
+            <div class="rounded-xl border border-gray-200 bg-white p-4">
+              <span class="block text-xs uppercase tracking-wide text-gray-400">Unbranded mention rate</span>
+              <span id="urOut" class="block mt-1 text-2xl font-bold text-gray-900">—</span>
+            </div>
+            <div class="rounded-xl border border-gray-200 bg-white p-4">
+              <span class="block text-xs uppercase tracking-wide text-gray-400">Gap</span>
+              <span id="gapOut" class="block mt-1 text-2xl font-bold text-gray-900">—</span>
+            </div>
+          </div>
+          <div class="mt-5">
+            <span id="band" class="inline-flex px-2.5 py-1 rounded-full text-xs font-semibold bg-gray-100 text-gray-700">Not enough data</span>
+            <p id="note" class="mt-3 text-sm text-gray-600 leading-relaxed"></p>
+            <p id="work" class="mt-2 text-sm text-gray-500 leading-relaxed"></p>
+          </div>
+          <p class="mt-5 text-xs text-gray-400">Calculated in your browser. Only counts, no prompt text.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Why the gap matters more than either rate</h2>
+          <p class="text-gray-600 leading-relaxed mb-4">Branded mention rate tells you whether the answer engine knows you exist. Unbranded rate tells you whether it thinks of you when the buyer does not name you. The second is the one that decides whether AI search sends you anyone new.</p>
+          <p class="text-gray-600 leading-relaxed mb-4">Reporting the two separately is the point. A single blended visibility score hides the only distinction that changes what you do next: one number improved by mentioning the brand more often, the other only by being the best answer to a category question.</p>
+        </section>
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">What the three bands mean in practice</h2>
+          <ul class="list-disc pl-5 space-y-2 text-gray-600 leading-relaxed marker:text-blue-500">
+            <li><strong class="text-gray-800">Under 15 points.</strong> Category recall is keeping pace with branded recall. Protect it: fresh dates, stable URLs, and no redesign of the pages that are already winning.</li>
+            <li><strong class="text-gray-800">15 to 40 points.</strong> The normal shape for most brands, and the one worth working on. Unbranded gaps are usually evidence gaps, not vocabulary gaps.</li>
+            <li><strong class="text-gray-800">Above 40 points.</strong> Effectively invisible outside branded prompts. Check indexability and category vocabulary before commissioning any new pages, because a 40-point gap is rarely an editorial failure.</li>
+          </ul>
+          <p class="text-gray-600 leading-relaxed mb-4">The counter at the bottom is not a target, it is an ordering device. If closing the gap needs twenty more of forty prompts to change, that is a category position, not a page. If it needs three, the fix is likely one page and one passage.</p>
+        </section>
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Three ways this number gets misused</h2>
+          <p class="text-gray-600 leading-relaxed mb-4">First, comparing gaps across categories. A crowded category will show a wider gap than a narrow one for identical quality of work, because there are more competitors to be named instead of you.</p>
+          <p class="text-gray-600 leading-relaxed mb-4">Second, treating the gap as a trend from a single run. Answer engines vary run to run; a gap measured once is a photograph, not a direction. Three runs minimum, and record the dates.</p>
+          <p class="text-gray-600 leading-relaxed mb-4">Third, weighting branded prompts into the total to make the headline rate look better. Keep the two groups separate in every report, and let the gap be the finding rather than a footnote.</p>
+        </section>
+
+        <section class="mt-12 pt-8 border-t border-gray-100">
+          <h2 class="text-lg font-semibold text-gray-900 mb-4">Keep reading</h2>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <a href="/tools/geo-score-calculator/" class="p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">GEO score calculator</span>
+              <span class="block mt-1 text-sm text-gray-500">Combine the rates into a single position score.</span>
+            </a>
+            <a href="/answers/measurement/" class="p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Measurement answers</span>
+              <span class="block mt-1 text-sm text-gray-500">Prompt libraries, sample sizes and reporting questions.</span>
+            </a>
+          </div>
+        </section>
+
+        <section class="mt-12">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-6">Frequently asked questions</h2>
+          <div class="space-y-5">
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">What counts as a branded prompt?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">Any prompt that contains your brand or product name. Everything else is unbranded, including category questions, comparison questions and problem-first questions.</p>
+            </div>
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">How many prompts do I need?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">Enough that one answer changing does not move the rate by more than a few points. Ten branded and forty unbranded is a workable starting shape, not a standard.</p>
+            </div>
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">Should I include the same prompts on every platform?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">Yes, and report each platform separately. A blended rate across surfaces hides which engine is actually carrying you.</p>
+            </div>
+          </div>
+        </section>
+
+  </main>
+
+  <footer class="border-t border-gray-100 px-5 sm:px-6 py-8">
+    <div class="max-w-3xl mx-auto text-center text-sm text-gray-400">
+      © 2026 IndexHot. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var menuBtn = document.getElementById('menu-btn');
+      var mobileMenu = document.getElementById('mobile-menu');
+      menuBtn.addEventListener('click', function () {
+        var isHidden = mobileMenu.classList.toggle('hidden');
+        menuBtn.setAttribute('aria-expanded', String(!isHidden));
+      });
+      mobileMenu.addEventListener('click', function (e) {
+        if (e.target.tagName === 'A') {
+          mobileMenu.classList.add('hidden');
+          menuBtn.setAttribute('aria-expanded', 'false');
+        }
+      });
+    })();
+  </script><script>
+
+(function () {
+  var ids = ['bn', 'bm', 'un', 'um'];
+  function num(id) { return Math.max(0, Number(document.getElementById(id).value) || 0); }
+  function pct(a, b) { return b > 0 ? (100 * a / b) : 0; }
+
+  function calc() {
+    var bn = num('bn'), bm = num('bm'), un = num('un'), um = num('um');
+    var br = pct(bm, bn), ur = pct(um, un);
+    var gap = br - ur;
+
+    document.getElementById('brOut').textContent = bn > 0 ? br.toFixed(0) + '%' : '—';
+    document.getElementById('urOut').textContent = un > 0 ? ur.toFixed(0) + '%' : '—';
+    document.getElementById('gapOut').textContent = (bn > 0 && un > 0) ? gap.toFixed(0) + ' pts' : '—';
+
+    var band, cls, note, fixes = 0;
+    if (bn === 0 || un === 0) {
+      band = 'Not enough data'; cls = 'bg-gray-100 text-gray-700';
+      note = 'Enter the number of prompts tested in each group. Rates without a denominator are the most common reporting error in this field.';
+    } else if (gap < 15) {
+      band = 'Healthy'; cls = 'bg-emerald-100 text-emerald-800';
+      note = 'Unbranded recall is close to branded recall. The category questions are already bringing you in without the name, which is the position most brands are trying to reach.';
+    } else if (gap < 40) {
+      band = 'Typical'; cls = 'bg-amber-100 text-amber-800';
+      note = 'You are named when the prompt contains your name and patchy when it does not. This is the normal shape, and it is fixable: the unbranded gap is almost always an evidence gap rather than a copy gap.';
+    } else {
+      band = 'Category problem'; cls = 'bg-red-100 text-red-800';
+      note = 'You are effectively invisible outside branded prompts. Before adding content, check whether the pages that answer these questions are indexable and whether your own site uses your category terms the way buyers do.';
+    }
+
+    if (bn > 0 && un > 0 && gap > 0) {
+      fixes = Math.ceil((gap / 100) * un);
+    }
+
+    document.getElementById('band').textContent = band;
+    document.getElementById('band').className = 'inline-flex px-2.5 py-1 rounded-full text-xs font-semibold ' + cls;
+    document.getElementById('note').textContent = note;
+    document.getElementById('work').textContent = (fixes > 0 && un > 0 && bn > 0)
+      ? ('To close the gap you would need ' + fixes + ' more of your ' + un + ' unbranded prompts to name you, holding everything else constant.')
+      : 'Add both groups to see how many unbranded prompts would need to change.';
+  }
+
+  ids.forEach(function (id) { document.getElementById(id).addEventListener('input', calc); });
+  calc();
+})();
+
+</script>
+</body>
+</html>

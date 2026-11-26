@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A worked example: a B2B SaaS visibility audit — IndexHot</title>
+  <meta name="description" content="A fabricated B2B inventory-sync brand measured across fifty prompts, with the loss located by prompt cluster and fixed structurally." />
+  <link rel="canonical" href="https://indexhot.com/examples/b2b-saas-visibility-audit/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="A worked example: a B2B SaaS visibility audit — IndexHot" />
+  <meta property="og:description" content="A fabricated B2B inventory-sync brand measured across fifty prompts, with the loss located by prompt cluster and fixed structurally." />
+  <meta property="og:url" content="https://indexhot.com/examples/b2b-saas-visibility-audit/" />
+  <meta property="og:site_name" content="IndexHot" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="A worked example: a B2B SaaS visibility audit — IndexHot" />
+  <meta name="twitter:description" content="A fabricated B2B inventory-sync brand measured across fifty prompts, with the loss located by prompt cluster and fixed structurally." />
+  <link rel="stylesheet" href="../../tailwind.min.css" />
+  <style>
+    body { font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "name": "A B2B SaaS visibility audit",
+      "url": "https://indexhot.com/examples/b2b-saas-visibility-audit/",
+      "description": "A fabricated B2B inventory-sync brand measured across fifty prompts, with the loss located by prompt cluster and fixed structurally.",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "IndexHot",
+        "url": "https://indexhot.com/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "IndexHot",
+        "url": "https://indexhot.com/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://indexhot.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Examples",
+          "item": "https://indexhot.com/examples/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "A B2B SaaS visibility audit",
+          "item": "https://indexhot.com/examples/b2b-saas-visibility-audit/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is Northwind Sync a real company?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. It is invented for this page so that the method can be shown without disclosing client work or making claims about a real brand."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Could the numbers be different for my category?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Almost certainly. Cluster shares differ by category; the method of locating failure by cluster does not."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why does absorption move last?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Because it depends on an engine adopting a specific claim, which requires the claim to be quotable and corroborated. Naming and citing can improve before that happens."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body class="bg-white text-gray-800 antialiased">
+
+  <!-- Top navigation -->
+  <header class="sticky top-0 z-20 bg-white/90 backdrop-blur border-b border-gray-100">
+    <div class="max-w-3xl mx-auto px-5 sm:px-6 h-16 flex items-center justify-between">
+      <a href="/" class="text-xl font-bold tracking-tight text-gray-900">
+        Index<span class="text-blue-600">Hot</span>
+      </a>
+
+      <!-- Desktop nav -->
+      <nav class="hidden md:flex items-center gap-6">
+        <a href="/blog/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Blog</a>
+        <a href="/guides/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Guides</a>
+        <a href="/answers/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Answers</a>
+        <a href="/tools/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Tools</a>
+        <a href="/methodology/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Methodology</a>
+        <a href="/data/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Data</a>
+        <a href="/about/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">About</a>
+        <a href="#" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Sign in</a>
+      </nav>
+
+      <!-- Mobile menu toggle -->
+      <button id="menu-btn" type="button" aria-label="Open menu" aria-expanded="false"
+        class="md:hidden flex items-center justify-center w-10 h-10 -mr-2 rounded-lg text-gray-600 hover:text-blue-600 hover:bg-gray-100 transition-colors">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile menu -->
+    <nav id="mobile-menu" class="hidden md:hidden px-5 pb-4 pt-2 border-t border-gray-100 bg-white">
+      <a href="/blog/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Blog</a>
+      <a href="/guides/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Guides</a>
+      <a href="/answers/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Answers</a>
+      <a href="/tools/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Tools</a>
+      <a href="/methodology/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Methodology</a>
+      <a href="/data/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Data</a>
+      <a href="/about/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">About</a>
+      <a href="#" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Sign in</a>
+    </nav>
+  </header>
+
+  <main>
+    <article class="px-5 sm:px-6 pt-10 pb-10">
+      <div class="max-w-3xl mx-auto">
+
+        <!-- Breadcrumb -->
+                <nav aria-label="Breadcrumb" class="mb-6 text-xs text-gray-500">
+          <a href="/" class="hover:text-blue-600 transition-colors">Home</a>
+          <span class="mx-1.5 text-gray-300">/</span>
+          <a href="/examples/" class="hover:text-blue-600 transition-colors">Examples</a>
+          <span class="mx-1.5 text-gray-300">/</span>
+          <span class="text-gray-700">A B2B SaaS visibility audit</span>
+        </nav>
+
+        <header class="mb-8">
+          <p class="text-sm font-semibold text-blue-600 mb-3">Worked example</p>
+          <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900 leading-tight">
+            A worked example: a B2B SaaS visibility audit
+          </h1>
+        </header>
+
+        <div class="text-lg text-gray-700 leading-relaxed border-l-4 border-blue-600 pl-4 mb-10">
+          <p>One brand, fifty prompts, two runs. This example shows the sequence we recommend: measure both halves, find the cluster that fails, change structure rather than volume, then re-run and compare the same columns.</p>
+        </div>
+
+        <div class="rounded-xl border border-amber-200 bg-amber-50 p-5 mb-10">
+          <p class="text-sm text-amber-900 leading-relaxed"><strong>Illustrative example.</strong> The brand, the prompts and every number below are constructed to demonstrate the method. No client data is used, no real company is being analysed, and none of the figures should be read as a benchmark.</p>
+        </div>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">The setup</h2>
+          <p class="text-gray-600 leading-relaxed mb-4">A fabricated B2B inventory-sync product, Northwind Sync, is measured with the standard library: fifty prompts, ten branded and forty unbranded, run across ChatGPT, Perplexity and Gemini in one pass, with AI Overviews recorded separately.</p>
+          <p class="text-gray-600 leading-relaxed mb-4">Before any content change, every answer is coded for the three outcomes. The point of the first run is not to feel good about a number; it is to locate where the loss happens, because the fix differs by location.</p>
+        </section>        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">What the first run showed</h2>
+          <div class="overflow-x-auto">
+            <table class="w-full text-sm border-collapse min-w-[520px]">
+              <thead><tr class="border-b border-gray-200 text-left text-gray-500"><th class="py-2 pr-4 font-medium">Prompt cluster</th><th class="py-2 pr-4 font-medium">Prompts</th><th class="py-2 pr-4 font-medium">Named</th><th class="py-2 pr-4 font-medium">Cited</th><th class="py-2 pr-4 font-medium">Absorbed</th></tr></thead>
+              <tbody class="text-gray-700">
+                <tr class="border-b border-gray-100"><td class="py-2 pr-4">B</td><td class="py-2 pr-4">r</td><td class="py-2 pr-4">a</td><td class="py-2 pr-4">n</td><td class="py-2 pr-4">d</td><td class="py-2 pr-4">e</td><td class="py-2 pr-4">d</td><td class="py-2 pr-4"> </td><td class="py-2 pr-4">c</td><td class="py-2 pr-4">o</td><td class="py-2 pr-4">m</td><td class="py-2 pr-4">p</td><td class="py-2 pr-4">a</td><td class="py-2 pr-4">r</td><td class="py-2 pr-4">i</td><td class="py-2 pr-4">s</td><td class="py-2 pr-4">o</td><td class="py-2 pr-4">n</td><td class="py-2 pr-4">s</td></tr>
+                <tr class="border-b border-gray-100"><td class="py-2 pr-4">6</td></tr>
+                <tr class="border-b border-gray-100"><td class="py-2 pr-4">6</td></tr>
+                <tr class="border-b border-gray-100"><td class="py-2 pr-4">4</td></tr>
+                <tr class="border-b border-gray-100"><td class="py-2 pr-4">1</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="text-gray-600 leading-relaxed mb-4">Read down the columns rather than across the rows. Branded recall is almost complete and absorption is almost zero, which is a specific condition: the engines can describe Northwind and will not adopt its framing. Unbranded recall is weakest exactly where buyers do not yet know a category exists, which is where new demand would come from.</p>
+        </section>        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Where the loss was concentrated</h2>
+          <p class="text-gray-600 leading-relaxed mb-4">Ten of the forty unbranded prompts resolve to integration documentation, and eight of those name a competitor. Northwind's own documentation is excellent and client-side rendered, so the passages that would answer the question cannot be retrieved at all.</p>
+          <p class="text-gray-600 leading-relaxed mb-4">Absorption fails for a duller reason: the pages make comparative claims with no quantities. Nothing in the copy can be lifted and repeated, so the engine paraphrases around it and the answer ends up describing the category rather than the product.</p>
+          <ul class="list-disc pl-5 space-y-2 text-gray-600 leading-relaxed marker:text-blue-500">
+            <li>Documentation behind a renderer: invisible to retrieval, however good it is.</li>
+            <li>Comparative claims without numbers: unquotable, so paraphrased away.</li>
+            <li>Pricing pages that list tiers without stating what changes between them.</li>
+          </ul>
+        </section>        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">What we changed</h2>
+          <ol class="list-decimal pl-5 space-y-2 text-gray-600 leading-relaxed marker:text-blue-500">
+            <li>Serve the integration docs as static HTML, one question per page, with the answer in the first sentence.</li>
+            <li>Add quantities to every comparative claim: seat thresholds, sync intervals, record limits, and the month those numbers were measured.</li>
+            <li>Publish one problem-first page per failure mode, written for a buyer who does not know the category term yet.</li>
+          </ol>
+          <p class="text-gray-600 leading-relaxed mb-4">Three changes, all of them structural. No new blog programme, no keyword rewrite, and nothing added that could not be traced to a specific failing prompt cluster.</p>
+        </section>        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">The second run</h2>
+          <p class="text-gray-600 leading-relaxed mb-4">Constructed to show the shape of the change rather than a result: unbranded naming rises from nineteen to twenty-eight of forty, citations from ten to nineteen, and absorption from two to nine. Branded numbers barely move, which is the expected pattern when the work is aimed at the unbranded half.</p>
+          <p class="text-gray-600 leading-relaxed mb-4">The absorption gain is the one worth watching. It moves last and it moves least, because it depends on the engine choosing to repeat a specific claim, which is a decision made about your page and not about your category.</p>
+        </section>        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">What this example can and cannot prove</h2>
+          <p class="text-gray-600 leading-relaxed mb-4">It can show the sequence: measure both halves, locate the failure by cluster, fix structure rather than volume, re-run and compare. That sequence is the standard's whole argument.</p>
+          <p class="text-gray-600 leading-relaxed mb-4">It cannot tell you what your numbers will be. Sample sizes here are illustrative, the prompts are invented, and a single run of an invented brand cannot establish a trend. Use it to check your own report for the same three columns, not to benchmark against.</p>
+        </section>
+        <section class="mt-12 pt-8 border-t border-gray-100">
+          <h2 class="text-lg font-semibold text-gray-900 mb-4">Keep reading</h2>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <a href="/examples/product-page-extraction-rewrite/" class="p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">The rewrite in detail</span>
+              <span class="block mt-1 text-sm text-gray-500">The same failure seen at the level of a single section.</span>
+            </a>
+            <a href="/guides/geo-measurement-playbook/" class="p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">The measurement playbook</span>
+              <span class="block mt-1 text-sm text-gray-500">Running the library and coding answers the same way twice.</span>
+            </a>
+          </div>
+        </section>
+
+        <section class="mt-12">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-6">Frequently asked questions</h2>
+          <div class="space-y-5">
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">Is Northwind Sync a real company?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">No. It is invented for this page so that the method can be shown without disclosing client work or making claims about a real brand.</p>
+            </div>
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">Could the numbers be different for my category?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">Almost certainly. Cluster shares differ by category; the method of locating failure by cluster does not.</p>
+            </div>
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">Why does absorption move last?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">Because it depends on an engine adopting a specific claim, which requires the claim to be quotable and corroborated. Naming and citing can improve before that happens.</p>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </article>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-100 px-5 sm:px-6 py-8">
+    <div class="max-w-3xl mx-auto text-center text-sm text-gray-400">
+      © 2026 IndexHot. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var menuBtn = document.getElementById('menu-btn');
+      var mobileMenu = document.getElementById('mobile-menu');
+
+      menuBtn.addEventListener('click', function () {
+        var isHidden = mobileMenu.classList.toggle('hidden');
+        menuBtn.setAttribute('aria-expanded', String(!isHidden));
+      });
+
+      mobileMenu.addEventListener('click', function (e) {
+        if (e.target.tagName === 'A') {
+          mobileMenu.classList.add('hidden');
+          menuBtn.setAttribute('aria-expanded', 'false');
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
