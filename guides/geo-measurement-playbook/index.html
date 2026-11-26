@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The GEO Measurement Playbook: From Prompt Library to Content Brief — IndexHot Guides</title>
+  <meta name="description" content="A five-step protocol for measuring AI visibility reproducibly: fifty prompts, three outcomes, absorption coding, and a content brief." />
+  <link rel="canonical" href="https://indexhot.com/guides/geo-measurement-playbook/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="The GEO Measurement Playbook: From Prompt Library to Content Brief — IndexHot Guides" />
+  <meta property="og:description" content="A five-step protocol for measuring AI visibility reproducibly: build the library, define the outcomes, run it, code absorption, and turn the result into a content brief." />
+  <meta property="og:url" content="https://indexhot.com/guides/geo-measurement-playbook/" />
+  <meta property="og:site_name" content="IndexHot" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="The GEO Measurement Playbook: From Prompt Library to Content Brief — IndexHot Guides" />
+  <meta name="twitter:description" content="A five-step protocol for measuring AI visibility reproducibly: build the library, define the outcomes, run it, code absorption, and turn the result into a content brief." />
+  <link rel="stylesheet" href="../../tailwind.min.css" />
+  <style>
+    body { font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "The GEO Measurement Playbook",
+      "description": "A five-step protocol for measuring AI visibility reproducibly: build the library, define the outcomes, run it, code absorption, and turn the result into a content brief.",
+      "url": "https://indexhot.com/guides/geo-measurement-playbook/",
+      "datePublished": "2026-11-26",
+      "dateModified": "2026-11-26",
+      "author": {
+        "@type": "Organization",
+        "name": "IndexHot Team",
+        "url": "https://indexhot.com/about/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "IndexHot",
+        "url": "https://indexhot.com/"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://indexhot.com/guides/geo-measurement-playbook/"
+      },
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "IndexHot",
+        "url": "https://indexhot.com/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://indexhot.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://indexhot.com/guides/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "The GEO Measurement Playbook",
+          "item": "https://indexhot.com/guides/geo-measurement-playbook/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How many prompts do I need for a reliable baseline?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Fifty: ten branded and forty non-branded across eight intent clusters. Below thirty, prompt-level noise dominates; above a hundred, the monthly cadence usually breaks before the precision pays off."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can one person do the absorption coding?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "They can, but the standard will drift over a long sample. The workable minimum is a written rubric, an anchor list of distinctive claims, and a twenty-answer calibration set scored twice."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How often should I re-run the cycle?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Monthly for trend, weekly only during an active change. Daily measurement produces noise that invites premature conclusions; quarterly misses the effect of work already paid for."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What if my numbers came from different tools across cycles?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Then the comparison is invalid unless the prompt library and definitions were identical. Switching tools mid-programme resets the baseline, and that reset should be recorded rather than hidden."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does a good score mean buyers will convert?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. It measures presence and influence inside answers, not demand or intent. Conversion depends on the offer behind the recommendation, which is a different question."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body class="bg-white text-gray-800 antialiased">
+
+  <!-- Top navigation -->
+  <header class="sticky top-0 z-20 bg-white/90 backdrop-blur border-b border-gray-100">
+    <div class="max-w-3xl mx-auto px-5 sm:px-6 h-16 flex items-center justify-between">
+      <a href="/" class="text-xl font-bold tracking-tight text-gray-900">
+        Index<span class="text-blue-600">Hot</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6">
+        <a href="/blog/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Blog</a>
+        <a href="/guides/" class="text-sm font-medium text-blue-600">Guides</a>
+        <a href="/answers/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Answers</a>
+        <a href="/tools/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Tools</a>
+        <a href="/methodology/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Methodology</a>
+        <a href="/data/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Data</a>
+        <a href="/about/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">About</a>
+        <a href="#" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Sign in</a>
+      </nav>
+      <button id="menu-btn" type="button" aria-label="Open menu" aria-expanded="false"
+        class="md:hidden flex items-center justify-center w-10 h-10 -mr-2 rounded-lg text-gray-600 hover:text-blue-600 hover:bg-gray-100 transition-colors">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+    <nav id="mobile-menu" class="hidden md:hidden px-5 pb-4 pt-2 border-t border-gray-100 bg-white">
+      <a href="/blog/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Blog</a>
+      <a href="/guides/" class="block py-2.5 text-sm font-medium text-blue-600">Guides</a>
+      <a href="/answers/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Answers</a>
+      <a href="/tools/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Tools</a>
+      <a href="/methodology/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Methodology</a>
+      <a href="/data/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Data</a>
+      <a href="/about/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">About</a>
+      <a href="#" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Sign in</a>
+    </nav>
+  </header>
+  <main>
+    <article class="px-5 sm:px-6 pt-10 pb-10">
+      <div class="max-w-3xl mx-auto">
+
+        <nav class="mb-6 text-xs text-gray-500">
+          <a href="/" class="hover:text-blue-600">Home</a><span class="mx-1.5 text-gray-300">/</span><a href="/guides/" class="hover:text-blue-600">Guides</a>
+        </nav>
+
+        <header class="mb-8">
+          <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900 leading-tight">
+            The GEO Measurement Playbook
+          </h1>
+          <p class="mt-4 text-sm text-gray-400">
+            By <span class="font-medium text-gray-600">IndexHot Team</span> &middot; <time datetime="2026-11-26">November 26, 2026</time> &middot; 9 sections
+          </p>
+        </header>
+
+        <div class="text-lg text-gray-700 leading-relaxed border-l-4 border-blue-600 pl-4 mb-10">
+          <p>A measurement is only useful if somebody else can repeat it. This playbook turns the IndexHot standard into an operating procedure: fifty prompts split ten and forty, three outcomes coded separately, three runs per surface, and a four-level rubric for the one metric that cannot be automated. It takes about three hours per cycle and produces a number you can defend, plus a content brief you can act on.</p>
+        </div>
+
+        <nav class="rounded-xl border border-gray-200 bg-gray-50 p-5 mb-10">
+          <h2 class="text-sm font-semibold text-gray-900">On this page</h2>
+          <ol class="mt-3 space-y-1 text-sm text-gray-600 list-decimal pl-5 marker:text-blue-500">
+            <li><a href="#why-measurement-comes-first" class="hover:text-blue-600">Why measurement comes first</a></li>
+            <li><a href="#step-1-build-the-fifty-prompt-library" class="hover:text-blue-600">Step 1: build the fifty-prompt library</a></li>
+            <li><a href="#step-2-define-the-three-outcomes" class="hover:text-blue-600">Step 2: define the three outcomes</a></li>
+            <li><a href="#step-3-run-the-protocol" class="hover:text-blue-600">Step 3: run the protocol</a></li>
+            <li><a href="#step-4-code-absorption" class="hover:text-blue-600">Step 4: code absorption</a></li>
+            <li><a href="#step-5-compute-and-band" class="hover:text-blue-600">Step 5: compute and band</a></li>
+            <li><a href="#step-6-report-three-numbers-and-one-change" class="hover:text-blue-600">Step 6: report three numbers and one change</a></li>
+            <li><a href="#six-ways-this-goes-wrong" class="hover:text-blue-600">Six ways this goes wrong</a></li>
+            <li><a href="#from-measurement-to-a-content-brief" class="hover:text-blue-600">From measurement to a content brief</a></li>
+          </ol>
+        </nav>
+
+        <section id="why-measurement-comes-first" class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Why measurement comes first</h2>
+          <p class="text-gray-600 leading-relaxed mt-4">Most GEO programmes start with content because content feels like progress. They then discover that they cannot tell whether anything worked, because there was no baseline and no frozen question set.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">Measurement first is not a preference, it is the only way to attribute anything later. If you fix access and rewrite pages in the same month, a change in visibility could be either fix or neither, and you will spend the next quarter arguing about it.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">It is also cheap. A first cycle costs about three hours once the library exists. That is less than the cost of one badly briefed article, and it decides whether the next ten articles are aimed at the right questions.</p>
+        </section>
+
+        <section id="step-1-build-the-fifty-prompt-library" class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Step 1: build the fifty-prompt library</h2>
+          <p class="text-gray-600 leading-relaxed mt-4">The split is ten branded and forty non-branded, and the ratio matters more than the total. Branded prompts test what the model already believes about you; non-branded prompts test whether it would ever introduce you. A library of only branded prompts measures recognition, not acquisition.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">The forty are distributed across eight intent clusters, because each cluster fails differently and therefore needs a different fix.</p>
+          <div class="overflow-x-auto mt-5">
+            <table class="w-full text-sm border-collapse min-w-[560px]">
+              <thead>
+                <tr>
+                  <th class="py-3 pr-4 text-left text-xs font-semibold uppercase tracking-wide text-gray-400 border-b border-gray-200">Cluster</th>                  <th class="py-3 pr-4 text-left text-xs font-semibold uppercase tracking-wide text-gray-400 border-b border-gray-200">Prompts</th>                  <th class="py-3 pr-4 text-left text-xs font-semibold uppercase tracking-wide text-gray-400 border-b border-gray-200">What it tests</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="py-3 pr-4 text-sm text-gray-600 align-top border-b border-gray-100">Category discovery</td>                  <td class="py-3 pr-4 text-sm text-gray-600 align-top border-b border-gray-100">5</td>                  <td class="py-3 pr-4 text-sm text-gray-600 align-top border-b border-gray-100">Whether you exist in the consideration set at all</td>
+                </tr>
+                <tr>
+                  <td class="py-3 pr-4 text-sm text-gray-600 align-top border-b border-gray-100">Comparison</td>                  <td class="py-3 pr-4 text-sm text-gray-600 align-top border-b border-gray-100">5</td>                  <td class="py-3 pr-4 text-sm text-gray-600 align-top border-b border-gray-100">Whether you appear when a choice is being made</td>
+                </tr>
+                <tr>
+                  <td class="py-3 pr-4 text-sm text-gray-600 align-top border-b border-gray-100">Pricing and budget</td>                  <td class="py-3 pr-4 text-sm text-gray-600 align-top border-b border-gray-100">5</td>                  <td class="py-3 pr-4 text-sm text-gray-600 align-top border-b border-gray-100">Whether your commercial facts are retrievable</td>
+                </tr>
+                <tr>
+                  <td class="py-3 pr-4 text-sm text-gray-600 align-top border-b border-gray-100">Implementation</td>                  <td class="py-3 pr-4 text-sm text-gray-600 align-top border-b border-gray-100">5</td>                  <td class="py-3 pr-4 text-sm text-gray-600 align-top border-b border-gray-100">Whether your operational detail is retrievable</td>
+                </tr>
+                <tr>
+                  <td class="py-3 pr-4 text-sm text-gray-600 align-top border-b border-gray-100">Problem and symptom</td>                  <td class="py-3 pr-4 text-sm text-gray-600 align-top border-b border-gray-100">5</td>                  <td class="py-3 pr-4 text-sm text-gray-600 align-top border-b border-gray-100">Whether you are surfaced to buyers already in motion</td>
+                </tr>
+                <tr>
+                  <td class="py-3 pr-4 text-sm text-gray-600 align-top border-b border-gray-100">Alternatives and switching</td>                  <td class="py-3 pr-4 text-sm text-gray-600 align-top border-b border-gray-100">5</td>                  <td class="py-3 pr-4 text-sm text-gray-600 align-top border-b border-gray-100">Whether you appear in displacement queries</td>
+                </tr>
+                <tr>
+                  <td class="py-3 pr-4 text-sm text-gray-600 align-top border-b border-gray-100">Trust and risk</td>                  <td class="py-3 pr-4 text-sm text-gray-600 align-top border-b border-gray-100">5</td>                  <td class="py-3 pr-4 text-sm text-gray-600 align-top border-b border-gray-100">Whether you can carry the reassurance half of a decision</td>
+                </tr>
+                <tr>
+                  <td class="py-3 pr-4 text-sm text-gray-600 align-top border-b border-gray-100">Fit and segment</td>                  <td class="py-3 pr-4 text-sm text-gray-600 align-top border-b border-gray-100">5</td>                  <td class="py-3 pr-4 text-sm text-gray-600 align-top border-b border-gray-100">Whether you are matched to a specific buyer shape</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="text-gray-600 leading-relaxed mt-4">Write the prompts in the buyer's phrasing, not yours. Pull the wording from sales calls, support tickets and search queries, then check each one reads like something a person would actually type. Internal jargon produces a library that measures your vocabulary.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">Freeze it, version it, and do not touch it mid-cycle. Rewording a prompt between cycles produces a trend that describes your edits rather than the market, and the failure is undetectable afterwards unless the original wording was recorded.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">Fifty is the right number for manual work. Below thirty, single-prompt noise passes for a trend. Above a hundred, marginal precision improves but the discipline of re-running monthly collapses, and discipline is worth more than precision here.</p>
+        </section>
+
+        <section id="step-2-define-the-three-outcomes" class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Step 2: define the three outcomes</h2>
+          <p class="text-gray-600 leading-relaxed mt-4">Three outcomes, three columns, no blending. The definitions must be written down before the first run, because the moment you start scoring a long sample the standard quietly relaxes.</p>
+          <p class="text-gray-600 leading-relaxed mt-4"><strong>Mention</strong> means the brand name appears in the answer text. Nothing more. A brand named in passing counts, and a brand described at length without being named does not.</p>
+          <p class="text-gray-600 leading-relaxed mt-4"><strong>Citation</strong> means a domain you control is attributed as a source, whether by link, footnote or named reference. A third-party page about you is a mention of your brand but not a citation of your site; keep them apart, because the fixes differ.</p>
+          <p class="text-gray-600 leading-relaxed mt-4"><strong>Absorption</strong> means a distinctive claim of yours appears in the answer in substance. This is the only one that requires judgement, which is why step four exists.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">The reason to separate them is diagnostic. Mention without citation points to structure or freshness. Citation without mention is possible but unusual and usually indicates a source list attached without the brand being discussed. Mention and citation without absorption points to generic content.</p>
+        </section>
+
+        <section id="step-3-run-the-protocol" class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Step 3: run the protocol</h2>
+          <p class="text-gray-600 leading-relaxed mt-4">Each prompt is run three times per surface, and the median answer is what gets coded. Single runs are samples: a prompt that names you twice and ignores you once has an unsettled answer, and the honest record is "unsettled" rather than an average.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">Log four fields per row: prompt id, surface, run date, and model or version identifier where the interface exposes one. Six months later, when somebody asks why a number moved, those fields are the difference between an explanation and a guess.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">Fix the account state. Logged-in and logged-out answers differ because personalisation and model version differ, so run every cycle from the same state. Turning personalisation off where the interface allows it reduces one source of variance at no cost.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">One cycle for one brand across four surfaces takes about three hours. A monthly cadence is the shortest interval worth reporting: daily checks measure the engine's variance rather than your content, and teams that check daily spend their weeks reacting to noise they cannot influence.</p>
+        </section>
+
+        <section id="step-4-code-absorption" class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Step 4: code absorption</h2>
+          <p class="text-gray-600 leading-relaxed mt-4">Four levels, scored at the highest reached anywhere in the answer rather than averaged across sentences.</p>
+          <div class="overflow-x-auto mt-5">
+            <table class="w-full text-sm border-collapse min-w-[560px]">
+              <thead>
+                <tr>
+                  <th class="py-3 pr-4 text-left text-xs font-semibold uppercase tracking-wide text-gray-400 border-b border-gray-200">Level</th>                  <th class="py-3 pr-4 text-left text-xs font-semibold uppercase tracking-wide text-gray-400 border-b border-gray-200">Label</th>                  <th class="py-3 pr-4 text-left text-xs font-semibold uppercase tracking-wide text-gray-400 border-b border-gray-200">What it requires</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="py-3 pr-4 text-sm text-gray-600 align-top border-b border-gray-100">0</td>                  <td class="py-3 pr-4 text-sm text-gray-600 align-top border-b border-gray-100">None</td>                  <td class="py-3 pr-4 text-sm text-gray-600 align-top border-b border-gray-100">The domain is attached, but nothing from the page appears beyond the name</td>
+                </tr>
+                <tr>
+                  <td class="py-3 pr-4 text-sm text-gray-600 align-top border-b border-gray-100">1</td>                  <td class="py-3 pr-4 text-sm text-gray-600 align-top border-b border-gray-100">Topical</td>                  <td class="py-3 pr-4 text-sm text-gray-600 align-top border-b border-gray-100">A theme associated with your page appears, but any competitor could have supplied it</td>
+                </tr>
+                <tr>
+                  <td class="py-3 pr-4 text-sm text-gray-600 align-top border-b border-gray-100">2</td>                  <td class="py-3 pr-4 text-sm text-gray-600 align-top border-b border-gray-100">Claim</td>                  <td class="py-3 pr-4 text-sm text-gray-600 align-top border-b border-gray-100">A specific checkable claim of yours appears in substance: a figure, threshold, condition or date</td>
+                </tr>
+                <tr>
+                  <td class="py-3 pr-4 text-sm text-gray-600 align-top border-b border-gray-100">3</td>                  <td class="py-3 pr-4 text-sm text-gray-600 align-top border-b border-gray-100">Recommendation</td>                  <td class="py-3 pr-4 text-sm text-gray-600 align-top border-b border-gray-100">The answer adopts your positioning or names you for a defined use case</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="text-gray-600 leading-relaxed mt-4">Before scoring, write down five to eight claims from the source page that are distinctive enough that a competitor could not plausibly supply them. Those become the anchor list for the whole sample, and they prevent the coding from drifting toward whatever the analyst remembers.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">Calibrate two coders on twenty answers before scoring the bulk. Where they disagree by more than a level, fix the rubric with an example rather than an argument. A rubric with edge cases is usable; a rubric that depends on who is coding is not.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">The level-1 to level-2 boundary is where reporting gets inflated. Level 1 feels like success in a sheet and represents almost no influence. If your absorption rate looks strong, check what proportion of the sample sits exactly at level 1.</p>
+        </section>
+
+        <section id="step-5-compute-and-band" class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Step 5: compute and band</h2>
+          <p class="text-gray-600 leading-relaxed mt-4">The score is <span class="font-mono text-base">100 &times; (0.30 &middot; MR + 0.30 &middot; CR + 0.40 &middot; AR)</span>, with each rate expressed as a fraction of prompts run. Absorption carries the largest weight because it is the only component that measures influence rather than presence.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">Four bands describe what a score implies for a buyer rather than how much work has been done: 0 to 25 invisible, 26 to 55 mentioned, 56 to 80 cited, 81 to 100 recommended. The middle two are where most brands sit, and the most useful distinction inside them is the gap between citation and absorption.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">For a cross-platform figure, score each surface separately and average with explicit weights — our default is ChatGPT 0.40, Perplexity 0.30 and Gemini 0.30. Never average the raw rates across surfaces first: a mention on one surface and a citation on another are different achievements that cancel out when blended.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">Where a fourth surface matters commercially, add it as a named weight and record the change. A silently reweighted composite is indistinguishable from a methodology change when someone reads last quarter's number.</p>
+        </section>
+
+        <section id="step-6-report-three-numbers-and-one-change" class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Step 6: report three numbers and one change</h2>
+          <p class="text-gray-600 leading-relaxed mt-4">A report that a decision-maker can use has four parts: the three rates per surface, a comparison against two or three named competitors from the same run, the single change made since the last report, and the evidence that it worked or did not.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">Put absorption first in the visual order. It is the number that predicts persuasion, and it is the one most likely to be missing from a vendor's dashboard because it cannot be automated cleanly.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">Report cluster-level results, not only the aggregate. A line saying share of voice rose four points hides that you lost every implementation question while winning the comparisons. Cluster-level reporting is what converts a number into a brief.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">Be explicit about what the measurement cannot show. Nothing here attributes pipeline or revenue, because no available measurement does. Claiming otherwise invites the audit that ends the conversation, and the honest chain — citations on owned pages, branded search lift, referral traffic where exposed — is persuasive enough on its own.</p>
+        </section>
+
+        <section id="six-ways-this-goes-wrong" class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Six ways this goes wrong</h2>
+          <ol class="list-decimal pl-5 space-y-2 text-gray-600 leading-relaxed marker:text-blue-500 mt-4">
+            <li><strong>Prompt drift.</strong> The library gets quietly reworded between cycles, and the trend line describes the analyst's edits.</li>
+            <li><strong>Branded-only libraries.</strong> Recognition is measured, acquisition is not, and every number looks healthy while the non-branded gap stays invisible.</li>
+            <li><strong>Blended scoring.</strong> One composite hides which of the three metrics moved, so it cannot produce a next action.</li>
+            <li><strong>Single runs.</strong> One sample per prompt per cycle, reported as a result rather than as a sample.</li>
+            <li><strong>Uncalibrated absorption.</strong> One analyst, no anchor list, standard relaxing as fatigue sets in.</li>
+            <li><strong>Missing run records.</strong> No date or model version attached to rows, which makes every historical comparison unfalsifiable.</li>
+          </ol>
+          <p class="text-gray-600 leading-relaxed mt-4">The pattern is that each failure is invisible at the time and expensive later. All six are prevented by the same two habits: write the definitions down before the first run, and date every row.</p>
+        </section>
+
+        <section id="from-measurement-to-a-content-brief" class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">From measurement to a content brief</h2>
+          <p class="text-gray-600 leading-relaxed mt-4">The measurement is only worth its cost if it produces a brief. The translation is mechanical, which is the point.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">Start with the cluster where you are mentioned but not cited. That gap points to structure or freshness rather than reach, so the brief is a restructure: convert the relevant pages into question-shaped sections, move each claim into the opening sentence, and publish tables and specifications as text.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">Then take the cluster where you are absent entirely and check access before writing anything. If pages in that cluster cannot be fetched or are not indexed, the answer is a technical brief, and no amount of content will substitute.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">Finally, take the cluster where you are cited but not absorbed. That is a specificity problem: the pages are usable but generic. The brief there is to add one distinctive, checkable claim per section — a figure, a threshold, a dated outcome — rather than to expand the page.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">Each brief names the cluster, the prompts, the pages involved and the single change expected. That shape makes it possible to check later whether the change worked, which is what closes the loop back into step three.</p>
+        </section>
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Frequently Asked Questions</h2>
+          <div class="space-y-4 mt-4">
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">How many prompts do I need for a reliable baseline?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">Fifty: ten branded and forty non-branded across eight intent clusters. Below thirty, prompt-level noise dominates; above a hundred, the monthly cadence usually breaks before the precision pays off.</p>
+            </div>
+
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">Can one person do the absorption coding?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">They can, but the standard will drift over a long sample. The workable minimum is a written rubric, an anchor list of distinctive claims, and a twenty-answer calibration set scored twice.</p>
+            </div>
+
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">How often should I re-run the cycle?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">Monthly for trend, weekly only during an active change. Daily measurement produces noise that invites premature conclusions; quarterly misses the effect of work already paid for.</p>
+            </div>
+
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">What if my numbers came from different tools across cycles?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">Then the comparison is invalid unless the prompt library and definitions were identical. Switching tools mid-programme resets the baseline, and that reset should be recorded rather than hidden.</p>
+            </div>
+
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">Does a good score mean buyers will convert?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">No. It measures presence and influence inside answers, not demand or intent. Conversion depends on the offer behind the recommendation, which is a different question.</p>
+            </div>
+          </div>
+        </section>
+        <section class="mt-12 pt-8 border-t border-gray-100">
+          <h2 class="text-lg font-semibold text-gray-900 mb-4">Keep reading</h2>
+          <div class="grid sm:grid-cols-2 gap-4">
+        <a href="/tools/prompt-library-generator/" class="block p-5 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+          <span class="block text-sm font-semibold text-gray-900">Prompt Library Generator</span>
+          <span class="block text-sm text-gray-500 mt-1">Build the fifty prompts in a minute.</span>
+        </a>
+        <a href="/methodology/" class="block p-5 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+          <span class="block text-sm font-semibold text-gray-900">The Measurement Standard</span>
+          <span class="block text-sm text-gray-500 mt-1">The published definitions and arithmetic.</span>
+        </a>
+          </div>
+        </section>
+
+        <section class="mt-12 pt-8 border-t border-gray-100">
+          <h2 class="text-lg font-semibold text-gray-900 mb-4">Glossary terms behind this</h2>
+          <div class="flex flex-wrap gap-x-4 gap-y-2 text-sm">
+            <a href="/glossary/governed-question-library/" class="text-blue-600 hover:text-blue-700">Governed Question Library</a>
+            <a href="/glossary/mention-rate/" class="text-blue-600 hover:text-blue-700">Mention Rate</a>
+            <a href="/glossary/citation-rate/" class="text-blue-600 hover:text-blue-700">Citation Rate</a>
+            <a href="/glossary/absorption-rate/" class="text-blue-600 hover:text-blue-700">Absorption Rate</a>
+            <a href="/glossary/ai-visibility-index/" class="text-blue-600 hover:text-blue-700">AI Visibility Index</a>
+            <a href="/glossary/competitive-citation-share/" class="text-blue-600 hover:text-blue-700">Competitive Citation Share</a>
+          </div>
+        </section>
+
+        <section class="mt-10 rounded-xl border border-blue-200 bg-blue-50 p-6">
+          <h2 class="text-lg font-semibold text-gray-900">Run this against your own brand</h2>
+          <p class="mt-2 text-sm text-gray-600">Fifty prompts, four surfaces, one baseline. Free report for the first twenty brands.</p>
+          <a href="https://indexhot.com" class="mt-4 inline-block px-5 py-3 rounded-lg bg-blue-600 text-white font-semibold text-sm hover:bg-blue-700 transition-colors">Check your brand free</a>
+        </section>
+
+      </div>
+    </article>
+  </main>
+
+  <footer class="border-t border-gray-100 px-5 sm:px-6 py-8">
+    <div class="max-w-3xl mx-auto text-center text-sm text-gray-400">
+      © 2026 IndexHot. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var menuBtn = document.getElementById('menu-btn');
+      var mobileMenu = document.getElementById('mobile-menu');
+      menuBtn.addEventListener('click', function () {
+        var isHidden = mobileMenu.classList.toggle('hidden');
+        menuBtn.setAttribute('aria-expanded', String(!isHidden));
+      });
+      mobileMenu.addEventListener('click', function (e) {
+        if (e.target.tagName === 'A') {
+          mobileMenu.classList.add('hidden');
+          menuBtn.setAttribute('aria-expanded', 'false');
+        }
+      });
+    })();
+  </script>
+</body>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guides — IndexHot</title>
+  <meta name="description" content="Three long-form guides: the complete GEO guide, how AI retrieval and synthesis work, and the measurement playbook." />
+  <link rel="canonical" href="https://indexhot.com/guides/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Guides — IndexHot" />
+  <meta property="og:description" content="Three long-form guides: GEO practice, AI retrieval mechanics, and measurement protocol." />
+  <meta property="og:url" content="https://indexhot.com/guides/" />
+  <meta property="og:site_name" content="IndexHot" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Guides — IndexHot" />
+  <meta name="twitter:description" content="Three long-form guides on GEO practice, retrieval and measurement." />
+  <link rel="stylesheet" href="../tailwind.min.css" />
+  <style>
+    body { font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "name": "Guides",
+      "url": "https://indexhot.com/guides/",
+      "description": "Three long-form guides covering GEO practice, AI retrieval mechanics and measurement protocol.",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "IndexHot",
+        "url": "https://indexhot.com/"
+      },
+      "hasPart": [
+        {
+          "@type": "Article",
+          "name": "The Complete Guide to Generative Engine Optimization",
+          "url": "https://indexhot.com/guides/geo-complete-guide/"
+        },
+        {
+          "@type": "Article",
+          "name": "How AI Search Actually Works: Retrieval, Synthesis and Citation",
+          "url": "https://indexhot.com/guides/how-ai-search-works/"
+        },
+        {
+          "@type": "Article",
+          "name": "The GEO Measurement Playbook",
+          "url": "https://indexhot.com/guides/geo-measurement-playbook/"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://indexhot.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://indexhot.com/guides/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How are these guides different from the blog?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The blog covers single findings and arguments. Guides are long-form references that cover a whole subject, with section anchors and a table of contents so they can be read selectively."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where should I start?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Start with the complete GEO guide if you have no baseline. Read the measurement playbook before spending on content. Read the retrieval guide if you are diagnosing why a good page never gets cited."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I cite these guides?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The measurement definitions come from the published standard, which carries a stable citation. Attribute the specific figures to the page you took them from."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body class="bg-white text-gray-800 antialiased">
+
+  <header class="sticky top-0 z-20 bg-white/90 backdrop-blur border-b border-gray-100">
+    <div class="max-w-3xl mx-auto px-5 sm:px-6 h-16 flex items-center justify-between">
+      <a href="/" class="text-xl font-bold tracking-tight text-gray-900">
+        Index<span class="text-blue-600">Hot</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6">
+        <a href="/blog/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Blog</a>
+        <a href="/guides/" class="text-sm font-medium text-blue-600">Guides</a>
+        <a href="/answers/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Answers</a>
+        <a href="/tools/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Tools</a>
+        <a href="/methodology/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Methodology</a>
+        <a href="/data/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Data</a>
+        <a href="/about/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">About</a>
+        <a href="#" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Sign in</a>
+      </nav>
+      <button id="menu-btn" type="button" aria-label="Open menu" aria-expanded="false"
+        class="md:hidden flex items-center justify-center w-10 h-10 -mr-2 rounded-lg text-gray-600 hover:text-blue-600 hover:bg-gray-100 transition-colors">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+    <nav id="mobile-menu" class="hidden md:hidden px-5 pb-4 pt-2 border-t border-gray-100 bg-white">
+      <a href="/blog/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Blog</a>
+      <a href="/guides/" class="block py-2.5 text-sm font-medium text-blue-600">Guides</a>
+      <a href="/answers/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Answers</a>
+      <a href="/tools/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Tools</a>
+      <a href="/methodology/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Methodology</a>
+      <a href="/data/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Data</a>
+      <a href="/about/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">About</a>
+      <a href="#" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Sign in</a>
+    </nav>
+  </header>
+  <main>
+    <article class="px-5 sm:px-6 pt-10 pb-10">
+      <div class="max-w-3xl mx-auto">
+
+        <header class="mb-8">
+          <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900 leading-tight">
+            Guides
+          </h1>
+          <p class="mt-3 text-sm text-gray-400">3 long-form guides &middot; updated November 2026</p>
+        </header>
+
+        <div class="text-lg text-gray-700 leading-relaxed border-l-4 border-blue-600 pl-4 mb-10">
+          <p>These are reference documents, not posts. Each covers one subject end to end, with a table of contents so you can read the section you need rather than the whole thing. Where a figure comes from our own measurement, the sample size is stated in the text.</p>
+        </div>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">The guides</h2>
+          <div class="grid sm:grid-cols-1 gap-4 mt-4">
+        <a href="/guides/geo-complete-guide/" class="block p-6 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+          <span class="block text-xs font-medium text-gray-400">12 sections &middot; 2741 words</span>
+          <span class="block mt-1 text-sm font-semibold text-gray-900">The Complete Guide to Generative Engine Optimization</span>
+          <span class="block text-sm text-gray-500 mt-1">What GEO measures, how the four major AI surfaces differ, what makes a page citable, and a 90-day plan you can run with a spreadsheet.</span>
+        </a>
+        <a href="/guides/how-ai-search-works/" class="block p-6 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+          <span class="block text-xs font-medium text-gray-400">9 sections &middot; 2003 words</span>
+          <span class="block mt-1 text-sm font-semibold text-gray-900">How AI Search Actually Works: Retrieval, Synthesis and Citation</span>
+          <span class="block text-sm text-gray-500 mt-1">The five stages between a question and an answer: query expansion, retrieval, chunking, re-ranking and synthesis. Where pages get lost, and what each stage implies for content.</span>
+        </a>
+        <a href="/guides/geo-measurement-playbook/" class="block p-6 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+          <span class="block text-xs font-medium text-gray-400">9 sections &middot; 2069 words</span>
+          <span class="block mt-1 text-sm font-semibold text-gray-900">The GEO Measurement Playbook</span>
+          <span class="block text-sm text-gray-500 mt-1">A five-step protocol for measuring AI visibility reproducibly: build the library, define the outcomes, run it, code absorption, and turn the result into a content brief.</span>
+        </a>
+          </div>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Where to start</h2>
+          <p class="text-gray-600 leading-relaxed">The order depends on what you already know, and reading all three in sequence is about forty minutes.</p>
+          <ul class="list-disc pl-5 space-y-2 text-gray-600 leading-relaxed marker:text-blue-500 mt-4">
+            <li>No baseline yet: start with the <a href="/guides/geo-complete-guide/" class="text-blue-600 hover:underline">complete guide</a>, then run fifty prompts before spending anything.</li>
+            <li>Good pages that never get cited: read <a href="/guides/how-ai-search-works/" class="text-blue-600 hover:underline">how AI search works</a>, which separates retrieval failures from extractability failures.</li>
+            <li>About to commission content: read the <a href="/guides/geo-measurement-playbook/" class="text-blue-600 hover:underline">measurement playbook</a> first, because without a frozen library you cannot tell whether the work succeeded.</li>
+          </ul>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Frequently Asked Questions</h2>
+          <div class="space-y-4 mt-4">
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">How are these different from the blog?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">The blog covers single findings and arguments. Guides are long-form references that cover a whole subject, with anchors and a table of contents so they can be read selectively.</p>
+            </div>
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">Can I cite these guides?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">Yes. The measurement definitions come from the published standard, which carries a stable citation. Attribute specific figures to the page you took them from.</p>
+            </div>
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">Do you update them?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">Each page carries a publication date and is revised when a claim stops holding. Corrections happen in the page rather than in a changelog.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="mt-10 rounded-xl border border-blue-200 bg-blue-50 p-6">
+          <h2 class="text-lg font-semibold text-gray-900">Run this against your own brand</h2>
+          <p class="mt-2 text-sm text-gray-600">Fifty prompts, four surfaces, one baseline. Free report for the first twenty brands.</p>
+          <a href="https://indexhot.com" class="mt-4 inline-block px-5 py-3 rounded-lg bg-blue-600 text-white font-semibold text-sm hover:bg-blue-700 transition-colors">Check your brand free</a>
+        </section>
+
+      </div>
+    </article>
+  </main>
+
+  <footer class="border-t border-gray-100 px-5 sm:px-6 py-8">
+    <div class="max-w-3xl mx-auto text-center text-sm text-gray-400">
+      © 2026 IndexHot. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var menuBtn = document.getElementById('menu-btn');
+      var mobileMenu = document.getElementById('mobile-menu');
+      menuBtn.addEventListener('click', function () {
+        var isHidden = mobileMenu.classList.toggle('hidden');
+        menuBtn.setAttribute('aria-expanded', String(!isHidden));
+      });
+      mobileMenu.addEventListener('click', function (e) {
+        if (e.target.tagName === 'A') {
+          mobileMenu.classList.add('hidden');
+          menuBtn.setAttribute('aria-expanded', 'false');
+        }
+      });
+    })();
+  </script>
+</body>

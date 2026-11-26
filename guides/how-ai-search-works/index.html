@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How AI Search Actually Works: Retrieval, Synthesis and Citation — IndexHot Guides</title>
+  <meta name="description" content="Five stages between a prompt and an answer: fan-out, retrieval, chunking, re-ranking and synthesis. Where pages get lost at each one." />
+  <link rel="canonical" href="https://indexhot.com/guides/how-ai-search-works/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="How AI Search Actually Works: Retrieval, Synthesis and Citation — IndexHot Guides" />
+  <meta property="og:description" content="The five stages between a question and an answer: query expansion, retrieval, chunking, re-ranking and synthesis. Where pages get lost, and what each stage implies for content." />
+  <meta property="og:url" content="https://indexhot.com/guides/how-ai-search-works/" />
+  <meta property="og:site_name" content="IndexHot" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="How AI Search Actually Works: Retrieval, Synthesis and Citation — IndexHot Guides" />
+  <meta name="twitter:description" content="The five stages between a question and an answer: query expansion, retrieval, chunking, re-ranking and synthesis. Where pages get lost, and what each stage implies for content." />
+  <link rel="stylesheet" href="../../tailwind.min.css" />
+  <style>
+    body { font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "How AI Search Actually Works: Retrieval, Synthesis and Citation",
+      "description": "The five stages between a question and an answer: query expansion, retrieval, chunking, re-ranking and synthesis. Where pages get lost, and what each stage implies for content.",
+      "url": "https://indexhot.com/guides/how-ai-search-works/",
+      "datePublished": "2026-11-26",
+      "dateModified": "2026-11-26",
+      "author": {
+        "@type": "Organization",
+        "name": "IndexHot Team",
+        "url": "https://indexhot.com/about/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "IndexHot",
+        "url": "https://indexhot.com/"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://indexhot.com/guides/how-ai-search-works/"
+      },
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "IndexHot",
+        "url": "https://indexhot.com/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://indexhot.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://indexhot.com/guides/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "How AI Search Actually Works: Retrieval, Synthesis and Citation",
+          "item": "https://indexhot.com/guides/how-ai-search-works/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Does an AI answer always retrieve web pages?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Many answers, especially conceptual ones, are written largely from training data with no retrieval and no citations. Absence of a citation is therefore not evidence that you were outranked — sometimes nothing was retrieved at all."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why does a page rank first and never get cited?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Eligibility gets a page into the candidate pool; extractability decides whether a passage survives chunking, re-ranking and synthesis. A ranked page whose claim is spread across sections has no usable chunk."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much does page length matter?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Less than structure. Length adds chunks, and chunks that restate common knowledge are discarded while consuming the same budget. Six hundred words answering six questions outperform two thousand answering one."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there a way to know which stage failed?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Partially. If you are named but never cited, the failure is late (synthesis and attribution). If you are cited but never quoted, it is mid-pipeline (chunking and re-ranking). If you never appear, check access and query coverage first."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body class="bg-white text-gray-800 antialiased">
+
+  <!-- Top navigation -->
+  <header class="sticky top-0 z-20 bg-white/90 backdrop-blur border-b border-gray-100">
+    <div class="max-w-3xl mx-auto px-5 sm:px-6 h-16 flex items-center justify-between">
+      <a href="/" class="text-xl font-bold tracking-tight text-gray-900">
+        Index<span class="text-blue-600">Hot</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6">
+        <a href="/blog/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Blog</a>
+        <a href="/guides/" class="text-sm font-medium text-blue-600">Guides</a>
+        <a href="/answers/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Answers</a>
+        <a href="/tools/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Tools</a>
+        <a href="/methodology/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Methodology</a>
+        <a href="/data/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Data</a>
+        <a href="/about/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">About</a>
+        <a href="#" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Sign in</a>
+      </nav>
+      <button id="menu-btn" type="button" aria-label="Open menu" aria-expanded="false"
+        class="md:hidden flex items-center justify-center w-10 h-10 -mr-2 rounded-lg text-gray-600 hover:text-blue-600 hover:bg-gray-100 transition-colors">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+    <nav id="mobile-menu" class="hidden md:hidden px-5 pb-4 pt-2 border-t border-gray-100 bg-white">
+      <a href="/blog/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Blog</a>
+      <a href="/guides/" class="block py-2.5 text-sm font-medium text-blue-600">Guides</a>
+      <a href="/answers/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Answers</a>
+      <a href="/tools/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Tools</a>
+      <a href="/methodology/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Methodology</a>
+      <a href="/data/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Data</a>
+      <a href="/about/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">About</a>
+      <a href="#" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Sign in</a>
+    </nav>
+  </header>
+  <main>
+    <article class="px-5 sm:px-6 pt-10 pb-10">
+      <div class="max-w-3xl mx-auto">
+
+        <nav class="mb-6 text-xs text-gray-500">
+          <a href="/" class="hover:text-blue-600">Home</a><span class="mx-1.5 text-gray-300">/</span><a href="/guides/" class="hover:text-blue-600">Guides</a>
+        </nav>
+
+        <header class="mb-8">
+          <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900 leading-tight">
+            How AI Search Actually Works: Retrieval, Synthesis and Citation
+          </h1>
+          <p class="mt-4 text-sm text-gray-400">
+            By <span class="font-medium text-gray-600">IndexHot Team</span> &middot; <time datetime="2026-11-26">November 26, 2026</time> &middot; 9 sections
+          </p>
+        </header>
+
+        <div class="text-lg text-gray-700 leading-relaxed border-l-4 border-blue-600 pl-4 mb-10">
+          <p>An AI answer is assembled in five stages: the question is expanded into several sub-queries, passages are retrieved for each, the passages are cut into chunks and re-ranked, the survivors are fitted into a context budget, and a model writes a summary that may or may not attribute its sources. A page can be lost at any of those stages, and each stage has a different fix. This guide walks through them in order, because the most common mistake in GEO is applying a content fix to a retrieval problem.</p>
+        </div>
+
+        <nav class="rounded-xl border border-gray-200 bg-gray-50 p-5 mb-10">
+          <h2 class="text-sm font-semibold text-gray-900">On this page</h2>
+          <ol class="mt-3 space-y-1 text-sm text-gray-600 list-decimal pl-5 marker:text-blue-500">
+            <li><a href="#the-five-stages" class="hover:text-blue-600">The five stages</a></li>
+            <li><a href="#query-fan-out-one-question-becomes-many" class="hover:text-blue-600">Query fan-out: one question becomes many</a></li>
+            <li><a href="#retrieval-lexical-semantic-and-hybrid" class="hover:text-blue-600">Retrieval: lexical, semantic and hybrid</a></li>
+            <li><a href="#chunking-the-unit-is-a-passage-not-a-page" class="hover:text-blue-600">Chunking: the unit is a passage, not a page</a></li>
+            <li><a href="#re-ranking-and-the-context-budget" class="hover:text-blue-600">Re-ranking and the context budget</a></li>
+            <li><a href="#grounding-and-the-hallucination-boundary" class="hover:text-blue-600">Grounding and the hallucination boundary</a></li>
+            <li><a href="#where-citations-come-from" class="hover:text-blue-600">Where citations come from</a></li>
+            <li><a href="#why-the-same-question-gives-different-answers" class="hover:text-blue-600">Why the same question gives different answers</a></li>
+            <li><a href="#what-this-implies-for-content" class="hover:text-blue-600">What this implies for content</a></li>
+          </ol>
+        </nav>
+
+        <section id="the-five-stages" class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">The five stages</h2>
+          <p class="text-gray-600 leading-relaxed mt-4">It helps to think of an answer as a pipeline rather than a lookup. Each stage narrows the candidate set, and the narrowing is where most pages disappear without anyone noticing.</p>
+          <div class="overflow-x-auto mt-5">
+            <table class="w-full text-sm border-collapse min-w-[560px]">
+              <thead>
+                <tr>
+                  <th class="py-3 pr-4 text-left text-xs font-semibold uppercase tracking-wide text-gray-400 border-b border-gray-200">Stage</th>                  <th class="py-3 pr-4 text-left text-xs font-semibold uppercase tracking-wide text-gray-400 border-b border-gray-200">What happens</th>                  <th class="py-3 pr-4 text-left text-xs font-semibold uppercase tracking-wide text-gray-400 border-b border-gray-200">Where you lose</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="py-3 pr-4 text-sm text-gray-600 align-top border-b border-gray-100">1. Expansion</td>                  <td class="py-3 pr-4 text-sm text-gray-600 align-top border-b border-gray-100">The question is rewritten into several sub-queries, often including implied ones</td>                  <td class="py-3 pr-4 text-sm text-gray-600 align-top border-b border-gray-100">Your page targets phrasing nobody uses</td>
+                </tr>
+                <tr>
+                  <td class="py-3 pr-4 text-sm text-gray-600 align-top border-b border-gray-100">2. Retrieval</td>                  <td class="py-3 pr-4 text-sm text-gray-600 align-top border-b border-gray-100">Candidates are fetched per sub-query using lexical, semantic or hybrid matching</td>                  <td class="py-3 pr-4 text-sm text-gray-600 align-top border-b border-gray-100">Your page is not reachable or not similar enough</td>
+                </tr>
+                <tr>
+                  <td class="py-3 pr-4 text-sm text-gray-600 align-top border-b border-gray-100">3. Chunking and re-ranking</td>                  <td class="py-3 pr-4 text-sm text-gray-600 align-top border-b border-gray-100">Passages are cut from pages and scored, and only the top ones advance</td>                  <td class="py-3 pr-4 text-sm text-gray-600 align-top border-b border-gray-100">Your passage is complete on the page but incomplete when cut</td>
+                </tr>
+                <tr>
+                  <td class="py-3 pr-4 text-sm text-gray-600 align-top border-b border-gray-100">4. Context assembly</td>                  <td class="py-3 pr-4 text-sm text-gray-600 align-top border-b border-gray-100">Survivors are fitted into a limited context window</td>                  <td class="py-3 pr-4 text-sm text-gray-600 align-top border-b border-gray-100">Your claim is redundant with another source and gets dropped</td>
+                </tr>
+                <tr>
+                  <td class="py-3 pr-4 text-sm text-gray-600 align-top border-b border-gray-100">5. Synthesis</td>                  <td class="py-3 pr-4 text-sm text-gray-600 align-top border-b border-gray-100">A model writes the answer and decides what to attribute</td>                  <td class="py-3 pr-4 text-sm text-gray-600 align-top border-b border-gray-100">Your contribution is used but not credited</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="text-gray-600 leading-relaxed mt-4">Read the table from the bottom up when diagnosing a problem. If you are quoted but not cited, the failure is at stage five. If you are cited but never quoted, it is at stage three. If you never appear at all, look at stages one and two before touching the writing.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">Note what is absent: nothing here is a ranking of URLs. Ranking still governs eligibility on Google's surface, but the other three surfaces do not rank pages at all — they rank passages, and they do it inside a budget.</p>
+        </section>
+
+        <section id="query-fan-out-one-question-becomes-many" class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Query fan-out: one question becomes many</h2>
+          <p class="text-gray-600 leading-relaxed mt-4">A single prompt usually becomes several retrievals. "Which CRM is best for a 20-person team?" implies questions about CRM categories, small-team suitability, pricing tiers and comparison. Each becomes its own retrieval, and each can be won or lost independently.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">This is why a page that answers the literal question but ignores the implied ones gets cited for one sub-question and missed for the rest. It also explains an observation that looks like instability: two nearly identical prompts returning different sources, because the implied sub-queries shifted by one.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">The practical response is to write for the question cluster rather than the question. A CRM page that states price tiers, seat minimums, onboarding time and a comparison against two named alternatives covers four sub-queries that a page answering only "best for small teams" does not.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">It also changes how you build a prompt library. Fifty prompts that are all variations of one question measure one cluster; fifty prompts spread across eight intents measure a market. The second is what tells you where you are absent.</p>
+        </section>
+
+        <section id="retrieval-lexical-semantic-and-hybrid" class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Retrieval: lexical, semantic and hybrid</h2>
+          <p class="text-gray-600 leading-relaxed mt-4">Retrieval systems score candidates in at least two ways, and understanding the difference explains a class of results that otherwise looks arbitrary.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">Lexical matching, historically BM25, rewards documents containing the same terms as the query, weighted by rarity and document length. It is exact and explainable: a page that says "replacement filter" is matched to a query about replacement filters and a page that says "consumable cartridge" is not, even though they mean the same thing.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">Semantic matching compares embeddings, so a page about consumable cartridges can be retrieved for a replacement-filter query because the meanings are close. This is what lets a well-explained concept match phrasings it never uses literally, and what lets an off-topic page with surface similarity slip in.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">Most production systems use both, weighted, which is why the advice "use the words your buyers use" remains correct even in a semantic era — not for keyword density, but because lexical matching is still one of the two signals. A page that uses only internal jargon loses the lexical half of the race.</p>
+        </section>
+
+        <section id="chunking-the-unit-is-a-passage-not-a-page" class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Chunking: the unit is a passage, not a page</h2>
+          <p class="text-gray-600 leading-relaxed mt-4">Before scoring, pages are cut into chunks — usually a few hundred tokens, often aligned to headings. Whatever happens next happens to the chunk, not to the page, which is the single most important structural fact in GEO.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">A chunk that begins mid-argument inherits a dangling reference: "this approach reduces latency by 40 percent" is unusable if the chunk does not say which approach. Systems handle this by overlapping chunks or by prepending the heading, and both are partial remedies rather than guarantees.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">The consequence is that a section should be written to survive being read alone. That means naming the subject explicitly rather than relying on "it" or "this", restating the condition near the figure, and avoiding tables that only make sense with the column header three pages earlier.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">This is also why heading structure matters more than most teams expect. Headings are both the natural cut points and, in many pipelines, the text prepended to a chunk to give it context. A vague heading like "More on this" degrades every chunk beneath it.</p>
+        </section>
+
+        <section id="re-ranking-and-the-context-budget" class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Re-ranking and the context budget</h2>
+          <p class="text-gray-600 leading-relaxed mt-4">Retrieval produces far more candidates than the model can read. A re-ranker scores them against the query, and only the top handful enter the context window — the fixed budget of text a model can attend to in one pass.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">Two practical consequences follow. First, being retrieved is not the same as being read: a page can be fetched and then ranked out before synthesis. Second, redundancy is expensive — if three sources say the same thing, the budget favours keeping one, and the others are dropped even though they were eligible.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">That redundancy rule is why distinctive facts outperform comprehensive ones. A page that repeats the category's common knowledge competes with every other page saying it. A page with one specific, checkable claim no competitor states is selected because there is nothing else to select.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">It also explains why longer pages do not automatically win. Length adds chunks, and chunks that restate known material are discarded while consuming the same budget as chunks that add something. The budget rewards density, not volume.</p>
+        </section>
+
+        <section id="grounding-and-the-hallucination-boundary" class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Grounding and the hallucination boundary</h2>
+          <p class="text-gray-600 leading-relaxed mt-4">Grounding means the model's output is constrained to claims supported by retrieved text. In practice the constraint is partial: the model can still misread, overstate or blend sources, and it can write from memory when retrieval supplies nothing.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">This produces a spectrum rather than two states. At one end, an answer is a near-quotation of one source. At the other, it is generated from parametric memory with no attribution. Most answers sit between, which is why an answer with no citations is not evidence that nothing was retrieved.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">For brands, the boundary matters commercially. A grounded claim about your product tends to be accurate and conservative, because the source constrains the wording. An ungrounded claim about your product is where errors concentrate: wrong pricing, discontinued features, stale positioning. Entity clarity and fresh, specific pages are the two levers that shift claims toward the grounded end.</p>
+        </section>
+
+        <section id="where-citations-come-from" class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Where citations come from</h2>
+          <p class="text-gray-600 leading-relaxed mt-4">Attribution is a separate decision from retrieval. A system may use a passage and decline to cite it, or cite a page it barely used, depending on how its interface and policy expose sources.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">On surfaces that attach a source list, citations usually reflect the retrieved set rather than a ranked judgement of importance. Position in a list is retrieval order, not influence, and reading it as a ranking of authority is the most common misinterpretation in GEO reporting.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">On surfaces that attach few or no sources, the citation, when it appears, tends to mark the page that supplied the dominant framing. This is why a scarce citation is often worth more per unit than one of twelve attached links, and why citation counts are a poor proxy for influence across surfaces.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">The measurement consequence is that citation and absorption must be coded separately. The first tells you the pipeline reached you; the second tells you whether anything of yours survived the synthesis.</p>
+        </section>
+
+        <section id="why-the-same-question-gives-different-answers" class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Why the same question gives different answers</h2>
+          <p class="text-gray-600 leading-relaxed mt-4">Non-determinism is structural, not a defect. Sampling temperature, index freshness, region, account state and the exact wording of a prompt all shift the output, and a single run is a sample rather than a result.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">This has a hard consequence for measurement: one check cannot distinguish a real change from variance. A prompt that names you twice and ignores you once has an unsettled answer, and reporting the average of three runs as a trend is how a flat number gets mistaken for progress.</p>
+          <p class="text-gray-600 leading-relaxed mt-4">The workable protocol is boring. Fix the prompt wording, run each prompt three times per surface, code the median answer, and record the date and model version beside every row. Report monthly aggregates and keep the weekly spread visible rather than hiding it behind a single figure.</p>
+        </section>
+
+        <section id="what-this-implies-for-content" class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">What this implies for content</h2>
+          <p class="text-gray-600 leading-relaxed mt-4">Five derivations, each following from a stage above rather than from folklore.</p>
+          <ol class="list-decimal pl-5 space-y-2 text-gray-600 leading-relaxed marker:text-blue-500 mt-4">
+            <li><strong>Write to the implied questions.</strong> Fan-out means the literal prompt is a fraction of what gets retrieved. Cover the cluster, not the sentence.</li>
+            <li><strong>Name your subject in every section.</strong> Chunks lose their antecedents. Explicit nouns survive cutting; pronouns do not.</li>
+            <li><strong>Put one distinctive fact per section.</strong> The context budget rewards density and penalises redundancy. Being the only source with a number is stronger than being the best source with everything.</li>
+            <li><strong>Fix access before structure.</strong> A page that cannot be fetched fails at stage two, and no amount of rewriting reaches stage five.</li>
+            <li><strong>Measure per stage.</strong> Mention tells you the pipeline reached you, citation tells you it used you as evidence, absorption tells you it kept your meaning. One number cannot do all three jobs.</li>
+          </ol>
+          <p class="text-gray-600 leading-relaxed mt-4">If you remember one line from this guide, make it this: most "we are invisible in AI search" diagnoses are made at stage five and fixed at stages two and three, which is why the work feels endless and the numbers stay flat.</p>
+        </section>
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Frequently Asked Questions</h2>
+          <div class="space-y-4 mt-4">
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">Does an AI answer always retrieve web pages?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">No. Many answers, especially conceptual ones, are written largely from training data with no retrieval and no citations. Absence of a citation is therefore not evidence that you were outranked — sometimes nothing was retrieved at all.</p>
+            </div>
+
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">Why does a page rank first and never get cited?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">Eligibility gets a page into the candidate pool; extractability decides whether a passage survives chunking, re-ranking and synthesis. A ranked page whose claim is spread across sections has no usable chunk.</p>
+            </div>
+
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">How much does page length matter?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">Less than structure. Length adds chunks, and chunks that restate common knowledge are discarded while consuming the same budget. Six hundred words answering six questions outperform two thousand answering one.</p>
+            </div>
+
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">Is there a way to know which stage failed?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">Partially. If you are named but never cited, the failure is late (synthesis and attribution). If you are cited but never quoted, it is mid-pipeline (chunking and re-ranking). If you never appear, check access and query coverage first.</p>
+            </div>
+          </div>
+        </section>
+        <section class="mt-12 pt-8 border-t border-gray-100">
+          <h2 class="text-lg font-semibold text-gray-900 mb-4">Keep reading</h2>
+          <div class="grid sm:grid-cols-2 gap-4">
+        <a href="/guides/geo-complete-guide/" class="block p-5 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+          <span class="block text-sm font-semibold text-gray-900">The Complete GEO Guide</span>
+          <span class="block text-sm text-gray-500 mt-1">The practice side of this theory.</span>
+        </a>
+        <a href="/platforms/" class="block p-5 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+          <span class="block text-sm font-semibold text-gray-900">Platform guides</span>
+          <span class="block text-sm text-gray-500 mt-1">How each surface differs in practice.</span>
+        </a>
+          </div>
+        </section>
+
+        <section class="mt-12 pt-8 border-t border-gray-100">
+          <h2 class="text-lg font-semibold text-gray-900 mb-4">Glossary terms behind this</h2>
+          <div class="flex flex-wrap gap-x-4 gap-y-2 text-sm">
+            <a href="/glossary/query-fan-out/" class="text-blue-600 hover:text-blue-700">Query Fan-Out</a>
+            <a href="/glossary/chunking/" class="text-blue-600 hover:text-blue-700">Chunking</a>
+            <a href="/glossary/re-ranking/" class="text-blue-600 hover:text-blue-700">Re-ranking</a>
+            <a href="/glossary/retrieval-augmented-generation/" class="text-blue-600 hover:text-blue-700">Retrieval-Augmented Generation</a>
+            <a href="/glossary/hybrid-search/" class="text-blue-600 hover:text-blue-700">Hybrid Search</a>
+            <a href="/glossary/context-window/" class="text-blue-600 hover:text-blue-700">Context Window</a>
+            <a href="/glossary/grounding/" class="text-blue-600 hover:text-blue-700">Grounding</a>
+            <a href="/glossary/hallucination/" class="text-blue-600 hover:text-blue-700">Hallucination</a>
+          </div>
+        </section>
+
+        <section class="mt-10 rounded-xl border border-blue-200 bg-blue-50 p-6">
+          <h2 class="text-lg font-semibold text-gray-900">Run this against your own brand</h2>
+          <p class="mt-2 text-sm text-gray-600">Fifty prompts, four surfaces, one baseline. Free report for the first twenty brands.</p>
+          <a href="https://indexhot.com" class="mt-4 inline-block px-5 py-3 rounded-lg bg-blue-600 text-white font-semibold text-sm hover:bg-blue-700 transition-colors">Check your brand free</a>
+        </section>
+
+      </div>
+    </article>
+  </main>
+
+  <footer class="border-t border-gray-100 px-5 sm:px-6 py-8">
+    <div class="max-w-3xl mx-auto text-center text-sm text-gray-400">
+      © 2026 IndexHot. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var menuBtn = document.getElementById('menu-btn');
+      var mobileMenu = document.getElementById('mobile-menu');
+      menuBtn.addEventListener('click', function () {
+        var isHidden = mobileMenu.classList.toggle('hidden');
+        menuBtn.setAttribute('aria-expanded', String(!isHidden));
+      });
+      mobileMenu.addEventListener('click', function (e) {
+        if (e.target.tagName === 'A') {
+          mobileMenu.classList.add('hidden');
+          menuBtn.setAttribute('aria-expanded', 'false');
+        }
+      });
+    })();
+  </script>
+</body>
