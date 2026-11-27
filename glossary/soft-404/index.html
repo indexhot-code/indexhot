@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What is Soft 404? — IndexHot Glossary</title>
+  <meta name="description" content="A soft 404 returns 200 while delivering a missing page, teaching crawlers to distrust your URL inventory. How to detect it and fix it without hurting users." />
+  <link rel="canonical" href="https://indexhot.com/glossary/soft-404/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="What is Soft 404? — IndexHot Glossary" />
+  <meta property="og:description" content="A soft 404 returns 200 while delivering a missing page, teaching crawlers to distrust your URL inventory. How to detect it and fix it without hurting users." />
+  <meta property="og:url" content="https://indexhot.com/glossary/soft-404/" />
+  <meta property="og:site_name" content="IndexHot" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="What is Soft 404? — IndexHot Glossary" />
+  <meta name="twitter:description" content="A soft 404 returns 200 while delivering a missing page, teaching crawlers to distrust your URL inventory. How to detect it and fix it without hurting users." />
+  <link rel="stylesheet" href="../../tailwind.min.css" />
+  <style>
+    body { font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "DefinedTerm",
+      "name": "Soft 404",
+      "description": "A soft 404 is a missing page served with a success status. The URL is gone, the server says it is fine, and the body is an apology or a redirect-shaped landing page. It is one of the most common technical defects on otherwise well-built sites.",
+      "url": "https://indexhot.com/glossary/soft-404/",
+      "inDefinedTermSet": {
+        "@type": "DefinedTermSet",
+        "name": "IndexHot GEO Glossary",
+        "url": "https://indexhot.com/glossary/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://indexhot.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Glossary",
+          "item": "https://indexhot.com/glossary/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Soft 404"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is a custom 404 page a soft 404?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No, if it returns 404. The defect is the status, not the design."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do redirects create soft 404s?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Only when they point to a generic page with a 200. That is a soft 404 with extra steps."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does this affect AI answers specifically?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It affects any retrieval system, and it matters more where citations are shown, because a cited dead URL is visible to the reader."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body class="bg-white text-gray-800 antialiased">
+
+  <header class="sticky top-0 z-20 bg-white/90 backdrop-blur border-b border-gray-100">
+    <div class="max-w-3xl mx-auto px-5 sm:px-6 h-16 flex items-center justify-between">
+      <a href="/" class="text-xl font-bold tracking-tight text-gray-900">
+        Index<span class="text-blue-600">Hot</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6">
+        <a href="/blog/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Blog</a>
+        <a href="/guides/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Guides</a>
+        <a href="/answers/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Answers</a>
+        <a href="/tools/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Tools</a>
+        <a href="/methodology/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Methodology</a>
+        <a href="/data/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Data</a>
+        <a href="/about/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">About</a>
+        <a href="#" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Sign in</a>
+      </nav>
+      <button id="menu-btn" type="button" aria-label="Open menu" aria-expanded="false"
+        class="md:hidden flex items-center justify-center w-10 h-10 -mr-2 rounded-lg text-gray-600 hover:text-blue-600 hover:bg-gray-100 transition-colors">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+    <nav id="mobile-menu" class="hidden md:hidden px-5 pb-4 pt-2 border-t border-gray-100 bg-white">
+      <a href="/blog/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Blog</a>
+      <a href="/guides/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Guides</a>
+      <a href="/answers/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Answers</a>
+      <a href="/tools/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Tools</a>
+      <a href="/methodology/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Methodology</a>
+      <a href="/data/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Data</a>
+      <a href="/about/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">About</a>
+      <a href="#" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Sign in</a>
+    </nav>
+  </header>
+
+  <main>
+    <article class="px-5 sm:px-6 pt-10 pb-10">
+      <div class="max-w-3xl mx-auto">
+
+                <nav class="mb-6 text-xs text-gray-500">
+          <a href="/" class="hover:text-blue-600">Home</a><span class="mx-1.5 text-gray-300">/</span><a href="/glossary/" class="hover:text-blue-600">Glossary</a><span class="mx-1.5 text-gray-300">/</span><span class="text-gray-700">Soft 404</span>
+        </nav>
+
+        <header class="mb-8">
+          <p class="text-sm font-semibold text-blue-600 mb-3">Glossary &middot; Technical</p>
+          <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900 leading-tight">
+            What is Soft 404?
+          </h1>
+        </header>
+
+        <p class="text-xs text-gray-400 mb-6">Last updated November 2026 &middot; Reviewed against the IndexHot GEO Measurement Standard v1.0</p>
+
+        <div class="text-lg text-gray-700 leading-relaxed border-l-4 border-blue-600 pl-4 mb-8">
+          <p>A soft 404 is a missing page served with a success status. The URL is gone, the server says it is fine, and the body is an apology or a redirect-shaped landing page. It is one of the most common technical defects on otherwise well-built sites.</p>
+        </div>
+
+        <p class="text-gray-600 leading-relaxed mb-10">
+          In short: A response that says 200 OK while delivering a page that does not exist, teaching crawlers to distrust your URL inventory.
+        </p>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Why it happens</h2>
+          <p class="text-gray-600 leading-relaxed mb-4">Single-page applications route unknown paths to the app shell. Frameworks render a not-found component without setting the status. CMS platforms serve a friendly page by default. In each case the intent is good and the signal is wrong.</p>
+        </section>
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">What it costs</h2>
+          <ul class="list-disc pl-5 space-y-2 text-gray-600 leading-relaxed marker:text-blue-500">
+            <li>Mass near-duplicate content: every unknown URL looks like a page with the same body.</li>
+            <li>Deletions that never take effect, so retired pages keep competing with their replacements.</li>
+            <li>Crawl budget spent on URLs that do not exist.</li>
+            <li>A citation landing on a URL that returns an apology, which is worse than no citation.</li>
+          </ul>
+        </section>
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">The check</h2>
+          <ol class="list-decimal pl-5 space-y-2 text-gray-600 leading-relaxed marker:text-blue-500">
+            <li>Request a path that certainly does not exist, such as a random slug under a real directory.</li>
+            <li>Confirm the status is 404 or 410, not 200.</li>
+            <li>Confirm the body is a real not-found page with navigation, not the home page.</li>
+            <li>Repeat for one path per content type, since each template fails differently.</li>
+          </ol>
+        </section>
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Fixing it without breaking people</h2>
+          <p class="text-gray-600 leading-relaxed mb-4">Return the correct status and keep the helpful page. A 404 with navigation and a search box is fine for users and correct for machines. What must go is the 200.</p>
+          <p class="text-gray-600 leading-relaxed mb-4">For pages that moved, use a single 301 to the new URL rather than a 200 landing page. For pages intentionally retired, 410 is defensible and clearer than 404.</p>
+        </section>
+
+        <section class="mt-12">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-6">Frequently asked questions</h2>
+          <div class="space-y-5">
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">Is a custom 404 page a soft 404?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">No, if it returns 404. The defect is the status, not the design.</p>
+            </div>
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">Do redirects create soft 404s?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">Only when they point to a generic page with a 200. That is a soft 404 with extra steps.</p>
+            </div>
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">Does this affect AI answers specifically?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">It affects any retrieval system, and it matters more where citations are shown, because a cited dead URL is visible to the reader.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-4">Related terms</h2>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <a href="/glossary/status-code-hygiene/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Status Code Hygiene</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">the broader discipline</span>
+            </a>
+            <a href="/glossary/canonical-tag/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Canonical Tag</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">what to do when a URL is a duplicate rather than missing</span>
+            </a>
+            <a href="/glossary/indexability/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Indexability</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">whether a URL can enter an index at all</span>
+            </a>
+            <a href="/glossary/crawl-budget/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Crawl Budget</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">the resource soft 404s waste</span>
+            </a>
+          </div>
+          <a href="/glossary/" class="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 transition-colors">
+            Browse the full glossary <span aria-hidden="true">&rarr;</span>
+          </a>
+        </section>
+
+        <section class="mt-10 rounded-xl border border-blue-200 bg-blue-50 p-6">
+          <h2 class="text-lg font-semibold text-gray-900">See how this shows up for your brand</h2>
+          <p class="mt-2 text-sm text-gray-600 leading-relaxed">The free IndexHot check runs a governed question library across ChatGPT, Perplexity, Gemini and AI Overviews, then separates mention, citation and absorption.</p>
+          <a href="/" class="mt-4 inline-flex items-center justify-center px-5 py-3 rounded-lg bg-blue-600 text-white font-semibold text-sm hover:bg-blue-700 transition-colors">Run the free check</a>
+        </section>
+      </div>
+    </article>
+  </main>
+
+  <footer class="border-t border-gray-100 px-5 sm:px-6 py-8">
+    <div class="max-w-3xl mx-auto text-center text-sm text-gray-400">
+      © 2026 IndexHot. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var menuBtn = document.getElementById('menu-btn');
+      var mobileMenu = document.getElementById('mobile-menu');
+
+      menuBtn.addEventListener('click', function () {
+        var isHidden = mobileMenu.classList.toggle('hidden');
+        menuBtn.setAttribute('aria-expanded', String(!isHidden));
+      });
+
+      mobileMenu.addEventListener('click', function (e) {
+        if (e.target.tagName === 'A') {
+          mobileMenu.classList.add('hidden');
+          menuBtn.setAttribute('aria-expanded', 'false');
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

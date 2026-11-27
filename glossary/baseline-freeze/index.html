@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What is Baseline Freeze? — IndexHot Glossary</title>
+  <meta name="description" content="A baseline freeze locks the prompt set, surfaces and run conditions for a period. Why skipping it makes every later number impossible to interpret." />
+  <link rel="canonical" href="https://indexhot.com/glossary/baseline-freeze/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="What is Baseline Freeze? — IndexHot Glossary" />
+  <meta property="og:description" content="A baseline freeze locks the prompt set, surfaces and run conditions for a period. Why skipping it makes every later number impossible to interpret." />
+  <meta property="og:url" content="https://indexhot.com/glossary/baseline-freeze/" />
+  <meta property="og:site_name" content="IndexHot" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="What is Baseline Freeze? — IndexHot Glossary" />
+  <meta name="twitter:description" content="A baseline freeze locks the prompt set, surfaces and run conditions for a period. Why skipping it makes every later number impossible to interpret." />
+  <link rel="stylesheet" href="../../tailwind.min.css" />
+  <style>
+    body { font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "DefinedTerm",
+      "name": "Baseline Freeze",
+      "description": "A baseline freeze is the decision to stop changing the measurement setup for a defined period. It is the least glamorous step in GEO and the one that decides whether any later number means anything.",
+      "url": "https://indexhot.com/glossary/baseline-freeze/",
+      "inDefinedTermSet": {
+        "@type": "DefinedTermSet",
+        "name": "IndexHot GEO Glossary",
+        "url": "https://indexhot.com/glossary/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://indexhot.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Glossary",
+          "item": "https://indexhot.com/glossary/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Baseline Freeze"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Does a freeze prevent improving the library?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. It schedules improvement, which is different from forbidding it."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens after a model release?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You re-baseline and annotate. The freeze is over the setup you control, not over the provider's behaviour."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is a written baseline enough?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Only if it includes run conditions. A prompt list without locale and account state is not reproducible."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body class="bg-white text-gray-800 antialiased">
+
+  <header class="sticky top-0 z-20 bg-white/90 backdrop-blur border-b border-gray-100">
+    <div class="max-w-3xl mx-auto px-5 sm:px-6 h-16 flex items-center justify-between">
+      <a href="/" class="text-xl font-bold tracking-tight text-gray-900">
+        Index<span class="text-blue-600">Hot</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6">
+        <a href="/blog/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Blog</a>
+        <a href="/guides/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Guides</a>
+        <a href="/answers/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Answers</a>
+        <a href="/tools/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Tools</a>
+        <a href="/methodology/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Methodology</a>
+        <a href="/data/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Data</a>
+        <a href="/about/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">About</a>
+        <a href="#" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Sign in</a>
+      </nav>
+      <button id="menu-btn" type="button" aria-label="Open menu" aria-expanded="false"
+        class="md:hidden flex items-center justify-center w-10 h-10 -mr-2 rounded-lg text-gray-600 hover:text-blue-600 hover:bg-gray-100 transition-colors">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+    <nav id="mobile-menu" class="hidden md:hidden px-5 pb-4 pt-2 border-t border-gray-100 bg-white">
+      <a href="/blog/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Blog</a>
+      <a href="/guides/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Guides</a>
+      <a href="/answers/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Answers</a>
+      <a href="/tools/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Tools</a>
+      <a href="/methodology/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Methodology</a>
+      <a href="/data/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Data</a>
+      <a href="/about/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">About</a>
+      <a href="#" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Sign in</a>
+    </nav>
+  </header>
+
+  <main>
+    <article class="px-5 sm:px-6 pt-10 pb-10">
+      <div class="max-w-3xl mx-auto">
+
+                <nav class="mb-6 text-xs text-gray-500">
+          <a href="/" class="hover:text-blue-600">Home</a><span class="mx-1.5 text-gray-300">/</span><a href="/glossary/" class="hover:text-blue-600">Glossary</a><span class="mx-1.5 text-gray-300">/</span><span class="text-gray-700">Baseline Freeze</span>
+        </nav>
+
+        <header class="mb-8">
+          <p class="text-sm font-semibold text-blue-600 mb-3">Glossary &middot; Measurement</p>
+          <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900 leading-tight">
+            What is Baseline Freeze?
+          </h1>
+        </header>
+
+        <p class="text-xs text-gray-400 mb-6">Last updated November 2026 &middot; Reviewed against the IndexHot GEO Measurement Standard v1.0</p>
+
+        <div class="text-lg text-gray-700 leading-relaxed border-l-4 border-blue-600 pl-4 mb-8">
+          <p>A baseline freeze is the decision to stop changing the measurement setup for a defined period. It is the least glamorous step in GEO and the one that decides whether any later number means anything.</p>
+        </div>
+
+        <p class="text-gray-600 leading-relaxed mb-10">
+          In short: Locking a prompt set, its version and its run conditions so later measurements are comparable.
+        </p>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">What gets frozen</h2>
+          <ul class="list-disc pl-5 space-y-2 text-gray-600 leading-relaxed marker:text-blue-500">
+            <li>The prompt list itself, including exact wording and grouping.</li>
+            <li>The surfaces measured, and whether AI Overviews is counted separately.</li>
+            <li>Run conditions: locale, account state, time of day band, number of runs.</li>
+            <li>The coding rules, including the absorption rubric and who applies it.</li>
+          </ul>
+        </section>
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">What a freeze is not</h2>
+          <p class="text-gray-600 leading-relaxed mb-4">It is not a promise that nothing will change. Providers ship new models, and a model change forces a re-baseline whether you want one or not. The freeze covers what you control; the version annotation covers what you do not.</p>
+          <p class="text-gray-600 leading-relaxed mb-4">It is also not a permanent commitment. Most teams freeze for a quarter, measure, then deliberately revise and re-baseline with the change documented.</p>
+        </section>
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Why teams skip it and what it costs</h2>
+          <p class="text-gray-600 leading-relaxed mb-4">Freezing feels like bureaucracy when the first report is due next week. The cost arrives two quarters later, when a number moves and nobody can say whether the prompts, the model or the work caused it. At that point the measurement programme is unfalsifiable and therefore political.</p>
+        </section>
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">A minimal implementation</h2>
+          <ol class="list-decimal pl-5 space-y-2 text-gray-600 leading-relaxed marker:text-blue-500">
+            <li>Store the library in one file with a version number and a date.</li>
+            <li>Record the exact run conditions in the same file.</li>
+            <li>Log every edit with a reason; never edit silently.</li>
+            <li>Publish the version alongside any number you show externally.</li>
+          </ol>
+        </section>
+
+        <section class="mt-12">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-6">Frequently asked questions</h2>
+          <div class="space-y-5">
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">Does a freeze prevent improving the library?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">No. It schedules improvement, which is different from forbidding it.</p>
+            </div>
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">What happens after a model release?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">You re-baseline and annotate. The freeze is over the setup you control, not over the provider's behaviour.</p>
+            </div>
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">Is a written baseline enough?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">Only if it includes run conditions. A prompt list without locale and account state is not reproducible.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-4">Related terms</h2>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <a href="/glossary/governed-question-library/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Governed Question Library</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">the artefact being frozen</span>
+            </a>
+            <a href="/glossary/prompt-drift/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Prompt Drift</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">why freezes eventually need revision</span>
+            </a>
+            <a href="/glossary/answer-drift/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Answer Drift</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">the variance a freeze helps you interpret</span>
+            </a>
+            <a href="/glossary/model-version-drift/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Model Version Drift</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">the change a freeze cannot prevent</span>
+            </a>
+          </div>
+          <a href="/glossary/" class="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 transition-colors">
+            Browse the full glossary <span aria-hidden="true">&rarr;</span>
+          </a>
+        </section>
+
+        <section class="mt-10 rounded-xl border border-blue-200 bg-blue-50 p-6">
+          <h2 class="text-lg font-semibold text-gray-900">See how this shows up for your brand</h2>
+          <p class="mt-2 text-sm text-gray-600 leading-relaxed">The free IndexHot check runs a governed question library across ChatGPT, Perplexity, Gemini and AI Overviews, then separates mention, citation and absorption.</p>
+          <a href="/" class="mt-4 inline-flex items-center justify-center px-5 py-3 rounded-lg bg-blue-600 text-white font-semibold text-sm hover:bg-blue-700 transition-colors">Run the free check</a>
+        </section>
+      </div>
+    </article>
+  </main>
+
+  <footer class="border-t border-gray-100 px-5 sm:px-6 py-8">
+    <div class="max-w-3xl mx-auto text-center text-sm text-gray-400">
+      © 2026 IndexHot. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var menuBtn = document.getElementById('menu-btn');
+      var mobileMenu = document.getElementById('mobile-menu');
+
+      menuBtn.addEventListener('click', function () {
+        var isHidden = mobileMenu.classList.toggle('hidden');
+        menuBtn.setAttribute('aria-expanded', String(!isHidden));
+      });
+
+      mobileMenu.addEventListener('click', function (e) {
+        if (e.target.tagName === 'A') {
+          mobileMenu.classList.add('hidden');
+          menuBtn.setAttribute('aria-expanded', 'false');
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

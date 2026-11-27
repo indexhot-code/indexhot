@@ -3,15 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GEO glossary: Technical foundations — IndexHot</title>
-  <meta name="description" content="14 GEO terms on technical foundations: what each means, why it matters and how it is measured." />
+  <title>Technical foundations: GEO Glossary Terms — IndexHot</title>
+  <meta name="description" content="The conditions that decide whether content is reachable at all: access rules, rendering, indexing, status codes and crawl diagnostics." />
   <link rel="canonical" href="https://indexhot.com/glossary/category/technical-foundations/" />
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="GEO glossary: Technical foundations — IndexHot" />
-  <meta property="og:description" content="14 terms on technical foundations, defined and cross-linked." />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Technical foundations: GEO Glossary Terms — IndexHot" />
+  <meta property="og:description" content="The conditions that decide whether content is reachable at all: access rules, rendering, indexing, status codes and crawl diagnostics." />
   <meta property="og:url" content="https://indexhot.com/glossary/category/technical-foundations/" />
   <meta property="og:site_name" content="IndexHot" />
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Technical foundations: GEO Glossary Terms — IndexHot" />
+  <meta name="twitter:description" content="The conditions that decide whether content is reachable at all: access rules, rendering, indexing, status codes and crawl diagnostics." />
   <link rel="stylesheet" href="../../../tailwind.min.css" />
   <style>
     body { font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
@@ -22,9 +24,9 @@
   "@graph": [
     {
       "@type": "CollectionPage",
-      "name": "GEO glossary: Technical foundations",
+      "name": "Technical foundations — IndexHot Glossary",
       "url": "https://indexhot.com/glossary/category/technical-foundations/",
-      "description": "The conditions under which content can be fetched, indexed and cited at all. When these fail, no content work reaches the answer, and the symptom looks identical to being outranked.",
+      "description": "The conditions that decide whether content is reachable at all: access rules, rendering, indexing, status codes and crawl diagnostics.",
       "isPartOf": {
         "@type": "WebSite",
         "name": "IndexHot",
@@ -32,7 +34,7 @@
       },
       "mainEntity": {
         "@type": "ItemList",
-        "numberOfItems": 14,
+        "numberOfItems": 17,
         "itemListElement": [
           {
             "@type": "ListItem",
@@ -117,6 +119,24 @@
             "position": 14,
             "name": "Crawl Log",
             "url": "https://indexhot.com/glossary/crawl-log/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 15,
+            "name": "Render Parity",
+            "url": "https://indexhot.com/glossary/render-parity/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 16,
+            "name": "Soft 404",
+            "url": "https://indexhot.com/glossary/soft-404/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 17,
+            "name": "Content Gating",
+            "url": "https://indexhot.com/glossary/content-gating/"
           }
         ]
       }
@@ -139,8 +159,7 @@
         {
           "@type": "ListItem",
           "position": 3,
-          "name": "Technical foundations",
-          "item": "https://indexhot.com/glossary/category/technical-foundations/"
+          "name": "Technical foundations"
         }
       ]
     },
@@ -149,18 +168,26 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Which technical failure is most common?",
+          "name": "Do these matter more than content?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Content that only exists after JavaScript runs. It is invisible in browser-based audits and decisive for retrieval pipelines."
+            "text": "No, but they come first, because content cannot be retrieved from a page that was never fetched."
           }
         },
         {
           "@type": "Question",
-          "name": "How do I test it in five minutes?",
+          "name": "How often should they be checked?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Fetch the URL as raw HTML and read what appears. If the substance is missing, nothing downstream will see it."
+            "text": "Quarterly, and immediately after any front-end, firewall or hosting change."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is this the same as classic technical SEO?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Largely, with two additions: separate crawler agents for retrieval, and render parity under a latency budget."
           }
         }
       ]
@@ -208,7 +235,7 @@
     <article class="px-5 sm:px-6 pt-10 pb-10">
       <div class="max-w-3xl mx-auto">
 
-        <nav aria-label="Breadcrumb" class="mb-6 text-xs text-gray-500">
+                <nav aria-label="Breadcrumb" class="mb-6 text-xs text-gray-500">
           <a href="/" class="hover:text-blue-600 transition-colors">Home</a>
           <span class="mx-1.5 text-gray-300">/</span>
           <a href="/glossary/" class="hover:text-blue-600 transition-colors">Glossary</a>
@@ -217,106 +244,129 @@
         </nav>
 
         <header class="mb-8">
-          <p class="text-sm font-semibold text-blue-600 mb-3">Glossary · 14 terms</p>
+          <p class="text-sm font-semibold text-blue-600 mb-3">Glossary category &middot; 17 terms</p>
           <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900 leading-tight">
             Technical foundations
           </h1>
         </header>
 
-        <div class="text-lg text-gray-700 leading-relaxed border-l-4 border-blue-600 pl-4 mb-8">
-          <p>The conditions under which content can be fetched, indexed and cited at all. When these fail, no content work reaches the answer, and the symptom looks identical to being outranked.</p>
-        </div>
-          <p class="text-gray-600 leading-relaxed mt-4">These terms describe plumbing, and plumbing failures are silent. A page can look correct in a browser, pass a human review and still be unreadable to a fetcher that does not execute scripts or cannot reach it through internal links.</p>
-          <p class="text-gray-600 leading-relaxed mt-4">Check them first when a whole cluster is absent, not when a single passage fails. Absence across many prompts is almost always a technical condition rather than a writing problem.</p>
-
-        <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-3">
-          <a href="/glossary/content-extractability/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
-            <span class="block text-sm font-semibold text-gray-900">Content Extractability</span>
-            <span class="block mt-1 text-xs text-gray-500 leading-relaxed">how easily a machine can isolate, quote and reuse your content</span>
-          </a>
-          <a href="/glossary/crawlability/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
-            <span class="block text-sm font-semibold text-gray-900">Crawlability</span>
-            <span class="block mt-1 text-xs text-gray-500 leading-relaxed">whether crawlers can discover and fetch your pages</span>
-          </a>
-          <a href="/glossary/indexability/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
-            <span class="block text-sm font-semibold text-gray-900">Indexability</span>
-            <span class="block mt-1 text-xs text-gray-500 leading-relaxed">whether a page is eligible to be stored in a search index</span>
-          </a>
-          <a href="/glossary/canonical-tag/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
-            <span class="block text-sm font-semibold text-gray-900">Canonical Tag</span>
-            <span class="block mt-1 text-xs text-gray-500 leading-relaxed">a signal declaring the preferred URL for a piece of content</span>
-          </a>
-          <a href="/glossary/internal-linking/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
-            <span class="block text-sm font-semibold text-gray-900">Internal Linking</span>
-            <span class="block mt-1 text-xs text-gray-500 leading-relaxed">links between your own pages that distribute authority and signal structure</span>
-          </a>
-          <a href="/glossary/ai-referral-traffic/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
-            <span class="block text-sm font-semibold text-gray-900">AI Referral Traffic</span>
-            <span class="block mt-1 text-xs text-gray-500 leading-relaxed">visits that arrive from an AI answer or assistant</span>
-          </a>
-          <a href="/glossary/competitive-citation-share/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
-            <span class="block text-sm font-semibold text-gray-900">Competitive Citation Share</span>
-            <span class="block mt-1 text-xs text-gray-500 leading-relaxed">your share of cited sources versus competitors in a prompt set</span>
-          </a>
-          <a href="/glossary/ai-crawler/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
-            <span class="block text-sm font-semibold text-gray-900">AI Crawler</span>
-            <span class="block mt-1 text-xs text-gray-500 leading-relaxed">a bot that fetches content for model training or live retrieval</span>
-          </a>
-          <a href="/glossary/content-freshness/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
-            <span class="block text-sm font-semibold text-gray-900">Content Freshness</span>
-            <span class="block mt-1 text-xs text-gray-500 leading-relaxed">how current a page is, and how clearly it says so</span>
-          </a>
-          <a href="/glossary/crawl-budget/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
-            <span class="block text-sm font-semibold text-gray-900">Crawl Budget</span>
-            <span class="block mt-1 text-xs text-gray-500 leading-relaxed">The amount of crawling a site can expect, and how efficiently that allowance is spent.</span>
-          </a>
-          <a href="/glossary/render-blocking/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
-            <span class="block text-sm font-semibold text-gray-900">Render Blocking</span>
-            <span class="block mt-1 text-xs text-gray-500 leading-relaxed">Content that only appears after JavaScript runs, and is therefore invisible to some crawlers and fetchers.</span>
-          </a>
-          <a href="/glossary/status-code-hygiene/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
-            <span class="block text-sm font-semibold text-gray-900">Status Code Hygiene</span>
-            <span class="block mt-1 text-xs text-gray-500 leading-relaxed">Whether the site returns the correct HTTP status for every kind of URL: 200, 301, 404 or 410.</span>
-          </a>
-          <a href="/glossary/content-decay/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
-            <span class="block text-sm font-semibold text-gray-900">Content Decay</span>
-            <span class="block mt-1 text-xs text-gray-500 leading-relaxed">The gradual loss of citation and traffic as a page's facts age or as better-structured competitors appear.</span>
-          </a>
-          <a href="/glossary/crawl-log/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
-            <span class="block text-sm font-semibold text-gray-900">Crawl Log</span>
-            <span class="block mt-1 text-xs text-gray-500 leading-relaxed">The record of which URLs a crawler requested and what each returned.</span>
-          </a>
+        <div class="text-lg text-gray-700 leading-relaxed border-l-4 border-blue-600 pl-4 mb-10">
+          <p>The conditions that decide whether content is reachable at all: access rules, rendering, indexing, status codes and crawl diagnostics.</p>
         </div>
 
-        <section class="mt-10">
-          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Frequently asked questions</h2>
-          <div class="space-y-4">
+          <p class="text-gray-600 leading-relaxed mb-4">Every term here is a gate. Failing one produces the same symptom as bad content, absence, which is why technical failures get diagnosed as editorial ones and rewritten for months.</p>
+          <p class="text-gray-600 leading-relaxed mb-4">The checks are cheap and finishable, which is the argument for doing them first: they clear the denominator that all later content work is measured against.</p>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-4">Terms in this category</h2>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <a href="/glossary/content-extractability/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Content Extractability</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">how easily a machine can isolate, quote and reuse your content</span>
+            </a>
+            <a href="/glossary/crawlability/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Crawlability</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">whether crawlers can discover and fetch your pages</span>
+            </a>
+            <a href="/glossary/indexability/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Indexability</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">whether a page is eligible to be stored in a search index</span>
+            </a>
+            <a href="/glossary/canonical-tag/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Canonical Tag</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">a signal declaring the preferred URL for a piece of content</span>
+            </a>
+            <a href="/glossary/internal-linking/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Internal Linking</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">links between your own pages that distribute authority and signal structure</span>
+            </a>
+            <a href="/glossary/ai-referral-traffic/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">AI Referral Traffic</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">visits that arrive from an AI answer or assistant</span>
+            </a>
+            <a href="/glossary/competitive-citation-share/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Competitive Citation Share</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">your share of cited sources versus competitors in a prompt set</span>
+            </a>
+            <a href="/glossary/ai-crawler/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">AI Crawler</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">a bot that fetches content for model training or live retrieval</span>
+            </a>
+            <a href="/glossary/content-freshness/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Content Freshness</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">how current a page is, and how clearly it says so</span>
+            </a>
+            <a href="/glossary/crawl-budget/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Crawl Budget</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">The amount of crawling a site can expect, and how efficiently that allowance is spent.</span>
+            </a>
+            <a href="/glossary/render-blocking/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Render Blocking</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">Content that only appears after JavaScript runs, and is therefore invisible to some crawlers and fetchers.</span>
+            </a>
+            <a href="/glossary/status-code-hygiene/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Status Code Hygiene</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">Whether the site returns the correct HTTP status for every kind of URL: 200, 301, 404 or 410.</span>
+            </a>
+            <a href="/glossary/content-decay/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Content Decay</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">The gradual loss of citation and traffic as a page's facts age or as better-structured competitors appear.</span>
+            </a>
+            <a href="/glossary/crawl-log/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Crawl Log</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">The record of which URLs a crawler requested and what each returned.</span>
+            </a>
+            <a href="/glossary/render-parity/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Render Parity</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">whether the HTML a bot fetches matches the page a visitor sees</span>
+            </a>
+            <a href="/glossary/soft-404/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Soft 404</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">a missing page served with a 200, teaching crawlers to distrust your URLs</span>
+            </a>
+            <a href="/glossary/content-gating/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Content Gating</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">logins, forms and paywalls that remove text from retrieval</span>
+            </a>
+          </div>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-4">Other categories</h2>
+          <div class="flex flex-wrap gap-x-5 gap-y-2 text-sm">
+            <a href="/glossary/category/core-concepts/" class="text-blue-600 hover:text-blue-700">Core concepts <span class="text-gray-400">(13)</span></a>
+            <a href="/glossary/category/retrieval-and-models/" class="text-blue-600 hover:text-blue-700">Retrieval and models <span class="text-gray-400">(16)</span></a>
+            <a href="/glossary/category/measurement/" class="text-blue-600 hover:text-blue-700">Measurement <span class="text-gray-400">(28)</span></a>
+            <a href="/glossary/category/entity-and-content/" class="text-blue-600 hover:text-blue-700">Entity and content <span class="text-gray-400">(16)</span></a>
+          </div>
+          <a href="/glossary/" class="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 transition-colors">
+            Browse the full glossary <span aria-hidden="true">&rarr;</span>
+          </a>
+        </section>
+
+        <section class="mt-12">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-6">Frequently asked questions</h2>
+          <div class="space-y-5">
             <div class="rounded-xl border border-gray-200 p-5">
-              <h3 class="font-semibold text-gray-900">Which technical failure is most common?</h3>
-              <p class="text-gray-600 leading-relaxed mt-2">Content that only exists after JavaScript runs. It is invisible in browser-based audits and decisive for retrieval pipelines.</p>
+              <h3 class="font-semibold text-gray-900">Do these matter more than content?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">No, but they come first, because content cannot be retrieved from a page that was never fetched.</p>
             </div>
             <div class="rounded-xl border border-gray-200 p-5">
-              <h3 class="font-semibold text-gray-900">How do I test it in five minutes?</h3>
-              <p class="text-gray-600 leading-relaxed mt-2">Fetch the URL as raw HTML and read what appears. If the substance is missing, nothing downstream will see it.</p>
+              <h3 class="font-semibold text-gray-900">How often should they be checked?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">Quarterly, and immediately after any front-end, firewall or hosting change.</p>
+            </div>
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">Is this the same as classic technical SEO?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">Largely, with two additions: separate crawler agents for retrieval, and render parity under a latency budget.</p>
             </div>
           </div>
         </section>
 
         <section class="mt-10 rounded-xl border border-blue-200 bg-blue-50 p-6">
-          <h2 class="text-lg font-semibold text-gray-900">Other glossary groups</h2>
-          <div class="mt-3 flex flex-wrap gap-x-4 gap-y-2 text-sm">
-            <a href="/glossary/category/core-concepts/" class="text-blue-600 hover:underline">Core concepts</a>
-            <a href="/glossary/category/retrieval-and-models/" class="text-blue-600 hover:underline">Retrieval and models</a>
-            <a href="/glossary/category/measurement/" class="text-blue-600 hover:underline">Measurement</a>
-            <a href="/glossary/category/entity-and-content/" class="text-blue-600 hover:underline">Entity and content</a>
-            <a href="/glossary/category/technical-foundations/" class="text-blue-600 hover:underline">Technical foundations</a>
-          </div>
-          <p class="mt-3 text-sm text-gray-600">
-            Or read the <a href="/guides/geo-complete-guide/" class="text-blue-600 hover:underline">complete GEO guide</a>,
-            which uses these terms in context.
-          </p>
+          <h2 class="text-lg font-semibold text-gray-900">See how this shows up for your brand</h2>
+          <p class="mt-2 text-sm text-gray-600 leading-relaxed">The free IndexHot check runs a governed question library across ChatGPT, Perplexity, Gemini and AI Overviews, then separates mention, citation and absorption.</p>
+          <a href="/" class="mt-4 inline-flex items-center justify-center px-5 py-3 rounded-lg bg-blue-600 text-white font-semibold text-sm hover:bg-blue-700 transition-colors">Run the free check</a>
         </section>
-
       </div>
     </article>
   </main>

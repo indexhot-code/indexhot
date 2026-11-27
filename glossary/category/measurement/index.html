@@ -3,15 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GEO glossary: Measurement — IndexHot</title>
-  <meta name="description" content="25 GEO terms on measurement: what each means, why it matters and how it is measured." />
+  <title>Measurement: GEO Glossary Terms — IndexHot</title>
+  <meta name="description" content="The largest group, because measurement is where most of the ambiguity lives: which rate, over what sample, against which baseline." />
   <link rel="canonical" href="https://indexhot.com/glossary/category/measurement/" />
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="GEO glossary: Measurement — IndexHot" />
-  <meta property="og:description" content="25 terms on measurement, defined and cross-linked." />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Measurement: GEO Glossary Terms — IndexHot" />
+  <meta property="og:description" content="The largest group, because measurement is where most of the ambiguity lives: which rate, over what sample, against which baseline." />
   <meta property="og:url" content="https://indexhot.com/glossary/category/measurement/" />
   <meta property="og:site_name" content="IndexHot" />
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Measurement: GEO Glossary Terms — IndexHot" />
+  <meta name="twitter:description" content="The largest group, because measurement is where most of the ambiguity lives: which rate, over what sample, against which baseline." />
   <link rel="stylesheet" href="../../../tailwind.min.css" />
   <style>
     body { font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
@@ -22,9 +24,9 @@
   "@graph": [
     {
       "@type": "CollectionPage",
-      "name": "GEO glossary: Measurement",
+      "name": "Measurement — IndexHot Glossary",
       "url": "https://indexhot.com/glossary/category/measurement/",
-      "description": "The vocabulary for counting what an answer says. Fourteen of these terms predate this expansion; six were added to cover states that a single visibility number cannot express, such as drift, gaps between branded and non-branded prompts, and how much of an answer a brand occupies.",
+      "description": "The largest group, because measurement is where most of the ambiguity lives: which rate, over what sample, against which baseline.",
       "isPartOf": {
         "@type": "WebSite",
         "name": "IndexHot",
@@ -32,7 +34,7 @@
       },
       "mainEntity": {
         "@type": "ItemList",
-        "numberOfItems": 25,
+        "numberOfItems": 28,
         "itemListElement": [
           {
             "@type": "ListItem",
@@ -183,6 +185,24 @@
             "position": 25,
             "name": "Competitor Benchmark",
             "url": "https://indexhot.com/glossary/competitor-benchmark/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 26,
+            "name": "Prompt Drift",
+            "url": "https://indexhot.com/glossary/prompt-drift/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 27,
+            "name": "Baseline Freeze",
+            "url": "https://indexhot.com/glossary/baseline-freeze/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 28,
+            "name": "Reporting Cadence",
+            "url": "https://indexhot.com/glossary/reporting-cadence/"
           }
         ]
       }
@@ -205,8 +225,7 @@
         {
           "@type": "ListItem",
           "position": 3,
-          "name": "Measurement",
-          "item": "https://indexhot.com/glossary/category/measurement/"
+          "name": "Measurement"
         }
       ]
     },
@@ -215,18 +234,26 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Which metric should a report lead with?",
+          "name": "Which single number should a report lead with?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Absorption rate. It is the one that predicts whether the answer persuaded anyone, and it is the one most often missing."
+            "text": "None. Report the three rates separately per surface, with the branded and unbranded halves split, and let the reader see the shape."
           }
         },
         {
           "@type": "Question",
-          "name": "Is share of answer part of the standard?",
+          "name": "What sample size is enough?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Not in v1.0. It is defined here because it is widely used informally and needs a shared meaning."
+            "text": "Enough that one answer changing moves the rate by only a point or two; in practice tens of prompts per group, not five."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why separate absorption from citation?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Because you can be cited and not repeated, and that pattern needs a different fix from being absent."
           }
         }
       ]
@@ -274,7 +301,7 @@
     <article class="px-5 sm:px-6 pt-10 pb-10">
       <div class="max-w-3xl mx-auto">
 
-        <nav aria-label="Breadcrumb" class="mb-6 text-xs text-gray-500">
+                <nav aria-label="Breadcrumb" class="mb-6 text-xs text-gray-500">
           <a href="/" class="hover:text-blue-600 transition-colors">Home</a>
           <span class="mx-1.5 text-gray-300">/</span>
           <a href="/glossary/" class="hover:text-blue-600 transition-colors">Glossary</a>
@@ -283,150 +310,173 @@
         </nav>
 
         <header class="mb-8">
-          <p class="text-sm font-semibold text-blue-600 mb-3">Glossary · 25 terms</p>
+          <p class="text-sm font-semibold text-blue-600 mb-3">Glossary category &middot; 28 terms</p>
           <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900 leading-tight">
             Measurement
           </h1>
         </header>
 
-        <div class="text-lg text-gray-700 leading-relaxed border-l-4 border-blue-600 pl-4 mb-8">
-          <p>The vocabulary for counting what an answer says. Fourteen of these terms predate this expansion; six were added to cover states that a single visibility number cannot express, such as drift, gaps between branded and non-branded prompts, and how much of an answer a brand occupies.</p>
-        </div>
-          <p class="text-gray-600 leading-relaxed mt-4">Measurement terms exist to prevent a specific error: reporting presence as influence. Mention, citation and absorption are three different facts, and the arithmetic that combines them is meaningless unless each is coded separately.</p>
-          <p class="text-gray-600 leading-relaxed mt-4">If you only take two terms from this group, take absorption rate and governed question library. The first is the only metric that measures influence; the second is what makes any of the others comparable over time.</p>
-
-        <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-3">
-          <a href="/glossary/mention-rate/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
-            <span class="block text-sm font-semibold text-gray-900">Mention Rate</span>
-            <span class="block mt-1 text-xs text-gray-500 leading-relaxed">the share of tracked prompts in which your brand is named</span>
-          </a>
-          <a href="/glossary/citation-rate/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
-            <span class="block text-sm font-semibold text-gray-900">Citation Rate</span>
-            <span class="block mt-1 text-xs text-gray-500 leading-relaxed">the share of prompts in which your domain is linked as a source</span>
-          </a>
-          <a href="/glossary/absorption-rate/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
-            <span class="block text-sm font-semibold text-gray-900">Absorption Rate</span>
-            <span class="block mt-1 text-xs text-gray-500 leading-relaxed">the share of prompts where your specific claims enter the answer</span>
-          </a>
-          <a href="/glossary/citation-absorption/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
-            <span class="block text-sm font-semibold text-gray-900">Citation Absorption</span>
-            <span class="block mt-1 text-xs text-gray-500 leading-relaxed">how deeply a cited source's content is reused in the answer</span>
-          </a>
-          <a href="/glossary/share-of-voice/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
-            <span class="block text-sm font-semibold text-gray-900">Share of Voice</span>
-            <span class="block mt-1 text-xs text-gray-500 leading-relaxed">your brand's share of mentions within a tracked prompt set</span>
-          </a>
-          <a href="/glossary/citation/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
-            <span class="block text-sm font-semibold text-gray-900">Citation</span>
-            <span class="block mt-1 text-xs text-gray-500 leading-relaxed">attribution of a domain as a source inside an AI answer</span>
-          </a>
-          <a href="/glossary/branded-prompt/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
-            <span class="block text-sm font-semibold text-gray-900">Branded Prompt</span>
-            <span class="block mt-1 text-xs text-gray-500 leading-relaxed">a question that includes the brand name explicitly</span>
-          </a>
-          <a href="/glossary/non-branded-prompt/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
-            <span class="block text-sm font-semibold text-gray-900">Non-Branded Prompt</span>
-            <span class="block mt-1 text-xs text-gray-500 leading-relaxed">a category question asked without naming any brand</span>
-          </a>
-          <a href="/glossary/governed-question-library/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
-            <span class="block text-sm font-semibold text-gray-900">Governed Question Library</span>
-            <span class="block mt-1 text-xs text-gray-500 leading-relaxed">a fixed, versioned set of prompts used for every measurement run</span>
-          </a>
-          <a href="/glossary/ai-visibility-index/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
-            <span class="block text-sm font-semibold text-gray-900">AI Visibility Index</span>
-            <span class="block mt-1 text-xs text-gray-500 leading-relaxed">a ranked index of brands scored on the same AI prompt set</span>
-          </a>
-          <a href="/glossary/citation-gap/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
-            <span class="block text-sm font-semibold text-gray-900">Citation Gap</span>
-            <span class="block mt-1 text-xs text-gray-500 leading-relaxed">the difference between being mentioned and being cited as a source</span>
-          </a>
-          <a href="/glossary/answer-sentiment/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
-            <span class="block text-sm font-semibold text-gray-900">Answer Sentiment</span>
-            <span class="block mt-1 text-xs text-gray-500 leading-relaxed">the tone an AI answer uses when it discusses your brand</span>
-          </a>
-          <a href="/glossary/long-tail-prompt/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
-            <span class="block text-sm font-semibold text-gray-900">Long-Tail Prompt</span>
-            <span class="block mt-1 text-xs text-gray-500 leading-relaxed">a specific, constrained question with clear intent and low volume</span>
-          </a>
-          <a href="/glossary/citation-source-diversity/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
-            <span class="block text-sm font-semibold text-gray-900">Citation Source Diversity</span>
-            <span class="block mt-1 text-xs text-gray-500 leading-relaxed">how spread out the sources behind an AI answer are</span>
-          </a>
-          <a href="/glossary/answer-drift/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
-            <span class="block text-sm font-semibold text-gray-900">Answer Drift</span>
-            <span class="block mt-1 text-xs text-gray-500 leading-relaxed">The tendency of an identical prompt to return a materially different answer over time, without any change on your side.</span>
-          </a>
-          <a href="/glossary/visibility-gap/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
-            <span class="block text-sm font-semibold text-gray-900">Visibility Gap</span>
-            <span class="block mt-1 text-xs text-gray-500 leading-relaxed">The difference between how visible a brand is on branded prompts and how visible it is on non-branded ones.</span>
-          </a>
-          <a href="/glossary/prompt-cluster/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
-            <span class="block text-sm font-semibold text-gray-900">Prompt Cluster</span>
-            <span class="block mt-1 text-xs text-gray-500 leading-relaxed">A group of prompts that share one buyer intent, scored together because they fail for the same reason.</span>
-          </a>
-          <a href="/glossary/share-of-answer/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
-            <span class="block text-sm font-semibold text-gray-900">Share of Answer</span>
-            <span class="block mt-1 text-xs text-gray-500 leading-relaxed">How much of an answer's text and structure is occupied by one brand relative to the others named.</span>
-          </a>
-          <a href="/glossary/brand-recall/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
-            <span class="block text-sm font-semibold text-gray-900">Brand Recall</span>
-            <span class="block mt-1 text-xs text-gray-500 leading-relaxed">Whether a model names a brand without being prompted by its name, from memory rather than retrieval.</span>
-          </a>
-          <a href="/glossary/source-concentration/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
-            <span class="block text-sm font-semibold text-gray-900">Source Concentration</span>
-            <span class="block mt-1 text-xs text-gray-500 leading-relaxed">How few domains account for most citations in a category's answers.</span>
-          </a>
-          <a href="/glossary/visibility-dashboard/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
-            <span class="block text-sm font-semibold text-gray-900">Visibility Dashboard</span>
-            <span class="block mt-1 text-xs text-gray-500 leading-relaxed">An interface that reports AI visibility metrics over time, usually as a composite score with trends.</span>
-          </a>
-          <a href="/glossary/prompt-volume/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
-            <span class="block text-sm font-semibold text-gray-900">Prompt Volume</span>
-            <span class="block mt-1 text-xs text-gray-500 leading-relaxed">An estimate of how often a given prompt or cluster is asked, used to weight a prompt library.</span>
-          </a>
-          <a href="/glossary/citation-velocity/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
-            <span class="block text-sm font-semibold text-gray-900">Citation Velocity</span>
-            <span class="block mt-1 text-xs text-gray-500 leading-relaxed">The rate at which a domain gains or loses citations across a prompt set between two measurement cycles.</span>
-          </a>
-          <a href="/glossary/answer-coverage/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
-            <span class="block text-sm font-semibold text-gray-900">Answer Coverage</span>
-            <span class="block mt-1 text-xs text-gray-500 leading-relaxed">The share of a category's prompt set in which the brand appears at all, regardless of depth.</span>
-          </a>
-          <a href="/glossary/competitor-benchmark/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
-            <span class="block text-sm font-semibold text-gray-900">Competitor Benchmark</span>
-            <span class="block mt-1 text-xs text-gray-500 leading-relaxed">A same-run comparison of the brand against named competitors, using an identical prompt library.</span>
-          </a>
+        <div class="text-lg text-gray-700 leading-relaxed border-l-4 border-blue-600 pl-4 mb-10">
+          <p>The largest group, because measurement is where most of the ambiguity lives: which rate, over what sample, against which baseline.</p>
         </div>
 
-        <section class="mt-10">
-          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Frequently asked questions</h2>
-          <div class="space-y-4">
+          <p class="text-gray-600 leading-relaxed mb-4">The vocabulary here exists to keep four things separate that are routinely conflated: was the brand named, was a source of yours attached, was anything of yours reused, and how much of the sampled set did any of that happen in.</p>
+          <p class="text-gray-600 leading-relaxed mb-4">Two further distinctions run through the group. Branded and non-branded prompts are reported separately because they measure recall and discovery respectively. And every rate needs its denominator stated, since a percentage without a sample size is the most common defect in this field.</p>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-4">Terms in this category</h2>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <a href="/glossary/mention-rate/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Mention Rate</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">the share of tracked prompts in which your brand is named</span>
+            </a>
+            <a href="/glossary/citation-rate/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Citation Rate</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">the share of prompts in which your domain is linked as a source</span>
+            </a>
+            <a href="/glossary/absorption-rate/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Absorption Rate</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">the share of prompts where your specific claims enter the answer</span>
+            </a>
+            <a href="/glossary/citation-absorption/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Citation Absorption</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">how deeply a cited source's content is reused in the answer</span>
+            </a>
+            <a href="/glossary/share-of-voice/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Share of Voice</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">your brand's share of mentions within a tracked prompt set</span>
+            </a>
+            <a href="/glossary/citation/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Citation</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">attribution of a domain as a source inside an AI answer</span>
+            </a>
+            <a href="/glossary/branded-prompt/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Branded Prompt</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">a question that includes the brand name explicitly</span>
+            </a>
+            <a href="/glossary/non-branded-prompt/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Non-Branded Prompt</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">a category question asked without naming any brand</span>
+            </a>
+            <a href="/glossary/governed-question-library/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Governed Question Library</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">a fixed, versioned set of prompts used for every measurement run</span>
+            </a>
+            <a href="/glossary/ai-visibility-index/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">AI Visibility Index</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">a ranked index of brands scored on the same AI prompt set</span>
+            </a>
+            <a href="/glossary/citation-gap/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Citation Gap</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">the difference between being mentioned and being cited as a source</span>
+            </a>
+            <a href="/glossary/answer-sentiment/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Answer Sentiment</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">the tone an AI answer uses when it discusses your brand</span>
+            </a>
+            <a href="/glossary/long-tail-prompt/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Long-Tail Prompt</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">a specific, constrained question with clear intent and low volume</span>
+            </a>
+            <a href="/glossary/citation-source-diversity/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Citation Source Diversity</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">how spread out the sources behind an AI answer are</span>
+            </a>
+            <a href="/glossary/answer-drift/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Answer Drift</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">The tendency of an identical prompt to return a materially different answer over time, without any change on your side.</span>
+            </a>
+            <a href="/glossary/visibility-gap/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Visibility Gap</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">The difference between how visible a brand is on branded prompts and how visible it is on non-branded ones.</span>
+            </a>
+            <a href="/glossary/prompt-cluster/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Prompt Cluster</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">A group of prompts that share one buyer intent, scored together because they fail for the same reason.</span>
+            </a>
+            <a href="/glossary/share-of-answer/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Share of Answer</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">How much of an answer's text and structure is occupied by one brand relative to the others named.</span>
+            </a>
+            <a href="/glossary/brand-recall/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Brand Recall</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">Whether a model names a brand without being prompted by its name, from memory rather than retrieval.</span>
+            </a>
+            <a href="/glossary/source-concentration/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Source Concentration</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">How few domains account for most citations in a category's answers.</span>
+            </a>
+            <a href="/glossary/visibility-dashboard/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Visibility Dashboard</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">An interface that reports AI visibility metrics over time, usually as a composite score with trends.</span>
+            </a>
+            <a href="/glossary/prompt-volume/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Prompt Volume</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">An estimate of how often a given prompt or cluster is asked, used to weight a prompt library.</span>
+            </a>
+            <a href="/glossary/citation-velocity/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Citation Velocity</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">The rate at which a domain gains or loses citations across a prompt set between two measurement cycles.</span>
+            </a>
+            <a href="/glossary/answer-coverage/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Answer Coverage</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">The share of a category's prompt set in which the brand appears at all, regardless of depth.</span>
+            </a>
+            <a href="/glossary/competitor-benchmark/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Competitor Benchmark</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">A same-run comparison of the brand against named competitors, using an identical prompt library.</span>
+            </a>
+            <a href="/glossary/prompt-drift/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Prompt Drift</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">the slow change in how people phrase questions, which dates a fixed library</span>
+            </a>
+            <a href="/glossary/baseline-freeze/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Baseline Freeze</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">locking a prompt set and its run conditions so later numbers compare</span>
+            </a>
+            <a href="/glossary/reporting-cadence/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Reporting Cadence</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">how often to measure, set against noise rather than the calendar</span>
+            </a>
+          </div>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-4">Other categories</h2>
+          <div class="flex flex-wrap gap-x-5 gap-y-2 text-sm">
+            <a href="/glossary/category/core-concepts/" class="text-blue-600 hover:text-blue-700">Core concepts <span class="text-gray-400">(13)</span></a>
+            <a href="/glossary/category/retrieval-and-models/" class="text-blue-600 hover:text-blue-700">Retrieval and models <span class="text-gray-400">(16)</span></a>
+            <a href="/glossary/category/entity-and-content/" class="text-blue-600 hover:text-blue-700">Entity and content <span class="text-gray-400">(16)</span></a>
+            <a href="/glossary/category/technical-foundations/" class="text-blue-600 hover:text-blue-700">Technical foundations <span class="text-gray-400">(17)</span></a>
+          </div>
+          <a href="/glossary/" class="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 transition-colors">
+            Browse the full glossary <span aria-hidden="true">&rarr;</span>
+          </a>
+        </section>
+
+        <section class="mt-12">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-6">Frequently asked questions</h2>
+          <div class="space-y-5">
             <div class="rounded-xl border border-gray-200 p-5">
-              <h3 class="font-semibold text-gray-900">Which metric should a report lead with?</h3>
-              <p class="text-gray-600 leading-relaxed mt-2">Absorption rate. It is the one that predicts whether the answer persuaded anyone, and it is the one most often missing.</p>
+              <h3 class="font-semibold text-gray-900">Which single number should a report lead with?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">None. Report the three rates separately per surface, with the branded and unbranded halves split, and let the reader see the shape.</p>
             </div>
             <div class="rounded-xl border border-gray-200 p-5">
-              <h3 class="font-semibold text-gray-900">Is share of answer part of the standard?</h3>
-              <p class="text-gray-600 leading-relaxed mt-2">Not in v1.0. It is defined here because it is widely used informally and needs a shared meaning.</p>
+              <h3 class="font-semibold text-gray-900">What sample size is enough?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">Enough that one answer changing moves the rate by only a point or two; in practice tens of prompts per group, not five.</p>
+            </div>
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">Why separate absorption from citation?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">Because you can be cited and not repeated, and that pattern needs a different fix from being absent.</p>
             </div>
           </div>
         </section>
 
         <section class="mt-10 rounded-xl border border-blue-200 bg-blue-50 p-6">
-          <h2 class="text-lg font-semibold text-gray-900">Other glossary groups</h2>
-          <div class="mt-3 flex flex-wrap gap-x-4 gap-y-2 text-sm">
-            <a href="/glossary/category/core-concepts/" class="text-blue-600 hover:underline">Core concepts</a>
-            <a href="/glossary/category/retrieval-and-models/" class="text-blue-600 hover:underline">Retrieval and models</a>
-            <a href="/glossary/category/measurement/" class="text-blue-600 hover:underline">Measurement</a>
-            <a href="/glossary/category/entity-and-content/" class="text-blue-600 hover:underline">Entity and content</a>
-            <a href="/glossary/category/technical-foundations/" class="text-blue-600 hover:underline">Technical foundations</a>
-          </div>
-          <p class="mt-3 text-sm text-gray-600">
-            Or read the <a href="/guides/geo-complete-guide/" class="text-blue-600 hover:underline">complete GEO guide</a>,
-            which uses these terms in context.
-          </p>
+          <h2 class="text-lg font-semibold text-gray-900">See how this shows up for your brand</h2>
+          <p class="mt-2 text-sm text-gray-600 leading-relaxed">The free IndexHot check runs a governed question library across ChatGPT, Perplexity, Gemini and AI Overviews, then separates mention, citation and absorption.</p>
+          <a href="/" class="mt-4 inline-flex items-center justify-center px-5 py-3 rounded-lg bg-blue-600 text-white font-semibold text-sm hover:bg-blue-700 transition-colors">Run the free check</a>
         </section>
-
       </div>
     </article>
   </main>

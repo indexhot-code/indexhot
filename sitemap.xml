@@ -115,7 +115,19 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://indexhot.com/blog/b2b-buying-committee-and-ai-answers/</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://indexhot.com/blog/brand-mention-vs-recommendation/</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://indexhot.com/blog/can-ai-visibility-roi-be-proven/</loc>
     <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -187,6 +199,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://indexhot.com/blog/prompt-library-audit/</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://indexhot.com/blog/schema-markup-ai-citations/</loc>
     <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
@@ -194,6 +212,12 @@
   </url>
   <url>
     <loc>https://indexhot.com/blog/track-brand-ai-search/</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://indexhot.com/blog/what-a-model-version-change-does-to-your-visibility/</loc>
     <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -331,6 +355,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://indexhot.com/glossary/baseline-freeze/</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://indexhot.com/glossary/brand-entity/</loc>
     <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
@@ -463,6 +493,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://indexhot.com/glossary/content-gating/</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://indexhot.com/glossary/context-window/</loc>
     <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
@@ -500,6 +536,12 @@
   </url>
   <url>
     <loc>https://indexhot.com/glossary/entity-clarity/</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://indexhot.com/glossary/entity-consistency/</loc>
     <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -625,13 +667,31 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://indexhot.com/glossary/passage-retrieval/</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://indexhot.com/glossary/prompt-cluster/</loc>
     <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://indexhot.com/glossary/prompt-drift/</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://indexhot.com/glossary/prompt-volume/</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://indexhot.com/glossary/provenance-signal/</loc>
     <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -656,6 +716,18 @@
   </url>
   <url>
     <loc>https://indexhot.com/glossary/render-blocking/</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://indexhot.com/glossary/render-parity/</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://indexhot.com/glossary/reporting-cadence/</loc>
     <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -704,6 +776,18 @@
   </url>
   <url>
     <loc>https://indexhot.com/glossary/share-of-voice/</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://indexhot.com/glossary/snippet-selection/</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://indexhot.com/glossary/soft-404/</loc>
     <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -781,6 +865,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://indexhot.com/guides/technical-readiness-for-ai-search/</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://indexhot.com/industries/</loc>
     <lastmod>2026-11-27</lastmod>
     <changefreq>weekly</changefreq>
@@ -829,7 +919,19 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://indexhot.com/industries/insurance/</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://indexhot.com/industries/legal/</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://indexhot.com/industries/logistics/</loc>
     <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

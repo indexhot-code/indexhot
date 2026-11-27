@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What is Snippet Selection? — IndexHot Glossary</title>
+  <meta name="description" content="Snippet selection is where a model chooses which sentences to carry into the answer. Why self-contained, verifiable claims get quoted and vague ones do not." />
+  <link rel="canonical" href="https://indexhot.com/glossary/snippet-selection/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="What is Snippet Selection? — IndexHot Glossary" />
+  <meta property="og:description" content="Snippet selection is where a model chooses which sentences to carry into the answer. Why self-contained, verifiable claims get quoted and vague ones do not." />
+  <meta property="og:url" content="https://indexhot.com/glossary/snippet-selection/" />
+  <meta property="og:site_name" content="IndexHot" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="What is Snippet Selection? — IndexHot Glossary" />
+  <meta name="twitter:description" content="Snippet selection is where a model chooses which sentences to carry into the answer. Why self-contained, verifiable claims get quoted and vague ones do not." />
+  <link rel="stylesheet" href="../../tailwind.min.css" />
+  <style>
+    body { font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "DefinedTerm",
+      "name": "Snippet Selection",
+      "description": "Snippet selection is the moment a retrieved passage becomes part of an answer. Between finding a page and quoting it, a model chooses specific sentences, and that choice is governed by how self-contained and verifiable those sentences are.",
+      "url": "https://indexhot.com/glossary/snippet-selection/",
+      "inDefinedTermSet": {
+        "@type": "DefinedTermSet",
+        "name": "IndexHot GEO Glossary",
+        "url": "https://indexhot.com/glossary/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://indexhot.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Glossary",
+          "item": "https://indexhot.com/glossary/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Snippet Selection"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is snippet selection under my control?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Indirectly. You control the sentences available to it, which is most of the outcome."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does markup influence it?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Marginally. Structure helps a model locate candidates; it does not make a weak sentence strong."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why was a middle paragraph used and not my summary?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Because that paragraph was more self-contained or more verifiable. Move the specific claim into the opening sentence if you want it preferred."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body class="bg-white text-gray-800 antialiased">
+
+  <header class="sticky top-0 z-20 bg-white/90 backdrop-blur border-b border-gray-100">
+    <div class="max-w-3xl mx-auto px-5 sm:px-6 h-16 flex items-center justify-between">
+      <a href="/" class="text-xl font-bold tracking-tight text-gray-900">
+        Index<span class="text-blue-600">Hot</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6">
+        <a href="/blog/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Blog</a>
+        <a href="/guides/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Guides</a>
+        <a href="/answers/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Answers</a>
+        <a href="/tools/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Tools</a>
+        <a href="/methodology/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Methodology</a>
+        <a href="/data/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Data</a>
+        <a href="/about/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">About</a>
+        <a href="#" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Sign in</a>
+      </nav>
+      <button id="menu-btn" type="button" aria-label="Open menu" aria-expanded="false"
+        class="md:hidden flex items-center justify-center w-10 h-10 -mr-2 rounded-lg text-gray-600 hover:text-blue-600 hover:bg-gray-100 transition-colors">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+    <nav id="mobile-menu" class="hidden md:hidden px-5 pb-4 pt-2 border-t border-gray-100 bg-white">
+      <a href="/blog/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Blog</a>
+      <a href="/guides/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Guides</a>
+      <a href="/answers/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Answers</a>
+      <a href="/tools/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Tools</a>
+      <a href="/methodology/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Methodology</a>
+      <a href="/data/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Data</a>
+      <a href="/about/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">About</a>
+      <a href="#" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Sign in</a>
+    </nav>
+  </header>
+
+  <main>
+    <article class="px-5 sm:px-6 pt-10 pb-10">
+      <div class="max-w-3xl mx-auto">
+
+                <nav class="mb-6 text-xs text-gray-500">
+          <a href="/" class="hover:text-blue-600">Home</a><span class="mx-1.5 text-gray-300">/</span><a href="/glossary/" class="hover:text-blue-600">Glossary</a><span class="mx-1.5 text-gray-300">/</span><span class="text-gray-700">Snippet Selection</span>
+        </nav>
+
+        <header class="mb-8">
+          <p class="text-sm font-semibold text-blue-600 mb-3">Glossary &middot; Retrieval and models</p>
+          <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900 leading-tight">
+            What is Snippet Selection?
+          </h1>
+        </header>
+
+        <p class="text-xs text-gray-400 mb-6">Last updated November 2026 &middot; Reviewed against the IndexHot GEO Measurement Standard v1.0</p>
+
+        <div class="text-lg text-gray-700 leading-relaxed border-l-4 border-blue-600 pl-4 mb-8">
+          <p>Snippet selection is the moment a retrieved passage becomes part of an answer. Between finding a page and quoting it, a model chooses specific sentences, and that choice is governed by how self-contained and verifiable those sentences are.</p>
+        </div>
+
+        <p class="text-gray-600 leading-relaxed mb-10">
+          In short: The step where a model chooses which sentences of retrieved material to carry into the answer.
+        </p>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">The gap between retrieval and quotation</h2>
+          <p class="text-gray-600 leading-relaxed mb-4">Retrieval produces a set of documents or chunks. Generation produces an answer, and the answer is assembled from sentences the model chooses to carry. A page can be retrieved and then contribute nothing, which shows up in reporting as a citation with no absorption.</p>
+          <p class="text-gray-600 leading-relaxed mb-4">Snippet selection explains that pattern. The model did read the page. It found nothing it could lift without inventing connective tissue, so it paraphrased around it and cited the page as context rather than evidence.</p>
+        </section>
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Which sentences get chosen</h2>
+          <ul class="list-disc pl-5 space-y-2 text-gray-600 leading-relaxed marker:text-blue-500">
+            <li>Sentences whose meaning survives removal from the surrounding text.</li>
+            <li>Sentences carrying a checkable fact: a number, a date, a named entity, a stated condition.</li>
+            <li>Sentences short enough to be reproduced without distortion, but specific enough to be worth reproducing.</li>
+            <li>Sentences whose claims the model can corroborate elsewhere, since an unsupported specific is a risk to repeat.</li>
+          </ul>
+        </section>
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">What this means for a section's opening</h2>
+          <p class="text-gray-600 leading-relaxed mb-4">The first two sentences of a section are the most likely candidates, because they are where a claim is usually stated most cleanly. If those sentences are throat-clearing, the model moves on and takes the middle of the section instead, or takes nothing.</p>
+          <p class="text-gray-600 leading-relaxed mb-4">The practical rule: write the opening sentence as though it will be quoted alone in a different document, because it probably will be.</p>
+        </section>
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Diagnosing selection failures</h2>
+          <p class="text-gray-600 leading-relaxed mb-4">When a page is cited but the answer says nothing of yours, the failure is usually selection rather than retrieval. Read the answer next to the page and ask which sentences could have been lifted unchanged. If the answer is none, that is the finding.</p>
+        </section>
+
+        <section class="mt-12">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-6">Frequently asked questions</h2>
+          <div class="space-y-5">
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">Is snippet selection under my control?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">Indirectly. You control the sentences available to it, which is most of the outcome.</p>
+            </div>
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">Does markup influence it?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">Marginally. Structure helps a model locate candidates; it does not make a weak sentence strong.</p>
+            </div>
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">Why was a middle paragraph used and not my summary?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">Because that paragraph was more self-contained or more verifiable. Move the specific claim into the opening sentence if you want it preferred.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-4">Related terms</h2>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <a href="/glossary/ai-snippet/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">AI Snippet</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">the fragment carried into a generated answer</span>
+            </a>
+            <a href="/glossary/citation-absorption/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Citation Absorption</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">how much of a source is reused</span>
+            </a>
+            <a href="/glossary/content-extractability/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Content Extractability</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">how easily a passage can be isolated</span>
+            </a>
+            <a href="/glossary/passage-retrieval/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Passage Retrieval</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">how the passage was found in the first place</span>
+            </a>
+          </div>
+          <a href="/glossary/" class="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 transition-colors">
+            Browse the full glossary <span aria-hidden="true">&rarr;</span>
+          </a>
+        </section>
+
+        <section class="mt-10 rounded-xl border border-blue-200 bg-blue-50 p-6">
+          <h2 class="text-lg font-semibold text-gray-900">See how this shows up for your brand</h2>
+          <p class="mt-2 text-sm text-gray-600 leading-relaxed">The free IndexHot check runs a governed question library across ChatGPT, Perplexity, Gemini and AI Overviews, then separates mention, citation and absorption.</p>
+          <a href="/" class="mt-4 inline-flex items-center justify-center px-5 py-3 rounded-lg bg-blue-600 text-white font-semibold text-sm hover:bg-blue-700 transition-colors">Run the free check</a>
+        </section>
+      </div>
+    </article>
+  </main>
+
+  <footer class="border-t border-gray-100 px-5 sm:px-6 py-8">
+    <div class="max-w-3xl mx-auto text-center text-sm text-gray-400">
+      © 2026 IndexHot. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var menuBtn = document.getElementById('menu-btn');
+      var mobileMenu = document.getElementById('mobile-menu');
+
+      menuBtn.addEventListener('click', function () {
+        var isHidden = mobileMenu.classList.toggle('hidden');
+        menuBtn.setAttribute('aria-expanded', String(!isHidden));
+      });
+
+      mobileMenu.addEventListener('click', function (e) {
+        if (e.target.tagName === 'A') {
+          mobileMenu.classList.add('hidden');
+          menuBtn.setAttribute('aria-expanded', 'false');
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

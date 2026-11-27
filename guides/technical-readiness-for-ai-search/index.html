@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Technical Readiness for AI Search: Twelve Checks That Decide Retrieval — IndexHot</title>
+  <meta name="description" content="Twelve checks that decide whether AI systems can fetch, parse and quote your pages, from user-agent access to render parity and status hygiene." />
+  <link rel="canonical" href="https://indexhot.com/guides/technical-readiness-for-ai-search/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Technical Readiness for AI Search: Twelve Checks That Decide Retrieval — IndexHot" />
+  <meta property="og:description" content="Twelve checks that decide whether AI systems can fetch, parse and quote your pages, from user-agent access to render parity and status hygiene." />
+  <meta property="og:url" content="https://indexhot.com/guides/technical-readiness-for-ai-search/" />
+  <meta property="og:site_name" content="IndexHot" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Technical Readiness for AI Search: Twelve Checks That Decide Retrieval — IndexHot" />
+  <meta name="twitter:description" content="Twelve checks that decide whether AI systems can fetch, parse and quote your pages, from user-agent access to render parity and status hygiene." />
+  <link rel="stylesheet" href="../../tailwind.min.css" />
+  <style>
+    body { font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Technical Readiness for AI Search: Twelve Checks That Decide Retrieval",
+      "url": "https://indexhot.com/guides/technical-readiness-for-ai-search/",
+      "datePublished": "2026-11-27",
+      "dateModified": "2026-11-27",
+      "author": {
+        "@type": "Organization",
+        "name": "IndexHot",
+        "url": "https://indexhot.com/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "IndexHot",
+        "url": "https://indexhot.com/"
+      },
+      "description": "Twelve checks that decide whether AI systems can fetch, parse and quote your pages, from user-agent access to render parity and status hygiene.",
+      "articleSection": "Technical"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://indexhot.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://indexhot.com/guides/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Technical readiness"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is blocking GPTBot the same as opting out of AI answers?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Operators run separate agents for training and for retrieval, and blocking the training agent leaves retrieval intact in most documented setups. Check the current vendor documentation before deciding which one to block."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need schema markup to be cited?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Citations come from the passage, not the markup. Schema helps a system resolve your entity and dates, which helps at the edges rather than the centre."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is a JavaScript site hopeless?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No, but it is conditionally readable: it depends on a renderer running within a budget. Server-rendering the content routes removes the condition, which is why the fix is usually a front-end change rather than a content one."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body class="bg-white text-gray-800 antialiased">
+
+  <!-- Top navigation -->
+  <header class="sticky top-0 z-20 bg-white/90 backdrop-blur border-b border-gray-100">
+    <div class="max-w-3xl mx-auto px-5 sm:px-6 h-16 flex items-center justify-between">
+      <a href="/" class="text-xl font-bold tracking-tight text-gray-900">
+        Index<span class="text-blue-600">Hot</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6">
+        <a href="/blog/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Blog</a>
+        <a href="/guides/" class="text-sm font-medium text-blue-600">Guides</a>
+        <a href="/answers/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Answers</a>
+        <a href="/tools/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Tools</a>
+        <a href="/methodology/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Methodology</a>
+        <a href="/data/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Data</a>
+        <a href="/about/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">About</a>
+        <a href="#" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Sign in</a>
+      </nav>
+      <button id="menu-btn" type="button" aria-label="Open menu" aria-expanded="false"
+        class="md:hidden flex items-center justify-center w-10 h-10 -mr-2 rounded-lg text-gray-600 hover:text-blue-600 hover:bg-gray-100 transition-colors">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+    <nav id="mobile-menu" class="hidden md:hidden px-5 pb-4 pt-2 border-t border-gray-100 bg-white">
+      <a href="/blog/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Blog</a>
+      <a href="/guides/" class="block py-2.5 text-sm font-medium text-blue-600">Guides</a>
+      <a href="/answers/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Answers</a>
+      <a href="/tools/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Tools</a>
+      <a href="/methodology/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Methodology</a>
+      <a href="/data/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Data</a>
+      <a href="/about/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">About</a>
+      <a href="#" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Sign in</a>
+    </nav>
+  </header>
+  <main>
+    <article class="px-5 sm:px-6 pt-10 pb-10">
+      <div class="max-w-3xl mx-auto">
+
+                <nav class="mb-6 text-xs text-gray-500">
+          <a href="/" class="hover:text-blue-600">Home</a><span class="mx-1.5 text-gray-300">/</span><a href="/guides/" class="hover:text-blue-600">Guides</a><span class="mx-1.5 text-gray-300">/</span><span class="text-gray-700">Technical readiness</span>
+        </nav>
+
+        <header class="mb-8">
+          <p class="text-sm font-semibold text-blue-600 mb-3">Guide &middot; technical</p>
+          <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900 leading-tight">
+            Technical Readiness for AI Search: Twelve Checks That Decide Retrieval
+          </h1>
+          <p class="mt-4 text-sm text-gray-400">
+            By <span class="font-medium text-gray-600">IndexHot Team</span> &middot; <time datetime="2026-11-27">November 27, 2026</time> &middot; 11 sections
+          </p>
+        </header>
+
+        <div class="text-lg text-gray-700 leading-relaxed border-l-4 border-blue-600 pl-4 mb-10">
+          <p>A brand missing from AI answers can be missing for three unrelated reasons, and only two of them are technical. This guide covers the two: whether a retrieval system can fetch your page at all, and whether the document it fetches is the one you wrote. Twelve checks, each finishable in an afternoon, each cheaper than the content work people usually start with instead.</p>
+        </div>
+
+        <nav class="rounded-xl border border-gray-200 bg-gray-50 p-5 mb-10">
+          <h2 class="text-sm font-semibold text-gray-900">On this page</h2>
+          <ol class="mt-3 space-y-1 text-sm text-gray-600 list-decimal pl-5 marker:text-blue-500">
+            <li><a href="#technical-readiness-is-a-third-separate-thing" class="hover:text-blue-600">Technical readiness is a third, separate thing</a></li>
+            <li><a href="#gate-one-can-it-be-fetched" class="hover:text-blue-600">Gate one: can it be fetched at all</a></li>
+            <li><a href="#gate-two-is-it-indexed-where-it-matters" class="hover:text-blue-600">Gate two: indexed where it matters</a></li>
+            <li><a href="#gate-three-does-the-fetch-return-your-document" class="hover:text-blue-600">Gate three: does the fetch return your document</a></li>
+            <li><a href="#rendering-what-the-client-side-hides" class="hover:text-blue-600">Rendering: what the client side hides</a></li>
+            <li><a href="#structure-inside-the-document" class="hover:text-blue-600">Structure inside the document</a></li>
+            <li><a href="#structured-data-what-it-does-and-does-not-do" class="hover:text-blue-600">Structured data: what it does and does not do</a></li>
+            <li><a href="#freshness-and-dates" class="hover:text-blue-600">Freshness and dates</a></li>
+            <li><a href="#the-crawl-log-as-a-diagnostic" class="hover:text-blue-600">The crawl log as a diagnostic</a></li>
+            <li><a href="#how-readiness-failures-masquerade-as-content-failures" class="hover:text-blue-600">How readiness failures masquerade as content failures</a></li>
+            <li><a href="#the-twelve-checks" class="hover:text-blue-600">The twelve checks</a></li>
+          </ol>
+        </nav>
+
+        <section id="technical-readiness-is-a-third-separate-thing" class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Technical readiness is a third, separate thing</h2>
+          <p class="text-gray-600 leading-relaxed mb-4">Three different failures look identical in a report: the brand is not mentioned. It can be missing because the page cannot be fetched, because the page can be fetched but not indexed, or because the page is indexed and simply not chosen. Only the first two are technical, and both must be cleared before any content work has a chance to show up.</p>
+          <p class="text-gray-600 leading-relaxed mb-4">The reason this deserves its own guide is that the checks are cheap, objective and finishable. Content work is neither. A team that spends a quarter writing before verifying access spends it against an unknown denominator, and then argues about whether the writing was good.</p>
+          <div class="rounded-xl border border-blue-200 bg-blue-50 p-5 my-5">
+            <p class="text-sm text-gray-700 leading-relaxed">Order of operations: verify access per page, verify indexation per page, verify the fetched document is the one you wrote, and only then look at whether the content deserved to be quoted. Doing this in reverse is the most common way to waste six months.</p>
+          </div>
+        </section>
+        <section id="gate-one-can-it-be-fetched" class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Gate one: can it be fetched at all</h2>
+          <p class="text-gray-600 leading-relaxed mb-4">Retrieval starts with a request. If that request is refused, nothing downstream exists. Three things refuse requests, and they are checked in this order: robots rules, edge protection, and the server itself.</p>
+          <h3 class="text-lg font-semibold text-gray-900 mt-6 mb-2">User agents are not one thing</h3>
+          <p class="text-gray-600 leading-relaxed mb-4">Every major answer engine operates more than one crawler, and they do different jobs. Blocking a training crawler removes your pages from model training; blocking the retrieval crawler removes your pages from answers. These are separate switches, and sites routinely flip the wrong one while believing they have made a privacy decision.</p>
+          <div class="overflow-x-auto">
+            <table class="w-full text-sm border-collapse min-w-[520px]">
+              <thead><tr class="border-b border-gray-200 text-left text-gray-500"><th class="py-2 pr-4 font-medium">Operator</th><th class="py-2 pr-4 font-medium">Documented agents (verify current names)</th><th class="py-2 pr-4 font-medium">What it does</th></tr></thead>
+              <tbody class="text-gray-700">
+                <tr class="border-b border-gray-100"><td class="py-2 pr-4">O</td><td class="py-2 pr-4">p</td><td class="py-2 pr-4">e</td><td class="py-2 pr-4">n</td><td class="py-2 pr-4">A</td><td class="py-2 pr-4">I</td></tr>
+                <tr class="border-b border-gray-100"><td class="py-2 pr-4">G</td><td class="py-2 pr-4">P</td><td class="py-2 pr-4">T</td><td class="py-2 pr-4">B</td><td class="py-2 pr-4">o</td><td class="py-2 pr-4">t</td><td class="py-2 pr-4"> </td><td class="py-2 pr-4">/</td><td class="py-2 pr-4"> </td><td class="py-2 pr-4">O</td><td class="py-2 pr-4">A</td><td class="py-2 pr-4">I</td><td class="py-2 pr-4">-</td><td class="py-2 pr-4">S</td><td class="py-2 pr-4">e</td><td class="py-2 pr-4">a</td><td class="py-2 pr-4">r</td><td class="py-2 pr-4">c</td><td class="py-2 pr-4">h</td><td class="py-2 pr-4">B</td><td class="py-2 pr-4">o</td><td class="py-2 pr-4">t</td><td class="py-2 pr-4"> </td><td class="py-2 pr-4">/</td><td class="py-2 pr-4"> </td><td class="py-2 pr-4">C</td><td class="py-2 pr-4">h</td><td class="py-2 pr-4">a</td><td class="py-2 pr-4">t</td><td class="py-2 pr-4">G</td><td class="py-2 pr-4">P</td><td class="py-2 pr-4">T</td><td class="py-2 pr-4">-</td><td class="py-2 pr-4">U</td><td class="py-2 pr-4">s</td><td class="py-2 pr-4">e</td><td class="py-2 pr-4">r</td></tr>
+                <tr class="border-b border-gray-100"><td class="py-2 pr-4">T</td><td class="py-2 pr-4">r</td><td class="py-2 pr-4">a</td><td class="py-2 pr-4">i</td><td class="py-2 pr-4">n</td><td class="py-2 pr-4">i</td><td class="py-2 pr-4">n</td><td class="py-2 pr-4">g</td><td class="py-2 pr-4"> </td><td class="py-2 pr-4">c</td><td class="py-2 pr-4">r</td><td class="py-2 pr-4">a</td><td class="py-2 pr-4">w</td><td class="py-2 pr-4">l</td><td class="py-2 pr-4">,</td><td class="py-2 pr-4"> </td><td class="py-2 pr-4">s</td><td class="py-2 pr-4">e</td><td class="py-2 pr-4">a</td><td class="py-2 pr-4">r</td><td class="py-2 pr-4">c</td><td class="py-2 pr-4">h</td><td class="py-2 pr-4"> </td><td class="py-2 pr-4">i</td><td class="py-2 pr-4">n</td><td class="py-2 pr-4">d</td><td class="py-2 pr-4">e</td><td class="py-2 pr-4">x</td><td class="py-2 pr-4">,</td><td class="py-2 pr-4"> </td><td class="py-2 pr-4">u</td><td class="py-2 pr-4">s</td><td class="py-2 pr-4">e</td><td class="py-2 pr-4">r</td><td class="py-2 pr-4">-</td><td class="py-2 pr-4">i</td><td class="py-2 pr-4">n</td><td class="py-2 pr-4">i</td><td class="py-2 pr-4">t</td><td class="py-2 pr-4">i</td><td class="py-2 pr-4">a</td><td class="py-2 pr-4">t</td><td class="py-2 pr-4">e</td><td class="py-2 pr-4">d</td><td class="py-2 pr-4"> </td><td class="py-2 pr-4">f</td><td class="py-2 pr-4">e</td><td class="py-2 pr-4">t</td><td class="py-2 pr-4">c</td><td class="py-2 pr-4">h</td><td class="py-2 pr-4"> </td><td class="py-2 pr-4">a</td><td class="py-2 pr-4">t</td><td class="py-2 pr-4"> </td><td class="py-2 pr-4">q</td><td class="py-2 pr-4">u</td><td class="py-2 pr-4">e</td><td class="py-2 pr-4">r</td><td class="py-2 pr-4">y</td><td class="py-2 pr-4"> </td><td class="py-2 pr-4">t</td><td class="py-2 pr-4">i</td><td class="py-2 pr-4">m</td><td class="py-2 pr-4">e</td></tr>
+              </tbody></table>
+          </div>
+          <div class="rounded-xl border border-amber-200 bg-amber-50 p-5 my-5">
+            <p class="text-sm text-amber-900 leading-relaxed">Agent names, paths and behaviours are vendor documentation, not constants. Treat this table as a checklist of questions to verify in each vendor's current docs rather than as a permanent answer.</p>
+          </div>
+          <h3 class="text-lg font-semibold text-gray-900 mt-6 mb-2">Edge protection that refuses politely</h3>
+          <p class="text-gray-600 leading-relaxed mb-4">A web application firewall configured to challenge unfamiliar clients will challenge a retrieval bot too. The rules are usually written for scrapers, and a bot that identifies honestly gets caught by them. Check the raw response for a 403 or a challenge page, not just whether the browser renders.</p>
+          <p class="text-gray-600 leading-relaxed mb-4">Cloudflare, Akamai and Fastly all publish their own bot-management behaviour, and all three will let you allowlist a named agent. The check is not whether you have a firewall; it is whether the ten pages that matter return 200 to the retrieval user agent.</p>
+        </section>
+        <section id="gate-two-is-it-indexed-where-it-matters" class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Gate two: indexed where it matters</h2>
+          <p class="text-gray-600 leading-relaxed mb-4">Index membership is per index, not global. A page can be comfortably indexed in Google and entirely absent from the index that grounds Copilot, which runs through Bing. This is a real and frequently missed condition, and it produces the most misleading kind of absence: rankable in one product, invisible in another.</p>
+          <ul class="list-disc pl-5 space-y-2 text-gray-600 leading-relaxed marker:text-blue-500">
+            <li>Submit and verify per engine rather than assuming one sitemap covers everything.</li>
+            <li>Check whether the sitemap is actually discovered: look for fetches of it in the server log.</li>
+            <li>For Bing, prefer IndexNow so changes are pushed instead of waited for.</li>
+            <li>For Google, use URL Inspection per page when the page matters; sitemap status alone will not tell you individual pages are in.</li>
+          </ul>
+          <p class="text-gray-600 leading-relaxed mb-4">There is a second, subtler form of absence: the page is indexed under a different URL than the one you promoted. Parameter variants, trailing-slash variants and http/https variants all create duplicates, and answers may cite the variant your analytics does not track. Canonical tags do not merge indexes; they only express preference, and preference is sometimes ignored.</p>
+        </section>
+        <section id="gate-three-does-the-fetch-return-your-document" class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Gate three: does the fetch return your document</h2>
+          <p class="text-gray-600 leading-relaxed mb-4">This is the check almost nobody runs, and it is the one that most often explains a mystery. Fetch the URL the way a bot does, with no cookies and no JavaScript execution, and compare the bytes to what you think you published.</p>
+          <h3 class="text-lg font-semibold text-gray-900 mt-6 mb-2">Status codes carry meaning you did not intend</h3>
+          <p class="text-gray-600 leading-relaxed mb-4">A soft 404, where a missing page returns 200 with an apology page, teaches a crawler that your site contains large amounts of near-duplicate content. It also means the deletion you thought you made never happened. Status hygiene is not housekeeping; it is a statement about which URLs are real.</p>
+          <div class="overflow-x-auto">
+            <table class="w-full text-sm border-collapse min-w-[520px]">
+              <thead><tr class="border-b border-gray-200 text-left text-gray-500"><th class="py-2 pr-4 font-medium">Response</th><th class="py-2 pr-4 font-medium">What a retrieval pipeline does with it</th></tr></thead>
+              <tbody class="text-gray-700">
+                <tr class="border-b border-gray-100"><td class="py-2 pr-4">2</td><td class="py-2 pr-4">0</td><td class="py-2 pr-4">0</td><td class="py-2 pr-4"> </td><td class="py-2 pr-4">w</td><td class="py-2 pr-4">i</td><td class="py-2 pr-4">t</td><td class="py-2 pr-4">h</td><td class="py-2 pr-4"> </td><td class="py-2 pr-4">t</td><td class="py-2 pr-4">h</td><td class="py-2 pr-4">e</td><td class="py-2 pr-4"> </td><td class="py-2 pr-4">r</td><td class="py-2 pr-4">e</td><td class="py-2 pr-4">a</td><td class="py-2 pr-4">l</td><td class="py-2 pr-4"> </td><td class="py-2 pr-4">p</td><td class="py-2 pr-4">a</td><td class="py-2 pr-4">g</td><td class="py-2 pr-4">e</td></tr>
+                <tr class="border-b border-gray-100"><td class="py-2 pr-4">U</td><td class="py-2 pr-4">s</td><td class="py-2 pr-4">e</td><td class="py-2 pr-4">s</td><td class="py-2 pr-4"> </td><td class="py-2 pr-4">t</td><td class="py-2 pr-4">h</td><td class="py-2 pr-4">e</td><td class="py-2 pr-4"> </td><td class="py-2 pr-4">d</td><td class="py-2 pr-4">o</td><td class="py-2 pr-4">c</td><td class="py-2 pr-4">u</td><td class="py-2 pr-4">m</td><td class="py-2 pr-4">e</td><td class="py-2 pr-4">n</td><td class="py-2 pr-4">t</td><td class="py-2 pr-4">.</td><td class="py-2 pr-4"> </td><td class="py-2 pr-4">T</td><td class="py-2 pr-4">h</td><td class="py-2 pr-4">i</td><td class="py-2 pr-4">s</td><td class="py-2 pr-4"> </td><td class="py-2 pr-4">i</td><td class="py-2 pr-4">s</td><td class="py-2 pr-4"> </td><td class="py-2 pr-4">t</td><td class="py-2 pr-4">h</td><td class="py-2 pr-4">e</td><td class="py-2 pr-4"> </td><td class="py-2 pr-4">o</td><td class="py-2 pr-4">n</td><td class="py-2 pr-4">l</td><td class="py-2 pr-4">y</td><td class="py-2 pr-4"> </td><td class="py-2 pr-4">o</td><td class="py-2 pr-4">u</td><td class="py-2 pr-4">t</td><td class="py-2 pr-4">c</td><td class="py-2 pr-4">o</td><td class="py-2 pr-4">m</td><td class="py-2 pr-4">e</td><td class="py-2 pr-4"> </td><td class="py-2 pr-4">y</td><td class="py-2 pr-4">o</td><td class="py-2 pr-4">u</td><td class="py-2 pr-4"> </td><td class="py-2 pr-4">w</td><td class="py-2 pr-4">a</td><td class="py-2 pr-4">n</td><td class="py-2 pr-4">t</td><td class="py-2 pr-4">.</td></tr>
+              </tbody></table>
+          </div>
+          <p class="text-gray-600 leading-relaxed mb-4">Two further traps sit here: an interstitial that renders before content, and a canonical that points somewhere else. The first means the fetched document has no substance even when the status is 200. The second means you asked the index to prefer a different URL, and it may comply.</p>
+        </section>
+        <section id="rendering-what-the-client-side-hides" class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Rendering: what the client side hides</h2>
+          <p class="text-gray-600 leading-relaxed mb-4">Retrieval pipelines operate under latency budgets. Rendering a JavaScript application costs seconds and a browser; fetching static HTML costs milliseconds. Faced with that difference, most pipelines take the cheap path and read what the server returned.</p>
+          <p class="text-gray-600 leading-relaxed mb-4">This does not make JavaScript sites unreadable. It makes them conditionally readable: readable if the renderer runs, if it succeeds, if it is not skipped for budget reasons. Conditional readability is a bad foundation for a page you want quoted.</p>
+          <ul class="list-disc pl-5 space-y-2 text-gray-600 leading-relaxed marker:text-blue-500">
+            <li>Ship the answer in the initial HTML, then let the client add interaction on top.</li>
+            <li>Do not put prices, specifications, availability or dates exclusively in a client-rendered component.</li>
+            <li>Test with JavaScript disabled and read what remains; that is closer to what a cheap fetch sees.</li>
+            <li>If you must render, server-side render the content routes and hydrate afterwards.</li>
+          </ul>
+          <p class="text-gray-600 leading-relaxed mb-4">One diagnostic is unusually informative: open the page with JavaScript disabled, find the paragraph you most want quoted, and see whether it is there. If it is not, no amount of copy editing will help, and the fix belongs with whoever owns the front end.</p>
+        </section>
+        <section id="structure-inside-the-document" class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Structure inside the document</h2>
+          <p class="text-gray-600 leading-relaxed mb-4">Once the document is fetchable and faithful, the next question is whether a passage inside it can stand alone. Retrieval works on chunks, and a chunk is only useful if its meaning survives being cut out of the page.</p>
+          <p class="text-gray-600 leading-relaxed mb-4">That gives a concrete editorial rule: every section should begin with a sentence that states its claim without pronouns pointing backwards. This sentence, and the two or three after it, is what gets lifted. If it begins with as noted above, the lifted text means nothing.</p>
+          <ul class="list-disc pl-5 space-y-2 text-gray-600 leading-relaxed marker:text-blue-500">
+            <li>One subject per heading, and the heading names that subject rather than the campaign.</li>
+            <li>Sections that answer a whole question, not a fragment of a narrative that spans the page.</li>
+            <li>Lists and tables where the content has parts, because they survive extraction intact.</li>
+            <li>No critical facts in images, and no critical facts only in captions.</li>
+          </ul>
+          <p class="text-gray-600 leading-relaxed mb-4">The ceiling here is set by the page, not the paragraph. A page of forty short sections answering forty questions is easier to retrieve from than a page of four long essays, because the retrieval unit that matches a query is smaller and better aligned. That is why question-shaped architecture outperforms topic-shaped architecture on these surfaces while both remain fine for classic search.</p>
+        </section>
+        <section id="structured-data-what-it-does-and-does-not-do" class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Structured data: what it does and does not do</h2>
+          <p class="text-gray-600 leading-relaxed mb-4">Schema markup helps machines resolve entities and relationships. It does not make a weak passage quotable, and it does not buy citations. Teams that add JSON-LD and see nothing change have usually mistaken a disambiguation tool for a content tool.</p>
+          <h3 class="text-lg font-semibold text-gray-900 mt-6 mb-2">What earns its keep</h3>
+          <ul class="list-disc pl-5 space-y-2 text-gray-600 leading-relaxed marker:text-blue-500">
+            <li><strong class="text-gray-800">Organization and WebSite.</strong> Name, URL, logo, sameAs. This is how a brand stops being three unrelated strings.</li>
+            <li><strong class="text-gray-800">sameAs links.</strong> Point to the profiles that are genuinely yours, and keep them consistent; a stale profile is worse than none.</li>
+            <li><strong class="text-gray-800">Article and BlogPosting with dates.</strong> Author, published, modified. Dates are read; wrong dates are read and distrusted.</li>
+            <li><strong class="text-gray-800">FAQPage.</strong> Only where the questions and answers are visible on the page. Marking up hidden content is a violation and a waste.</li>
+          </ul>
+          <h3 class="text-lg font-semibold text-gray-900 mt-6 mb-2">What is usually overrated</h3>
+          <p class="text-gray-600 leading-relaxed mb-4">Product markup on pages that are not products, breadcrumbs treated as an SEO ritual rather than navigation, and elaborate ontologies that describe a business nobody can verify. Structured data expresses facts; if the facts are thin, the markup is thin in a machine-readable way.</p>
+          <div class="rounded-xl border border-amber-200 bg-amber-50 p-5 my-5">
+            <p class="text-sm text-amber-900 leading-relaxed">Test: remove all JSON-LD and reread the page. If it still says who you are, what you sell and what you claim, the markup was decoration. If it collapses, the markup was carrying the meaning, which is a fragile arrangement in the other direction.</p>
+          </div>
+        </section>
+        <section id="freshness-and-dates" class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Freshness and dates</h2>
+          <p class="text-gray-600 leading-relaxed mb-4">Answers on volatile topics are assembled from pages whose currency can be judged. A visible last-updated date is that judgement made easy. A missing date is a reason to prefer another source, and a wrong date is a reason to distrust this one.</p>
+          <p class="text-gray-600 leading-relaxed mb-4">Two habits cause most date failures: bumping the modified timestamp on every deploy, which makes every page look freshly touched and therefore meaningless, and never touching it at all, which makes a five-year-old price look current.</p>
+          <ul class="list-disc pl-5 space-y-2 text-gray-600 leading-relaxed marker:text-blue-500">
+            <li>Date only the pages whose facts can expire: prices, specifications, availability, regulation, rankings.</li>
+            <li>State the as-of month inside the sentence, not only in metadata, so a lifted passage carries its date.</li>
+            <li>Do not backdate or forward-date to look competitive. Both are detectable and both cost trust.</li>
+          </ul>
+        </section>
+        <section id="the-crawl-log-as-a-diagnostic" class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">The crawl log as a diagnostic</h2>
+          <p class="text-gray-600 leading-relaxed mb-4">Server logs answer questions no dashboard can: which agent requested which URL, what they got back, and how often. Three patterns are worth reading for.</p>
+          <div class="overflow-x-auto">
+            <table class="w-full text-sm border-collapse min-w-[520px]">
+              <thead><tr class="border-b border-gray-200 text-left text-gray-500"><th class="py-2 pr-4 font-medium">Pattern</th><th class="py-2 pr-4 font-medium">Likely cause</th><th class="py-2 pr-4 font-medium">First move</th></tr></thead>
+              <tbody class="text-gray-700">
+                <tr class="border-b border-gray-100"><td class="py-2 pr-4">R</td><td class="py-2 pr-4">e</td><td class="py-2 pr-4">t</td><td class="py-2 pr-4">r</td><td class="py-2 pr-4">i</td><td class="py-2 pr-4">e</td><td class="py-2 pr-4">v</td><td class="py-2 pr-4">a</td><td class="py-2 pr-4">l</td><td class="py-2 pr-4"> </td><td class="py-2 pr-4">a</td><td class="py-2 pr-4">g</td><td class="py-2 pr-4">e</td><td class="py-2 pr-4">n</td><td class="py-2 pr-4">t</td><td class="py-2 pr-4"> </td><td class="py-2 pr-4">n</td><td class="py-2 pr-4">e</td><td class="py-2 pr-4">v</td><td class="py-2 pr-4">e</td><td class="py-2 pr-4">r</td><td class="py-2 pr-4"> </td><td class="py-2 pr-4">a</td><td class="py-2 pr-4">p</td><td class="py-2 pr-4">p</td><td class="py-2 pr-4">e</td><td class="py-2 pr-4">a</td><td class="py-2 pr-4">r</td><td class="py-2 pr-4">s</td></tr>
+                <tr class="border-b border-gray-100"><td class="py-2 pr-4">R</td><td class="py-2 pr-4">o</td><td class="py-2 pr-4">b</td><td class="py-2 pr-4">o</td><td class="py-2 pr-4">t</td><td class="py-2 pr-4">s</td><td class="py-2 pr-4"> </td><td class="py-2 pr-4">r</td><td class="py-2 pr-4">u</td><td class="py-2 pr-4">l</td><td class="py-2 pr-4">e</td><td class="py-2 pr-4">,</td><td class="py-2 pr-4"> </td><td class="py-2 pr-4">f</td><td class="py-2 pr-4">i</td><td class="py-2 pr-4">r</td><td class="py-2 pr-4">e</td><td class="py-2 pr-4">w</td><td class="py-2 pr-4">a</td><td class="py-2 pr-4">l</td><td class="py-2 pr-4">l</td><td class="py-2 pr-4">,</td><td class="py-2 pr-4"> </td><td class="py-2 pr-4">o</td><td class="py-2 pr-4">r</td><td class="py-2 pr-4"> </td><td class="py-2 pr-4">n</td><td class="py-2 pr-4">o</td><td class="py-2 pr-4"> </td><td class="py-2 pr-4">d</td><td class="py-2 pr-4">i</td><td class="py-2 pr-4">s</td><td class="py-2 pr-4">c</td><td class="py-2 pr-4">o</td><td class="py-2 pr-4">v</td><td class="py-2 pr-4">e</td><td class="py-2 pr-4">r</td><td class="py-2 pr-4">y</td><td class="py-2 pr-4"> </td><td class="py-2 pr-4">p</td><td class="py-2 pr-4">a</td><td class="py-2 pr-4">t</td><td class="py-2 pr-4">h</td></tr>
+                <tr class="border-b border-gray-100"><td class="py-2 pr-4">F</td><td class="py-2 pr-4">e</td><td class="py-2 pr-4">t</td><td class="py-2 pr-4">c</td><td class="py-2 pr-4">h</td><td class="py-2 pr-4"> </td><td class="py-2 pr-4">a</td><td class="py-2 pr-4">s</td><td class="py-2 pr-4"> </td><td class="py-2 pr-4">t</td><td class="py-2 pr-4">h</td><td class="py-2 pr-4">a</td><td class="py-2 pr-4">t</td><td class="py-2 pr-4"> </td><td class="py-2 pr-4">a</td><td class="py-2 pr-4">g</td><td class="py-2 pr-4">e</td><td class="py-2 pr-4">n</td><td class="py-2 pr-4">t</td><td class="py-2 pr-4">,</td><td class="py-2 pr-4"> </td><td class="py-2 pr-4">t</td><td class="py-2 pr-4">h</td><td class="py-2 pr-4">e</td><td class="py-2 pr-4">n</td><td class="py-2 pr-4"> </td><td class="py-2 pr-4">r</td><td class="py-2 pr-4">e</td><td class="py-2 pr-4">a</td><td class="py-2 pr-4">d</td><td class="py-2 pr-4"> </td><td class="py-2 pr-4">r</td><td class="py-2 pr-4">o</td><td class="py-2 pr-4">b</td><td class="py-2 pr-4">o</td><td class="py-2 pr-4">t</td><td class="py-2 pr-4">s</td><td class="py-2 pr-4">.</td><td class="py-2 pr-4">t</td><td class="py-2 pr-4">x</td><td class="py-2 pr-4">t</td></tr>
+              </tbody></table>
+          </div>
+          <p class="text-gray-600 leading-relaxed mb-4">The log also tells you what you have never looked at: which sections of the site are crawled and which are not, whether your newest pages were fetched within days or not at all, and whether a redirect chain is costing you entries.</p>
+        </section>
+        <section id="how-readiness-failures-masquerade-as-content-failures" class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">How readiness failures masquerade as content failures</h2>
+          <p class="text-gray-600 leading-relaxed mb-4">The reason this guide exists is the diagnosis problem. A brand that is absent gets told it needs better content, more content, or different content, and all three prescriptions are wrong when the page was never readable.</p>
+          <ul class="list-disc pl-5 space-y-2 text-gray-600 leading-relaxed marker:text-blue-500">
+            <li>Absence on one surface and presence on another usually means one index, not one editor.</li>
+            <li>Absence on newly published pages while old pages still get cited usually means crawl discovery, not quality.</li>
+            <li>Presence without citation usually means the passage is there but not liftable, which is the one case that really is editorial.</li>
+            <li>Citation without absorption usually means the claim is not specific enough to be repeated.</li>
+          </ul>
+          <p class="text-gray-600 leading-relaxed mb-4">Each of these has a different owner: platform, front end, editor, and writer respectively. Sending all four to the content team is how organisations end up rewriting pages that were never the problem.</p>
+        </section>
+        <section id="the-twelve-checks" class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">The twelve checks</h2>
+          <ol class="list-decimal pl-5 space-y-2 text-gray-600 leading-relaxed marker:text-blue-500">
+            <li>Every page that matters returns 200 to the retrieval user agent, tested raw.</li>
+            <li>robots.txt allows the retrieval agent on the paths you care about, not only the home page.</li>
+            <li>Edge protection allowlists named agents rather than challenging all unfamiliar clients.</li>
+            <li>Bing indexation is verified separately from Google indexation.</li>
+            <li>Sitemap is fetched by crawlers, confirmed in the log, and lists canonical URLs only.</li>
+            <li>Each page's canonical points to itself, with the trailing-slash form you actually serve.</li>
+            <li>Unknown URLs return 404, not 200 with an apology page.</li>
+            <li>Redirects are single-hop, and old paths are not left resolving to themselves.</li>
+            <li>The document fetched without JavaScript still contains the passages you want quoted.</li>
+            <li>Every section opens with a self-contained claim, and headings name their subject.</li>
+            <li>Dates are visible, plausible, and limited to pages whose facts can expire.</li>
+            <li>JSON-LD validates, matches the page, and describes entities you can corroborate elsewhere.</li>
+          </ol>
+          <p class="text-gray-600 leading-relaxed mb-4">Twelve checks, one afternoon with a browser and a terminal, and they clear the denominator for everything else. Skip them and every later measurement is a measurement of your own plumbing.</p>
+        </section>
+
+        <section class="mt-12">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-6">Frequently asked questions</h2>
+          <div class="space-y-5">
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">Is blocking GPTBot the same as opting out of AI answers?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">No. Operators run separate agents for training and for retrieval, and blocking the training agent leaves retrieval intact in most documented setups. Check the current vendor documentation before deciding which one to block.</p>
+            </div>
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">Do I need schema markup to be cited?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">No. Citations come from the passage, not the markup. Schema helps a system resolve your entity and dates, which helps at the edges rather than the centre.</p>
+            </div>
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">Is a JavaScript site hopeless?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">No, but it is conditionally readable: it depends on a renderer running within a budget. Server-rendering the content routes removes the condition, which is why the fix is usually a front-end change rather than a content one.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="mt-12 pt-8 border-t border-gray-100">
+          <h2 class="text-lg font-semibold text-gray-900 mb-4">Keep reading</h2>
+          <div class="grid sm:grid-cols-2 gap-4">
+            <a href="/guides/how-ai-search-works/" class="block p-5 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">How AI search works</span>
+              <span class="block text-sm text-gray-500 mt-1">Retrieval and synthesis, explained without the marketing.</span>
+            </a>
+            <a href="/blog/why-your-page-is-not-cited/" class="block p-5 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Why your page is not cited</span>
+              <span class="block text-sm text-gray-500 mt-1">The editorial half of the same problem.</span>
+            </a>
+            <a href="/tools/citation-extractability-checker/" class="block p-5 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Extractability checker</span>
+              <span class="block text-sm text-gray-500 mt-1">Test a passage for the structural failures listed here.</span>
+            </a>
+            <a href="/answers/technical/" class="block p-5 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Technical answers</span>
+              <span class="block text-sm text-gray-500 mt-1">Indexing and crawl questions, answered directly.</span>
+            </a>
+          </div>
+        </section>
+
+        <section class="mt-12 pt-8 border-t border-gray-100">
+          <h2 class="text-lg font-semibold text-gray-900 mb-4">Glossary terms behind this</h2>
+          <div class="flex flex-wrap gap-x-4 gap-y-2 text-sm">
+            <a href="/glossary/crawlability/" class="text-blue-600 hover:text-blue-700">Crawlability</a>
+            <a href="/glossary/indexability/" class="text-blue-600 hover:text-blue-700">Indexability</a>
+            <a href="/glossary/render-blocking/" class="text-blue-600 hover:text-blue-700">Render Blocking</a>
+            <a href="/glossary/status-code-hygiene/" class="text-blue-600 hover:text-blue-700">Status Code Hygiene</a>
+            <a href="/glossary/content-extractability/" class="text-blue-600 hover:text-blue-700">Content Extractability</a>
+            <a href="/glossary/canonical-tag/" class="text-blue-600 hover:text-blue-700">Canonical Tag</a>
+            <a href="/glossary/ai-crawler/" class="text-blue-600 hover:text-blue-700">AI Crawler</a>
+          </div>
+        </section>
+
+        <section class="mt-10 rounded-xl border border-blue-200 bg-blue-50 p-6">
+          <h2 class="text-lg font-semibold text-gray-900">Check your own brand for free</h2>
+          <p class="mt-2 text-sm text-gray-600 leading-relaxed">Fifty prompts, the same coding rules, a report you can compare against next quarter.</p>
+          <a href="/" class="mt-4 inline-block px-5 py-3 rounded-lg bg-blue-600 text-white font-semibold text-sm hover:bg-blue-700 transition-colors">Run the free check</a>
+        </section>
+      </div>
+    </article>
+  </main>
+
+  <footer class="border-t border-gray-100 px-5 sm:px-6 py-8">
+    <div class="max-w-3xl mx-auto text-center text-sm text-gray-400">
+      © 2026 IndexHot. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var menuBtn = document.getElementById('menu-btn');
+      var mobileMenu = document.getElementById('mobile-menu');
+      menuBtn.addEventListener('click', function () {
+        var isHidden = mobileMenu.classList.toggle('hidden');
+        menuBtn.setAttribute('aria-expanded', String(!isHidden));
+      });
+      mobileMenu.addEventListener('click', function (e) {
+        if (e.target.tagName === 'A') {
+          mobileMenu.classList.add('hidden');
+          menuBtn.setAttribute('aria-expanded', 'false');
+        }
+      });
+    })();
+  </script>
+</body>

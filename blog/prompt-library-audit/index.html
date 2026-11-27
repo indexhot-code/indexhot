@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Auditing Your Prompt Library Before It Quietly Stops Working — IndexHot</title>
+  <meta name="description" content="A fifty-prompt set decays: prompts saturate, wording leads, coverage gaps appear. A quarterly audit routine that keeps the library discriminating." />
+  <link rel="canonical" href="https://indexhot.com/blog/prompt-library-audit/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Auditing Your Prompt Library Before It Quietly Stops Working — IndexHot" />
+  <meta property="og:description" content="A fifty-prompt set decays: prompts saturate, wording leads, coverage gaps appear. A quarterly audit routine that keeps the library discriminating." />
+  <meta property="og:url" content="https://indexhot.com/blog/prompt-library-audit/" />
+  <meta property="og:site_name" content="IndexHot" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Auditing Your Prompt Library Before It Quietly Stops Working — IndexHot" />
+  <meta name="twitter:description" content="A fifty-prompt set decays: prompts saturate, wording leads, coverage gaps appear. A quarterly audit routine that keeps the library discriminating." />
+  <link rel="stylesheet" href="../../tailwind.min.css" />
+  <style>
+    body { font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "headline": "Auditing Your Prompt Library Before It Quietly Stops Working",
+      "url": "https://indexhot.com/blog/prompt-library-audit/",
+      "datePublished": "2026-11-27",
+      "dateModified": "2026-11-27",
+      "author": {
+        "@type": "Organization",
+        "name": "IndexHot",
+        "url": "https://indexhot.com/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "IndexHot",
+        "url": "https://indexhot.com/"
+      },
+      "description": "A fifty-prompt set decays: prompts saturate, wording leads, coverage gaps appear. A quarterly audit routine that keeps the library discriminating."
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://indexhot.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://indexhot.com/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Auditing Your Prompt Library Before It Quietly Stops Working"
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body class="bg-white text-gray-800 antialiased">
+
+  <!-- Top navigation -->
+  <header class="sticky top-0 z-20 bg-white/90 backdrop-blur border-b border-gray-100">
+    <div class="max-w-3xl mx-auto px-5 sm:px-6 h-16 flex items-center justify-between">
+      <a href="/" class="text-xl font-bold tracking-tight text-gray-900">
+        Index<span class="text-blue-600">Hot</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6">
+        <a href="/blog/" class="text-sm font-medium text-blue-600">Blog</a>
+        <a href="/guides/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Guides</a>
+        <a href="/answers/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Answers</a>
+        <a href="/tools/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Tools</a>
+        <a href="/methodology/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Methodology</a>
+        <a href="/data/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Data</a>
+        <a href="/about/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">About</a>
+        <a href="#" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Sign in</a>
+      </nav>
+      <button id="menu-btn" type="button" aria-label="Open menu" aria-expanded="false"
+        class="md:hidden flex items-center justify-center w-10 h-10 -mr-2 rounded-lg text-gray-600 hover:text-blue-600 hover:bg-gray-100 transition-colors">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+    <nav id="mobile-menu" class="hidden md:hidden px-5 pb-4 pt-2 border-t border-gray-100 bg-white">
+      <a href="/blog/" class="block py-2.5 text-sm font-medium text-blue-600">Blog</a>
+      <a href="/guides/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Guides</a>
+      <a href="/answers/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Answers</a>
+      <a href="/tools/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Tools</a>
+      <a href="/methodology/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Methodology</a>
+      <a href="/data/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Data</a>
+      <a href="/about/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">About</a>
+      <a href="#" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Sign in</a>
+    </nav>
+  </header>
+
+  <main>
+    <article class="px-5 sm:px-6 pt-10 pb-10">
+      <div class="max-w-3xl mx-auto">
+
+                <a href="/blog/" class="inline-flex items-center gap-1 text-sm font-medium text-gray-500 hover:text-blue-600 transition-colors mb-6">
+          &larr; Back to Blog
+        </a>
+
+        <header class="mb-8">
+          <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900 leading-tight">
+            Auditing Your Prompt Library Before It Quietly Stops Working
+          </h1>
+          <p class="mt-4 text-sm text-gray-400">
+            By <span class="font-medium text-gray-600">IndexHot Team</span> &middot; <time datetime="2026-11-27">November 27, 2026</time>
+          </p>
+        </header>
+
+        <div class="text-lg text-gray-700 leading-relaxed border-l-4 border-blue-600 pl-4 mb-10">
+          <p>A prompt library is an instrument, and instruments drift. Prompts that discriminated last year now get the same answer for eight brands, and the set reports a flat line that looks like stability. This is the audit we run every quarter.</p>
+        </div>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">The four ways a library fails</h2>
+          <ul class="list-disc pl-5 space-y-2 text-gray-600 leading-relaxed marker:text-blue-500">
+            <li><strong class="text-gray-800">Saturation.</strong> A prompt every model now answers with the same three brands tells you nothing about your position. It is a category fact, not a brand signal.</li>
+            <li><strong class="text-gray-800">Leading wording.</strong> Prompts that hint at the answer, or that only make sense if the buyer already knows you, measure recall rather than visibility.</li>
+            <li><strong class="text-gray-800">Duplication.</strong> Six prompts that paraphrase each other weight one theme sixfold and starve the rest of the set.</li>
+            <li><strong class="text-gray-800">Coverage gaps.</strong> No prompts for the objection, the comparison, the integration question or the failure mode, which are where buying decisions actually stall.</li>
+          </ul>
+        </section>
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Saturation is measurable</h2>
+          <p class="text-gray-600 leading-relaxed mb-4">For each prompt, record how many distinct brands appear across the runs and how concentrated the top answer is. A prompt where the same brand leads every run has stopped being a test; it has become a fact about the category. Keep one or two of those deliberately as a control, and retire the rest.</p>
+          <p class="text-gray-600 leading-relaxed mb-4">The same measure catches prompts that have become too easy for a different reason: the category consolidated, an incumbent exited, regulation changed. The library does not know any of that; only the audit does.</p>
+        </section>
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Leading prompts are easy to write by accident</h2>
+          <p class="text-gray-600 leading-relaxed mb-4">An unbranded prompt that says the thing only your product does is effectively branded. If a prompt cannot be asked by a buyer who has never heard of you, it belongs in the branded group, and counting it as unbranded inflates the number that matters most.</p>
+          <p class="text-gray-600 leading-relaxed mb-4">The test: would a stranger with a budget and a problem type this into a chat box, word for word? If not, rewrite it until they would, or move it.</p>
+        </section>
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">The quarterly routine</h2>
+          <ol class="list-decimal pl-5 space-y-2 text-gray-600 leading-relaxed marker:text-blue-500">
+            <li>Re-run the full set on one version, twice, and record the noise floor.</li>
+            <li>Score each prompt for discrimination: distinct brands named, concentration of the top answer.</li>
+            <li>Flag prompts where your brand is absent but a direct competitor leads, and check whether the answering page is yours at all.</li>
+            <li>Retire saturated prompts, rewrite leading ones, and add two prompts per uncovered buying stage.</li>
+            <li>Freeze the new set and version it. Never edit a prompt mid-quarter; you lose comparability for the sake of tidiness.</li>
+          </ol>
+          <div class="rounded-xl border border-amber-200 bg-amber-50 p-5 my-5">
+            <p class="text-sm text-amber-900 leading-relaxed">A library that never changes is measuring last year's market. A library that changes continuously is measuring nothing. Versioned quarterly change is the only workable middle.</p>
+          </div>
+        </section>
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">What the audit produces</h2>
+          <p class="text-gray-600 leading-relaxed mb-4">Two deliverables, both short: a retiring list with reasons, and an additions list tied to buying stages you could not previously test. Anything longer becomes a document nobody reads and a set nobody trusts.</p>
+          <p class="text-gray-600 leading-relaxed mb-4">The value is not the audit itself. It is that the next quarterly comparison is between two instruments that were deliberately chosen rather than accidentally inherited.</p>
+        </section>
+
+        <section class="mt-12 pt-8 border-t border-gray-100">
+          <h2 class="text-lg font-semibold text-gray-900 mb-4">Keep reading</h2>
+          <div class="grid sm:grid-cols-2 gap-4">
+            <a href="/tools/prompt-library-generator/" class="block p-5 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Prompt library generator</span>
+              <span class="block text-sm text-gray-500 mt-1">Build a fifty-prompt seed set to audit from.</span>
+            </a>
+            <a href="/blog/track-brand-ai-search/" class="block p-5 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">How to track brand in AI search</span>
+              <span class="block text-sm text-gray-500 mt-1">The running routine this audit sits inside.</span>
+            </a>
+          </div>
+        </section>
+
+        <section class="mt-12 pt-8 border-t border-gray-100">
+          <h2 class="text-lg font-semibold text-gray-900 mb-4">Glossary terms behind this</h2>
+          <div class="flex flex-wrap gap-x-4 gap-y-2 text-sm">
+            <a href="/glossary/governed-question-library/" class="text-blue-600 hover:text-blue-700">Governed Question Library</a>
+            <a href="/glossary/prompt-cluster/" class="text-blue-600 hover:text-blue-700">Prompt Cluster</a>
+            <a href="/glossary/prompt-volume/" class="text-blue-600 hover:text-blue-700">Prompt Volume</a>
+            <a href="/glossary/non-branded-prompt/" class="text-blue-600 hover:text-blue-700">Non-branded Prompt</a>
+          </div>
+        </section>
+
+        <section class="mt-10 rounded-xl border border-blue-200 bg-blue-50 p-6">
+          <h2 class="text-lg font-semibold text-gray-900">Check your own brand for free</h2>
+          <p class="mt-2 text-sm text-gray-600 leading-relaxed">Fifty prompts, the same coding rules, a report you can compare against next quarter.</p>
+          <a href="/" class="mt-4 inline-block px-5 py-3 rounded-lg bg-blue-600 text-white font-semibold text-sm hover:bg-blue-700 transition-colors">Run the free check</a>
+        </section>
+      </div>
+    </article>
+  </main>
+
+
+  <footer class="border-t border-gray-100 px-5 sm:px-6 py-8">
+    <div class="max-w-3xl mx-auto text-center text-sm text-gray-400">
+      © 2026 IndexHot. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var menuBtn = document.getElementById('menu-btn');
+      var mobileMenu = document.getElementById('mobile-menu');
+      menuBtn.addEventListener('click', function () {
+        var isHidden = mobileMenu.classList.toggle('hidden');
+        menuBtn.setAttribute('aria-expanded', String(!isHidden));
+      });
+      mobileMenu.addEventListener('click', function (e) {
+        if (e.target.tagName === 'A') {
+          mobileMenu.classList.add('hidden');
+          menuBtn.setAttribute('aria-expanded', 'false');
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

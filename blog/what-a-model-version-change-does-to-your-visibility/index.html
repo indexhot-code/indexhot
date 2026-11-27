@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What a Model Version Change Does to Your Visibility Numbers — IndexHot</title>
+  <meta name="description" content="Model updates move your rates without anyone touching your pages. How to record versions, separate drift from a real change, and what to report." />
+  <link rel="canonical" href="https://indexhot.com/blog/what-a-model-version-change-does-to-your-visibility/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="What a Model Version Change Does to Your Visibility Numbers — IndexHot" />
+  <meta property="og:description" content="Model updates move your rates without anyone touching your pages. How to record versions, separate drift from a real change, and what to report." />
+  <meta property="og:url" content="https://indexhot.com/blog/what-a-model-version-change-does-to-your-visibility/" />
+  <meta property="og:site_name" content="IndexHot" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="What a Model Version Change Does to Your Visibility Numbers — IndexHot" />
+  <meta name="twitter:description" content="Model updates move your rates without anyone touching your pages. How to record versions, separate drift from a real change, and what to report." />
+  <link rel="stylesheet" href="../../tailwind.min.css" />
+  <style>
+    body { font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "headline": "What a Model Version Change Does to Your Visibility Numbers",
+      "url": "https://indexhot.com/blog/what-a-model-version-change-does-to-your-visibility/",
+      "datePublished": "2026-11-27",
+      "dateModified": "2026-11-27",
+      "author": {
+        "@type": "Organization",
+        "name": "IndexHot",
+        "url": "https://indexhot.com/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "IndexHot",
+        "url": "https://indexhot.com/"
+      },
+      "description": "Model updates move your rates without anyone touching your pages. How to record versions, separate drift from a real change, and what to report."
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://indexhot.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://indexhot.com/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "What a Model Version Change Does to Your Visibility Numbers"
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body class="bg-white text-gray-800 antialiased">
+
+  <!-- Top navigation -->
+  <header class="sticky top-0 z-20 bg-white/90 backdrop-blur border-b border-gray-100">
+    <div class="max-w-3xl mx-auto px-5 sm:px-6 h-16 flex items-center justify-between">
+      <a href="/" class="text-xl font-bold tracking-tight text-gray-900">
+        Index<span class="text-blue-600">Hot</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6">
+        <a href="/blog/" class="text-sm font-medium text-blue-600">Blog</a>
+        <a href="/guides/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Guides</a>
+        <a href="/answers/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Answers</a>
+        <a href="/tools/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Tools</a>
+        <a href="/methodology/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Methodology</a>
+        <a href="/data/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Data</a>
+        <a href="/about/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">About</a>
+        <a href="#" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Sign in</a>
+      </nav>
+      <button id="menu-btn" type="button" aria-label="Open menu" aria-expanded="false"
+        class="md:hidden flex items-center justify-center w-10 h-10 -mr-2 rounded-lg text-gray-600 hover:text-blue-600 hover:bg-gray-100 transition-colors">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+    <nav id="mobile-menu" class="hidden md:hidden px-5 pb-4 pt-2 border-t border-gray-100 bg-white">
+      <a href="/blog/" class="block py-2.5 text-sm font-medium text-blue-600">Blog</a>
+      <a href="/guides/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Guides</a>
+      <a href="/answers/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Answers</a>
+      <a href="/tools/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Tools</a>
+      <a href="/methodology/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Methodology</a>
+      <a href="/data/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Data</a>
+      <a href="/about/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">About</a>
+      <a href="#" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Sign in</a>
+    </nav>
+  </header>
+
+  <main>
+    <article class="px-5 sm:px-6 pt-10 pb-10">
+      <div class="max-w-3xl mx-auto">
+
+                <a href="/blog/" class="inline-flex items-center gap-1 text-sm font-medium text-gray-500 hover:text-blue-600 transition-colors mb-6">
+          &larr; Back to Blog
+        </a>
+
+        <header class="mb-8">
+          <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900 leading-tight">
+            What a Model Version Change Does to Your Visibility Numbers
+          </h1>
+          <p class="mt-4 text-sm text-gray-400">
+            By <span class="font-medium text-gray-600">IndexHot Team</span> &middot; <time datetime="2026-11-27">November 27, 2026</time>
+          </p>
+        </header>
+
+        <div class="text-lg text-gray-700 leading-relaxed border-l-4 border-blue-600 pl-4 mb-10">
+          <p>Every few weeks a provider ships a new model build and your dashboard moves. Nothing on your site changed. This post is about telling that kind of movement apart from a real regression, and about the record keeping that makes the difference visible at all.</p>
+        </div>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Why the numbers move when the content does not</h2>
+          <p class="text-gray-600 leading-relaxed mb-4">An answer is a sample from a model, a retrieval index and a prompt set. Change any of the three and the sample changes. Model updates alter how aggressively sources are retrieved, how long answers get, how often citations are attached and how willing the model is to name a specific brand rather than describe a category.</p>
+          <p class="text-gray-600 leading-relaxed mb-4">None of that is random noise. It is a different sampling distribution, which matters because teams routinely treat a distribution shift as evidence about their own work. A rise after a model update is not proof the rewrite helped; a fall is not proof it hurt.</p>
+        </section>
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">The three things to record, every run</h2>
+          <ol class="list-decimal pl-5 space-y-2 text-gray-600 leading-relaxed marker:text-blue-500">
+            <li>Provider and model identifier, as the product reports it, plus the date of the run.</li>
+            <li>The surface, because the same provider behaves differently inside a chat product and inside a summarised search result.</li>
+            <li>Locale and whether you used a logged-in account, since personalisation and settings change what a fresh visitor sees.</li>
+          </ol>
+          <p class="text-gray-600 leading-relaxed mb-4">Without those three, a comparison between two runs is a comparison between two things you cannot name. The most common reporting failure in this field is a quarter-over-quarter chart with no version annotation, which is unfalsifiable in both directions.</p>
+        </section>
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Separating drift from a real change</h2>
+          <p class="text-gray-600 leading-relaxed mb-4">Run the same frozen prompt set twice in the same week, on the same version. The difference between those two runs is your noise floor. If your quarterly change is smaller than the noise floor, you have not measured anything yet.</p>
+          <div class="overflow-x-auto">
+            <table class="w-full text-sm border-collapse min-w-[520px]">
+              <thead><tr class="border-b border-gray-200 text-left text-gray-500"><th class="py-2 pr-4 font-medium">Observation</th><th class="py-2 pr-4 font-medium">Most likely explanation</th><th class="py-2 pr-4 font-medium">What to do</th></tr></thead>
+              <tbody class="text-gray-700">
+                <tr class="border-b border-gray-100"><td class="py-2 pr-4">A</td><td class="py-2 pr-4">l</td><td class="py-2 pr-4">l</td><td class="py-2 pr-4"> </td><td class="py-2 pr-4">p</td><td class="py-2 pr-4">r</td><td class="py-2 pr-4">o</td><td class="py-2 pr-4">m</td><td class="py-2 pr-4">p</td><td class="py-2 pr-4">t</td><td class="py-2 pr-4">s</td><td class="py-2 pr-4"> </td><td class="py-2 pr-4">m</td><td class="py-2 pr-4">o</td><td class="py-2 pr-4">v</td><td class="py-2 pr-4">e</td><td class="py-2 pr-4"> </td><td class="py-2 pr-4">t</td><td class="py-2 pr-4">o</td><td class="py-2 pr-4">g</td><td class="py-2 pr-4">e</td><td class="py-2 pr-4">t</td><td class="py-2 pr-4">h</td><td class="py-2 pr-4">e</td><td class="py-2 pr-4">r</td><td class="py-2 pr-4"> </td><td class="py-2 pr-4">a</td><td class="py-2 pr-4">f</td><td class="py-2 pr-4">t</td><td class="py-2 pr-4">e</td><td class="py-2 pr-4">r</td><td class="py-2 pr-4"> </td><td class="py-2 pr-4">a</td><td class="py-2 pr-4"> </td><td class="py-2 pr-4">r</td><td class="py-2 pr-4">e</td><td class="py-2 pr-4">l</td><td class="py-2 pr-4">e</td><td class="py-2 pr-4">a</td><td class="py-2 pr-4">s</td><td class="py-2 pr-4">e</td></tr>
+                <tr class="border-b border-gray-100"><td class="py-2 pr-4">M</td><td class="py-2 pr-4">o</td><td class="py-2 pr-4">d</td><td class="py-2 pr-4">e</td><td class="py-2 pr-4">l</td><td class="py-2 pr-4"> </td><td class="py-2 pr-4">o</td><td class="py-2 pr-4">r</td><td class="py-2 pr-4"> </td><td class="py-2 pr-4">r</td><td class="py-2 pr-4">e</td><td class="py-2 pr-4">t</td><td class="py-2 pr-4">r</td><td class="py-2 pr-4">i</td><td class="py-2 pr-4">e</td><td class="py-2 pr-4">v</td><td class="py-2 pr-4">a</td><td class="py-2 pr-4">l</td><td class="py-2 pr-4"> </td><td class="py-2 pr-4">c</td><td class="py-2 pr-4">h</td><td class="py-2 pr-4">a</td><td class="py-2 pr-4">n</td><td class="py-2 pr-4">g</td><td class="py-2 pr-4">e</td></tr>
+                <tr class="border-b border-gray-100"><td class="py-2 pr-4">A</td><td class="py-2 pr-4">n</td><td class="py-2 pr-4">n</td><td class="py-2 pr-4">o</td><td class="py-2 pr-4">t</td><td class="py-2 pr-4">a</td><td class="py-2 pr-4">t</td><td class="py-2 pr-4">e</td><td class="py-2 pr-4">,</td><td class="py-2 pr-4"> </td><td class="py-2 pr-4">r</td><td class="py-2 pr-4">e</td><td class="py-2 pr-4">-</td><td class="py-2 pr-4">b</td><td class="py-2 pr-4">a</td><td class="py-2 pr-4">s</td><td class="py-2 pr-4">e</td><td class="py-2 pr-4">l</td><td class="py-2 pr-4">i</td><td class="py-2 pr-4">n</td><td class="py-2 pr-4">e</td><td class="py-2 pr-4">,</td><td class="py-2 pr-4"> </td><td class="py-2 pr-4">d</td><td class="py-2 pr-4">o</td><td class="py-2 pr-4"> </td><td class="py-2 pr-4">n</td><td class="py-2 pr-4">o</td><td class="py-2 pr-4">t</td><td class="py-2 pr-4"> </td><td class="py-2 pr-4">a</td><td class="py-2 pr-4">t</td><td class="py-2 pr-4">t</td><td class="py-2 pr-4">r</td><td class="py-2 pr-4">i</td><td class="py-2 pr-4">b</td><td class="py-2 pr-4">u</td><td class="py-2 pr-4">t</td><td class="py-2 pr-4">e</td><td class="py-2 pr-4"> </td><td class="py-2 pr-4">t</td><td class="py-2 pr-4">o</td><td class="py-2 pr-4"> </td><td class="py-2 pr-4">c</td><td class="py-2 pr-4">o</td><td class="py-2 pr-4">n</td><td class="py-2 pr-4">t</td><td class="py-2 pr-4">e</td><td class="py-2 pr-4">n</td><td class="py-2 pr-4">t</td></tr>
+              </tbody></table>
+          </div>
+        </section>
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">What to tell stakeholders</h2>
+          <p class="text-gray-600 leading-relaxed mb-4">Say which version produced the number, when it was measured, and what the noise floor was. Three sentences. It prevents the meeting where a marketing lead claims credit for a model release and the following one where they are blamed for it.</p>
+          <p class="text-gray-600 leading-relaxed mb-4">If a re-baseline is needed, say so plainly and reset expectations: the old number and the new number are not comparable, and pretending otherwise costs more credibility than the reset.</p>
+        </section>
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">The habit that makes this manageable</h2>
+          <p class="text-gray-600 leading-relaxed mb-4">Keep one sheet with a row per run: date, version, surface, prompt count, mention rate, citation rate, absorption rate, and a note field. Two years of that sheet is worth more than any single report, because it is the only artefact that can distinguish a trend from a series of unrelated shocks.</p>
+          <p class="text-gray-600 leading-relaxed mb-4">And date your own content changes in the same sheet. Without that, you cannot separate your edits from their releases, and the argument becomes unresolvable.</p>
+        </section>
+
+        <section class="mt-12 pt-8 border-t border-gray-100">
+          <h2 class="text-lg font-semibold text-gray-900 mb-4">Keep reading</h2>
+          <div class="grid sm:grid-cols-2 gap-4">
+            <a href="/blog/how-often-do-ai-answers-change/" class="block p-5 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">How often answers change</span>
+              <span class="block text-sm text-gray-500 mt-1">The variance you should expect before calling anything a trend.</span>
+            </a>
+            <a href="/guides/geo-measurement-playbook/" class="block p-5 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">The measurement playbook</span>
+              <span class="block text-sm text-gray-500 mt-1">Freezing a library and coding answers consistently.</span>
+            </a>
+          </div>
+        </section>
+
+        <section class="mt-12 pt-8 border-t border-gray-100">
+          <h2 class="text-lg font-semibold text-gray-900 mb-4">Glossary terms behind this</h2>
+          <div class="flex flex-wrap gap-x-4 gap-y-2 text-sm">
+            <a href="/glossary/model-version-drift/" class="text-blue-600 hover:text-blue-700">Model Version Drift</a>
+            <a href="/glossary/baseline-freeze/" class="text-blue-600 hover:text-blue-700">Baseline Freeze</a>
+            <a href="/glossary/answer-drift/" class="text-blue-600 hover:text-blue-700">Answer Drift</a>
+            <a href="/glossary/citation-velocity/" class="text-blue-600 hover:text-blue-700">Citation Velocity</a>
+          </div>
+        </section>
+
+        <section class="mt-10 rounded-xl border border-blue-200 bg-blue-50 p-6">
+          <h2 class="text-lg font-semibold text-gray-900">Check your own brand for free</h2>
+          <p class="mt-2 text-sm text-gray-600 leading-relaxed">Fifty prompts, the same coding rules, a report you can compare against next quarter.</p>
+          <a href="/" class="mt-4 inline-block px-5 py-3 rounded-lg bg-blue-600 text-white font-semibold text-sm hover:bg-blue-700 transition-colors">Run the free check</a>
+        </section>
+      </div>
+    </article>
+  </main>
+
+
+  <footer class="border-t border-gray-100 px-5 sm:px-6 py-8">
+    <div class="max-w-3xl mx-auto text-center text-sm text-gray-400">
+      © 2026 IndexHot. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var menuBtn = document.getElementById('menu-btn');
+      var mobileMenu = document.getElementById('mobile-menu');
+      menuBtn.addEventListener('click', function () {
+        var isHidden = mobileMenu.classList.toggle('hidden');
+        menuBtn.setAttribute('aria-expanded', String(!isHidden));
+      });
+      mobileMenu.addEventListener('click', function (e) {
+        if (e.target.tagName === 'A') {
+          mobileMenu.classList.add('hidden');
+          menuBtn.setAttribute('aria-expanded', 'false');
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

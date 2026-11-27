@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What is Prompt Drift? — IndexHot Glossary</title>
+  <meta name="description" content="Prompt drift is the slow change in how buyers phrase questions, which quietly dates a fixed prompt library. Where to look for it, and when to revise." />
+  <link rel="canonical" href="https://indexhot.com/glossary/prompt-drift/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="What is Prompt Drift? — IndexHot Glossary" />
+  <meta property="og:description" content="Prompt drift is the slow change in how buyers phrase questions, which quietly dates a fixed prompt library. Where to look for it, and when to revise." />
+  <meta property="og:url" content="https://indexhot.com/glossary/prompt-drift/" />
+  <meta property="og:site_name" content="IndexHot" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="What is Prompt Drift? — IndexHot Glossary" />
+  <meta name="twitter:description" content="Prompt drift is the slow change in how buyers phrase questions, which quietly dates a fixed prompt library. Where to look for it, and when to revise." />
+  <link rel="stylesheet" href="../../tailwind.min.css" />
+  <style>
+    body { font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "DefinedTerm",
+      "name": "Prompt Drift",
+      "description": "Prompt drift is the gradual shift in the wording and intent of real user questions over time. A library frozen last year measures last year's questions, and the resulting flat line can be mistaken for stability.",
+      "url": "https://indexhot.com/glossary/prompt-drift/",
+      "inDefinedTermSet": {
+        "@type": "DefinedTermSet",
+        "name": "IndexHot GEO Glossary",
+        "url": "https://indexhot.com/glossary/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://indexhot.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Glossary",
+          "item": "https://indexhot.com/glossary/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Prompt Drift"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How often does drift matter?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Annually for stable B2B categories, quarterly where a market is consolidating or a regulation is landing."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I detect it without new data?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Partly. Re-read your own library and ask whether a stranger would still phrase a question that way. That catches wording drift cheaply."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does drift invalidate old reports?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It dates them. Keep the version annotation and the old reports remain honest history."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body class="bg-white text-gray-800 antialiased">
+
+  <header class="sticky top-0 z-20 bg-white/90 backdrop-blur border-b border-gray-100">
+    <div class="max-w-3xl mx-auto px-5 sm:px-6 h-16 flex items-center justify-between">
+      <a href="/" class="text-xl font-bold tracking-tight text-gray-900">
+        Index<span class="text-blue-600">Hot</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6">
+        <a href="/blog/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Blog</a>
+        <a href="/guides/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Guides</a>
+        <a href="/answers/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Answers</a>
+        <a href="/tools/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Tools</a>
+        <a href="/methodology/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Methodology</a>
+        <a href="/data/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Data</a>
+        <a href="/about/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">About</a>
+        <a href="#" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Sign in</a>
+      </nav>
+      <button id="menu-btn" type="button" aria-label="Open menu" aria-expanded="false"
+        class="md:hidden flex items-center justify-center w-10 h-10 -mr-2 rounded-lg text-gray-600 hover:text-blue-600 hover:bg-gray-100 transition-colors">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+    <nav id="mobile-menu" class="hidden md:hidden px-5 pb-4 pt-2 border-t border-gray-100 bg-white">
+      <a href="/blog/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Blog</a>
+      <a href="/guides/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Guides</a>
+      <a href="/answers/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Answers</a>
+      <a href="/tools/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Tools</a>
+      <a href="/methodology/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Methodology</a>
+      <a href="/data/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Data</a>
+      <a href="/about/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">About</a>
+      <a href="#" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Sign in</a>
+    </nav>
+  </header>
+
+  <main>
+    <article class="px-5 sm:px-6 pt-10 pb-10">
+      <div class="max-w-3xl mx-auto">
+
+                <nav class="mb-6 text-xs text-gray-500">
+          <a href="/" class="hover:text-blue-600">Home</a><span class="mx-1.5 text-gray-300">/</span><a href="/glossary/" class="hover:text-blue-600">Glossary</a><span class="mx-1.5 text-gray-300">/</span><span class="text-gray-700">Prompt Drift</span>
+        </nav>
+
+        <header class="mb-8">
+          <p class="text-sm font-semibold text-blue-600 mb-3">Glossary &middot; Measurement</p>
+          <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900 leading-tight">
+            What is Prompt Drift?
+          </h1>
+        </header>
+
+        <p class="text-xs text-gray-400 mb-6">Last updated November 2026 &middot; Reviewed against the IndexHot GEO Measurement Standard v1.0</p>
+
+        <div class="text-lg text-gray-700 leading-relaxed border-l-4 border-blue-600 pl-4 mb-8">
+          <p>Prompt drift is the gradual shift in the wording and intent of real user questions over time. A library frozen last year measures last year's questions, and the resulting flat line can be mistaken for stability.</p>
+        </div>
+
+        <p class="text-gray-600 leading-relaxed mb-10">
+          In short: The slow change in what people actually ask an assistant, which quietly invalidates a fixed prompt library.
+        </p>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Two kinds of drift</h2>
+          <p class="text-gray-600 leading-relaxed mb-4">Wording drift is vocabulary change: a category gets renamed, a competitor's brand becomes the generic term, a regulation introduces new language. Intent drift is structural: questions move from what is this to how do I switch, as a market matures.</p>
+          <p class="text-gray-600 leading-relaxed mb-4">Both reduce the value of a fixed set, and both are invisible in a report that only shows rates. A rate that holds steady while the underlying questions changed is a measurement of your library, not of your market.</p>
+        </section>
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Where to look for it</h2>
+          <ul class="list-disc pl-5 space-y-2 text-gray-600 leading-relaxed marker:text-blue-500">
+            <li>Search console queries for the same topics, compared year over year.</li>
+            <li>Sales call notes and support tickets, which contain the phrasing buyers actually use.</li>
+            <li>Community threads and review sites, where category language is negotiated.</li>
+            <li>The answers themselves: when every model starts prefacing with a definition, the question has become unfamiliar to a new audience.</li>
+          </ul>
+        </section>
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Why not simply rewrite the library</h2>
+          <p class="text-gray-600 leading-relaxed mb-4">Because comparability is the point. A library that changes whenever someone has a hunch produces numbers that cannot be compared across quarters, which is the same as having no numbers. Drift should trigger a scheduled revision, not an immediate edit.</p>
+          <p class="text-gray-600 leading-relaxed mb-4">The workable pattern is a versioned library revised on a fixed cadence, with the retiring prompts and the reasons recorded. Then a change in the rate can be attributed to the market or to the library, and usually to both, in known proportions.</p>
+        </section>
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">How it shows up in a report</h2>
+          <p class="text-gray-600 leading-relaxed mb-4">The tell is a set where several prompts produce nearly identical answers across all brands. Those prompts have been overtaken: the question is now settled, and continuing to ask it measures the settlement rather than your position.</p>
+        </section>
+
+        <section class="mt-12">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-6">Frequently asked questions</h2>
+          <div class="space-y-5">
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">How often does drift matter?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">Annually for stable B2B categories, quarterly where a market is consolidating or a regulation is landing.</p>
+            </div>
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">Can I detect it without new data?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">Partly. Re-read your own library and ask whether a stranger would still phrase a question that way. That catches wording drift cheaply.</p>
+            </div>
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">Does drift invalidate old reports?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">It dates them. Keep the version annotation and the old reports remain honest history.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-4">Related terms</h2>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <a href="/glossary/governed-question-library/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Governed Question Library</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">the versioned set drift acts on</span>
+            </a>
+            <a href="/glossary/answer-drift/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Answer Drift</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">change in the answers themselves</span>
+            </a>
+            <a href="/glossary/baseline-freeze/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Baseline Freeze</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">the comparison point a library defines</span>
+            </a>
+            <a href="/glossary/long-tail-prompt/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Long-tail Prompt</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">where new phrasing usually appears first</span>
+            </a>
+          </div>
+          <a href="/glossary/" class="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 transition-colors">
+            Browse the full glossary <span aria-hidden="true">&rarr;</span>
+          </a>
+        </section>
+
+        <section class="mt-10 rounded-xl border border-blue-200 bg-blue-50 p-6">
+          <h2 class="text-lg font-semibold text-gray-900">See how this shows up for your brand</h2>
+          <p class="mt-2 text-sm text-gray-600 leading-relaxed">The free IndexHot check runs a governed question library across ChatGPT, Perplexity, Gemini and AI Overviews, then separates mention, citation and absorption.</p>
+          <a href="/" class="mt-4 inline-flex items-center justify-center px-5 py-3 rounded-lg bg-blue-600 text-white font-semibold text-sm hover:bg-blue-700 transition-colors">Run the free check</a>
+        </section>
+      </div>
+    </article>
+  </main>
+
+  <footer class="border-t border-gray-100 px-5 sm:px-6 py-8">
+    <div class="max-w-3xl mx-auto text-center text-sm text-gray-400">
+      © 2026 IndexHot. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var menuBtn = document.getElementById('menu-btn');
+      var mobileMenu = document.getElementById('mobile-menu');
+
+      menuBtn.addEventListener('click', function () {
+        var isHidden = mobileMenu.classList.toggle('hidden');
+        menuBtn.setAttribute('aria-expanded', String(!isHidden));
+      });
+
+      mobileMenu.addEventListener('click', function (e) {
+        if (e.target.tagName === 'A') {
+          mobileMenu.classList.add('hidden');
+          menuBtn.setAttribute('aria-expanded', 'false');
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
