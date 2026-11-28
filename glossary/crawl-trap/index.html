@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What is Crawl Trap? — IndexHot Glossary</title>
+  <meta name="description" content="A crawl trap is a near-infinite set of generated URLs, such as facet combinations or calendars, that consumes crawl capacity without earning citations." />
+  <link rel="canonical" href="https://indexhot.com/glossary/crawl-trap/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="What is Crawl Trap? — IndexHot Glossary" />
+  <meta property="og:description" content="A crawl trap is a near-infinite set of generated URLs, such as facet combinations or calendars, that consumes crawl capacity without earning citations." />
+  <meta property="og:url" content="https://indexhot.com/glossary/crawl-trap/" />
+  <meta property="og:site_name" content="IndexHot" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="What is Crawl Trap? — IndexHot Glossary" />
+  <meta name="twitter:description" content="A crawl trap is a near-infinite set of generated URLs, such as facet combinations or calendars, that consumes crawl capacity without earning citations." />
+  <link rel="stylesheet" href="../../tailwind.min.css" />
+  <style>
+    body { font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "DefinedTerm",
+      "name": "Crawl Trap",
+      "description": "A crawl trap is a pattern that generates effectively unlimited URLs from a small content set: faceted filters, sort parameters, calendar archives, session IDs. The pages are technically valid and individually worthless, and they consume the capacity that would have gone to the pages that matter.",
+      "url": "https://indexhot.com/glossary/crawl-trap/",
+      "inDefinedTermSet": {
+        "@type": "DefinedTermSet",
+        "name": "IndexHot GEO Glossary",
+        "url": "https://indexhot.com/glossary/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://indexhot.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Glossary",
+          "item": "https://indexhot.com/glossary/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Crawl Trap"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Does noindex solve a trap?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It stops indexing, not fetching. You usually need disallow or canonicalisation as well."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are paginated pages a trap?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Only when they are deep and unlinked. A handful of paginated pages with clear links is normal."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I know I have one?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Compare fetch counts to citations per URL pattern over a month. The pattern with high fetches and no citations is the suspect."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body class="bg-white text-gray-800 antialiased">
+
+  <header class="sticky top-0 z-20 bg-white/90 backdrop-blur border-b border-gray-100">
+    <div class="max-w-3xl mx-auto px-5 sm:px-6 h-16 flex items-center justify-between">
+      <a href="/" class="text-xl font-bold tracking-tight text-gray-900">
+        Index<span class="text-blue-600">Hot</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6">
+        <a href="/blog/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Blog</a>
+        <a href="/guides/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Guides</a>
+        <a href="/answers/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Answers</a>
+        <a href="/tools/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Tools</a>
+        <a href="/methodology/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Methodology</a>
+        <a href="/data/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Data</a>
+        <a href="/about/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">About</a>
+        <a href="#" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Sign in</a>
+      </nav>
+      <button id="menu-btn" type="button" aria-label="Open menu" aria-expanded="false"
+        class="md:hidden flex items-center justify-center w-10 h-10 -mr-2 rounded-lg text-gray-600 hover:text-blue-600 hover:bg-gray-100 transition-colors">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+    <nav id="mobile-menu" class="hidden md:hidden px-5 pb-4 pt-2 border-t border-gray-100 bg-white">
+      <a href="/blog/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Blog</a>
+      <a href="/guides/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Guides</a>
+      <a href="/answers/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Answers</a>
+      <a href="/tools/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Tools</a>
+      <a href="/methodology/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Methodology</a>
+      <a href="/data/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Data</a>
+      <a href="/about/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">About</a>
+      <a href="#" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Sign in</a>
+    </nav>
+  </header>
+
+  <main>
+    <article class="px-5 sm:px-6 pt-10 pb-10">
+      <div class="max-w-3xl mx-auto">
+
+                <nav class="mb-6 text-xs text-gray-500">
+          <a href="/" class="hover:text-blue-600">Home</a><span class="mx-1.5 text-gray-300">/</span><a href="/glossary/" class="hover:text-blue-600">Glossary</a><span class="mx-1.5 text-gray-300">/</span><span class="text-gray-700">Crawl Trap</span>
+        </nav>
+
+        <header class="mb-8">
+          <p class="text-sm font-semibold text-blue-600 mb-3">Glossary &middot; Technical</p>
+          <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900 leading-tight">
+            What is Crawl Trap?
+          </h1>
+        </header>
+
+        <p class="text-xs text-gray-400 mb-6">Last updated November 2026 &middot; Reviewed against the IndexHot GEO Measurement Standard v1.0</p>
+
+        <div class="text-lg text-gray-700 leading-relaxed border-l-4 border-blue-600 pl-4 mb-8">
+          <p>A crawl trap is a pattern that generates effectively unlimited URLs from a small content set: faceted filters, sort parameters, calendar archives, session IDs. The pages are technically valid and individually worthless, and they consume the capacity that would have gone to the pages that matter.</p>
+        </div>
+
+        <p class="text-gray-600 leading-relaxed mb-10">
+          In short: Near-infinite generated URLs that consume crawl capacity without adding indexable value.
+        </p>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Four common traps</h2>
+          <ul class="list-disc pl-5 space-y-2 text-gray-600 leading-relaxed marker:text-blue-500">
+            <li><strong class="text-gray-800">Faceted filters.</strong> Colour × size × price × brand combinations, each a URL.</li>
+            <li><strong class="text-gray-800">Calendars and pagination.</strong> Every date and every page number, including empty ones.</li>
+            <li><strong class="text-gray-800">Parameters that do not change content.</strong> Sort order, tracking tags, session identifiers.</li>
+            <li><strong class="text-gray-800">Search result pages.</strong> Internal search URLs exposed to crawlers, generating thousands of thin pages.</li>
+          </ul>
+        </section>
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Why it matters more on answer surfaces</h2>
+          <p class="text-gray-600 leading-relaxed mb-4">Capacity is finite per site. When a large share of fetches resolve to parameter variants of the same three pages, the new pages and the pages that answer questions are fetched less. The site is not penalised; it is simply read less, which is indistinguishable from neglect in a visibility report.</p>
+        </section>
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">The fix set</h2>
+          <ol class="list-decimal pl-5 space-y-2 text-gray-600 leading-relaxed marker:text-blue-500">
+            <li>Disallow or canonicalise parameter combinations, and keep the one combination worth indexing.</li>
+            <li>Noindex empty result and empty calendar pages, and return 404 for the ones that do not exist.</li>
+            <li>Keep internal search results out of the crawl path and out of the sitemap.</li>
+            <li>Check the log monthly for URL patterns whose fetch count is high and whose citation count is zero.</li>
+          </ol>
+          <div class="rounded-xl border border-amber-200 bg-amber-50 p-5 my-5">
+            <p class="text-sm text-amber-900 leading-relaxed">The diagnostic is a ratio, not a rule: fetches per cited URL. A section with thousands of fetches and no citations is either unindexable, uncitable, or a trap.</p>
+          </div>
+        </section>
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">What it looks like in a report</h2>
+          <p class="text-gray-600 leading-relaxed mb-4">Nothing, usually. Traps do not produce errors, they produce silence. The only place they are visible is the server log, which is why a quarterly log read is worth more than another dashboard.</p>
+        </section>
+
+        <section class="mt-12">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-6">Frequently asked questions</h2>
+          <div class="space-y-5">
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">Does noindex solve a trap?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">It stops indexing, not fetching. You usually need disallow or canonicalisation as well.</p>
+            </div>
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">Are paginated pages a trap?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">Only when they are deep and unlinked. A handful of paginated pages with clear links is normal.</p>
+            </div>
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">How do I know I have one?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">Compare fetch counts to citations per URL pattern over a month. The pattern with high fetches and no citations is the suspect.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-4">Related terms</h2>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <a href="/glossary/crawl-budget/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Crawl Budget</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">the capacity a trap consumes</span>
+            </a>
+            <a href="/glossary/crawl-log/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Crawl Log</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">where a trap becomes visible</span>
+            </a>
+            <a href="/glossary/indexability/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Indexability</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">what a trap's pages fail</span>
+            </a>
+            <a href="/glossary/soft-404/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Soft 404</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">the status problem often found alongside</span>
+            </a>
+          </div>
+          <a href="/glossary/" class="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 transition-colors">
+            Browse the full glossary <span aria-hidden="true">&rarr;</span>
+          </a>
+        </section>
+
+        <section class="mt-10 rounded-xl border border-blue-200 bg-blue-50 p-6">
+          <h2 class="text-lg font-semibold text-gray-900">See how this shows up for your brand</h2>
+          <p class="mt-2 text-sm text-gray-600 leading-relaxed">The free IndexHot check runs a governed question library across ChatGPT, Perplexity, Gemini and AI Overviews, then separates mention, citation and absorption.</p>
+          <a href="/" class="mt-4 inline-flex items-center justify-center px-5 py-3 rounded-lg bg-blue-600 text-white font-semibold text-sm hover:bg-blue-700 transition-colors">Run the free check</a>
+        </section>
+      </div>
+    </article>
+  </main>
+
+  <footer class="border-t border-gray-100 px-5 sm:px-6 py-8">
+    <div class="max-w-3xl mx-auto text-center text-sm text-gray-400">
+      © 2026 IndexHot. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var menuBtn = document.getElementById('menu-btn');
+      var mobileMenu = document.getElementById('mobile-menu');
+
+      menuBtn.addEventListener('click', function () {
+        var isHidden = mobileMenu.classList.toggle('hidden');
+        menuBtn.setAttribute('aria-expanded', String(!isHidden));
+      });
+
+      mobileMenu.addEventListener('click', function (e) {
+        if (e.target.tagName === 'A') {
+          mobileMenu.classList.add('hidden');
+          menuBtn.setAttribute('aria-expanded', 'false');
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

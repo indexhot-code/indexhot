@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What is Entity Resolution? — IndexHot Glossary</title>
+  <meta name="description" content="Entity resolution is where a system decides whether several names, profiles or domains are one organisation. Failure produces fragments too weak to cite." />
+  <link rel="canonical" href="https://indexhot.com/glossary/entity-resolution/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="What is Entity Resolution? — IndexHot Glossary" />
+  <meta property="og:description" content="Entity resolution is where a system decides whether several names, profiles or domains are one organisation. Failure produces fragments too weak to cite." />
+  <meta property="og:url" content="https://indexhot.com/glossary/entity-resolution/" />
+  <meta property="og:site_name" content="IndexHot" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="What is Entity Resolution? — IndexHot Glossary" />
+  <meta name="twitter:description" content="Entity resolution is where a system decides whether several names, profiles or domains are one organisation. Failure produces fragments too weak to cite." />
+  <link rel="stylesheet" href="../../tailwind.min.css" />
+  <style>
+    body { font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "DefinedTerm",
+      "name": "Entity Resolution",
+      "description": "Entity resolution is the process by which a system decides that Acme Ltd, Acme Labs and acme.com are one organisation, or decides that they are not. Failing it produces fragments: several weak entities instead of one strong one, and an answer that hedges about all of them.",
+      "url": "https://indexhot.com/glossary/entity-resolution/",
+      "inDefinedTermSet": {
+        "@type": "DefinedTermSet",
+        "name": "IndexHot GEO Glossary",
+        "url": "https://indexhot.com/glossary/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://indexhot.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Glossary",
+          "item": "https://indexhot.com/glossary/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Entity Resolution"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is entity resolution something I can see?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Only indirectly, through the symptoms: split descriptions, mismatched citations, products attributed to the wrong brand."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does sameAs fix a rename?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It helps if the old name remains a documented alias. Declaring a link without recording the alias leaves the old record orphaned."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What if a competitor has a similar name?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Disambiguate in text: state the category, the location and one distinguishing fact in the same sentence as your name."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body class="bg-white text-gray-800 antialiased">
+
+  <header class="sticky top-0 z-20 bg-white/90 backdrop-blur border-b border-gray-100">
+    <div class="max-w-3xl mx-auto px-5 sm:px-6 h-16 flex items-center justify-between">
+      <a href="/" class="text-xl font-bold tracking-tight text-gray-900">
+        Index<span class="text-blue-600">Hot</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6">
+        <a href="/blog/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Blog</a>
+        <a href="/guides/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Guides</a>
+        <a href="/answers/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Answers</a>
+        <a href="/tools/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Tools</a>
+        <a href="/methodology/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Methodology</a>
+        <a href="/data/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Data</a>
+        <a href="/about/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">About</a>
+        <a href="#" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Sign in</a>
+      </nav>
+      <button id="menu-btn" type="button" aria-label="Open menu" aria-expanded="false"
+        class="md:hidden flex items-center justify-center w-10 h-10 -mr-2 rounded-lg text-gray-600 hover:text-blue-600 hover:bg-gray-100 transition-colors">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+    <nav id="mobile-menu" class="hidden md:hidden px-5 pb-4 pt-2 border-t border-gray-100 bg-white">
+      <a href="/blog/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Blog</a>
+      <a href="/guides/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Guides</a>
+      <a href="/answers/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Answers</a>
+      <a href="/tools/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Tools</a>
+      <a href="/methodology/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Methodology</a>
+      <a href="/data/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Data</a>
+      <a href="/about/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">About</a>
+      <a href="#" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Sign in</a>
+    </nav>
+  </header>
+
+  <main>
+    <article class="px-5 sm:px-6 pt-10 pb-10">
+      <div class="max-w-3xl mx-auto">
+
+                <nav class="mb-6 text-xs text-gray-500">
+          <a href="/" class="hover:text-blue-600">Home</a><span class="mx-1.5 text-gray-300">/</span><a href="/glossary/" class="hover:text-blue-600">Glossary</a><span class="mx-1.5 text-gray-300">/</span><span class="text-gray-700">Entity Resolution</span>
+        </nav>
+
+        <header class="mb-8">
+          <p class="text-sm font-semibold text-blue-600 mb-3">Glossary &middot; Entity and content</p>
+          <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900 leading-tight">
+            What is Entity Resolution?
+          </h1>
+        </header>
+
+        <p class="text-xs text-gray-400 mb-6">Last updated November 2026 &middot; Reviewed against the IndexHot GEO Measurement Standard v1.0</p>
+
+        <div class="text-lg text-gray-700 leading-relaxed border-l-4 border-blue-600 pl-4 mb-8">
+          <p>Entity resolution is the process by which a system decides that Acme Ltd, Acme Labs and acme.com are one organisation, or decides that they are not. Failing it produces fragments: several weak entities instead of one strong one, and an answer that hedges about all of them.</p>
+        </div>
+
+        <p class="text-gray-600 leading-relaxed mb-10">
+          In short: Deciding whether several names, profiles or domains refer to one organisation.
+        </p>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">What the system uses to decide</h2>
+          <ul class="list-disc pl-5 space-y-2 text-gray-600 leading-relaxed marker:text-blue-500">
+            <li>Name similarity, including suffixes, spacing and abbreviations.</li>
+            <li>Shared identifiers: domain, logo, address, registration number, founding date.</li>
+            <li>Co-occurrence: whether the same pages, people and products appear across the records.</li>
+            <li>Declared links: sameAs, official profiles, cross-site references.</li>
+          </ul>
+        </section>
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Where resolution fails in practice</h2>
+          <p class="text-gray-600 leading-relaxed mb-4">Three patterns account for most failures: a rename without aliases, a sub-brand sharing the parent's name, and a legal entity that differs from the trading name. In each case the pages are individually correct and jointly ambiguous.</p>
+          <p class="text-gray-600 leading-relaxed mb-4">The symptom is specific: answers describe the company accurately and attribute the description to the wrong URL, or split a product line across two names. Reporting this as a citation problem sends teams to the wrong fix.</p>
+        </section>
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">What improves it</h2>
+          <ol class="list-decimal pl-5 space-y-2 text-gray-600 leading-relaxed marker:text-blue-500">
+            <li>Declare one canonical name and use it in the first sentence of the homepage and the about page.</li>
+            <li>Record aliases explicitly: former names, legal names, abbreviations, and local-language forms.</li>
+            <li>Keep sameAs accurate and short; a dormant profile weakens the set it belongs to.</li>
+            <li>Give products their own resolvable identities rather than reusing the parent name.</li>
+            <li>Check whether a same-named company exists in your category, and disambiguate in text if so.</li>
+          </ol>
+        </section>
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">How to test your own</h2>
+          <p class="text-gray-600 leading-relaxed mb-4">Ask a fresh assistant who you are, twice, in different sessions, and compare the company description and the cited URL. Consistent description plus consistent citation means resolution is holding. Description consistent, citation varying between two URLs usually means an unresolved duplicate.</p>
+        </section>
+
+        <section class="mt-12">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-6">Frequently asked questions</h2>
+          <div class="space-y-5">
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">Is entity resolution something I can see?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">Only indirectly, through the symptoms: split descriptions, mismatched citations, products attributed to the wrong brand.</p>
+            </div>
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">Does sameAs fix a rename?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">It helps if the old name remains a documented alias. Declaring a link without recording the alias leaves the old record orphaned.</p>
+            </div>
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">What if a competitor has a similar name?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">Disambiguate in text: state the category, the location and one distinguishing fact in the same sentence as your name.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-4">Related terms</h2>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <a href="/glossary/entity-consistency/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Entity Consistency</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">the input resolution depends on</span>
+            </a>
+            <a href="/glossary/entity-clarity/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Entity Clarity</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">whether the result is usable</span>
+            </a>
+            <a href="/glossary/sameas-link/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">sameAs Link</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">the declaration that helps</span>
+            </a>
+            <a href="/glossary/entity-ambiguity/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Entity Ambiguity</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">the failure state</span>
+            </a>
+          </div>
+          <a href="/glossary/" class="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 transition-colors">
+            Browse the full glossary <span aria-hidden="true">&rarr;</span>
+          </a>
+        </section>
+
+        <section class="mt-10 rounded-xl border border-blue-200 bg-blue-50 p-6">
+          <h2 class="text-lg font-semibold text-gray-900">See how this shows up for your brand</h2>
+          <p class="mt-2 text-sm text-gray-600 leading-relaxed">The free IndexHot check runs a governed question library across ChatGPT, Perplexity, Gemini and AI Overviews, then separates mention, citation and absorption.</p>
+          <a href="/" class="mt-4 inline-flex items-center justify-center px-5 py-3 rounded-lg bg-blue-600 text-white font-semibold text-sm hover:bg-blue-700 transition-colors">Run the free check</a>
+        </section>
+      </div>
+    </article>
+  </main>
+
+  <footer class="border-t border-gray-100 px-5 sm:px-6 py-8">
+    <div class="max-w-3xl mx-auto text-center text-sm text-gray-400">
+      © 2026 IndexHot. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var menuBtn = document.getElementById('menu-btn');
+      var mobileMenu = document.getElementById('mobile-menu');
+
+      menuBtn.addEventListener('click', function () {
+        var isHidden = mobileMenu.classList.toggle('hidden');
+        menuBtn.setAttribute('aria-expanded', String(!isHidden));
+      });
+
+      mobileMenu.addEventListener('click', function (e) {
+        if (e.target.tagName === 'A') {
+          mobileMenu.classList.add('hidden');
+          menuBtn.setAttribute('aria-expanded', 'false');
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

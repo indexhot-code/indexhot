@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What is HTML-First? — IndexHot Glossary</title>
+  <meta name="description" content="HTML-first means the content is present in the first response, before any script runs, so every retrieval client can read the page." />
+  <link rel="canonical" href="https://indexhot.com/glossary/html-first/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="What is HTML-First? — IndexHot Glossary" />
+  <meta property="og:description" content="HTML-first means the content is present in the first response, before any script runs, so every retrieval client can read the page." />
+  <meta property="og:url" content="https://indexhot.com/glossary/html-first/" />
+  <meta property="og:site_name" content="IndexHot" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="What is HTML-First? — IndexHot Glossary" />
+  <meta name="twitter:description" content="HTML-first means the content is present in the first response, before any script runs, so every retrieval client can read the page." />
+  <link rel="stylesheet" href="../../tailwind.min.css" />
+  <style>
+    body { font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "DefinedTerm",
+      "name": "HTML-First",
+      "description": "HTML-first is an architectural choice: the content a page exists to deliver is present in the initial HTML response, before JavaScript runs. Everything else, styling, interaction and personalisation, is layered on afterwards.",
+      "url": "https://indexhot.com/glossary/html-first/",
+      "inDefinedTermSet": {
+        "@type": "DefinedTermSet",
+        "name": "IndexHot GEO Glossary",
+        "url": "https://indexhot.com/glossary/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://indexhot.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Glossary",
+          "item": "https://indexhot.com/glossary/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "HTML-First"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is HTML-first the same as static?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Static is one way to achieve it. Server rendering and prerendering achieve it with dynamic back ends."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does it hurt performance?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Usually it improves first paint, since content no longer waits for a script."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What about sites that must render?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Render the content routes and keep the interactive parts client-side. The rule is about content, not the whole page."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body class="bg-white text-gray-800 antialiased">
+
+  <header class="sticky top-0 z-20 bg-white/90 backdrop-blur border-b border-gray-100">
+    <div class="max-w-3xl mx-auto px-5 sm:px-6 h-16 flex items-center justify-between">
+      <a href="/" class="text-xl font-bold tracking-tight text-gray-900">
+        Index<span class="text-blue-600">Hot</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6">
+        <a href="/blog/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Blog</a>
+        <a href="/guides/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Guides</a>
+        <a href="/answers/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Answers</a>
+        <a href="/tools/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Tools</a>
+        <a href="/methodology/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Methodology</a>
+        <a href="/data/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Data</a>
+        <a href="/about/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">About</a>
+        <a href="#" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Sign in</a>
+      </nav>
+      <button id="menu-btn" type="button" aria-label="Open menu" aria-expanded="false"
+        class="md:hidden flex items-center justify-center w-10 h-10 -mr-2 rounded-lg text-gray-600 hover:text-blue-600 hover:bg-gray-100 transition-colors">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+    <nav id="mobile-menu" class="hidden md:hidden px-5 pb-4 pt-2 border-t border-gray-100 bg-white">
+      <a href="/blog/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Blog</a>
+      <a href="/guides/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Guides</a>
+      <a href="/answers/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Answers</a>
+      <a href="/tools/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Tools</a>
+      <a href="/methodology/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Methodology</a>
+      <a href="/data/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Data</a>
+      <a href="/about/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">About</a>
+      <a href="#" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Sign in</a>
+    </nav>
+  </header>
+
+  <main>
+    <article class="px-5 sm:px-6 pt-10 pb-10">
+      <div class="max-w-3xl mx-auto">
+
+                <nav class="mb-6 text-xs text-gray-500">
+          <a href="/" class="hover:text-blue-600">Home</a><span class="mx-1.5 text-gray-300">/</span><a href="/glossary/" class="hover:text-blue-600">Glossary</a><span class="mx-1.5 text-gray-300">/</span><span class="text-gray-700">HTML-First</span>
+        </nav>
+
+        <header class="mb-8">
+          <p class="text-sm font-semibold text-blue-600 mb-3">Glossary &middot; Technical</p>
+          <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900 leading-tight">
+            What is HTML-First?
+          </h1>
+        </header>
+
+        <p class="text-xs text-gray-400 mb-6">Last updated November 2026 &middot; Reviewed against the IndexHot GEO Measurement Standard v1.0</p>
+
+        <div class="text-lg text-gray-700 leading-relaxed border-l-4 border-blue-600 pl-4 mb-8">
+          <p>HTML-first is an architectural choice: the content a page exists to deliver is present in the initial HTML response, before JavaScript runs. Everything else, styling, interaction and personalisation, is layered on afterwards.</p>
+        </div>
+
+        <p class="text-gray-600 leading-relaxed mb-10">
+          In short: Content present in the first HTML response, before any script runs.
+        </p>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Why the choice is structural, not stylistic</h2>
+          <p class="text-gray-600 leading-relaxed mb-4">A page that requires rendering is readable by clients that render and invisible to clients that do not. Since pipelines differ in budget rather than in principle, a render-dependent page is readable sometimes. HTML-first removes the dependency, which converts a probabilistic outcome into a deterministic one.</p>
+        </section>
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">What HTML-first does not forbid</h2>
+          <ul class="list-disc pl-5 space-y-2 text-gray-600 leading-relaxed marker:text-blue-500">
+            <li>Client-side interaction: filtering, calculators, modals, all still fine.</li>
+            <li>Personalisation after load: a default state in HTML, personalised afterwards.</li>
+            <li>Frameworks: server rendering or prerendering does the same job with the same tooling.</li>
+            <li>Modern design: the constraint is on where content lives, not how it looks.</li>
+          </ul>
+        </section>
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">The three-layer model</h2>
+          <div class="overflow-x-auto">
+            <table class="w-full text-sm border-collapse min-w-[520px]">
+              <thead><tr class="border-b border-gray-200 text-left text-gray-500"><th class="py-2 pr-4 font-medium">Layer</th><th class="py-2 pr-4 font-medium">Contains</th><th class="py-2 pr-4 font-medium">Must be in first response</th></tr></thead>
+              <tbody class="text-gray-700">
+                <tr class="border-b border-gray-100"><td class="py-2 pr-4">C</td><td class="py-2 pr-4">o</td><td class="py-2 pr-4">n</td><td class="py-2 pr-4">t</td><td class="py-2 pr-4">e</td><td class="py-2 pr-4">n</td><td class="py-2 pr-4">t</td></tr>
+                <tr class="border-b border-gray-100"><td class="py-2 pr-4">C</td><td class="py-2 pr-4">l</td><td class="py-2 pr-4">a</td><td class="py-2 pr-4">i</td><td class="py-2 pr-4">m</td><td class="py-2 pr-4">s</td><td class="py-2 pr-4">,</td><td class="py-2 pr-4"> </td><td class="py-2 pr-4">t</td><td class="py-2 pr-4">a</td><td class="py-2 pr-4">b</td><td class="py-2 pr-4">l</td><td class="py-2 pr-4">e</td><td class="py-2 pr-4">s</td><td class="py-2 pr-4">,</td><td class="py-2 pr-4"> </td><td class="py-2 pr-4">p</td><td class="py-2 pr-4">r</td><td class="py-2 pr-4">i</td><td class="py-2 pr-4">c</td><td class="py-2 pr-4">e</td><td class="py-2 pr-4">s</td><td class="py-2 pr-4">,</td><td class="py-2 pr-4"> </td><td class="py-2 pr-4">d</td><td class="py-2 pr-4">a</td><td class="py-2 pr-4">t</td><td class="py-2 pr-4">e</td><td class="py-2 pr-4">s</td><td class="py-2 pr-4">,</td><td class="py-2 pr-4"> </td><td class="py-2 pr-4">h</td><td class="py-2 pr-4">e</td><td class="py-2 pr-4">a</td><td class="py-2 pr-4">d</td><td class="py-2 pr-4">i</td><td class="py-2 pr-4">n</td><td class="py-2 pr-4">g</td><td class="py-2 pr-4">s</td></tr>
+                <tr class="border-b border-gray-100"><td class="py-2 pr-4">Y</td><td class="py-2 pr-4">e</td><td class="py-2 pr-4">s</td></tr>
+              </tbody></table>
+          </div>
+        </section>
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Testing it</h2>
+          <p class="text-gray-600 leading-relaxed mb-4">Disable JavaScript, reload, and read the page. Whatever is missing is the gap between your intent and what some pipelines receive. Repeat on the ten pages whose claims you need cited, and treat a missing paragraph as an engineering ticket rather than a copy problem.</p>
+        </section>
+
+        <section class="mt-12">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-6">Frequently asked questions</h2>
+          <div class="space-y-5">
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">Is HTML-first the same as static?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">Static is one way to achieve it. Server rendering and prerendering achieve it with dynamic back ends.</p>
+            </div>
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">Does it hurt performance?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">Usually it improves first paint, since content no longer waits for a script.</p>
+            </div>
+            <div class="rounded-xl border border-gray-200 p-5">
+              <h3 class="font-semibold text-gray-900">What about sites that must render?</h3>
+              <p class="text-gray-600 leading-relaxed mt-2">Render the content routes and keep the interactive parts client-side. The rule is about content, not the whole page.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-4">Related terms</h2>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <a href="/glossary/render-parity/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Render Parity</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">the outcome HTML-first guarantees</span>
+            </a>
+            <a href="/glossary/retrieval-latency/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Retrieval Latency</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">why the guarantee matters</span>
+            </a>
+            <a href="/glossary/content-extractability/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Content Extractability</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">the editorial half</span>
+            </a>
+            <a href="/glossary/crawlability/" class="block p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Crawlability</span>
+              <span class="block mt-1 text-xs text-gray-500 leading-relaxed">whether the response is requested</span>
+            </a>
+          </div>
+          <a href="/glossary/" class="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 transition-colors">
+            Browse the full glossary <span aria-hidden="true">&rarr;</span>
+          </a>
+        </section>
+
+        <section class="mt-10 rounded-xl border border-blue-200 bg-blue-50 p-6">
+          <h2 class="text-lg font-semibold text-gray-900">See how this shows up for your brand</h2>
+          <p class="mt-2 text-sm text-gray-600 leading-relaxed">The free IndexHot check runs a governed question library across ChatGPT, Perplexity, Gemini and AI Overviews, then separates mention, citation and absorption.</p>
+          <a href="/" class="mt-4 inline-flex items-center justify-center px-5 py-3 rounded-lg bg-blue-600 text-white font-semibold text-sm hover:bg-blue-700 transition-colors">Run the free check</a>
+        </section>
+      </div>
+    </article>
+  </main>
+
+  <footer class="border-t border-gray-100 px-5 sm:px-6 py-8">
+    <div class="max-w-3xl mx-auto text-center text-sm text-gray-400">
+      © 2026 IndexHot. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var menuBtn = document.getElementById('menu-btn');
+      var mobileMenu = document.getElementById('mobile-menu');
+
+      menuBtn.addEventListener('click', function () {
+        var isHidden = mobileMenu.classList.toggle('hidden');
+        menuBtn.setAttribute('aria-expanded', String(!isHidden));
+      });
+
+      mobileMenu.addEventListener('click', function (e) {
+        if (e.target.tagName === 'A') {
+          mobileMenu.classList.add('hidden');
+          menuBtn.setAttribute('aria-expanded', 'false');
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prompt Sets for Non-English Markets Are Not Translations — IndexHot</title>
+  <meta name="description" content="Translated prompts measure your translator, not the market. How to build locale-specific sets, and the three ways multilingual measurement goes wrong." />
+  <link rel="canonical" href="https://indexhot.com/blog/non-english-prompt-sets/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Prompt Sets for Non-English Markets Are Not Translations — IndexHot" />
+  <meta property="og:description" content="Translated prompts measure your translator, not the market. How to build locale-specific sets, and the three ways multilingual measurement goes wrong." />
+  <meta property="og:url" content="https://indexhot.com/blog/non-english-prompt-sets/" />
+  <meta property="og:site_name" content="IndexHot" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Prompt Sets for Non-English Markets Are Not Translations — IndexHot" />
+  <meta name="twitter:description" content="Translated prompts measure your translator, not the market. How to build locale-specific sets, and the three ways multilingual measurement goes wrong." />
+  <link rel="stylesheet" href="../../tailwind.min.css" />
+  <style>
+    body { font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "headline": "Prompt Sets for Non-English Markets Are Not Translations",
+      "url": "https://indexhot.com/blog/non-english-prompt-sets/",
+      "datePublished": "2026-11-28",
+      "dateModified": "2026-11-28",
+      "author": {
+        "@type": "Organization",
+        "name": "IndexHot",
+        "url": "https://indexhot.com/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "IndexHot",
+        "url": "https://indexhot.com/"
+      },
+      "description": "Translated prompts measure your translator, not the market. How to build locale-specific sets, and the three ways multilingual measurement goes wrong."
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://indexhot.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://indexhot.com/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Prompt Sets for Non-English Markets Are Not Translations"
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body class="bg-white text-gray-800 antialiased">
+
+  <!-- Top navigation -->
+  <header class="sticky top-0 z-20 bg-white/90 backdrop-blur border-b border-gray-100">
+    <div class="max-w-3xl mx-auto px-5 sm:px-6 h-16 flex items-center justify-between">
+      <a href="/" class="text-xl font-bold tracking-tight text-gray-900">
+        Index<span class="text-blue-600">Hot</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6">
+        <a href="/blog/" class="text-sm font-medium text-blue-600">Blog</a>
+        <a href="/guides/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Guides</a>
+        <a href="/answers/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Answers</a>
+        <a href="/tools/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Tools</a>
+        <a href="/methodology/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Methodology</a>
+        <a href="/data/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Data</a>
+        <a href="/about/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">About</a>
+        <a href="#" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Sign in</a>
+      </nav>
+      <button id="menu-btn" type="button" aria-label="Open menu" aria-expanded="false"
+        class="md:hidden flex items-center justify-center w-10 h-10 -mr-2 rounded-lg text-gray-600 hover:text-blue-600 hover:bg-gray-100 transition-colors">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+    <nav id="mobile-menu" class="hidden md:hidden px-5 pb-4 pt-2 border-t border-gray-100 bg-white">
+      <a href="/blog/" class="block py-2.5 text-sm font-medium text-blue-600">Blog</a>
+      <a href="/guides/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Guides</a>
+      <a href="/answers/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Answers</a>
+      <a href="/tools/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Tools</a>
+      <a href="/methodology/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Methodology</a>
+      <a href="/data/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Data</a>
+      <a href="/about/" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">About</a>
+      <a href="#" class="block py-2.5 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Sign in</a>
+    </nav>
+  </header>
+
+  <main>
+    <article class="px-5 sm:px-6 pt-10 pb-10">
+      <div class="max-w-3xl mx-auto">
+
+                <a href="/blog/" class="inline-flex items-center gap-1 text-sm font-medium text-gray-500 hover:text-blue-600 transition-colors mb-6">
+          &larr; Back to Blog
+        </a>
+
+        <header class="mb-8">
+          <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900 leading-tight">
+            Prompt Sets for Non-English Markets Are Not Translations
+          </h1>
+          <p class="mt-4 text-sm text-gray-400">
+            By <span class="font-medium text-gray-600">IndexHot Team</span> &middot; <time datetime="2026-11-28">November 28, 2026</time>
+          </p>
+        </header>
+
+        <div class="text-lg text-gray-700 leading-relaxed border-l-4 border-blue-600 pl-4 mb-10">
+          <p>If your library is English and your market is not, the measurement is of your translation rather than of your position. Buyers in other languages ask with different phrasing, different category words, and sometimes different questions entirely.</p>
+        </div>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Why translation fails as a method</h2>
+          <p class="text-gray-600 leading-relaxed mb-4">A translated prompt imports English assumptions: the category name, the comparison set, the unit of purchase. In markets where the category is known by a local term, or where buyers search by regulation rather than by product, the translated prompt returns an answer about a market that does not exist.</p>
+          <p class="text-gray-600 leading-relaxed mb-4">The failure is invisible in the report. Rates look plausible and comparable, which is worse than looking broken, because it invites cross-market conclusions that the data cannot support.</p>
+        </section>
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">What a locale-specific set contains</h2>
+          <ul class="list-disc pl-5 space-y-2 text-gray-600 leading-relaxed marker:text-blue-500">
+            <li>The category term as buyers actually use it, including the local loanword if one dominates.</li>
+            <li>Comparison prompts naming the competitors that are actually present in that market, not your global set.</li>
+            <li>Regulatory or standards prompts, which frequently outrank product prompts in regulated categories.</li>
+            <li>The purchase unit: per seat, per container, per square metre, per month, as locally understood.</li>
+            <li>One prompt in the local language for a mixed-language query, since real queries mix.</li>
+          </ul>
+        </section>
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Three ways multilingual measurement goes wrong</h2>
+          <div class="overflow-x-auto">
+            <table class="w-full text-sm border-collapse min-w-[520px]">
+              <thead><tr class="border-b border-gray-200 text-left text-gray-500"><th class="py-2 pr-4 font-medium">Mistake</th><th class="py-2 pr-4 font-medium">What it produces</th></tr></thead>
+              <tbody class="text-gray-700">
+                <tr class="border-b border-gray-100"><td class="py-2 pr-4">B</td><td class="py-2 pr-4">l</td><td class="py-2 pr-4">e</td><td class="py-2 pr-4">n</td><td class="py-2 pr-4">d</td><td class="py-2 pr-4">i</td><td class="py-2 pr-4">n</td><td class="py-2 pr-4">g</td><td class="py-2 pr-4"> </td><td class="py-2 pr-4">l</td><td class="py-2 pr-4">o</td><td class="py-2 pr-4">c</td><td class="py-2 pr-4">a</td><td class="py-2 pr-4">l</td><td class="py-2 pr-4">e</td><td class="py-2 pr-4">s</td><td class="py-2 pr-4"> </td><td class="py-2 pr-4">i</td><td class="py-2 pr-4">n</td><td class="py-2 pr-4">t</td><td class="py-2 pr-4">o</td><td class="py-2 pr-4"> </td><td class="py-2 pr-4">o</td><td class="py-2 pr-4">n</td><td class="py-2 pr-4">e</td><td class="py-2 pr-4"> </td><td class="py-2 pr-4">r</td><td class="py-2 pr-4">a</td><td class="py-2 pr-4">t</td><td class="py-2 pr-4">e</td></tr>
+                <tr class="border-b border-gray-100"><td class="py-2 pr-4">A</td><td class="py-2 pr-4"> </td><td class="py-2 pr-4">n</td><td class="py-2 pr-4">u</td><td class="py-2 pr-4">m</td><td class="py-2 pr-4">b</td><td class="py-2 pr-4">e</td><td class="py-2 pr-4">r</td><td class="py-2 pr-4"> </td><td class="py-2 pr-4">d</td><td class="py-2 pr-4">e</td><td class="py-2 pr-4">s</td><td class="py-2 pr-4">c</td><td class="py-2 pr-4">r</td><td class="py-2 pr-4">i</td><td class="py-2 pr-4">b</td><td class="py-2 pr-4">i</td><td class="py-2 pr-4">n</td><td class="py-2 pr-4">g</td><td class="py-2 pr-4"> </td><td class="py-2 pr-4">t</td><td class="py-2 pr-4">h</td><td class="py-2 pr-4">e</td><td class="py-2 pr-4"> </td><td class="py-2 pr-4">m</td><td class="py-2 pr-4">i</td><td class="py-2 pr-4">x</td><td class="py-2 pr-4"> </td><td class="py-2 pr-4">o</td><td class="py-2 pr-4">f</td><td class="py-2 pr-4"> </td><td class="py-2 pr-4">m</td><td class="py-2 pr-4">a</td><td class="py-2 pr-4">r</td><td class="py-2 pr-4">k</td><td class="py-2 pr-4">e</td><td class="py-2 pr-4">t</td><td class="py-2 pr-4">s</td><td class="py-2 pr-4"> </td><td class="py-2 pr-4">s</td><td class="py-2 pr-4">a</td><td class="py-2 pr-4">m</td><td class="py-2 pr-4">p</td><td class="py-2 pr-4">l</td><td class="py-2 pr-4">e</td><td class="py-2 pr-4">d</td><td class="py-2 pr-4">,</td><td class="py-2 pr-4"> </td><td class="py-2 pr-4">n</td><td class="py-2 pr-4">o</td><td class="py-2 pr-4">t</td><td class="py-2 pr-4"> </td><td class="py-2 pr-4">a</td><td class="py-2 pr-4">n</td><td class="py-2 pr-4">y</td><td class="py-2 pr-4"> </td><td class="py-2 pr-4">m</td><td class="py-2 pr-4">a</td><td class="py-2 pr-4">r</td><td class="py-2 pr-4">k</td><td class="py-2 pr-4">e</td><td class="py-2 pr-4">t</td></tr>
+              </tbody></table>
+          </div>
+        </section>
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">Implementation, cheaply</h2>
+          <ol class="list-decimal pl-5 space-y-2 text-gray-600 leading-relaxed marker:text-blue-500">
+            <li>Run one locale properly rather than five badly. One market, twenty prompts, both halves, three runs.</li>
+            <li>Have a native speaker review the prompts, not the answers. Prompt wording is where the market assumption lives.</li>
+            <li>Publish local-language pages for the terms you measure, or the measurement will describe someone else's pages.</li>
+            <li>Report locale separately in every table, and never in a blended column.</li>
+          </ol>
+          <div class="rounded-xl border border-amber-200 bg-amber-50 p-5 my-5">
+            <p class="text-sm text-amber-900 leading-relaxed">If you cannot review prompts with someone who buys in that language, do not publish the number. An unreviewed translated set is a claim about your translator wearing the costume of a market study.</p>
+          </div>
+        </section>
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-3">The entity side</h2>
+          <p class="text-gray-600 leading-relaxed mb-4">Local-language pages need their own entity signals: the brand name as written locally, the local legal entity if one exists, sameAs links between the language versions, and hreflang so the language versions are understood as alternates rather than duplicates. Without those, a model may treat the local site as an unrelated company with a similar name, which is the worst of both outcomes.</p>
+        </section>
+
+        <section class="mt-12 pt-8 border-t border-gray-100">
+          <h2 class="text-lg font-semibold text-gray-900 mb-4">Keep reading</h2>
+          <div class="grid sm:grid-cols-2 gap-4">
+            <a href="/guides/technical-readiness-for-ai-search/" class="block p-5 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Technical readiness</span>
+              <span class="block text-sm text-gray-500 mt-1">Hreflang, canonicals and language variants.</span>
+            </a>
+            <a href="/blog/prompt-library-audit/" class="block p-5 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition">
+              <span class="block text-sm font-semibold text-gray-900">Auditing the library</span>
+              <span class="block text-sm text-gray-500 mt-1">The quarterly routine, extended per locale.</span>
+            </a>
+          </div>
+        </section>
+
+        <section class="mt-12 pt-8 border-t border-gray-100">
+          <h2 class="text-lg font-semibold text-gray-900 mb-4">Glossary terms behind this</h2>
+          <div class="flex flex-wrap gap-x-4 gap-y-2 text-sm">
+            <a href="/glossary/crawlability/" class="text-blue-600 hover:text-blue-700">Crawlability</a>
+            <a href="/glossary/canonical-tag/" class="text-blue-600 hover:text-blue-700">Canonical Tag</a>
+            <a href="/glossary/branded-prompt/" class="text-blue-600 hover:text-blue-700">Branded Prompt</a>
+            <a href="/glossary/prompt-drift/" class="text-blue-600 hover:text-blue-700">Prompt Drift</a>
+          </div>
+        </section>
+
+        <section class="mt-10 rounded-xl border border-blue-200 bg-blue-50 p-6">
+          <h2 class="text-lg font-semibold text-gray-900">Check your own brand for free</h2>
+          <p class="mt-2 text-sm text-gray-600 leading-relaxed">Fifty prompts, the same coding rules, a report you can compare against next quarter.</p>
+          <a href="/" class="mt-4 inline-block px-5 py-3 rounded-lg bg-blue-600 text-white font-semibold text-sm hover:bg-blue-700 transition-colors">Run the free check</a>
+        </section>
+      </div>
+    </article>
+  </main>
+
+
+  <footer class="border-t border-gray-100 px-5 sm:px-6 py-8">
+    <div class="max-w-3xl mx-auto text-center text-sm text-gray-400">
+      © 2026 IndexHot. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var menuBtn = document.getElementById('menu-btn');
+      var mobileMenu = document.getElementById('mobile-menu');
+      menuBtn.addEventListener('click', function () {
+        var isHidden = mobileMenu.classList.toggle('hidden');
+        menuBtn.setAttribute('aria-expanded', String(!isHidden));
+      });
+      mobileMenu.addEventListener('click', function (e) {
+        if (e.target.tagName === 'A') {
+          mobileMenu.classList.add('hidden');
+          menuBtn.setAttribute('aria-expanded', 'false');
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
